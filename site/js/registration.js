@@ -114,6 +114,10 @@ export function stavPrihlasky(prihlaska, dnes) {
     }
     return { stav: 'planovano', text: `Přihlášky od ${formatDatum(od)}` };
   }
+  // Doplněno nad rámec tabulky v zadání: přihlášky začaly a konec není uveden.
+  if (od && !doData && cisloDne(od) <= d && prihlaska?.prubezne !== true) {
+    return { stav: 'probiha', text: 'Přihlášky probíhají' };
+  }
   if (!od && doData && d <= cisloDne(doData)) {
     return { stav: 'probiha', text: textProbiha(doData, dnes) };
   }

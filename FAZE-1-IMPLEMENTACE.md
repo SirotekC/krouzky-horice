@@ -264,6 +264,7 @@ Mezi skupinami filtrů platí logika **AND**.
 | `od` a `do` vyplněné a `od ≤ dnes ≤ do` | `probiha` | „Přihlášky do {d. m.}“ (pokud zbývá ≤ 7 dní: „Končí za X dní“) |
 | `od` vyplněné, `dnes < od` a rozdíl ≤ 30 dní | `brzy` | „Přihlášky od {d. m.}“ |
 | `od` vyplněné, `dnes < od` a rozdíl > 30 dní | `planovano` | „Přihlášky od {d. m. rrrr}“ |
+| jen `od` vyplněné (bez `do`), `od ≤ dnes` a není průběžný nábor | `probiha` | „Přihlášky probíhají“ *(doplněno 2026-10-12)* |
 | jen `do` vyplněné (bez `od`) a `dnes ≤ do` | `probiha` | jako výše |
 | `prubezne === true` | `prubezne` | „Průběžný nábor“ |
 | `do` vyplněné a `dnes > do` | `ukonceno` | „Přihlášky ukončeny“ |

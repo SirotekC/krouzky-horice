@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "id": "ddm-horice",
+    "nazev": "Dům dětí a mládeže Hořice",
+    "typ": "ddm",
+    "web": "https://www.ddmhorice.cz",
+    "email": "info@ddmhorice.cz",
+    "telefon": null,
+    "adresa": "Žižkova 611, 508 01 Hořice",
+    "popis": "Městský dům dětí a mládeže s desítkami pravidelných kroužků, akcemi a příměstskými tábory.",
+    "zdroj_url": "https://www.ddmhorice.cz/kontakty",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice",
+    "nazev": "Sportovní zařízení města Hořice",
+    "typ": "jine",
+    "web": "https://www.sporthorice.cz",
+    "email": "info@sporthorice.cz",
+    "telefon": "602 238 534",
+    "adresa": null,
+    "popis": "Městská organizace provozující bazén a další sportoviště. Pořádá plavecké kroužky pro děti a plavecký oddíl Rejnok.",
+    "zdroj_url": "https://www.sporthorice.cz",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "florbal-horice",
+    "nazev": "FBK Hořice, z.s.",
+    "typ": "sportovni-klub",
+    "web": "https://www.florbalhorice.cz",
+    "email": "sekretar@florbalhorice.cz",
+    "telefon": null,
+    "adresa": null,
+    "popis": "Florbalový klub s mládežnickými týmy od přípravky po juniory.",
+    "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "zus-horice",
+    "nazev": "Základní umělecká škola Hořice",
+    "typ": "zus",
+    "web": "https://zushorice.cz",
+    "email": null,
+    "telefon": null,
+    "adresa": "Havlíčkova 1107, 508 01 Hořice v Podkrkonoší",
+    "popis": "Umělecká škola s hudebním, literárně-dramatickým a výtvarným oborem pro žáky zhruba od 5 do 19 let.",
+    "zdroj_url": "https://zushorice.cz/o-skole/studium/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "tj-sokol-horice",
+    "nazev": "T. J. Sokol Hořice",
+    "typ": "sportovni-klub",
+    "web": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+    "email": "horice@sokol.eu",
+    "telefon": null,
+    "adresa": "Erbenova 1081, 508 01 Hořice",
+    "popis": "Sokolská jednota s pravidelným cvičením v sokolovně pro rodiče s dětmi, žáky a žákyně.",
+    "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "junak-horice",
+    "nazev": "Junák – český skaut, středisko Hořice",
+    "typ": "spolek",
+    "web": "https://www.junakhorice.cz",
+    "email": null,
+    "telefon": null,
+    "adresa": "Máchova 576, Hořice",
+    "popis": "Skautské středisko se třemi oddíly pro děti. V novém školním roce přijímá nováčky od 5 let.",
+    "zdroj_url": "https://www.junakhorice.cz",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "fotbal-jiskra-horice",
+    "nazev": "TJ Jiskra Hořice – fotbal",
+    "typ": "sportovni-klub",
+    "web": "https://www.horickyfotbal.cz",
+    "email": null,
+    "telefon": null,
+    "adresa": "Gothard 700, 508 01 Hořice v Podkrkonoší",
+    "popis": "Fotbalový oddíl TJ Jiskra Hořice s mládežnickými týmy od předpřípravky (U7) po starší dorost (U19). Trénuje se na hřišti Gothard.",
+    "zdroj_url": "https://www.horickyfotbal.cz/cs/s/14-kontakty",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "rebels-gym",
+    "nazev": "Rebels Gym Hořice",
+    "typ": "sportovni-klub",
+    "web": "https://www.rebelsgym.cz",
+    "email": "info@rebelsgym.cz",
+    "telefon": "739 673 376",
+    "adresa": "Žižkova 1021, Hořice",
+    "popis": "Posilovna s osobními a skupinovými tréninky. Pro děti nabízí pravidelné tréninky ve dvou věkových skupinách.",
+    "zdroj_url": "https://www.rebelsgym.cz/kontakt/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "volejbal-horice",
+    "nazev": "Volejbalový oddíl Hořice",
+    "typ": "sportovni-klub",
+    "web": "https://www.horice.org/volejbal/ms-11400/p1=11400",
+    "email": null,
+    "telefon": null,
+    "adresa": null,
+    "popis": "Volejbalový oddíl založený v roce 1960, s vlastními kurty u Orlovny. Pro děti nabízí barevný minivolejbal a pořádá volejbalová soustředění.",
+    "zdroj_url": "https://www.horice.org/volejbal/ms-11400/p1=11400",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "spv-horice",
+    "nazev": "Sport pro všechny (ČASPV) Hořice",
+    "typ": "sportovni-klub",
+    "web": "https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788",
+    "email": null,
+    "telefon": null,
+    "adresa": null,
+    "popis": "Sportovní oddíl pro děti v rámci České asociace Sport pro všechny, založený v roce 1992. Zaměřuje se na všestrannou pohybovou průpravu.",
+    "zdroj_url": "https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788",
+    "overeno": "2026-10-12"
+  }
+]

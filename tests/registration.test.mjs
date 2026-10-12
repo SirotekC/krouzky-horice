@@ -130,6 +130,15 @@ test('neznamy: nic nevyplněno', () => {
   assert.equal(stavPrihlasky(undefined, '2027-01-10').stav, 'neznamy');
 });
 
-test('neznamy: jen od v minulosti, bez do a bez průběžného náboru', () => {
-  assert.equal(stavPrihlasky(p('2026-09-01', null), '2026-10-12').stav, 'neznamy');
+// Doplněné pravidlo: od v minulosti (nebo dnes), bez do → probiha bez data konce
+test('probiha: jen od v minulosti, bez do', () => {
+  assert.deepEqual(stavPrihlasky(p('2026-08-26', null), '2026-10-12'), {
+    stav: 'probiha',
+    text: 'Přihlášky probíhají',
+  });
+  assert.equal(stavPrihlasky(p('2026-10-12', null), '2026-10-12').stav, 'probiha');
+});
+
+test('jen od v minulosti a průběžný nábor → prubezne', () => {
+  assert.equal(stavPrihlasky(p('2026-09-02', null, true), '2026-10-12').stav, 'prubezne');
 });

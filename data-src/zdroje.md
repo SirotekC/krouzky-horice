@@ -28,9 +28,16 @@
 | tenis-horice | TC Hořice | Web neaktualizovaný od 2022, nábor z 2019. |
 | – | Šachy, basketbal, box, MMA, SDH (mladí hasiči) | Bez ověřitelné nabídky pro děti nebo jen Facebook. Šachy pokrývá DDM. |
 
-## Poznámky ze sběru
+## Poznámky ze sběru (2026-10-12)
 
-_(doplní se při vyplňování dat)_
+- **DDM** je zatím jedna souhrnná aktivita. Vlastní řešení pro jednotlivé kroužky (asi 70) přijde později. Začátek činnosti web uvádí jako 29. 9. i 29. 10. 2026. Přihlášky jsou online přes iDDM od 26. 8. 2026.
+- **Sokol:** sokol.eu a web města uvádějí rozdílné skupiny a časy. Použit sokol.eu, rozpor je v poznámkách aktivit.
+- **ZUŠ:** přijímací řízení 2026/2027 proběhlo v červnu, termín dalšího kola web neuvádí. Ceny jsou z ceníku, ne ze stránek oborů.
+- **Florbal:** stránky /treninky a /pridej-se-k-nam se v časech liší. Použita náborová stránka. Věk je dopočítaný z ročníků narození.
+- **Fotbal:** aktivity sdružují více kategorií. Nábor ani ceny web neuvádí.
+- **Rebels Gym:** u Gymčat je „Kapacita: 0“, nejasné, zda jde o obsazený kurz.
+- **Volejbal a SPV:** k dispozici jen stránka na webu města, chybí časy a ceny.
+- **Osobní kontakty** (telefony trenérů, ředitelů, WhatsApp, osobní e-maily) záměrně vynechány.
 
 ## Zjištění pro fázi 3–4
 

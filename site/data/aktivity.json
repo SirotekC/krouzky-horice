@@ -1,1 +1,1016 @@
-[]
+[
+  {
+    "id": "ddm-horice-krouzky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Kroužky DDM Hořice (přes 70 kroužků)",
+    "kategorie": [
+      "vytvarne",
+      "tanec",
+      "sport-ostatni",
+      "hudba",
+      "technika",
+      "priroda",
+      "jazyky",
+      "divadlo",
+      "bojove",
+      "ostatni"
+    ],
+    "popis": "Široká nabídka: výtvarné obory a keramika, tanec a mažoretky, sport a judo, kytara a ukulele, jazyky, loutkové divadlo, 3D tisk, Lego, elektronika, modeláři, přírodověda, šachy, vaření.",
+    "vek_od": null,
+    "vek_do": null,
+    "cena": {
+      "text": "0–3 200 Kč podle kroužku",
+      "castka_kc": null,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes web DDM (systém iDDM).",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz",
+      "poznamka": "Některé kroužky se rychle plní. Začátek činnosti web uvádí nejednotně (29. 9. i 29. 10. 2026)."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/hlavni-udalosti/159-prihlasovani-do-krouzku-2026-2027-je-spusteno",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice-pulci",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavecký kroužek Pulci",
+    "kategorie": [
+      "plavani"
+    ],
+    "popis": "Pro předškoláky, navazuje na kojenecké plavání. 15 lekcí po 50 minutách za pololetí.",
+    "vek_od": 4,
+    "vek_do": 5,
+    "terminy": {
+      "text": "Úterý 16:00–16:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "2 250 Kč za kurz (15 lekcí)",
+      "castka_kc": 2250,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
+      "od": "2026-08-16",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://rezervace.sporthorice.cz",
+      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice-rybicky",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavecký kroužek Rybičky",
+    "kategorie": [
+      "plavani"
+    ],
+    "popis": "Pro děti, které se s vodou teprve seznamují. 15 lekcí po 50 minutách za pololetí.",
+    "vek_od": 4,
+    "vek_do": 6,
+    "terminy": {
+      "text": "Úterý 15:00–15:50 nebo 17:00–17:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "2 250 Kč za kurz (15 lekcí)",
+      "castka_kc": 2250,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
+      "od": "2026-08-16",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://rezervace.sporthorice.cz",
+      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice-plavacci",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavecký kroužek Plaváčci",
+    "kategorie": [
+      "plavani"
+    ],
+    "popis": "Pro děti, které už zvládají základní orientaci ve vodě. 15 lekcí po 50 minutách za pololetí.",
+    "vek_od": 5,
+    "vek_do": 6,
+    "terminy": {
+      "text": "Úterý 16:00–16:50 nebo 17:00–17:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "2 250 Kč za kurz (15 lekcí)",
+      "castka_kc": 2250,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
+      "od": "2026-08-16",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://rezervace.sporthorice.cz",
+      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice-stiky",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavecký kroužek Štiky",
+    "kategorie": [
+      "plavani"
+    ],
+    "popis": "Pro děti, které zvládají alespoň jeden plavecký způsob, skoky a potápění. 15 lekcí po 50 minutách za pololetí.",
+    "vek_od": 6,
+    "vek_do": 9,
+    "terminy": {
+      "text": "Úterý 15:00–15:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "2 250 Kč za kurz (15 lekcí)",
+      "castka_kc": 2250,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
+      "od": "2026-08-16",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://rezervace.sporthorice.cz",
+      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice-delfini",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavecký kroužek Delfíni",
+    "kategorie": [
+      "plavani"
+    ],
+    "popis": "Další plavecké způsoby a zdokonalování techniky. Skupiny 9–13 a 13–16 let, 15 lekcí po 50 minutách za pololetí.",
+    "vek_od": 9,
+    "vek_do": 16,
+    "terminy": {
+      "text": "Úterý 16:00–16:50, 17:00–17:50 nebo 18:00–18:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "2 250 Kč za kurz (15 lekcí)",
+      "castka_kc": 2250,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
+      "od": "2026-08-16",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://rezervace.sporthorice.cz",
+      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice-rodice-s-detmi",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavání rodičů s dětmi",
+    "kategorie": [
+      "plavani"
+    ],
+    "popis": "Plavání malých dětí s rodičem, navazuje na kojenecké plavání. Lekce trvají 40 minut.",
+    "vek_od": 3,
+    "vek_do": 4,
+    "terminy": {
+      "text": "Pondělí a středa 16:30–17:10; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "dny": [
+        "po",
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "2 250 Kč za kurz",
+      "castka_kc": 2250,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
+      "od": "2026-08-16",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://rezervace.sporthorice.cz",
+      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "plavani-sporthorice-rejnok",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavecký oddíl Rejnok",
+    "kategorie": [
+      "plavani"
+    ],
+    "popis": "Plavecký oddíl pro plavce žákovského věku: přípravný a základní trénink, krajské závody.",
+    "vek_od": null,
+    "vek_do": null,
+    "terminy": {
+      "text": "Pondělí a středa 16:30–18:00, pátek 16:30–17:30 (mimo školní prázdniny)",
+      "dny": [
+        "po",
+        "st",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": null
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.sporthorice.cz/plavecky-oddil-rejnok/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "florbal-horice-pripravka",
+    "organizace_id": "florbal-horice",
+    "nazev": "Florbal – přípravka (U6, U7)",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Florbal pro nejmenší (ročníky 2020–2022) se zaměřením na všestranný pohyb, pro kluky i holky.",
+    "vek_od": 4,
+    "vek_do": 6,
+    "misto": {
+      "nazev": "Sportovní hala Gymnázia Hořice",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "U6 (2021–2022): středa 15:15–16:15; U7 (2020): pondělí 16:30–17:30, pátek 15:30–16:45",
+      "dny": [
+        "po",
+        "st",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Přijďte na náborový trénink, dotazy na sekretar@florbalhorice.cz.",
+      "od": "2026-09-02",
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.florbalhorice.cz/pridej-se-k-nam",
+      "poznamka": "Náborové tréninky probíhají od 2. 9. 2026 po celou sezónu."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "florbal-horice-elevove",
+    "organizace_id": "florbal-horice",
+    "nazev": "Florbal – elévové (U8–U11)",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Florbal pro děti z ročníků 2016–2019, pro kluky i holky. Tréninky 2–3× týdně.",
+    "vek_od": 7,
+    "vek_do": 10,
+    "terminy": {
+      "text": "U8 (2019): po 15:30–16:45 (Zemědělka), pá 15:30–16:45; U9 (2018): po 18:00–19:15 (Zemědělka), čt 18:00–19:15; U10 (2017): po 17:30–18:45, st 16:15–17:30, čt 15:30–16:45 (Zemědělka); U11 (2016): po 17:30–18:45, st a čt 18:00–19:15 (Zemědělka). Jinak SH Gymnázia.",
+      "dny": [
+        "po",
+        "st",
+        "ct",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Přijďte na náborový trénink, dotazy na sekretar@florbalhorice.cz.",
+      "od": "2026-09-02",
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.florbalhorice.cz/pridej-se-k-nam",
+      "poznamka": "Náborové tréninky probíhají od 2. 9. 2026 po celou sezónu."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "florbal-horice-zaci",
+    "organizace_id": "florbal-horice",
+    "nazev": "Florbal – žáci (U12–U15)",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Florbal pro žáky z ročníků 2013–2015, tréninky 3× týdně.",
+    "vek_od": 11,
+    "vek_do": 13,
+    "terminy": {
+      "text": "Po 15:30–16:45 (městská hala Erbenova), út 18:00–19:15 (tělocvična Zemědělka), čt 16:45–18:00 (SH Gymnázia)",
+      "dny": [
+        "po",
+        "ut",
+        "ct"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Přijďte na náborový trénink, dotazy na sekretar@florbalhorice.cz.",
+      "od": "2026-09-02",
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.florbalhorice.cz/pridej-se-k-nam",
+      "poznamka": "Náborové tréninky probíhají od 2. 9. 2026 po celou sezónu."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "florbal-horice-dorost",
+    "organizace_id": "florbal-horice",
+    "nazev": "Florbal – dorost a junioři",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Florbal pro starší mládež: dívky z ročníků 2010–2013, chlapci 2010–2012 a junioři 2008–2009.",
+    "vek_od": 13,
+    "vek_do": 18,
+    "terminy": {
+      "text": "Dívky 2010–2013: po 18:45–20:00, út 18:00–19:15, pá 16:45–18:00; chlapci 2010–2012: po 20:00–21:15, st 18:30–19:45 (Erbenova), pá 16:45–18:00; junioři 2008–2009: út 19:15–20:45, st 19:45–21:15 (Erbenova), pá 18:00–19:15. Jinak SH Gymnázia.",
+      "dny": [
+        "po",
+        "ut",
+        "st",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Přijďte na náborový trénink, dotazy na sekretar@florbalhorice.cz.",
+      "od": "2026-09-02",
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.florbalhorice.cz/pridej-se-k-nam",
+      "poznamka": "Náborové tréninky probíhají od 2. 9. 2026 po celou sezónu."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "zus-horice-hudebni-obor",
+    "organizace_id": "zus-horice",
+    "nazev": "Hudební obor",
+    "kategorie": [
+      "hudba"
+    ],
+    "popis": "Výuka hry na nástroje a zpěvu: nejprve dva přípravné ročníky, potom základní studium. Kromě klasických nástrojů i kytara, popový zpěv a bicí.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": null,
+    "terminy": null,
+    "cena": {
+      "text": "1 500 Kč za pololetí (1 žák na hodině), 1 000 Kč (2 žáci), 800 Kč (3 žáci) – podle ceníku 2026/2027",
+      "castka_kc": null,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://zushorice.cz/o-skole/prihlaska/",
+      "poznamka": "Přijímací řízení pro rok 2026/2027 už proběhlo (výsledky zveřejněny 5. 6. 2026). Termín dalšího kola web neuvádí."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://zushorice.cz/hudebni-obor/o-studiu-hudebniho-oboru/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "zus-horice-literarne-dramaticky-obor",
+    "organizace_id": "zus-horice",
+    "nazev": "Literárně-dramatický obor",
+    "kategorie": [
+      "divadlo"
+    ],
+    "popis": "Tvořivá dramatická hra, přednes, práce v souboru a s dramatickým textem.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "ZUŠ Hořice",
+      "adresa": "Havlíčkova 1107, 508 01 Hořice v Podkrkonoší",
+      "gps": null
+    },
+    "terminy": null,
+    "cena": {
+      "text": "900 Kč za pololetí (kolektivní výuka) – podle ceníku 2026/2027",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://zushorice.cz/o-skole/prihlaska/",
+      "poznamka": "Přijímací řízení pro rok 2026/2027 už proběhlo (výsledky zveřejněny 5. 6. 2026). Termín dalšího kola web neuvádí."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://zushorice.cz/literarne-dramaticky-obor/o-studiu/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "zus-horice-vytvarny-obor",
+    "organizace_id": "zus-horice",
+    "nazev": "Výtvarný obor",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Výtvarné dovednosti v tematických řadách a projektech, exkurze, galerie a plenéry. Starší žáci se mohou připravit na umělecké školy.",
+    "vek_od": 5,
+    "vek_do": null,
+    "misto": {
+      "nazev": "ZUŠ Hořice – výtvarný obor",
+      "adresa": "Husova 1414, Hořice",
+      "gps": null
+    },
+    "terminy": null,
+    "cena": {
+      "text": "1 400 Kč za pololetí (kolektivní výuka) – podle ceníku 2026/2027",
+      "castka_kc": 1400,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://zushorice.cz/o-skole/prihlaska/",
+      "poznamka": "Přijímací řízení pro rok 2026/2027 už proběhlo (výsledky zveřejněny 5. 6. 2026). Termín dalšího kola web neuvádí."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://zushorice.cz/vytvarny-obor/o-studiu/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "zus-horice-pripravne-studium",
+    "organizace_id": "zus-horice",
+    "nazev": "Přípravné studium",
+    "kategorie": [
+      "hudba",
+      "divadlo",
+      "vytvarne"
+    ],
+    "popis": "Přípravné ročníky před základním studiem v hudebním, literárně-dramatickém a výtvarném oboru.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": null,
+    "terminy": null,
+    "cena": {
+      "text": "Hudební a literárně-dramatický obor 600 Kč, výtvarný obor 900 Kč za pololetí",
+      "castka_kc": null,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://zushorice.cz/o-skole/prihlaska/",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://zushorice.cz/o-skole/cenik-skolneho/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "zus-horice-pevecke-sbory",
+    "organizace_id": "zus-horice",
+    "nazev": "Pěvecké sbory Písnička a Musica",
+    "kategorie": [
+      "hudba"
+    ],
+    "popis": "Dva pěvecké sbory ZUŠ Hořice.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": null,
+    "terminy": null,
+    "cena": {
+      "text": "Písnička 600 Kč, Musica 800 Kč za pololetí",
+      "castka_kc": null,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://zushorice.cz/o-skole/cenik-skolneho/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "tj-sokol-horice-rodice-s-detmi",
+    "organizace_id": "tj-sokol-horice",
+    "nazev": "Cvičení pro rodiče s dětmi",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Společné pohybové cvičení rodičů a dětí v sokolovně.",
+    "vek_od": 2,
+    "vek_do": 6,
+    "misto": {
+      "nazev": "Sokolovna Hořice",
+      "adresa": "Erbenova 1081, 508 01 Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Středa 15:00–16:00",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Stačí přijít vyzkoušet první lekci přímo do sokolovny.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": null,
+      "poznamka": null
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "tj-sokol-horice-vsestrannost",
+    "organizace_id": "tj-sokol-horice",
+    "nazev": "Všestrannost pro žáky",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Všestranné pohybové cvičení pro děti.",
+    "vek_od": 6,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "Sokolovna Hořice",
+      "adresa": "Erbenova 1081, 508 01 Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Středa 16:00–17:00",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Stačí přijít vyzkoušet první lekci přímo do sokolovny.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": null,
+      "poznamka": "Web města uvádí jiný rozpis (žáci a dorostenci 6–18 let, pátek 16:30–17:00). Použity jsou údaje ze sokol.eu."
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "tj-sokol-horice-mladsi-zakyne",
+    "organizace_id": "tj-sokol-horice",
+    "nazev": "Mladší žákyně",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Cvičení pro mladší dívky.",
+    "vek_od": 6,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "Sokolovna Hořice",
+      "adresa": "Erbenova 1081, 508 01 Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Pátek 14:30–16:00",
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Stačí přijít vyzkoušet první lekci přímo do sokolovny.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": null,
+      "poznamka": "Web města uvádí místo toho skupinu žákyně a dorostenky 6–18 let, pátek 15:00–16:30. Použity jsou údaje ze sokol.eu."
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "tj-sokol-horice-starsi-zakyne",
+    "organizace_id": "tj-sokol-horice",
+    "nazev": "Starší žákyně",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Cvičení pro starší dívky.",
+    "vek_od": 10,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "Sokolovna Hořice",
+      "adresa": "Erbenova 1081, 508 01 Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Pátek 16:00–17:30",
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Stačí přijít vyzkoušet první lekci přímo do sokolovny.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": null,
+      "poznamka": "Web města uvádí místo toho skupinu žákyně a dorostenky 6–18 let, pátek 15:00–16:30. Použity jsou údaje ze sokol.eu."
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "junak-horice-zlatenky",
+    "organizace_id": "junak-horice",
+    "nazev": "Skauti – 1. oddíl Zlatěnky",
+    "kategorie": [
+      "priroda"
+    ],
+    "popis": "Skautský oddíl pro holky a kluky. Nejmladší družina je pro děti od 5 do 7 let.",
+    "vek_od": 5,
+    "vek_do": null,
+    "misto": null,
+    "terminy": {
+      "text": "Pátek 16:00–18:00",
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Napište oddílu na zlatenky@junakhorice.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.junakhorice.cz/zlatenky/1-oddil-zlatenky-kontaktujte-nas/",
+      "poznamka": "Středisko uvádí: „V novém školním roce přijímáme nováčky.“"
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.junakhorice.cz/zlatenky/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "junak-horice-jitrenka",
+    "organizace_id": "junak-horice",
+    "nazev": "Skauti – 2. oddíl Jitřenka",
+    "kategorie": [
+      "priroda"
+    ],
+    "popis": "Skautský oddíl pro kluky a holky od 5 let.",
+    "vek_od": 5,
+    "vek_do": null,
+    "misto": null,
+    "terminy": {
+      "text": "Pondělí a středa",
+      "dny": [
+        "po",
+        "st"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Kontaktujte středisko přes kontakty na jeho webu.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.junakhorice.cz/hledam-oddil/",
+      "poznamka": "Středisko uvádí: „V novém školním roce přijímáme nováčky.“"
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.junakhorice.cz",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "junak-horice-3-oddil-skautu",
+    "organizace_id": "junak-horice",
+    "nazev": "Skauti – 3. oddíl (vlčata a skauti)",
+    "kategorie": [
+      "priroda"
+    ],
+    "popis": "Chlapecký skautský oddíl: vlčata od 6 do 10 let, skauti od 11 do 14 let.",
+    "vek_od": 6,
+    "vek_do": 14,
+    "misto": {
+      "nazev": "Klubovna Na Pile",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": null,
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Přijďte s rodiči po předchozí domluvě s oddílem (3.oddil.horice@skaut.cz).",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.junakhorice.cz/3-oddil-skautu/3-oddil-skautu-kontakt/",
+      "poznamka": "Schůzky vlčat a skautů jsou podle stránky družin v pátek 16:00–18:00."
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.junakhorice.cz/3-oddil-skautu/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "fotbal-jiskra-horice-pripravka",
+    "organizace_id": "fotbal-jiskra-horice",
+    "nazev": "Fotbal – školička a přípravky (U7–U11)",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Fotbal pro nejmenší: školička a předpřípravka (U7), mladší přípravka (U9) a starší přípravka (U11).",
+    "vek_od": 4,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "Hřiště Gothard",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": {
+      "text": "Podzim 2026: U7 po 17:00–18:00, pá 16:30–18:00; U9 út a pá 16:30–18:00; U11 út, st, pá 16:30–18:00. Ročníky: školička 2022 a mladší, předpřípravka 2020–2021, U9 2018–2019, U11 2016–2017 (dívky o rok starší).",
+      "dny": [
+        "po",
+        "ut",
+        "st",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "prubezne": false,
+      "odkaz": "https://www.horickyfotbal.cz/cs/s/14-kontakty",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.horickyfotbal.cz/cs/s/13-soupiska/79-u7-predpripravka",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "fotbal-jiskra-horice-zaci",
+    "organizace_id": "fotbal-jiskra-horice",
+    "nazev": "Fotbal – mladší a starší žáci (U13–U15)",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Mladší (U13) a starší (U15) žáci. Hrají krajské a okresní soutěže.",
+    "vek_od": 11,
+    "vek_do": 14,
+    "misto": {
+      "nazev": "Hřiště Gothard",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": {
+      "text": "Podzim 2026: U13 út, st, pá 16:30–18:00; U15 po a čt 16:30–18:00. Ročníky: U13 2014–2015, U15 2012–2013 (dívky o rok starší).",
+      "dny": [
+        "po",
+        "ut",
+        "st",
+        "ct",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "prubezne": false,
+      "odkaz": "https://www.horickyfotbal.cz/cs/s/14-kontakty",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.horickyfotbal.cz/cs/s/13-soupiska/63-u13-mladsi-zaci",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "fotbal-jiskra-horice-dorost",
+    "organizace_id": "fotbal-jiskra-horice",
+    "nazev": "Fotbal – mladší a starší dorost (U17–U19)",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Mladší (U17) a starší (U19) dorost. Hrají krajský přebor.",
+    "vek_od": 15,
+    "vek_do": 18,
+    "misto": {
+      "nazev": "Hřiště Gothard",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": {
+      "text": "Podzim 2026: U17 po a čt 18:00–19:30; U19 st a pá 18:00–19:30. Ročníky: U17 2010–2011, U19 2008–2009.",
+      "dny": [
+        "po",
+        "st",
+        "ct",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "prubezne": false,
+      "odkaz": "https://www.horickyfotbal.cz/cs/s/14-kontakty",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.horickyfotbal.cz/cs/s/13-soupiska/29-u17-mladsi-dorost",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "rebels-gym-gymcata",
+    "organizace_id": "rebels-gym",
+    "nazev": "Gymčata",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Všestranná pohybová průprava pro školkové děti formou jednoduchých cvičení a her. V prvních lekcích je nutná účast rodičů.",
+    "vek_od": 3,
+    "vek_do": 5,
+    "misto": {
+      "nazev": "Tělocvična Rebels Gym",
+      "adresa": "Žižkova 1021, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Středa 15:00–15:45, 13 lekcí září–prosinec 2026, start 23. 9. 2026.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 300 Kč za 13 lekcí (září–prosinec)",
+      "castka_kc": 1300,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "zpusob": "Online formulář na stránce kurzu.",
+      "prubezne": false,
+      "odkaz": "https://www.rebelsgym.cz/gymcata/",
+      "poznamka": "Na stránce kurzu je uvedeno „Kapacita: 0“, volná místa ověřte u pořadatele."
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.rebelsgym.cz/gymcata/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "rebels-gym-rebelaci",
+    "organizace_id": "rebels-gym",
+    "nazev": "Rebeláci",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Dětské tréninky v malých skupinách (max. 8 dětí) zaměřené na všestranný pohybový a sportovní rozvoj.",
+    "vek_od": 6,
+    "vek_do": 12,
+    "misto": {
+      "nazev": "Rebels Gym",
+      "adresa": "Žižkova 1021, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Po, st, čt 16:00–17:00 (tři skupiny, dítě má pevné místo v jedné z nich).",
+      "dny": [
+        "po",
+        "st",
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "150 Kč za lekci, platí se čtvrtletně podle počtu lekcí",
+      "castka_kc": 150,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Online formulář na stránce. Gym potvrdí rezervaci místa a pošle platební údaje.",
+      "prubezne": false,
+      "odkaz": "https://www.rebelsgym.cz/rebelaci/",
+      "poznamka": "K 12. 10. 2026: pondělí a středa obsazeno, čtvrtek 1 volné místo."
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.rebelsgym.cz/rebelaci/",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "volejbal-horice-minivolejbal",
+    "organizace_id": "volejbal-horice",
+    "nazev": "Barevný minivolejbal",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Barevný minivolejbal pro děti, trénink dvakrát týdně. Oddíl pořádá dvě volejbalová soustředění ročně.",
+    "vek_od": 6,
+    "vek_do": 14,
+    "misto": null,
+    "terminy": {
+      "text": "Úterý a čtvrtek (časy neuvedeny)",
+      "dny": [
+        "ut",
+        "ct"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": null
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.horice.org/volejbal/ms-11400/p1=11400",
+    "overeno": "2026-10-12"
+  },
+  {
+    "id": "spv-horice-vsestrannost",
+    "organizace_id": "spv-horice",
+    "nazev": "Všestranná pohybová průprava pro děti",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Obratnost, základy gymnastiky, atletika a pohybové hry venku. Děti závodí v zimním pětiboji a atletickém čtyřboji.",
+    "vek_od": 4,
+    "vek_do": null,
+    "misto": {
+      "nazev": "Sokolovna a atletický stadion u gymnázia",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": null,
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": null
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788",
+    "overeno": "2026-10-12"
+  }
+]
