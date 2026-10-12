@@ -1,0 +1,21 @@
+{
+  "name": "clubs-horice",
+  "version": "0.1.0",
+  "description": "Kroužky Hořice – všechny kroužky pro děti na jednom místě",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Sirotek",
+  "scripts": {
+    "dev": "npx --yes http-server site -p 8080 -c-1",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test tests/"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
