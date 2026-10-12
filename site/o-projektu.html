@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O projektu – Kroužky Hořice</title>
+  <meta name="description" content="Co je projekt Kroužky Hořice, odkud bereme údaje, jak nahlásit chybu a jak zacházíme s osobními údaji.">
+  <meta name="theme-color" content="#1f5f8b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="O projektu – Kroužky Hořice">
+  <meta property="og:description" content="Odkud bereme údaje o kroužcích pro děti v Hořicích a jak nahlásit chybu.">
+  <meta property="og:locale" content="cs_CZ">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/o-projektu.js"></script>
+</head>
+<body>
+  <a class="preskocit" href="#obsah">Přeskočit na obsah</a>
+
+  <header class="hlavicka">
+    <div class="obal hlavicka__obsah">
+      <div>
+        <p class="hlavicka__nazev"><a href="./">Kroužky Hořice</a></p>
+        <p class="hlavicka__podtitul">Všechny kroužky pro děti na jednom místě</p>
+      </div>
+      <nav aria-label="Hlavní">
+        <a href="./">Přehled kroužků</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="obsah" class="obal text-stranka">
+    <h1>O projektu</h1>
+
+    <h2>Co projekt dělá</h2>
+    <p>Rodiče v Hořicích dnes musí procházet weby základní umělecké školy, domu dětí, sportovních klubů a spolků zvlášť. Každý web vypadá jinak a informace o přihláškách se hledají těžko.</p>
+    <p>Tato stránka sbírá základní údaje o kroužcích pro děti na jedno místo: pro jaký věk jsou, kde a kdy probíhají, kolik stojí a hlavně <strong>jak a kdy se dítě může přihlásit</strong>. U každého kroužku je odkaz na původní zdroj.</p>
+
+    <h2>Odkud údaje pocházejí</h2>
+    <p>Údaje přebíráme ručně z veřejných webů těchto organizací. U každého kroužku je uvedeno, kdy jsme údaje naposledy ověřili.</p>
+    <div id="organizace">
+      <p>Načítám seznam organizací…</p>
+    </div>
+
+    <h2>Přesnost údajů</h2>
+    <p><strong>Informace vždy ověřujte u pořadatele.</strong> Termíny, ceny i způsob přihlášení se mohou změnit a my se to nemusíme dozvědět hned. Rozhodující jsou vždy informace organizace.</p>
+
+    <h2>Nahlášení chyby nebo odstranění</h2>
+    <p>Našli jste chybu, chybí vám kroužek, nebo zastupujete organizaci a chcete údaje opravit či odstranit? Dejte nám vědět a co nejdříve to vyřešíme.</p>
+    <p class="paticka__odkazy">
+      <a data-odkaz="chyba" hidden>Nahlásit chybu nebo požádat o odstranění</a>
+    </p>
+
+    <h2>Osobní údaje</h2>
+    <ul>
+      <li>Neuvádíme jména ani osobní kontakty trenérů a lektorů, jen obecné kontakty organizací.</li>
+      <li>Stránka nepoužívá cookies, analytiku ani jiné sledování návštěvníků.</li>
+      <li>Filtry, které nastavíte, zůstávají jen v adrese stránky ve vašem prohlížeči.</li>
+    </ul>
+  </main>
+
+  <footer class="paticka">
+    <div class="obal">
+      <p><strong>Informace ověřujte u pořadatele.</strong></p>
+      <p class="paticka__odkazy">
+        <a href="./">Přehled kroužků</a>
+        <a data-odkaz="repo" hidden>Zdrojový kód</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
