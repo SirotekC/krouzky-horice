@@ -627,6 +627,7 @@
       "sport-ostatni"
     ],
     "popis": "Cvičení pro mladší dívky.",
+    "pohlavi": "divky",
     "vek_od": 6,
     "vek_do": 10,
     "misto": {
@@ -661,6 +662,7 @@
       "sport-ostatni"
     ],
     "popis": "Cvičení pro starší dívky.",
+    "pohlavi": "divky",
     "vek_od": 10,
     "vek_do": 15,
     "misto": {
@@ -756,6 +758,7 @@
       "priroda"
     ],
     "popis": "Chlapecký skautský oddíl: vlčata od 6 do 10 let, skauti od 11 do 14 let.",
+    "pohlavi": "chlapci",
     "vek_od": 6,
     "vek_do": 14,
     "misto": {

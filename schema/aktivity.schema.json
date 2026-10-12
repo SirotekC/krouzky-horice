@@ -23,6 +23,10 @@
         "items": { "$ref": "#/$defs/kategorie" }
       },
       "popis": { "type": ["string", "null"], "maxLength": 300 },
+      "pohlavi": {
+        "enum": ["divky", "chlapci", null],
+        "description": "Pro koho je aktivita určená. null = pro všechny nebo neuvedeno."
+      },
       "vek_od": { "type": ["integer", "null"], "minimum": 0, "maximum": 26 },
       "vek_do": { "type": ["integer", "null"], "minimum": 0, "maximum": 26 },
       "misto": {

@@ -4,15 +4,15 @@ import { prazdneFiltry } from '../site/js/filters.js';
 import { filtryDoUrl, filtryZUrl } from '../site/js/url-state.js';
 
 test('převod URL tam a zpět', () => {
-  const filtry = { q: 'klavír', vek: 8, kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha' };
+  const filtry = { q: 'klavír', vek: 8, kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
   const url = filtryDoUrl(filtry);
-  assert.equal(url, '?q=klav%C3%ADr&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha');
+  assert.equal(url, '?q=klav%C3%ADr&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha&pohlavi=divky');
   assert.deepEqual(filtryZUrl(url), filtry);
 });
 
 test('příklad URL ze zadání', () => {
   assert.deepEqual(filtryZUrl('?q=klavir&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha'), {
-    q: 'klavir', vek: 8, kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha',
+    q: 'klavir', vek: 8, kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: '',
   });
 });
 
@@ -34,6 +34,8 @@ test('neplatné hodnoty se tiše ignorují', () => {
   assert.equal(filtryZUrl('?vek=30').vek, null);
   assert.equal(filtryZUrl('?vek=-1').vek, null);
   assert.equal(filtryZUrl('?stav=ukonceno').stav, '');
+  assert.equal(filtryZUrl('?pohlavi=jine').pohlavi, '');
+  assert.equal(filtryZUrl('?pohlavi=chlapci').pohlavi, 'chlapci');
 });
 
 test('organizace mimo seznam platných se ignoruje', () => {

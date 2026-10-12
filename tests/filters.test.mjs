@@ -18,11 +18,11 @@ const { aktivity } = pripravData(organizace, [
     prihlaska: prihlaska('2027-05-01', '2027-06-15') },
   { id: 'tanec', organizace_id: 'zus', nazev: 'Taneční obor', popis: 'Současný TANEC', kategorie: ['tanec'], vek_od: 5, vek_do: null,
     prihlaska: prihlaska('2026-10-01', '2026-10-20') },
-  { id: 'florbal', organizace_id: 'sokol', nazev: 'Florbal', kategorie: ['sport-mickove'], vek_od: null, vek_do: 12,
+  { id: 'florbal', organizace_id: 'sokol', nazev: 'Florbal', kategorie: ['sport-mickove'], vek_od: null, vek_do: 12, pohlavi: 'chlapci',
     prihlaska: prihlaska(null, null, true) },
-  { id: 'cviceni', organizace_id: 'sokol', nazev: 'Cvičení rodičů s dětmi', kategorie: ['sport-ostatni', 'tanec'],
+  { id: 'cviceni', organizace_id: 'sokol', nazev: 'Cvičení rodičů s dětmi', kategorie: ['sport-ostatni', 'tanec'], pohlavi: null,
     prihlaska: prihlaska('2026-10-20', '2026-11-30') },
-  { id: 'zpev', organizace_id: 'zus', nazev: 'Zpěv', kategorie: ['hudba'], vek_od: 6, vek_do: 18,
+  { id: 'zpev', organizace_id: 'zus', nazev: 'Zpěv', kategorie: ['hudba'], vek_od: 6, vek_do: 18, pohlavi: 'divky',
     prihlaska: prihlaska('2026-06-01', '2026-06-30') },
 ]);
 
@@ -78,6 +78,13 @@ test('filtr stavu přihlášek', () => {
   assert.deepEqual(ids(filtruj(aktivity, f({ stav: 'probiha' }), kontext)), ['tanec']);
   assert.deepEqual(ids(filtruj(aktivity, f({ stav: 'brzy' }), kontext)), ['cviceni']);
   assert.deepEqual(ids(filtruj(aktivity, f({ stav: 'prubezne' }), kontext)), ['florbal']);
+});
+
+test('filtr pohlaví: aktivity pro všechny zůstávají, opačné pohlaví se skryje', () => {
+  assert.deepEqual(ids(filtruj(aktivity, f({ pohlavi: 'divky' }), kontext)), ['cviceni', 'klavir', 'tanec', 'zpev']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ pohlavi: 'chlapci' }), kontext)), ['cviceni', 'florbal', 'klavir', 'tanec']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ pohlavi: 'divky', kat: ['hudba'] }), kontext)), ['klavir', 'zpev']);
+  assert.equal(jsouPrazdne(f({ pohlavi: 'divky' })), false);
 });
 
 test('řazení podle stavu a pak abecedně', () => {

@@ -1,7 +1,7 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
 import { KATEGORIE, nactiData } from './data.js';
-import { STAVY_FILTRU, filtruj, prazdneFiltry, seradi } from './filters.js';
+import { POHLAVI_FILTRU, STAVY_FILTRU, filtruj, prazdneFiltry, seradi } from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
 import { chybovyStav, el, nastavOdkazy, pocetKrouzku, prazdnyStav, seznamKaret } from './render.js';
 import { filtryDoUrl, filtryZUrl } from './url-state.js';
@@ -38,6 +38,11 @@ function naplnFormular(data) {
     select.append(el('option', { text: o.nazev, atributy: { value: o.id } }));
   }
 
+  const pohlavi = $('#f-pohlavi');
+  for (const [klic, popisek] of Object.entries(POHLAVI_FILTRU)) {
+    pohlavi.append(el('option', { text: popisek, atributy: { value: klic } }));
+  }
+
   const stav = $('#f-stav');
   for (const [klic, popisek] of Object.entries(STAVY_FILTRU)) {
     stav.append(el('option', { text: popisek, atributy: { value: klic } }));
@@ -50,6 +55,7 @@ function zapisDoFormulare(form, filtry) {
   for (const vstup of form.querySelectorAll('input[name="kat"]')) vstup.checked = filtry.kat.includes(vstup.value);
   form.org.value = filtry.org;
   form.stav.value = filtry.stav;
+  form.pohlavi.value = filtry.pohlavi;
 }
 
 function prectiFormular(form) {
@@ -61,6 +67,7 @@ function prectiFormular(form) {
     kat: [...form.querySelectorAll('input[name="kat"]:checked')].map((v) => v.value),
     org: form.org.value,
     stav: form.stav.value,
+    pohlavi: form.pohlavi.value,
   };
 }
 

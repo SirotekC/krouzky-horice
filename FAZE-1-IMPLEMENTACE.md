@@ -172,6 +172,7 @@ Pole objektů:
 | `nazev` | string | ano | |
 | `kategorie` | enum[] | ano | min. 1 hodnota, viz 4.3 |
 | `popis` | string\|null | ne | Max. 300 znaků, vlastními slovy |
+| `pohlavi` | enum\|null | ne | `divky`, `chlapci`. `null` nebo chybí = pro všechny / neuvedeno. Vyplňovat jen, když to zdroj výslovně uvádí. *(doplněno 2026-10-12)* |
 | `vek_od` | integer\|null | ne | 0–26. `null` = neuvedeno |
 | `vek_do` | integer\|null | ne | 0–26, ≥ `vek_od` |
 | `misto` | object\|null | ne | `nazev`, `adresa`, `gps` (`[lat, lon]` nebo `null`, využije se ve fázi 2) |
@@ -230,6 +231,7 @@ Pole objektů:
 |---|---|---|
 | Vyhledávání | `<input type="search">` | Hledá v `nazev`, `popis`, názvu organizace a popiscích kategorií. Bez ohledu na diakritiku a velikost písmen. S debounce 150 ms. |
 | Věk dítěte | `<input type="number" min="0" max="26">` | Zobrazí aktivity, kde `vek_od ≤ věk ≤ vek_do`. Chybějící `vek_od` se bere jako 0 a chybějící `vek_do` jako 99. Prázdné pole znamená bez filtru. |
+| Pohlaví dítěte | `<select>` | „Nezáleží“ / „Dívka“ / „Chlapec“. Zobrazí aktivity pro zvolené pohlaví a aktivity bez určení pohlaví. *(doplněno 2026-10-12)* |
 | Kategorie | Skupina zaškrtávacích tlačítek (chips) | Více najednou, logika **OR**. Žádná vybraná znamená vše. |
 | Organizace | `<select>` | Jedna nebo „Všechny“. |
 | Stav přihlášek | `<select>` | „Vše“ / „Přihlášky probíhají“ / „Brzy začnou (do 30 dní)“ / „Průběžný nábor“. |
@@ -279,7 +281,7 @@ Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy
 
 ### 5.3 Stav v URL (`url-state.js`)
 
-- Filtry se ukládají do query stringu, např. `?q=klavir&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha`.
+- Filtry se ukládají do query stringu, např. `?q=klavir&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha&pohlavi=divky`.
 - Při načtení stránky se filtry obnoví z URL. Při změně filtru se použije `history.replaceState`, takže nevznikají nové položky historie.
 - Neplatné hodnoty z URL se tiše ignorují.
 

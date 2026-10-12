@@ -64,6 +64,13 @@ test('neplatná kategorie, datum a id neprojdou', () => {
   assert.equal(aktivity([{ ...ukazkaAktivity, id: 'Klavír' }]), false);
 });
 
+test('pohlaví: povolené hodnoty a null', () => {
+  assert.equal(aktivity([{ ...ukazkaAktivity, pohlavi: 'divky' }]), true);
+  assert.equal(aktivity([{ ...ukazkaAktivity, pohlavi: 'chlapci' }]), true);
+  assert.equal(aktivity([{ ...ukazkaAktivity, pohlavi: null }]), true);
+  assert.equal(aktivity([{ ...ukazkaAktivity, pohlavi: 'holky' }]), false);
+});
+
 test('minimální aktivita s null hodnotami projde', () => {
   const minimalni = {
     id: 'a',

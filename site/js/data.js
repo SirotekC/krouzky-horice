@@ -18,6 +18,12 @@ export const KATEGORIE = Object.freeze({
   ostatni: 'Ostatní',
 });
 
+/** Pohlaví, pro které je aktivita určená: klíč → popisek na kartě. */
+export const POHLAVI = Object.freeze({
+  divky: 'Jen dívky',
+  chlapci: 'Jen chlapci',
+});
+
 /** Typy organizací: klíč → popisek v UI. */
 export const TYPY_ORGANIZACI = Object.freeze({
   zus: 'Základní umělecká škola',

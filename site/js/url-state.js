@@ -1,12 +1,12 @@
 // Synchronizace filtrů s query stringem URL. Čisté funkce bez přístupu k DOM.
 
 import { KATEGORIE } from './data.js';
-import { STAVY_FILTRU, prazdneFiltry } from './filters.js';
+import { POHLAVI_FILTRU, STAVY_FILTRU, prazdneFiltry } from './filters.js';
 
 const VZOR_ID = /^[a-z0-9-]+$/;
 
 /**
- * Načte filtry z query stringu (např. `?q=klavir&vek=8&kat=hudba,tanec&org=zus&stav=probiha`).
+ * Načte filtry z query stringu (např. `?q=klavir&vek=8&kat=hudba,tanec&org=zus&stav=probiha&pohlavi=divky`).
  * Neplatné hodnoty tiše ignoruje.
  * @param {string} search obsah `location.search`
  * @param {string[] | null} platneOrganizace pokud je zadáno, `org` mimo seznam se ignoruje
@@ -32,6 +32,9 @@ export function filtryZUrl(search, platneOrganizace = null) {
   const stav = parametry.get('stav');
   if (stav && Object.hasOwn(STAVY_FILTRU, stav)) filtry.stav = stav;
 
+  const pohlavi = parametry.get('pohlavi');
+  if (pohlavi && Object.hasOwn(POHLAVI_FILTRU, pohlavi)) filtry.pohlavi = pohlavi;
+
   return filtry;
 }
 
@@ -44,5 +47,6 @@ export function filtryDoUrl(filtry) {
   if (filtry.kat?.length) casti.push(`kat=${filtry.kat.map(encodeURIComponent).join(',')}`);
   if (filtry.org) casti.push(`org=${encodeURIComponent(filtry.org)}`);
   if (filtry.stav) casti.push(`stav=${encodeURIComponent(filtry.stav)}`);
+  if (filtry.pohlavi) casti.push(`pohlavi=${encodeURIComponent(filtry.pohlavi)}`);
   return casti.length ? `?${casti.join('&')}` : '';
 }

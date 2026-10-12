@@ -2,7 +2,7 @@
 // `textContent`, nikdy přes `innerHTML`. DOM se používá až uvnitř funkcí.
 
 import { CHYBA_URL, REPO_URL } from './config.js';
-import { KATEGORIE } from './data.js';
+import { KATEGORIE, POHLAVI } from './data.js';
 import { cisloDne, formatDatum, formatObdobi, stavPrihlasky } from './registration.js';
 
 const ZASTARALE_DNI = 90;
@@ -102,6 +102,7 @@ export function kartaAktivity(a, dnes) {
 
   const radky = [
     udaj('Věk', textVeku(a.vek_od, a.vek_do)),
+    udaj('Pro', POHLAVI[a.pohlavi] ?? null),
     udaj('Místo', textMista(a.misto)),
     udaj('Kdy', textTerminu(a.terminy)),
     udaj('Cena', textCeny(a.cena)),

@@ -13,9 +13,15 @@ export const STAVY_FILTRU = Object.freeze({
   prubezne: 'Průběžný nábor',
 });
 
+/** Hodnoty filtru „Pohlaví dítěte“ (prázdný řetězec = nezáleží). */
+export const POHLAVI_FILTRU = Object.freeze({
+  divky: 'Dívka',
+  chlapci: 'Chlapec',
+});
+
 /** Prázdné filtry. */
 export function prazdneFiltry() {
-  return { q: '', vek: null, kat: [], org: '', stav: '' };
+  return { q: '', vek: null, kat: [], org: '', stav: '', pohlavi: '' };
 }
 
 /** Malá písmena bez diakritiky, např. „Klavír“ → „klavir“. */
@@ -58,6 +64,8 @@ export function filtruj(aktivity, filtry, kontext) {
     if (vek !== null && !odpovidaVeku(a, vek)) return false;
     if (kategorie.size && !(a.kategorie ?? []).some((k) => kategorie.has(k))) return false;
     if (filtry.org && a.organizace_id !== filtry.org) return false;
+    // Aktivity bez určení pohlaví jsou pro všechny.
+    if (filtry.pohlavi && a.pohlavi && a.pohlavi !== filtry.pohlavi) return false;
     if (filtry.stav && stavPrihlasky(a.prihlaska, kontext.dnes).stav !== filtry.stav) return false;
     return true;
   });
@@ -77,5 +85,5 @@ export function seradi(aktivity, dnes) {
 
 /** Jsou všechny filtry prázdné? */
 export function jsouPrazdne(filtry) {
-  return !filtry.q && filtry.vek == null && !(filtry.kat?.length) && !filtry.org && !filtry.stav;
+  return !filtry.q && filtry.vek == null && !(filtry.kat?.length) && !filtry.org && !filtry.stav && !filtry.pohlavi;
 }
