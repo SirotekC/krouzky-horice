@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://krouzky.example/schema/organizace.schema.json",
+  "title": "Organizace",
+  "description": "Seznam organizací (ZUŠ, DDM, kluby, spolky), které pořádají aktivity pro děti.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "nazev", "typ", "web", "zdroj_url", "overeno"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "description": "Unikátní a stabilní identifikátor."
+      },
+      "nazev": { "type": "string", "minLength": 1 },
+      "typ": {
+        "enum": ["zus", "ddm", "sportovni-klub", "spolek", "skola", "jine"]
+      },
+      "web": { "type": "string", "format": "uri" },
+      "email": {
+        "type": ["string", "null"],
+        "description": "Jen obecný kontakt organizace, ne osobní e-mail."
+      },
+      "telefon": { "type": ["string", "null"] },
+      "adresa": { "type": ["string", "null"] },
+      "popis": { "type": ["string", "null"], "maxLength": 300 },
+      "zdroj_url": { "type": "string", "format": "uri" },
+      "overeno": { "type": "string", "format": "date" }
+    }
+  }
+}

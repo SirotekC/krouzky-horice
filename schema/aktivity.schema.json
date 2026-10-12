@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://krouzky.example/schema/aktivity.schema.json",
+  "title": "Aktivity",
+  "description": "Seznam aktivit (kroužků, oborů) pro děti.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "organizace_id", "nazev", "kategorie", "prihlaska", "zdroj_url", "overeno"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "description": "Unikátní identifikátor, doporučený tvar {organizace_id}-{slug}."
+      },
+      "organizace_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "nazev": { "type": "string", "minLength": 1 },
+      "kategorie": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": { "$ref": "#/$defs/kategorie" }
+      },
+      "popis": { "type": ["string", "null"], "maxLength": 300 },
+      "vek_od": { "type": ["integer", "null"], "minimum": 0, "maximum": 26 },
+      "vek_do": { "type": ["integer", "null"], "minimum": 0, "maximum": 26 },
+      "misto": {
+        "type": ["object", "null"],
+        "additionalProperties": false,
+        "properties": {
+          "nazev": { "type": ["string", "null"] },
+          "adresa": { "type": ["string", "null"] },
+          "gps": {
+            "type": ["array", "null"],
+            "prefixItems": [
+              { "type": "number", "minimum": -90, "maximum": 90 },
+              { "type": "number", "minimum": -180, "maximum": 180 }
+            ],
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      },
+      "terminy": {
+        "type": ["object", "null"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": ["string", "null"] },
+          "dny": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "enum": ["po", "ut", "st", "ct", "pa", "so", "ne"] }
+          }
+        }
+      },
+      "cena": {
+        "type": ["object", "null"],
+        "additionalProperties": false,
+        "properties": {
+          "text": { "type": ["string", "null"] },
+          "castka_kc": { "type": ["number", "null"], "minimum": 0 },
+          "obdobi": {
+            "enum": ["lekce", "mesic", "pololeti", "rok", "jednorazove", "zdarma", null]
+          }
+        }
+      },
+      "prihlaska": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["zpusob", "prubezne"],
+        "properties": {
+          "zpusob": { "type": "string", "minLength": 1 },
+          "od": { "type": ["string", "null"], "format": "date" },
+          "do": { "type": ["string", "null"], "format": "date" },
+          "prubezne": { "type": "boolean" },
+          "odkaz": { "type": ["string", "null"], "format": "uri" },
+          "poznamka": { "type": ["string", "null"] }
+        }
+      },
+      "skolni_rok": { "type": ["string", "null"], "pattern": "^\\d{4}/\\d{4}$" },
+      "zdroj_url": { "type": "string", "format": "uri" },
+      "overeno": { "type": "string", "format": "date" }
+    }
+  },
+  "$defs": {
+    "kategorie": {
+      "enum": [
+        "hudba",
+        "vytvarne",
+        "tanec",
+        "divadlo",
+        "sport-mickove",
+        "sport-ostatni",
+        "bojove",
+        "plavani",
+        "priroda",
+        "technika",
+        "veda",
+        "jazyky",
+        "ostatni"
+      ]
+    }
+  }
+}
