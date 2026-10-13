@@ -54,8 +54,45 @@
           "dny": {
             "type": "array",
             "uniqueItems": true,
-            "items": { "enum": ["po", "ut", "st", "ct", "pa", "so", "ne"] }
-          }
+            "items": { "$ref": "#/$defs/den" }
+          },
+          "rozvrh": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["den"],
+              "properties": {
+                "skupina": { "type": ["string", "null"] },
+                "den": { "$ref": "#/$defs/den" },
+                "casy": {
+                  "type": "array",
+                  "items": { "type": "string", "pattern": "^\\d{1,2}:\\d{2}–\\d{1,2}:\\d{2}$" }
+                },
+                "misto": { "type": ["string", "null"] }
+              }
+            }
+          },
+          "obdobi": {
+            "oneOf": [
+              { "type": ["string", "null"] },
+              {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["nazev", "termin"],
+                  "properties": {
+                    "nazev": { "type": "string", "minLength": 1 },
+                    "termin": { "type": "string", "minLength": 1 }
+                  }
+                }
+              }
+            ]
+          },
+          "poznamka": { "type": ["string", "null"] }
         }
       },
       "cena": {
@@ -88,6 +125,7 @@
     }
   },
   "$defs": {
+    "den": { "enum": ["po", "ut", "st", "ct", "pa", "so", "ne"] },
     "kategorie": {
       "enum": [
         "hudba",

@@ -46,7 +46,27 @@
     "vek_od": 4,
     "vek_do": 5,
     "terminy": {
-      "text": "Úterý 16:00–16:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–16:50"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "1. pololetí",
+          "termin": "29. 9. 2026 – 19. 1. 2027"
+        },
+        {
+          "nazev": "2. pololetí",
+          "termin": "16. 2. – 25. 5. 2027"
+        }
+      ],
+      "poznamka": null,
       "dny": [
         "ut"
       ]
@@ -79,7 +99,28 @@
     "vek_od": 4,
     "vek_do": 6,
     "terminy": {
-      "text": "Úterý 15:00–15:50 nebo 17:00–17:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–15:50",
+            "17:00–17:50"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "1. pololetí",
+          "termin": "29. 9. 2026 – 19. 1. 2027"
+        },
+        {
+          "nazev": "2. pololetí",
+          "termin": "16. 2. – 25. 5. 2027"
+        }
+      ],
+      "poznamka": null,
       "dny": [
         "ut"
       ]
@@ -112,7 +153,28 @@
     "vek_od": 5,
     "vek_do": 6,
     "terminy": {
-      "text": "Úterý 16:00–16:50 nebo 17:00–17:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–16:50",
+            "17:00–17:50"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "1. pololetí",
+          "termin": "29. 9. 2026 – 19. 1. 2027"
+        },
+        {
+          "nazev": "2. pololetí",
+          "termin": "16. 2. – 25. 5. 2027"
+        }
+      ],
+      "poznamka": null,
       "dny": [
         "ut"
       ]
@@ -145,7 +207,27 @@
     "vek_od": 6,
     "vek_do": 9,
     "terminy": {
-      "text": "Úterý 15:00–15:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–15:50"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "1. pololetí",
+          "termin": "29. 9. 2026 – 19. 1. 2027"
+        },
+        {
+          "nazev": "2. pololetí",
+          "termin": "16. 2. – 25. 5. 2027"
+        }
+      ],
+      "poznamka": null,
       "dny": [
         "ut"
       ]
@@ -178,7 +260,29 @@
     "vek_od": 9,
     "vek_do": 16,
     "terminy": {
-      "text": "Úterý 16:00–16:50, 17:00–17:50 nebo 18:00–18:50; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–16:50",
+            "17:00–17:50",
+            "18:00–18:50"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "1. pololetí",
+          "termin": "29. 9. 2026 – 19. 1. 2027"
+        },
+        {
+          "nazev": "2. pololetí",
+          "termin": "16. 2. – 25. 5. 2027"
+        }
+      ],
+      "poznamka": null,
       "dny": [
         "ut"
       ]
@@ -211,7 +315,35 @@
     "vek_od": 3,
     "vek_do": 4,
     "terminy": {
-      "text": "Pondělí a středa 16:30–17:10; 1. pololetí 29. 9. 2026 – 19. 1. 2027, 2. pololetí 16. 2. – 25. 5. 2027",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:30–17:10"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:30–17:10"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "1. pololetí",
+          "termin": "29. 9. 2026 – 19. 1. 2027"
+        },
+        {
+          "nazev": "2. pololetí",
+          "termin": "16. 2. – 25. 5. 2027"
+        }
+      ],
+      "poznamka": null,
       "dny": [
         "po",
         "st"
@@ -245,7 +377,34 @@
     "vek_od": null,
     "vek_do": null,
     "terminy": {
-      "text": "Pondělí a středa 16:30–18:00, pátek 16:30–17:30 (mimo školní prázdniny)",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "16:30–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Mimo školní prázdniny.",
       "dny": [
         "po",
         "st",
@@ -281,7 +440,34 @@
       "gps": null
     },
     "terminy": {
-      "text": "U6 (2021–2022): středa 15:15–16:15; U7 (2020): pondělí 16:30–17:30, pátek 15:30–16:45",
+      "rozvrh": [
+        {
+          "skupina": "U6 (2021–2022)",
+          "den": "st",
+          "casy": [
+            "15:15–16:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U7 (2020)",
+          "den": "po",
+          "casy": [
+            "16:30–17:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U7 (2020)",
+          "den": "pa",
+          "casy": [
+            "15:30–16:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
       "dny": [
         "po",
         "st",
@@ -312,7 +498,90 @@
     "vek_od": 7,
     "vek_do": 10,
     "terminy": {
-      "text": "U8 (2019): po 15:30–16:45 (Zemědělka), pá 15:30–16:45; U9 (2018): po 18:00–19:15 (Zemědělka), čt 18:00–19:15; U10 (2017): po 17:30–18:45, st 16:15–17:30, čt 15:30–16:45 (Zemědělka); U11 (2016): po 17:30–18:45, st a čt 18:00–19:15 (Zemědělka). Jinak SH Gymnázia.",
+      "rozvrh": [
+        {
+          "skupina": "U8 (2019)",
+          "den": "po",
+          "casy": [
+            "15:30–16:45"
+          ],
+          "misto": "tělocvična Zemědělka"
+        },
+        {
+          "skupina": "U8 (2019)",
+          "den": "pa",
+          "casy": [
+            "15:30–16:45"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U9 (2018)",
+          "den": "po",
+          "casy": [
+            "18:00–19:15"
+          ],
+          "misto": "tělocvična Zemědělka"
+        },
+        {
+          "skupina": "U9 (2018)",
+          "den": "ct",
+          "casy": [
+            "18:00–19:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U10 (2017)",
+          "den": "po",
+          "casy": [
+            "17:30–18:45"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U10 (2017)",
+          "den": "st",
+          "casy": [
+            "16:15–17:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U10 (2017)",
+          "den": "ct",
+          "casy": [
+            "15:30–16:45"
+          ],
+          "misto": "tělocvična Zemědělka"
+        },
+        {
+          "skupina": "U11 (2016)",
+          "den": "po",
+          "casy": [
+            "17:30–18:45"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U11 (2016)",
+          "den": "st",
+          "casy": [
+            "18:00–19:15"
+          ],
+          "misto": "tělocvična Zemědělka"
+        },
+        {
+          "skupina": "U11 (2016)",
+          "den": "ct",
+          "casy": [
+            "18:00–19:15"
+          ],
+          "misto": "tělocvična Zemědělka"
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Pokud není uvedeno jinak, trénuje se ve sportovní hale Gymnázia.",
       "dny": [
         "po",
         "st",
@@ -344,7 +613,34 @@
     "vek_od": 11,
     "vek_do": 13,
     "terminy": {
-      "text": "Po 15:30–16:45 (městská hala Erbenova), út 18:00–19:15 (tělocvična Zemědělka), čt 16:45–18:00 (SH Gymnázia)",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "15:30–16:45"
+          ],
+          "misto": "městská hala Erbenova"
+        },
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "18:00–19:15"
+          ],
+          "misto": "tělocvična Zemědělka"
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:45–18:00"
+          ],
+          "misto": "sportovní hala Gymnázia"
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
       "dny": [
         "po",
         "ut",
@@ -375,7 +671,82 @@
     "vek_od": 13,
     "vek_do": 18,
     "terminy": {
-      "text": "Dívky 2010–2013: po 18:45–20:00, út 18:00–19:15, pá 16:45–18:00; chlapci 2010–2012: po 20:00–21:15, st 18:30–19:45 (Erbenova), pá 16:45–18:00; junioři 2008–2009: út 19:15–20:45, st 19:45–21:15 (Erbenova), pá 18:00–19:15. Jinak SH Gymnázia.",
+      "rozvrh": [
+        {
+          "skupina": "Dívky 2010–2013",
+          "den": "po",
+          "casy": [
+            "18:45–20:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Dívky 2010–2013",
+          "den": "ut",
+          "casy": [
+            "18:00–19:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Dívky 2010–2013",
+          "den": "pa",
+          "casy": [
+            "16:45–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Chlapci 2010–2012",
+          "den": "po",
+          "casy": [
+            "20:00–21:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Chlapci 2010–2012",
+          "den": "st",
+          "casy": [
+            "18:30–19:45"
+          ],
+          "misto": "městská hala Erbenova"
+        },
+        {
+          "skupina": "Chlapci 2010–2012",
+          "den": "pa",
+          "casy": [
+            "16:45–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Junioři 2008–2009",
+          "den": "ut",
+          "casy": [
+            "19:15–20:45"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Junioři 2008–2009",
+          "den": "st",
+          "casy": [
+            "19:45–21:15"
+          ],
+          "misto": "městská hala Erbenova"
+        },
+        {
+          "skupina": "Junioři 2008–2009",
+          "den": "pa",
+          "casy": [
+            "18:00–19:15"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Pokud není uvedeno jinak, trénuje se ve sportovní hale Gymnázia.",
       "dny": [
         "po",
         "ut",
@@ -567,7 +938,18 @@
       "gps": null
     },
     "terminy": {
-      "text": "Středa 15:00–16:00",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
       "dny": [
         "st"
       ]
@@ -601,7 +983,18 @@
       "gps": null
     },
     "terminy": {
-      "text": "Středa 16:00–17:00",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
       "dny": [
         "st"
       ]
@@ -636,7 +1029,18 @@
       "gps": null
     },
     "terminy": {
-      "text": "Pátek 14:30–16:00",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "14:30–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
       "dny": [
         "pa"
       ]
@@ -671,7 +1075,18 @@
       "gps": null
     },
     "terminy": {
-      "text": "Pátek 16:00–17:30",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "16:00–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
       "dny": [
         "pa"
       ]
@@ -701,7 +1116,18 @@
     "vek_do": null,
     "misto": null,
     "terminy": {
-      "text": "Pátek 16:00–18:00",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "16:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
       "dny": [
         "pa"
       ]
@@ -731,7 +1157,22 @@
     "vek_do": null,
     "misto": null,
     "terminy": {
-      "text": "Pondělí a středa",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Časy schůzek nejsou uvedeny.",
       "dny": [
         "po",
         "st"
@@ -796,7 +1237,66 @@
       "gps": null
     },
     "terminy": {
-      "text": "Podzim 2026: U7 po 17:00–18:00, pá 16:30–18:00; U9 út a pá 16:30–18:00; U11 út, st, pá 16:30–18:00. Ročníky: školička 2022 a mladší, předpřípravka 2020–2021, U9 2018–2019, U11 2016–2017 (dívky o rok starší).",
+      "rozvrh": [
+        {
+          "skupina": "U7",
+          "den": "po",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U7",
+          "den": "pa",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U9",
+          "den": "ut",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U9",
+          "den": "pa",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U11",
+          "den": "ut",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U11",
+          "den": "st",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U11",
+          "den": "pa",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Podzim 2026",
+      "poznamka": "Ročníky: školička 2022 a mladší, předpřípravka 2020–2021, U9 2018–2019, U11 2016–2017 (dívky o rok starší).",
       "dny": [
         "po",
         "ut",
@@ -831,7 +1331,50 @@
       "gps": null
     },
     "terminy": {
-      "text": "Podzim 2026: U13 út, st, pá 16:30–18:00; U15 po a čt 16:30–18:00. Ročníky: U13 2014–2015, U15 2012–2013 (dívky o rok starší).",
+      "rozvrh": [
+        {
+          "skupina": "U13",
+          "den": "ut",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U13",
+          "den": "st",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U13",
+          "den": "pa",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U15",
+          "den": "po",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U15",
+          "den": "ct",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Podzim 2026",
+      "poznamka": "Ročníky: U13 2014–2015, U15 2012–2013 (dívky o rok starší).",
       "dny": [
         "po",
         "ut",
@@ -867,7 +1410,42 @@
       "gps": null
     },
     "terminy": {
-      "text": "Podzim 2026: U17 po a čt 18:00–19:30; U19 st a pá 18:00–19:30. Ročníky: U17 2010–2011, U19 2008–2009.",
+      "rozvrh": [
+        {
+          "skupina": "U17",
+          "den": "po",
+          "casy": [
+            "18:00–19:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U17",
+          "den": "ct",
+          "casy": [
+            "18:00–19:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U19",
+          "den": "st",
+          "casy": [
+            "18:00–19:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "U19",
+          "den": "pa",
+          "casy": [
+            "18:00–19:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Podzim 2026",
+      "poznamka": "Ročníky: U17 2010–2011, U19 2008–2009.",
       "dny": [
         "po",
         "st",
@@ -902,7 +1480,18 @@
       "gps": null
     },
     "terminy": {
-      "text": "Středa 15:00–15:45, 13 lekcí září–prosinec 2026, start 23. 9. 2026.",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–15:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "13 lekcí září–prosinec 2026, začátek 23. 9. 2026",
+      "poznamka": null,
       "dny": [
         "st"
       ]
@@ -938,7 +1527,34 @@
       "gps": null
     },
     "terminy": {
-      "text": "Po, st, čt 16:00–17:00 (tři skupiny, dítě má pevné místo v jedné z nich).",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Tři skupiny, dítě má pevné místo v jedné z nich.",
       "dny": [
         "po",
         "st",
@@ -972,7 +1588,22 @@
     "vek_do": 14,
     "misto": null,
     "terminy": {
-      "text": "Úterý a čtvrtek (časy neuvedeny)",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Časy tréninků nejsou uvedeny.",
       "dny": [
         "ut",
         "ct"

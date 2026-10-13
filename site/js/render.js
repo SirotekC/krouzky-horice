@@ -8,6 +8,9 @@ import { cisloDne, formatDatum, formatObdobi, stavPrihlasky } from './registrati
 const ZASTARALE_DNI = 90;
 
 const DNY = { po: 'Po', ut: 'Út', st: 'St', ct: 'Čt', pa: 'Pá', so: 'So', ne: 'Ne' };
+const DNY_CELE = { po: 'Pondělí', ut: 'Úterý', st: 'Středa', ct: 'Čtvrtek', pa: 'Pátek', so: 'Sobota', ne: 'Neděle' };
+/** Celé názvy dnů ve volném textu (např. „Úterý“, „středa“), které se zvýrazní tučně. */
+const VZOR_DNU = /(pondělí|úterý|středa|středu|čtvrtek|pátek|sobota|sobotu|neděle|neděli)/giu;
 
 /** Vytvoří element s třídou a textem. */
 export function el(tag, { trida, text, atributy } = {}, ...deti) {
@@ -48,11 +51,79 @@ function textMista(misto) {
   return [misto.nazev, misto.adresa].filter(Boolean).join(', ') || null;
 }
 
-function textTerminu(terminy) {
+/** Rozdělí řádky rozvrhu do po sobě jdoucích bloků se stejnou skupinou. */
+function blokySkupin(rozvrh) {
+  const bloky = [];
+  for (const radek of rozvrh) {
+    const posledni = bloky.at(-1);
+    if (posledni && posledni.skupina === (radek.skupina ?? null)) posledni.radky.push(radek);
+    else bloky.push({ skupina: radek.skupina ?? null, radky: [radek] });
+  }
+  return bloky;
+}
+
+function seznamDnu(radky) {
+  return el(
+    'ul',
+    { trida: 'rozvrh__dny' },
+    ...radky.map((r) =>
+      el(
+        'li',
+        { trida: 'rozvrh__den' },
+        el('strong', { text: DNY_CELE[r.den] ?? r.den }),
+        el(
+          'span',
+          {},
+          r.casy?.length ? r.casy.join(' nebo ') : null,
+          r.misto ? el('span', { trida: 'rozvrh__misto', text: r.casy?.length ? ` · ${r.misto}` : r.misto }) : null,
+        ),
+      ),
+    ),
+  );
+}
+
+/** Volný text s celými názvy dnů zvýrazněnými tučně. */
+function textSeZvyraznenymiDny(text) {
+  const p = el('p', { trida: 'rozvrh__text' });
+  for (const [i, cast] of text.split(VZOR_DNU).entries()) {
+    if (cast) p.append(i % 2 ? el('strong', { text: cast }) : cast);
+  }
+  return p;
+}
+
+/** Obsah údaje „Kdy“: strukturovaný rozvrh, nebo volný text. */
+function obsahTerminu(terminy) {
   if (!terminy) return null;
-  if (terminy.text) return terminy.text;
-  if (terminy.dny?.length) return terminy.dny.map((d) => DNY[d] ?? d).join(', ');
-  return null;
+  const casti = [];
+  if (terminy.rozvrh?.length) {
+    for (const blok of blokySkupin(terminy.rozvrh)) {
+      if (blok.skupina) {
+        casti.push(el('div', { trida: 'rozvrh__skupina' }, el('p', { text: blok.skupina }), seznamDnu(blok.radky)));
+      } else {
+        casti.push(seznamDnu(blok.radky));
+      }
+    }
+  } else if (terminy.text) {
+    casti.push(textSeZvyraznenymiDny(terminy.text));
+  } else if (terminy.dny?.length) {
+    casti.push(el('p', { text: terminy.dny.map((d) => DNY[d] ?? d).join(', ') }));
+  }
+  if (!casti.length) return null;
+  if (Array.isArray(terminy.obdobi)) {
+    casti.push(
+      el(
+        'ul',
+        { trida: 'rozvrh__obdobi' },
+        ...terminy.obdobi.map((o) =>
+          el('li', { trida: 'rozvrh__den' }, el('strong', { text: o.nazev }), el('span', { text: o.termin })),
+        ),
+      ),
+    );
+  } else if (terminy.obdobi) {
+    casti.push(el('p', { trida: 'rozvrh__doplnek', text: terminy.obdobi }));
+  }
+  if (terminy.poznamka) casti.push(el('p', { trida: 'rozvrh__doplnek', text: terminy.poznamka }));
+  return el('div', { trida: 'rozvrh' }, ...casti);
 }
 
 function textCeny(cena) {
@@ -81,7 +152,8 @@ export function pocetKrouzku(n) {
 
 function udaj(nazev, hodnota) {
   if (!hodnota) return null;
-  return el('div', { trida: 'udaje__radek' }, el('dt', { text: nazev }), el('dd', { text: hodnota }));
+  const dd = typeof hodnota === 'string' ? el('dd', { text: hodnota }) : el('dd', {}, hodnota);
+  return el('div', { trida: 'udaje__radek' }, el('dt', { text: nazev }), dd);
 }
 
 /** Vykreslí kartu jedné aktivity. */
@@ -104,7 +176,7 @@ export function kartaAktivity(a, dnes) {
     udaj('Věk', textVeku(a.vek_od, a.vek_do)),
     udaj('Pro', POHLAVI[a.pohlavi] ?? null),
     udaj('Místo', textMista(a.misto)),
-    udaj('Kdy', textTerminu(a.terminy)),
+    udaj('Kdy', obsahTerminu(a.terminy)),
     udaj('Cena', textCeny(a.cena)),
   ].filter(Boolean);
   const udaje = radky.length ? el('dl', { trida: 'udaje' }, ...radky) : null;

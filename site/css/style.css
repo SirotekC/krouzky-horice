@@ -225,6 +225,23 @@ select {
   display: inline-flex;
 }
 
+.chipy[hidden],
+.chip[hidden] {
+  display: none;
+}
+
+/* Podkategorie vybrané skupiny: menší a odsazené, aby bylo vidět, že skupinu upřesňují. */
+.chipy--pod {
+  margin-top: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--akcent);
+}
+
+.chipy--pod .chip span {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+}
+
 .chip input {
   position: absolute;
   opacity: 0;
@@ -378,6 +395,65 @@ select {
   display: grid;
   grid-template-columns: 4.5rem 1fr;
   gap: 0.5rem;
+}
+
+/* Rozvrh v údaji „Kdy“: dny pod sebou, tučně, časy zarovnané do sloupce. */
+.rozvrh {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.rozvrh p {
+  margin: 0;
+}
+
+.rozvrh__dny {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rozvrh__den {
+  display: grid;
+  grid-template-columns: 5.25rem 1fr;
+  gap: 0.5rem;
+}
+
+.rozvrh__skupina > p {
+  font-weight: 600;
+}
+
+.rozvrh__skupina > .rozvrh__dny {
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--okraj);
+}
+
+/* Pololetí: stejné odsazení jako dny, ale menší a tlumenější. */
+.rozvrh__obdobi {
+  display: grid;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0 0 0 0.75rem;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--text-tlumeny);
+  border-left: 2px solid var(--okraj);
+}
+
+.rozvrh__obdobi strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.rozvrh__misto,
+.rozvrh__doplnek {
+  color: var(--text-tlumeny);
+}
+
+.rozvrh__doplnek {
+  font-size: 0.875rem;
 }
 
 .udaje dt {

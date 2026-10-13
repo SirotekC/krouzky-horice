@@ -178,6 +178,9 @@ Pole objektů:
 | `misto` | object\|null | ne | `nazev`, `adresa`, `gps` (`[lat, lon]` nebo `null`, využije se ve fázi 2) |
 | `terminy.text` | string\|null | ne | Volný text, jak je uveden u zdroje |
 | `terminy.dny` | enum[] | ne | `po`, `ut`, `st`, `ct`, `pa`, `so`, `ne` |
+| `terminy.rozvrh` | object[] | ne | Strukturovaný rozvrh, má přednost před `text`. Položka: `den` (enum, povinné), `casy` (pole `"16:00–16:50"`), `skupina` (např. `"U8 (2019)"`), `misto`. Po sobě jdoucí položky se stejnou `skupina` se na kartě seskupí. `dny` musí odpovídat dnům v rozvrhu (kontroluje validace). |
+| `terminy.obdobi` | string\|object[]\|null | ne | Období konání. Buď text (`"Podzim 2026"`), nebo seznam `[{ "nazev": "1. pololetí", "termin": "29. 9. 2026 – 19. 1. 2027" }]`, který se na kartě vykreslí odsazeně s tučnými názvy. |
+| `terminy.poznamka` | string\|null | ne | Doplňující poznámka k termínům |
 | `cena.text` | string\|null | ne | Volný text |
 | `cena.castka_kc` | number\|null | ne | Pro budoucí filtr ceny |
 | `cena.obdobi` | enum\|null | ne | `lekce`, `mesic`, `pololeti`, `rok`, `jednorazove`, `zdarma` |
@@ -232,7 +235,7 @@ Pole objektů:
 | Vyhledávání | `<input type="search">` | Hledá v `nazev`, `popis`, názvu organizace a popiscích kategorií. Bez ohledu na diakritiku a velikost písmen. S debounce 150 ms. |
 | Věk dítěte | `<input type="number" min="0" max="26">` | Zobrazí aktivity, kde `vek_od ≤ věk ≤ vek_do`. Chybějící `vek_od` se bere jako 0 a chybějící `vek_do` jako 99. Prázdné pole znamená bez filtru. |
 | Pohlaví dítěte | `<select>` | „Nezáleží“ / „Dívka“ / „Chlapec“. Zobrazí aktivity pro zvolené pohlaví a aktivity bez určení pohlaví. *(doplněno 2026-10-12)* |
-| Kategorie | Skupina zaškrtávacích tlačítek (chips) | Více najednou, logika **OR**. Žádná vybraná znamená vše. |
+| Zaměření | Dvě úrovně tlačítek (chips) | Nahoře hlavní skupina (Vše, Sport, Umění, Věda a technika, Příroda a skauting, Ostatní), vybírá se jedna; skupiny se definují v `SKUPINY_KATEGORII` v `site/js/data.js`. Pod vybranou skupinou se zobrazí její kategorie (jen pokud jich je v datech víc než jedna), více najednou, logika **OR**. Žádná vybraná kategorie znamená celou skupinu. V URL `skup=sport&kat=plavani`. |
 | Organizace | `<select>` | Jedna nebo „Všechny“. |
 | Stav přihlášek | `<select>` | „Vše“ / „Přihlášky probíhají“ / „Brzy začnou (do 30 dní)“ / „Průběžný nábor“. |
 | Reset | tlačítko | Vymaže všechny filtry. |

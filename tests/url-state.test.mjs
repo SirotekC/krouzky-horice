@@ -4,15 +4,15 @@ import { prazdneFiltry } from '../site/js/filters.js';
 import { filtryDoUrl, filtryZUrl } from '../site/js/url-state.js';
 
 test('převod URL tam a zpět', () => {
-  const filtry = { q: 'klavír', vek: 8, kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
+  const filtry = { q: 'klavír', vek: 8, skup: 'umeni', kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
   const url = filtryDoUrl(filtry);
-  assert.equal(url, '?q=klav%C3%ADr&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha&pohlavi=divky');
+  assert.equal(url, '?q=klav%C3%ADr&vek=8&skup=umeni&kat=hudba,tanec&org=zus-mesto&stav=probiha&pohlavi=divky');
   assert.deepEqual(filtryZUrl(url), filtry);
 });
 
 test('příklad URL ze zadání', () => {
   assert.deepEqual(filtryZUrl('?q=klavir&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha'), {
-    q: 'klavir', vek: 8, kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: '',
+    q: 'klavir', vek: 8, skup: 'umeni', kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: '',
   });
 });
 
@@ -29,6 +29,7 @@ test('věk 0 se do URL zapíše', () => {
 test('neplatné hodnoty se tiše ignorují', () => {
   assert.deepEqual(filtryZUrl('?vek=abc&kat=hudba,neexistuje&stav=xyz&org=<script>&foo=bar'), {
     ...prazdneFiltry(),
+    skup: 'umeni',
     kat: ['hudba'],
   });
   assert.equal(filtryZUrl('?vek=30').vek, null);
@@ -46,4 +47,13 @@ test('organizace mimo seznam platných se ignoruje', () => {
 test('mezery ve vyhledávání', () => {
   assert.equal(filtryZUrl('?q=hra+na+klav%C3%ADr').q, 'hra na klavír');
   assert.equal(filtryDoUrl({ ...prazdneFiltry(), q: '  ' }), '');
+});
+
+test('skupina kategorií a podkategorie mimo skupinu', () => {
+  assert.equal(filtryZUrl('?skup=sport').skup, 'sport');
+  assert.equal(filtryZUrl('?skup=neexistuje').skup, '');
+  // Podkategorie z jiné skupiny se zahodí.
+  assert.deepEqual(filtryZUrl('?skup=sport&kat=hudba,plavani'), { ...prazdneFiltry(), skup: 'sport', kat: ['plavani'] });
+  // Starší odkaz bez skupiny: skupina se odvodí z první kategorie.
+  assert.deepEqual(filtryZUrl('?kat=plavani,hudba'), { ...prazdneFiltry(), skup: 'sport', kat: ['plavani'] });
 });

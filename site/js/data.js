@@ -18,6 +18,26 @@ export const KATEGORIE = Object.freeze({
   ostatni: 'Ostatní',
 });
 
+/**
+ * Hlavní skupiny kategorií pro filtr: klíč → popisek a kategorie, které do skupiny patří.
+ * Každá kategorie patří právě do jedné skupiny (kontroluje validační skript). Pořadí určuje pořadí filtrů.
+ */
+export const SKUPINY_KATEGORII = Object.freeze({
+  sport: { popisek: 'Sport', kategorie: ['sport-mickove', 'sport-ostatni', 'bojove', 'plavani'] },
+  umeni: { popisek: 'Umění', kategorie: ['hudba', 'vytvarne', 'tanec', 'divadlo'] },
+  veda: { popisek: 'Věda a technika', kategorie: ['technika', 'veda', 'jazyky'] },
+  priroda: { popisek: 'Příroda a skauting', kategorie: ['priroda'] },
+  ostatni: { popisek: 'Ostatní', kategorie: ['ostatni'] },
+});
+
+/** Vrátí klíč skupiny, do které kategorie patří, nebo `null`. */
+export function skupinaKategorie(kategorie) {
+  for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
+    if (skupina.kategorie.includes(kategorie)) return klic;
+  }
+  return null;
+}
+
 /** Pohlaví, pro které je aktivita určená: klíč → popisek na kartě. */
 export const POHLAVI = Object.freeze({
   divky: 'Jen dívky',

@@ -64,3 +64,19 @@ test('nesoulad číselníku kategorií', () => {
   assert.match(chyby[0], /„b“ je ve schématu/);
   assert.match(chyby[1], /„c“ je v site\/js\/data\.js/);
 });
+
+test('skupiny kategorií: každá kategorie právě v jedné skupině', () => {
+  const skupinyUi = { x: { kategorie: ['a', 'b'] }, y: { kategorie: ['b', 'z'] } };
+  const { chyby } = zaklad([org('o')], [akt('a', 'o')], { kategorieUi: ['a', 'b', 'c'], kategorieSchema: ['a', 'b', 'c'], skupinyUi });
+  assert.equal(chyby.length, 3);
+  assert.match(chyby[0], /„b“ je ve skupině „x“ i „y“/);
+  assert.match(chyby[1], /„z“ ve skupině „y“ není v číselníku/);
+  assert.match(chyby[2], /„c“ nepatří do žádné skupiny/);
+});
+
+test('dny termínů musí odpovídat rozvrhu', () => {
+  const terminy = (dny) => ({ terminy: { rozvrh: [{ den: 'po' }, { den: 'st' }], dny } });
+  const { chyby } = zaklad([org('o')], [akt('a', 'o', terminy(['po', 'st'])), akt('b', 'o', terminy(['po']))]);
+  assert.equal(chyby.length, 1);
+  assert.match(chyby[0], /^aktivity\[1\]\.terminy\.dny: dny \[po\] neodpovídají rozvrhu \[po,st\]/);
+});

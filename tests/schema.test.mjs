@@ -88,3 +88,22 @@ test('minimální aktivita s null hodnotami projde', () => {
   };
   assert.equal(aktivity([minimalni]), true, JSON.stringify(aktivity.errors));
 });
+
+test('rozvrh termínů: den je povinný, čas ve tvaru 16:00–16:50', () => {
+  const sRozvrhem = (rozvrh) => aktivity([{ ...ukazkaAktivity, terminy: { rozvrh, obdobi: null, poznamka: null } }]);
+  assert.equal(sRozvrhem([{ skupina: 'U8', den: 'ut', casy: ['16:00–16:50', '9:00–9:45'], misto: null }]), true);
+  assert.equal(sRozvrhem([{ den: 'po', casy: [] }]), true);
+  assert.equal(sRozvrhem([{ casy: ['16:00–16:50'] }]), false);
+  assert.equal(sRozvrhem([{ den: 'utery' }]), false);
+  assert.equal(sRozvrhem([{ den: 'ut', casy: ['16:00-16:50'] }]), false);
+  assert.equal(sRozvrhem([]), false);
+});
+
+test('období termínů: text, nebo seznam pololetí', () => {
+  const sObdobim = (obdobi) => aktivity([{ ...ukazkaAktivity, terminy: { rozvrh: [{ den: 'ut' }], obdobi } }]);
+  assert.equal(sObdobim('Podzim 2026'), true);
+  assert.equal(sObdobim(null), true);
+  assert.equal(sObdobim([{ nazev: '1. pololetí', termin: '29. 9. 2026 – 19. 1. 2027' }]), true);
+  assert.equal(sObdobim([{ nazev: '1. pololetí' }]), false);
+  assert.equal(sObdobim([]), false);
+});

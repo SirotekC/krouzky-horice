@@ -1,5 +1,6 @@
 // Logika filtrování, vyhledávání a řazení. Čisté funkce bez přístupu k DOM.
 
+import { SKUPINY_KATEGORII, skupinaKategorie } from './data.js';
 import { PORADI_STAVU, stavPrihlasky } from './registration.js';
 
 /** Výchozí věkové hranice, pokud je aktivita nemá vyplněné. */
@@ -21,7 +22,7 @@ export const POHLAVI_FILTRU = Object.freeze({
 
 /** Prázdné filtry. */
 export function prazdneFiltry() {
-  return { q: '', vek: null, kat: [], org: '', stav: '', pohlavi: '' };
+  return { q: '', vek: null, skup: '', kat: [], org: '', stav: '', pohlavi: '' };
 }
 
 /** Malá písmena bez diakritiky, např. „Klavír“ → „klavir“. */
@@ -33,9 +34,13 @@ export function normalizuj(text) {
 }
 
 function textProHledani(aktivita, kontext) {
-  const popiskyKategorii = (aktivita.kategorie ?? []).map((k) => kontext.kategorie?.[k] ?? k);
+  const kategorie = aktivita.kategorie ?? [];
+  const popiskyKategorii = kategorie.map((k) => kontext.kategorie?.[k] ?? k);
+  const popiskySkupin = kategorie.map((k) => SKUPINY_KATEGORII[skupinaKategorie(k)]?.popisek);
   return normalizuj(
-    [aktivita.nazev, aktivita.popis, aktivita.organizace?.nazev, ...popiskyKategorii].filter(Boolean).join(' '),
+    [aktivita.nazev, aktivita.popis, aktivita.organizace?.nazev, ...popiskyKategorii, ...popiskySkupin]
+      .filter(Boolean)
+      .join(' '),
   );
 }
 
@@ -46,15 +51,24 @@ function odpovidaVeku(aktivita, vek) {
 }
 
 /**
+ * Kategorie, kterým musí aktivita odpovídat (alespoň jedné): vybrané podkategorie,
+ * jinak všechny kategorie vybrané skupiny. Prázdná množina znamená bez omezení.
+ */
+function hledaneKategorie(filtry) {
+  if (filtry.kat?.length) return new Set(filtry.kat);
+  return new Set(SKUPINY_KATEGORII[filtry.skup]?.kategorie ?? []);
+}
+
+/**
  * Vrátí aktivity odpovídající filtrům. Mezi skupinami filtrů platí AND, v kategoriích OR.
  * @param {object[]} aktivity aktivity s vlastností `organizace` (viz `pripravData`)
- * @param {{ q?: string, vek?: number|null, kat?: string[], org?: string, stav?: string }} filtry
+ * @param {{ q?: string, vek?: number|null, skup?: string, kat?: string[], org?: string, stav?: string }} filtry
  * @param {{ dnes: string, kategorie?: Record<string, string> }} kontext
  */
 export function filtruj(aktivity, filtry, kontext) {
   const slova = normalizuj(filtry.q ?? '').split(/\s+/).filter(Boolean);
   const vek = Number.isInteger(filtry.vek) ? filtry.vek : null;
-  const kategorie = new Set(filtry.kat ?? []);
+  const kategorie = hledaneKategorie(filtry);
 
   return aktivity.filter((a) => {
     if (slova.length) {
@@ -85,5 +99,5 @@ export function seradi(aktivity, dnes) {
 
 /** Jsou všechny filtry prázdné? */
 export function jsouPrazdne(filtry) {
-  return !filtry.q && filtry.vek == null && !(filtry.kat?.length) && !filtry.org && !filtry.stav && !filtry.pohlavi;
+  return !filtry.q && filtry.vek == null && !filtry.skup && !(filtry.kat?.length) && !filtry.org && !filtry.stav && !filtry.pohlavi;
 }

@@ -68,6 +68,21 @@ test('kategorie: OR uvnitř skupiny', () => {
   assert.deepEqual(ids(filtruj(aktivity, f({ kat: ['hudba', 'sport-mickove'] }), kontext)), ['florbal', 'klavir', 'zpev']);
 });
 
+test('skupina kategorií bez upřesnění vybere všechny její kategorie', () => {
+  assert.deepEqual(ids(filtruj(aktivity, f({ skup: 'sport' }), kontext)), ['cviceni', 'florbal']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ skup: 'umeni' }), kontext)), ['cviceni', 'klavir', 'tanec', 'zpev']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ skup: 'veda' }), kontext)), []);
+  assert.equal(jsouPrazdne(f({ skup: 'sport' })), false);
+});
+
+test('podkategorie zúží vybranou skupinu', () => {
+  assert.deepEqual(ids(filtruj(aktivity, f({ skup: 'umeni', kat: ['hudba'] }), kontext)), ['klavir', 'zpev']);
+});
+
+test('vyhledávání v popiscích skupin', () => {
+  assert.deepEqual(ids(filtruj(aktivity, f({ q: 'sport' }), kontext)), ['cviceni', 'florbal']);
+});
+
 test('kombinace filtrů: AND mezi skupinami', () => {
   assert.deepEqual(ids(filtruj(aktivity, f({ kat: ['tanec', 'hudba'], org: 'zus' }), kontext)), ['klavir', 'tanec', 'zpev']);
   assert.deepEqual(ids(filtruj(aktivity, f({ kat: ['tanec', 'hudba'], org: 'zus', vek: 5 }), kontext)), ['tanec']);

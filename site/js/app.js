@@ -1,6 +1,6 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
-import { KATEGORIE, nactiData } from './data.js';
+import { KATEGORIE, SKUPINY_KATEGORII, nactiData } from './data.js';
 import { POHLAVI_FILTRU, STAVY_FILTRU, filtruj, prazdneFiltry, seradi } from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
 import { chybovyStav, el, nastavOdkazy, pocetKrouzku, prazdnyStav, seznamKaret } from './render.js';
@@ -23,13 +23,28 @@ function sbalitelneFiltry() {
   panel.addEventListener('toggle', nastav);
 }
 
+function chip(typ, jmeno, hodnota, popisek) {
+  const vstup = el('input', { atributy: { type: typ, name: jmeno, value: hodnota } });
+  return el('label', { trida: 'chip' }, vstup, el('span', { text: popisek }));
+}
+
 function naplnFormular(data) {
-  const chipy = $('#f-kat');
-  for (const [klic, popisek] of Object.entries(KATEGORIE)) {
-    // Nabízet jen kategorie, které v datech opravdu jsou.
-    if (!data.aktivity.some((a) => a.kategorie.includes(klic))) continue;
-    const vstup = el('input', { atributy: { type: 'checkbox', name: 'kat', value: klic } });
-    chipy.append(el('label', { trida: 'chip' }, vstup, el('span', { text: popisek })));
+  // Nabízet jen skupiny a kategorie, které v datech opravdu jsou.
+  const pouzite = new Set(data.aktivity.flatMap((a) => a.kategorie));
+  const skupiny = $('#f-skup');
+  const podkategorie = $('#f-kat');
+  skupiny.append(chip('radio', 'skup', '', 'Vše'));
+  for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
+    const kategorie = skupina.kategorie.filter((k) => pouzite.has(k));
+    if (!kategorie.length) continue;
+    skupiny.append(chip('radio', 'skup', klic, skupina.popisek));
+    // Upřesnění má smysl, jen když skupina obsahuje víc kategorií.
+    if (kategorie.length < 2) continue;
+    for (const k of kategorie) {
+      const stitek = chip('checkbox', 'kat', k, KATEGORIE[k]);
+      stitek.dataset.skupina = klic;
+      podkategorie.append(stitek);
+    }
   }
 
   const porovnej = new Intl.Collator('cs').compare;
@@ -52,10 +67,30 @@ function naplnFormular(data) {
 function zapisDoFormulare(form, filtry) {
   form.q.value = filtry.q;
   form.vek.value = filtry.vek ?? '';
+  const skupiny = [...form.querySelectorAll('input[name="skup"]')];
+  // Skupina, která v datech není, se zobrazí jako „Vše“.
+  const vybrana = skupiny.find((v) => v.value === filtry.skup) ?? skupiny[0];
+  for (const vstup of skupiny) vstup.checked = vstup === vybrana;
   for (const vstup of form.querySelectorAll('input[name="kat"]')) vstup.checked = filtry.kat.includes(vstup.value);
+  zobrazPodkategorie(form);
   form.org.value = filtry.org;
   form.stav.value = filtry.stav;
   form.pohlavi.value = filtry.pohlavi;
+}
+
+function vybranaSkupina(form) {
+  return form.querySelector('input[name="skup"]:checked')?.value ?? '';
+}
+
+/** Ukáže jen podkategorie vybrané skupiny; bez nich skryje celý řádek. */
+function zobrazPodkategorie(form) {
+  const skup = vybranaSkupina(form);
+  let viditelne = 0;
+  for (const stitek of $('#f-kat').children) {
+    stitek.hidden = stitek.dataset.skupina !== skup;
+    if (!stitek.hidden) viditelne++;
+  }
+  $('#f-kat').hidden = viditelne === 0;
 }
 
 function prectiFormular(form) {
@@ -64,7 +99,10 @@ function prectiFormular(form) {
   return {
     q: form.q.value.trim(),
     vek: vek !== '' && Number.isInteger(vekCislo) && vekCislo >= 0 && vekCislo <= 26 ? vekCislo : null,
-    kat: [...form.querySelectorAll('input[name="kat"]:checked')].map((v) => v.value),
+    skup: vybranaSkupina(form),
+    kat: [...form.querySelectorAll('input[name="kat"]:checked')]
+      .filter((v) => v.closest('.chip').dataset.skupina === vybranaSkupina(form))
+      .map((v) => v.value),
     org: form.org.value,
     stav: form.stav.value,
     pohlavi: form.pohlavi.value,
@@ -102,8 +140,9 @@ async function spust() {
   $('#aktualizovano').textContent = `Data aktualizována ${formatDatum(data.meta.aktualizovano)}.`;
 
   naplnFormular(data);
-  let filtry = filtryZUrl(window.location.search, data.organizace.map((o) => o.id));
-  zapisDoFormulare(form, filtry);
+  zapisDoFormulare(form, filtryZUrl(window.location.search, data.organizace.map((o) => o.id)));
+  // Filtry bereme z formuláře, aby odpovídaly tomu, co je vidět (např. skupina, která v datech není).
+  let filtry = prectiFormular(form);
 
   const prekresli = () => {
     const vysledky = seradi(filtruj(data.aktivity, filtry, kontext), dnes);
@@ -131,7 +170,15 @@ async function spust() {
   }
 
   const aktualizujSOdkladem = debounce(aktualizuj, DEBOUNCE_MS);
-  form.addEventListener('input', (e) => (e.target.name === 'q' ? aktualizujSOdkladem() : aktualizuj()));
+  form.addEventListener('input', (e) => {
+    if (e.target.name === 'q') return aktualizujSOdkladem();
+    if (e.target.name === 'skup') {
+      // Nová skupina začíná bez upřesnění.
+      for (const vstup of form.querySelectorAll('input[name="kat"]')) vstup.checked = false;
+      zobrazPodkategorie(form);
+    }
+    aktualizuj();
+  });
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     aktualizuj();

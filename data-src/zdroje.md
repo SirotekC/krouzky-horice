@@ -39,6 +39,14 @@
 - **Volejbal a SPV:** k dispozici jen stránka na webu města, chybí časy a ceny.
 - **Osobní kontakty** (telefony trenérů, ředitelů, WhatsApp, osobní e-maily) záměrně vynechány.
 
+## Tipy od uživatele – čekají na hromadný import
+
+> Průběžně sbírané tipy. Zatím neověřeno, zpracuje se hromadně později.
+
+| přidáno | web | poznámka |
+|---|---|---|
+| 2026-10-13 | https://rckonvicka.cz/ | Tip na další zdroj kroužků v Hořicích. Zatím neprozkoumáno. |
+
 ## Zjištění pro fázi 3–4
 
 _(doplní se v úkolu 8)_

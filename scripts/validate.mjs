@@ -73,7 +73,7 @@ function popisChybyAjv(soubor, chyba) {
  * Logické kontroly nad daty, která už prošla schématem.
  * @returns {{ chyby: string[], varovani: string[] }}
  */
-export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategorieUi, dnes }) {
+export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategorieUi, skupinyUi = null, dnes }) {
   const chyby = [];
   const varovani = [];
 
@@ -106,6 +106,14 @@ export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategori
     if (a.vek_od != null && a.vek_do != null && a.vek_od > a.vek_do) {
       chyby.push(`${cesta}.vek_do: vek_do (${a.vek_do}) je menší než vek_od (${a.vek_od}) (${a.id})`);
     }
+    const rozvrh = a.terminy?.rozvrh;
+    if (rozvrh?.length && a.terminy.dny) {
+      const vRozvrhu = new Set(rozvrh.map((r) => r.den));
+      const dny = new Set(a.terminy.dny);
+      if (vRozvrhu.size !== dny.size || [...dny].some((d) => !vRozvrhu.has(d))) {
+        chyby.push(`${cesta}.terminy.dny: dny [${[...dny]}] neodpovídají rozvrhu [${[...vRozvrhu]}] (${a.id})`);
+      }
+    }
     const { od, do: doData } = a.prihlaska;
     if (od && doData && cisloDne(od) > cisloDne(doData)) {
       chyby.push(`${cesta}.prihlaska.do: konec přihlášek (${doData}) je před začátkem (${od}) (${a.id})`);
@@ -116,6 +124,18 @@ export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategori
   const vUi = new Set(kategorieUi);
   for (const k of vSchematu) if (!vUi.has(k)) chyby.push(`kategorie: „${k}“ je ve schématu, ale chybí v site/js/data.js`);
   for (const k of vUi) if (!vSchematu.has(k)) chyby.push(`kategorie: „${k}“ je v site/js/data.js, ale chybí ve schématu`);
+
+  if (skupinyUi) {
+    const vSkupinach = new Map();
+    for (const [skupina, { kategorie }] of Object.entries(skupinyUi)) {
+      for (const k of kategorie) {
+        if (!vUi.has(k)) chyby.push(`skupiny kategorií: „${k}“ ve skupině „${skupina}“ není v číselníku kategorií`);
+        else if (vSkupinach.has(k)) chyby.push(`skupiny kategorií: „${k}“ je ve skupině „${vSkupinach.get(k)}“ i „${skupina}“`);
+        else vSkupinach.set(k, skupina);
+      }
+    }
+    for (const k of vUi) if (!vSkupinach.has(k)) chyby.push(`skupiny kategorií: „${k}“ nepatří do žádné skupiny`);
+  }
 
   return { chyby, varovani };
 }
@@ -140,12 +160,13 @@ export async function validuj({ dnes = dnesPraha() } = {}) {
   // Logické kontroly mají smysl jen nad daty se správnou strukturou.
   if (chyby.length) return { chyby, varovani: [] };
 
-  const { KATEGORIE } = await import(pathToFileURL(path.join(KOREN, 'site/js/data.js')).href);
+  const { KATEGORIE, SKUPINY_KATEGORII } = await import(pathToFileURL(path.join(KOREN, 'site/js/data.js')).href);
   return zkontrolujData({
     organizace,
     aktivity,
     kategorieSchema: validatory.schemaAktivity.$defs.kategorie.enum,
     kategorieUi: Object.keys(KATEGORIE),
+    skupinyUi: SKUPINY_KATEGORII,
     dnes,
   });
 }
