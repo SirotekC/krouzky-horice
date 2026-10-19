@@ -11,6 +11,7 @@
 | florbal-horice | FBK Hořice, z.s. | sportovni-klub | https://www.florbalhorice.cz | https://www.florbalhorice.cz/treninky | https://www.florbalhorice.cz/pridej-se-k-nam | Asi 19 mládežnických skupin, ročníky narození, nábor od 2. 9. 2026. Bez cen. |
 | zus-horice | Základní umělecká škola Hořice | zus | https://zushorice.cz | https://zushorice.cz/o-skole/studium/ | https://zushorice.cz/o-skole/prihlaska/ | Ceník 2026/27: https://zushorice.cz/o-skole/cenik-skolneho/. Zápis byl v červnu 2026. Stránka „Studium“ má v nadpisu ještě 2024/2025. |
 | zus-melodie | Základní umělecká škola Melodie (soukromá) | zus | https://www.zusmelodie.cz | https://www.zusmelodie.cz/obory.php ; https://www.zusmelodie.cz/pobocky.php | https://www.zusmelodie.cz/ (tlačítko „Přihláška“, formulář v okně) | Ceník a organizace roku 2026/27 v PDF na https://www.zusmelodie.cz/dokumenty.php. Rozvrhy tanečního a výtvarného oboru jen na obrázcích v aktualitě „Poslední volná místa“ (9. 9. 2026). Hudební obor bez rozvrhu. |
+| rc-konvicka | Rodinné centrum Konvička, z. s. | spolek | https://rckonvicka.cz | https://rckonvicka.cz/aktualni-pravidelny-program/ (rozvrh jen na obrázku letáku) | rezervace přes Facebook (Messenger) nebo rckonvicka@seznam.cz | Kroužky pro malé děti s rodiči, platí se za lekci. Leták je „od září 2025“, program na 2026/27 zatím nezveřejněn (článek z 1. 8. 2026 slibuje návrat programů a novinky od září). Tip uživatele. |
 | tj-sokol-horice | T. J. Sokol Hořice | sportovni-klub | https://www.sokol.eu/sokolovna/tj-sokol-horice | tamtéž | – | Vlastní web nenalezen. 4 dětské skupiny. Údaje se liší od webu města. Bez cen. |
 | junak-horice | Junák – český skaut, středisko Hořice | spolek | https://www.junakhorice.cz | https://www.junakhorice.cz/hledam-oddil/ | https://www.junakhorice.cz/hledam-oddil/pro-rodice/ | 3 oddíly, věk a den schůzky. Web oddílu Jitřenka se nenačetl. |
 | fotbal-jiskra-horice | TJ Jiskra Hořice – fotbal | sportovni-klub | https://www.horickyfotbal.cz | soupisky kategorií U7–U19 | – | Bez tréninků, náboru a cen. |
@@ -61,6 +62,15 @@
 - Rozvrhy tanečního a výtvarného oboru jsou přepsané z obrázků (letáky „Poslední volná místa“) a obsahují jen skupiny s volnými místy. Leták tanečního oboru neuvádí pobočku. Taneční obor se v Hořicích vyučuje, takže je zapsaný tam.
 - Ceník hudebního přípravného studia (varianta B „1–2 žáci 1500 / 1000 Kč“) je vyložený jako 1 500 Kč pro 1 žáka a 1 000 Kč pro 2 žáky.
 - Kontakty vedení a kanceláře obsahují osobní jméno, proto je uvedený jen telefon studijního oddělení.
+
+## Poznámky ze sběru (2026-10-19) – RC Konvička
+
+- Zdroj od uživatele: článek https://rckonvicka.cz/2025/01/11/do-noveho-roku-konvicka-vkrocila-s-novym-programem/ je z ledna 2025 a uvádí začátek kroužků v 9:30. Novější leták „Pravidelné aktivity od září 2025“ uvádí 9:00, platí leták.
+- Zapsáno 5 dětských aktivit (Hernička pro miminka, Hýbánky, Notičky z Konvičky, Barevné ručičky, SENZAční hraní) se `skolni_rok` 2025/2026 a poznámkou, že program na 2026/27 zatím není zveřejněn. **Po zveřejnění nového letáku aktualizovat.**
+- Vynecháno: Maminky v kondici a Časoprostor ženy (pro dospělé), jednorázové přednášky a akce.
+- Leták uvádí jen začátek lekce („od 9:00“), proto termíny jako `text` místo `rozvrh`.
+- Hernička: věk 0–1 odvozen z popisu „první rok s děťátkem“. SENZAční hraní: „od cca 1,5 roku“ je jen v popisu, `vek_od` nevyplněn (celá čísla).
+- Lektorky jsou na webu jen křestními jmény, do dat se nepřebírají. Telefon u Maminek v kondici je osobní.
 
 ## Zjištění pro fázi 3–4
 

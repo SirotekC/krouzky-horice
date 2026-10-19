@@ -5040,5 +5040,205 @@
     "skolni_rok": null,
     "zdroj_url": "https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788",
     "overeno": "2026-10-12"
+  },
+  {
+    "id": "rc-konvicka-hernicka-pro-miminka",
+    "organizace_id": "rc-konvicka",
+    "nazev": "Hernička pro miminka",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Setkávání rodičů s miminky v prvním roce: hračky a podněty pro miminka a prostor sdílet radosti i starosti s ostatními rodiči.",
+    "vek_od": 0,
+    "vek_do": 1,
+    "misto": {
+      "nazev": "RC Konvička, Sportovní hala (1. patro)",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Pondělí od 9:00",
+      "obdobi": null,
+      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "30 Kč za lekci",
+      "castka_kc": 30,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://rckonvicka.cz/hernicka-pro-miminka/",
+      "poznamka": null
+    },
+    "skolni_rok": "2025/2026",
+    "zdroj_url": "https://rckonvicka.cz/hernicka-pro-miminka/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "rc-konvicka-hybanky",
+    "organizace_id": "rc-konvicka",
+    "nazev": "Hýbánky",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Cvičení pro chodící děti s rodičem: tanec, cvičení s pohádkou nebo říkankou, padák a míčky, pak opičí dráhy a balanční pomůcky. Rodiče cvičí s dětmi.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "RC Konvička, Sportovní hala (1. patro)",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Úterý od 9:00",
+      "obdobi": null,
+      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "60 Kč za lekci",
+      "castka_kc": 60,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://rckonvicka.cz/hybanky/",
+      "poznamka": null
+    },
+    "skolni_rok": "2025/2026",
+    "zdroj_url": "https://rckonvicka.cz/hybanky/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "rc-konvicka-noticky-z-konvicky",
+    "organizace_id": "rc-konvicka",
+    "nazev": "Notičky z Konvičky",
+    "kategorie": [
+      "hudba"
+    ],
+    "popis": "Hudební kroužek pro malé děti s rodiči: písničky a básničky s kytarou nebo klávesy, hraní na hudební nástroje včetně méně obvyklých a poslech klasické hudby.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "RC Konvička, Sportovní hala (1. patro)",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Čtvrtek od 9:00",
+      "obdobi": null,
+      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "60 Kč za lekci",
+      "castka_kc": 60,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://rckonvicka.cz/noticky-z-konvicky/",
+      "poznamka": null
+    },
+    "skolni_rok": "2025/2026",
+    "zdroj_url": "https://rckonvicka.cz/noticky-z-konvicky/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "rc-konvicka-barevne-rucicky",
+    "organizace_id": "rc-konvicka",
+    "nazev": "Barevné ručičky",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Výtvarný kroužek pro batolata a malé děti s rodiči: každé setkání má téma (barvy, tvary, zvířátka…), cvičení jemné i hrubé motoriky a na závěr malé výtvarné dílo.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "RC Konvička, Sportovní hala (1. patro)",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Pátek od 9:00",
+      "obdobi": null,
+      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo. Každý druhý pátek je místo Barevných ručiček SENZAční hraní.",
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": {
+      "text": "60 Kč za lekci",
+      "castka_kc": 60,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://rckonvicka.cz/tvorilek/",
+      "poznamka": null
+    },
+    "skolni_rok": "2025/2026",
+    "zdroj_url": "https://rckonvicka.cz/tvorilek/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "rc-konvicka-senzacni-hrani",
+    "organizace_id": "rc-konvicka",
+    "nazev": "SENZAční hraní",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Smyslová hra (sensory play) pro děti zhruba od 1,5 roku s rodiči: voda, písek, rýže, kinetický písek, modelína, sliz a jednoduché pokusy. Baví i předškoláky a školáky.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "RC Konvička, Sportovní hala (1. patro)",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Pátek od 9:30 a od 16:00, každý druhý týden",
+      "obdobi": null,
+      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": {
+      "text": "150 Kč za lekci",
+      "castka_kc": 150,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://rckonvicka.cz/senzacni-hrani/",
+      "poznamka": null
+    },
+    "skolni_rok": "2025/2026",
+    "zdroj_url": "https://rckonvicka.cz/senzacni-hrani/",
+    "overeno": "2026-10-19"
   }
 ]

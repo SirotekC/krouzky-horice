@@ -130,5 +130,17 @@
     "popis": "Sportovní oddíl pro děti v rámci České asociace Sport pro všechny, založený v roce 1992. Zaměřuje se na všestrannou pohybovou průpravu.",
     "zdroj_url": "https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788",
     "overeno": "2026-10-12"
+  },
+  {
+    "id": "rc-konvicka",
+    "nazev": "Rodinné centrum Konvička, z. s.",
+    "typ": "spolek",
+    "web": "https://rckonvicka.cz",
+    "email": "rckonvicka@seznam.cz",
+    "telefon": null,
+    "adresa": "Šalounova 2164, 508 01 Hořice (1. patro Sportovní haly)",
+    "popis": "Rodinné centrum pro rodiče s malými dětmi: dopolední kroužky s rodiči, hernička, přednášky a akce.",
+    "zdroj_url": "https://rckonvicka.cz/kontakt/",
+    "overeno": "2026-10-19"
   }
 ]
