@@ -28,16 +28,25 @@ function chip(typ, jmeno, hodnota, popisek) {
   return el('label', { trida: 'chip' }, vstup, el('span', { text: popisek }));
 }
 
+/** Skupiny zaměření se vykreslí ještě před načtením dat, aby filtry pod nimi neposkočily. */
+function vykresliSkupiny() {
+  const skupiny = $('#f-skup');
+  skupiny.append(chip('radio', 'skup', '', 'Vše'));
+  for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
+    skupiny.append(chip('radio', 'skup', klic, skupina.popisek));
+  }
+}
+
 function naplnFormular(data) {
   // Nabízet jen skupiny a kategorie, které v datech opravdu jsou.
   const pouzite = new Set(data.aktivity.flatMap((a) => a.kategorie));
-  const skupiny = $('#f-skup');
   const podkategorie = $('#f-kat');
-  skupiny.append(chip('radio', 'skup', '', 'Vše'));
   for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
     const kategorie = skupina.kategorie.filter((k) => pouzite.has(k));
-    if (!kategorie.length) continue;
-    skupiny.append(chip('radio', 'skup', klic, skupina.popisek));
+    if (!kategorie.length) {
+      $(`#f-skup input[value="${klic}"]`).closest('.chip').remove();
+      continue;
+    }
     // Upřesnění má smysl, jen když skupina obsahuje víc kategorií.
     if (kategorie.length < 2) continue;
     for (const k of kategorie) {
@@ -120,6 +129,7 @@ function debounce(fn, ms) {
 async function spust() {
   nastavOdkazy();
   sbalitelneFiltry();
+  vykresliSkupiny();
 
   const seznam = $('#seznam');
   const pocet = $('#pocet');

@@ -423,13 +423,15 @@ Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy
 
 **Kritéria přijetí:**
 
-- [ ] Všechny filtry z 5.1 fungují a kombinují se správně.
-- [ ] Obnovení stránky s parametry v URL zachová filtry.
-- [ ] Bez chyb v konzoli prohlížeče.
-- [ ] Při 360 px šířce není vodorovný posuvník. Filtry jsou na mobilu sbalitelné.
-- [ ] Celá stránka je ovladatelná klávesnicí a viditelný je focus.
-- [ ] Lighthouse (mobil): Accessibility ≥ 95, Performance ≥ 90, Best Practices ≥ 95.
-- [ ] Prázdný, chybový i načítací stav fungují. Chybový stav ověříš dočasným přejmenováním `aktivity.json`.
+- [x] Všechny filtry z 5.1 fungují a kombinují se správně.
+- [x] Obnovení stránky s parametry v URL zachová filtry.
+- [x] Bez chyb v konzoli prohlížeče.
+- [x] Při 360 px šířce není vodorovný posuvník. Filtry jsou na mobilu sbalitelné.
+- [x] Celá stránka je ovladatelná klávesnicí a viditelný je focus.
+- [x] Lighthouse (mobil): Accessibility ≥ 95, Performance ≥ 90, Best Practices ≥ 95.
+- [x] Prázdný, chybový i načítací stav fungují. Chybový stav ověříš dočasným přejmenováním `aktivity.json`.
+
+*Ověřeno 2026-10-19 automaticky (puppeteer + Lighthouse 12, lokální server): Lighthouse mobil Performance 99, Accessibility 100, Best Practices 100, CLS 0. Chybový stav ověřen zablokováním požadavku na `aktivity.json` místo přejmenování souboru.*
 
 ### Úkol 7: Nasazení na GitHub Pages
 

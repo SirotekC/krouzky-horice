@@ -154,6 +154,9 @@ a {
   display: grid;
   gap: var(--mezera);
   padding-block: var(--mezera) 2rem;
+  /* Patička zůstane pod okrajem obrazovky i během načítání, takže po vykreslení karet neposkočí. */
+  min-height: 100vh;
+  align-content: start;
 }
 
 /* Filtry */
