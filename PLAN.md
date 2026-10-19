@@ -130,7 +130,7 @@ Nejdůležitější pole aktivity: `nazev`, `organizace_id`, `kategorie`, `vek_o
 - Filtry uložené v URL, takže odkaz lze sdílet.
 - Zvýraznění „Přihlášky probíhají / končí za X dní“.
 - Den v týdnu jako filtr (vyžaduje strukturované termíny).
-- Export do kalendáře (.ics) pro termíny přihlášek.
+- ~~Export do kalendáře (.ics) pro termíny přihlášek.~~ Zatím odloženo (rozhodnutí 2026-10-13).
 
 ### Fáze 3: Automatický monitoring zdrojů
 
