@@ -1,6 +1,5 @@
-// Nastavení webu. Po založení repozitáře na GitHubu doplňte adresu,
-// např. 'https://github.com/uzivatel/clubs-horice'. Dokud je `null`,
-// odkaz na repozitář se nezobrazuje.
+// Nastavení webu. Adresa repozitáře na GitHubu (nebo `null`). Na webu se
+// nezobrazuje, slouží jen jako záloha pro odkaz „Nahlásit chybu“, když chybí e-mail.
 export const REPO_URL = 'https://github.com/SirotekC/krouzky-horice';
 
 /** Veřejný e-mail pro opravy a dotazy, nebo `null`. */

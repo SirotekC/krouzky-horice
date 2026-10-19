@@ -1,7 +1,7 @@
 // Vykreslení karet aktivit a stavů stránky. Texty z dat se vkládají jen přes
 // `textContent`, nikdy přes `innerHTML`. DOM se používá až uvnitř funkcí.
 
-import { CHYBA_URL, REPO_URL } from './config.js';
+import { CHYBA_URL } from './config.js';
 import { KATEGORIE, POHLAVI } from './data.js';
 import { cisloDne, formatDatum, formatObdobi, stavPrihlasky } from './registration.js';
 import { odkazNaAktivitu } from './url-state.js';
@@ -308,9 +308,9 @@ export function seznamKaret(aktivity, dnes) {
   return seznam;
 }
 
-/** Zobrazí odkazy `[data-odkaz="repo|chyba"]`, pokud jsou adresy nastavené v config.js. */
+/** Zobrazí odkazy `[data-odkaz="chyba"]`, pokud je adresa nastavená v config.js. */
 export function nastavOdkazy() {
-  for (const [klic, url] of [['repo', REPO_URL], ['chyba', CHYBA_URL]]) {
+  for (const [klic, url] of [['chyba', CHYBA_URL]]) {
     if (!url) continue;
     for (const odkaz of document.querySelectorAll(`[data-odkaz="${klic}"]`)) {
       odkaz.href = url;
