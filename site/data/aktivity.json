@@ -1,39 +1,3183 @@
 [
   {
-    "id": "ddm-horice-krouzky",
+    "id": "ddm-horice-latino-kids",
     "organizace_id": "ddm-horice",
-    "nazev": "Kroužky DDM Hořice (přes 70 kroužků)",
+    "nazev": "Latino KIDS",
     "kategorie": [
-      "vytvarne",
-      "tanec",
-      "sport-ostatni",
-      "hudba",
+      "tanec"
+    ],
+    "popis": "Latinsko-americké tance s přípravou na vystoupení a soutěže. Před soutěžemi může být trénink delší. Taneční obuv a oblečení se dokupují.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 11,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1000",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1000-latino-kids",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-mladi-umelci",
+    "organizace_id": "ddm-horice",
+    "nazev": "Mladí umělci",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Výtvarné techniky a práce s různými materiály včetně keramické hlíny a točení na kruhu. Rozvíjí fantazii a jemnou motoriku.",
+    "pohlavi": null,
+    "vek_od": 5,
+    "vek_do": 12,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:30–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "7. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1001",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1001-mladi-umelci",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-juniorky-phoenix-mazoretky-roztleskavacky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Juniorky Phoenix – mažoretky, roztleskávačky",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Mažoretkový sport a roztleskávání: nácvik sestav na vystoupení a malé formace. Jen pro vybrané děti po dohodě s vedoucími.",
+    "pohlavi": null,
+    "vek_od": 11,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "ZŠ Na Habru, Hořice",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "18:00–19:00"
+          ],
+          "misto": "Sokolovna"
+        },
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "17:30–19:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "14. 9. 2026 – 30. 5. 2027",
+      "poznamka": "V pondělí se trénuje v Sokolovně, v úterý na ZŠ Na Habru.",
+      "dny": [
+        "po",
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "2 200 Kč za pololetí",
+      "castka_kc": 2200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1005",
+      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1005-juniorky-phoenix-mazoretky-roztleskavacky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-motoristicky-krouzek-praxe-teorie-a-simulator",
+    "organizace_id": "ddm-horice",
+    "nazev": "Motoristický kroužek – praxe + teorie a simulátor",
+    "kategorie": [
       "technika",
-      "priroda",
-      "jazyky",
-      "divadlo",
-      "bojove",
+      "sport-ostatni"
+    ],
+    "popis": "Teorie bezpečné jízdy, pravidla silničního provozu a závodů, jízda na simulátoru a za dobrého počasí na minibiku v autokempu. Ochranná výbava vítána.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 17,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:30–18:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "so",
+          "casy": [
+            "09:00–12:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 26. 5. 2027",
+      "poznamka": "Kroužek se přesouvá do budovy zámku (Riegrova 1490).",
+      "dny": [
+        "st",
+        "so"
+      ]
+    },
+    "cena": {
+      "text": "2 000 Kč za pololetí",
+      "castka_kc": 2000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1006",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1006-motoristicky-krouzek-praxe-teorie-a-simulator",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-formace-phoenix-seniorky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Formace PHOENIX (seniorky)",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Taneční formace pro pokročilé tanečnice.",
+    "pohlavi": null,
+    "vek_od": 15,
+    "vek_do": 26,
+    "misto": {
+      "nazev": "tělocvična Zemědělské akademie Hořice",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "15:00–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": {
+      "text": "1 300 Kč za pololetí",
+      "castka_kc": 1300,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1007",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1007-formace-phoenix-seniorky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-loutkove-divadlo-zvonecek-pokrocili",
+    "organizace_id": "ddm-horice",
+    "nazev": "Loutkové divadlo Zvoneček – pokročilí",
+    "kategorie": [
+      "divadlo"
+    ],
+    "popis": "Loutkové divadlo: děti si vyrábějí loutky, hrají s nimi představení a učí se základy herectví. Vystupují na akcích a soutěžích.",
+    "pohlavi": null,
+    "vek_od": 12,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "DK Koruna Hořice",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "16:30–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "2. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1009",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1009-loutkove-divadlo-zvonecek-pokrocili",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-pohybova-skolicka-pro-deti-od-4-7-let",
+    "organizace_id": "ddm-horice",
+    "nazev": "Pohybová školička pro děti od 4–7 let",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Všestranná pohybová průprava pro předškoláky bez rodičů: běh, skoky, hody, hry venku i v sále, tanec a cvičení s pomůckami.",
+    "pohlavi": null,
+    "vek_od": 4,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "850 Kč za pololetí",
+      "castka_kc": 850,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1010",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1010-pohybova-skolicka-pro-deti-od-4-7-let",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-sijeme-hackujeme-vysivame",
+    "organizace_id": "ddm-horice",
+    "nazev": "Šijeme, háčkujeme, vyšíváme",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Šití, háčkování a vyšívání: figurky, hračky nebo taštička s vlastní výšivkou. Pro začátečníky i ty, kdo už něco umí.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 14,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1011",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1011-sijeme-hackujeme-vysivame",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-mlada-modni-navrhar-ka",
+    "organizace_id": "ddm-horice",
+    "nazev": "Mladá módní návrhář/ka",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Návrhy oblečení a módních doplňků, stříhání látek a šití na stroji. Šicí stroj je k dispozici v DDM.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 17,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1012",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1012-mlada-modni-navrhar-ka",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-kreativky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Kreativky",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Vlastní doplňky z látek, vlny a recyklovaných materiálů – šití na stroji, háčkování, vyšívání, korálkování, úpravy oblečení.",
+    "pohlavi": null,
+    "vek_od": 10,
+    "vek_do": 18,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1013",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1013-kreativky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-prirodovedny-krouzek",
+    "organizace_id": "ddm-horice",
+    "nazev": "Přírodovědný kroužek",
+    "kategorie": [
+      "priroda"
+    ],
+    "popis": "Zvířata, rostliny a ochrana přírody. Pravidelné vycházky do terénu, rukodělné činnosti a jednou za pololetí sobotní výprava.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 14,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "15:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "5. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1014",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 4 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-lego-stavitel",
+    "organizace_id": "ddm-horice",
+    "nazev": "Lego stavitel",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Stavění modelů z kostek LEGO podle zadání i vlastní fantazie.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "14:30–15:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 25. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "800 Kč za pololetí",
+      "castka_kc": 800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1015",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1015-lego-stavitel",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-lego-animace",
+    "organizace_id": "ddm-horice",
+    "nazev": "Lego animace",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Scénky z kostek LEGO, vlastní příběhy a jejich převod do jednoduchých animací s efekty. S sebou flash disk.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:45–16:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 25. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1016",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1016-lego-animace",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-art-zona-vytvarne-tvoreni-bez-zabran",
+    "organizace_id": "ddm-horice",
+    "nazev": "ART Zóna – výtvarné tvoření bez zábran",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Volné výtvarné tvoření bez hodnocení: různé techniky, spontánní a abstraktní tvorba, radost z procesu.",
+    "pohlavi": null,
+    "vek_od": 10,
+    "vek_do": 16,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "17:15–18:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 25. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1017-art-zona-vytvarne-tvoreni-bez-zabran",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-pece-cely-domecek",
+    "organizace_id": "ddm-horice",
+    "nazev": "Peče celý Domeček",
+    "kategorie": [
       "ostatni"
     ],
-    "popis": "Široká nabídka: výtvarné obory a keramika, tanec a mažoretky, sport a judo, kytara a ukulele, jazyky, loutkové divadlo, 3D tisk, Lego, elektronika, modeláři, přírodověda, šachy, vaření.",
-    "vek_od": null,
-    "vek_do": null,
+    "popis": "Vaření a pečení sladkých i slaných dobrot podle nových receptů, pro holky i kluky. S sebou zástěra a krabička.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 14,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:30–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 26. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
     "cena": {
-      "text": "0–3 200 Kč podle kroužku",
+      "text": "1 200 Kč za pololetí",
+      "castka_kc": 1200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1018",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Mateřské centrum – pohybové aktivity pro děti a maminky",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Pohybové aktivity pro malé děti s rodičem: tanec, básničky a říkanky, na závěr opičí dráha.",
+    "pohlavi": null,
+    "vek_od": 2,
+    "vek_do": 4,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "09:00–10:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Rodič se kroužku aktivně účastní.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "60 Kč za lekci",
+      "castka_kc": 60,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1019",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1019-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-hratky-s-batolatky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Hrátky s batolátky",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Setkávání nejmenších s vrstevníky za účasti rodičů: hry, básničky a říkanky.",
+    "pohlavi": null,
+    "vek_od": 1,
+    "vek_do": 2,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "09:00–10:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Rodič se kroužku aktivně účastní. Přihlášku podává rodič za sebe i za dítě.",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "60 Kč za lekci",
+      "castka_kc": 60,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1020",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1020-hratky-s-batolatky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-tanecky-pro-berusky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Tanečky pro Berušky",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Hravé tancování různých stylů, cvičení s náčiním a všestranná pohybová průprava pro holčičky.",
+    "pohlavi": "divky",
+    "vek_od": 4,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "850 Kč za pololetí",
+      "castka_kc": 850,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1023",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1023-tanecky-pro-berusky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-gymnastika-pro-roztleskavacky-kadetky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Gymnastika pro roztleskávačky kadetky",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Gymnastická průprava jen pro děti, které chodí do kroužku roztleskávaček.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 11,
+    "misto": {
+      "nazev": "Sokolovna pod Sportovním areálem",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "21. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "Zdarma",
+      "castka_kc": 0,
+      "obdobi": "zdarma"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1026-gymnastika-pro-roztleskavacky-kadetky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-keramika-kreativni-tvoreni",
+    "organizace_id": "ddm-horice",
+    "nazev": "Keramika – kreativní tvoření",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Keramika pro děti, které už zvládají základní techniky: složitější tvary, vlastní nápady a pečlivé dokončení výrobků.",
+    "pohlavi": null,
+    "vek_od": 8,
+    "vek_do": 13,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:15–16:15"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "7. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 300 Kč za pololetí",
+      "castka_kc": 1300,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-motoristicky-krouzek-teorie-simulator",
+    "organizace_id": "ddm-horice",
+    "nazev": "Motoristický kroužek – teorie + simulátor",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Teorie bezpečné jízdy, pravidla silničního provozu a závodů a trénink na simulátoru. Varianta s praktickou jízdou je samostatný kroužek.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 18,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:30–18:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 26. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "800 Kč za pololetí",
+      "castka_kc": 800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1030",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1030-motoristicky-krouzek-teorie-simulator",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-formace-kadetek",
+    "organizace_id": "ddm-horice",
+    "nazev": "Formace kadetek",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Mažoretková formace pro dívky po domluvě s vedoucí kroužku.",
+    "pohlavi": "divky",
+    "vek_od": 8,
+    "vek_do": 11,
+    "misto": {
+      "nazev": "ZŠ Na Habru, Hořice",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "13:45–14:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 300 Kč za pololetí",
+      "castka_kc": 1300,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1031-formace-kadetek",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-myslivecky-krouzek",
+    "organizace_id": "ddm-horice",
+    "nazev": "Myslivecký kroužek",
+    "kategorie": [
+      "priroda"
+    ],
+    "popis": "Fauna a flóra, návštěvy lesa, stavba krmelců a přikrmování v zimě, návštěva bažantnice a střelba ze vzduchovky pod dohledem.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 16,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "7. 10. 2026 – 31. 5. 2027",
+      "poznamka": "Schází se jednou za dva týdny (liché týdny) na 2 hodiny.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "800 Kč za pololetí",
+      "castka_kc": 800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1032",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1032-myslivecky-krouzek",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-rybarsky-krouzek-8-15-let",
+    "organizace_id": "ddm-horice",
+    "nazev": "Rybářský kroužek (8–15 let)",
+    "kategorie": [
+      "priroda"
+    ],
+    "popis": "Teorie i praxe v přírodě s cílem získat rybářské oprávnění. Pokračující členové mají připravený další program.",
+    "pohlavi": null,
+    "vek_od": 8,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Schází se jednou za dva týdny (sudé týdny) na 2 hodiny.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "800 Kč za pololetí",
+      "castka_kc": 800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1033",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1033-rybarsky-krouzek-8-15-let",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-keramika-tvurci-dilna",
+    "organizace_id": "ddm-horice",
+    "nazev": "Keramika – tvůrčí dílna",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Keramika pro děti, které už zvládají základní techniky: složitější tvary, kombinace technik a vlastní nápady.",
+    "pohlavi": null,
+    "vek_od": 8,
+    "vek_do": 12,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "14:45–15:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "8. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 300 Kč za pololetí",
+      "castka_kc": 1300,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-parkour",
+    "organizace_id": "ddm-horice",
+    "nazev": "Parkour",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Parkourové dovednosti – síla, obratnost a nové triky. Trénuje se v tělocvičně nebo na venkovním parkourovém hřišti, možná i soutěže.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 12,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Za dobrého počasí venku na parkourovém hřišti u Sportovního zařízení města.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 200 Kč za pololetí",
+      "castka_kc": 1200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1035",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-parkour-pokrocili",
+    "organizace_id": "ddm-horice",
+    "nazev": "Parkour pokročilí",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Parkour pro zdatnější děti; do skupiny je zařazuje trenér. Tělocvična nebo venkovní parkourové hřiště, případně soutěže.",
+    "pohlavi": null,
+    "vek_od": 8,
+    "vek_do": 16,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Za dobrého počasí venku na parkourovém hřišti u Sportovního zařízení města.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 200 Kč za pololetí",
+      "castka_kc": 1200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1036",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1036-parkour-pokrocili",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-formace-little-kadetky",
+    "organizace_id": "ddm-horice",
+    "nazev": "Formace Little kadetky",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Malé formace v mažoretkovém sportu. Jen pro vybrané děti po dohodě s vedoucími.",
+    "pohlavi": null,
+    "vek_od": 5,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Nechodí se pravidelně, ale podle potřeby (např. 4× za pololetí po dohodě s trenérkami).",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Volná místa podle webu DDM k 19. 10. 2026: poslední 4 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1037-formace-little-kadetky",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-sachy-pokrocili",
+    "organizace_id": "ddm-horice",
+    "nazev": "Šachy – pokročilí",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Šachy pro děti, které už hrají. Účast na soutěžích v regionu.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 26. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1048",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1048-sachy-pokrocili",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-3d-tisk",
+    "organizace_id": "ddm-horice",
+    "nazev": "3D tisk",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Základy 3D modelování, příprava návrhů a práce s 3D tiskárnou – od nápadu ke skutečnému výrobku. S sebou vlastní notebook a myš.",
+    "pohlavi": null,
+    "vek_od": 11,
+    "vek_do": 18,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 27. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1049",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-anglictina-pro-5-8-tridu",
+    "organizace_id": "ddm-horice",
+    "nazev": "Angličtina pro 5.–8. třídu",
+    "kategorie": [
+      "jazyky"
+    ],
+    "popis": "Pomoc s angličtinou pro 5.–8. třídu: opakování konverzačních témat a slovní zásoby, procvičení učiva podle potřeb dítěte.",
+    "pohlavi": null,
+    "vek_od": 10,
+    "vek_do": 14,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "14:00–15:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "5. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1050",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1050-anglictina-pro-5-8-tridu",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-keramika-kreativne-14",
+    "organizace_id": "ddm-horice",
+    "nazev": "Keramika kreativně 14+",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Keramika pro starší děti, středoškoláky i dospělé: vlastní nápady, detail a práce na hrnčířském kruhu.",
+    "pohlavi": null,
+    "vek_od": 14,
+    "vek_do": null,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "15:15–17:15"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "9. 10. 2026 – 31. 5. 2027",
+      "poznamka": "Schází se jednou za 14 dní.",
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": {
+      "text": "1 600 Kč za pololetí",
+      "castka_kc": 1600,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1053",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1053-keramika-kreativne-14",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-anglicky-klubik",
+    "organizace_id": "ddm-horice",
+    "nazev": "Anglický klubík",
+    "kategorie": [
+      "jazyky"
+    ],
+    "popis": "Angličtina hrou pro předškoláky a prvňáčky: slovíčka, básničky, písničky a tvoření.",
+    "pohlavi": null,
+    "vek_od": 5,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:30–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1055",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1055-anglicky-klubik",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-anglictina-2-4-trida",
+    "organizace_id": "ddm-horice",
+    "nazev": "Angličtina pro 2.–4. třídu",
+    "kategorie": [
+      "jazyky"
+    ],
+    "popis": "Angličtina hrou pro 2.–4. třídu: komunikace, slovní zásoba a gramatika přiměřená věku.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "13:50–14:50"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 30. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1059",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1059-anglictina-2-4-trida",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-pece-cely-domecek-ii",
+    "organizace_id": "ddm-horice",
+    "nazev": "Peče celý domeček II.",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Druhá skupina kroužku vaření a pečení pro holky i kluky. Otevře se při nejméně 4 přihlášených.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "13:45–15:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 30. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 200 Kč za 1. pololetí",
+      "castka_kc": 1200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1062-pece-cely-domecek-ii",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-anglicky-klubik-ii",
+    "organizace_id": "ddm-horice",
+    "nazev": "Anglický klubík II",
+    "kategorie": [
+      "jazyky"
+    ],
+    "popis": "Angličtina hrou pro předškoláky a prvňáčky: slovíčka, básničky, písničky a tvoření.",
+    "pohlavi": null,
+    "vek_od": 4,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:40–16:40"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1063",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1063-anglicky-klubik-ii",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-ukulele-pro-radost",
+    "organizace_id": "ddm-horice",
+    "nazev": "Ukulele pro radost",
+    "kategorie": [
+      "hudba"
+    ],
+    "popis": "Ukulele pro začátečníky všech věků, i rodiče s dětmi: základy rytmu a melodie, lidovky i moderní písně. Vlastní ukulele podmínkou.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": null,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 30. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za 1. pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1065",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1065-ukulele-pro-radost",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-domecku-var",
+    "organizace_id": "ddm-horice",
+    "nazev": "Domečku, vař!",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Vaření a pečení jednoduchých sladkých i slaných jídel a základy práce v kuchyni.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 14,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 30. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 200 Kč za 1. pololetí",
+      "castka_kc": 1200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1070",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1070-domecku-var",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-kreativky-dobra-voda",
+    "organizace_id": "ddm-horice",
+    "nazev": "Kreativky – Dobrá Voda",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Výtvarné a rukodělné tvoření na ZŠ Dobrá Voda: dřevo, korálky, drátky, modelovací hmoty, háčkování a vyšívání.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 13,
+    "misto": {
+      "nazev": "ZŠ Dobrá Voda u Hořic",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "13:20–14:20"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za 1. pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1080",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1080-kreativky-dobra-voda",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-sachy-dobra-voda",
+    "organizace_id": "ddm-horice",
+    "nazev": "Šachy – Dobrá Voda",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Šachy pro začátečníky i hráče na ZŠ Dobrá Voda.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 13,
+    "misto": {
+      "nazev": "ZŠ Dobrá Voda u Hořic",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "13:20–14:20"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "950 Kč za 1. pololetí",
+      "castka_kc": 950,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1081",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1081-sachy-dobra-voda",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-sportik-mzany",
+    "organizace_id": "ddm-horice",
+    "nazev": "Sportík Mžany",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Pohybové hry a základy atletiky a gymnastiky na ZŠ Mžany.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "ZŠ Mžany",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "14:00–15:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "13. 10. 2026 – 30. 6. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "700 Kč za 1. pololetí (10 setkání)",
+      "castka_kc": 700,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1082",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1082-sportik-mzany",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-pohybova-skolicka-mzany",
+    "organizace_id": "ddm-horice",
+    "nazev": "Pohybová školička Mžany",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Všestranná pohybová průprava pro předškoláky bez rodičů na ZŠ Mžany, za dobrého počasí venku.",
+    "pohlavi": null,
+    "vek_od": 2,
+    "vek_do": 6,
+    "misto": {
+      "nazev": "ZŠ Mžany",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "13. 10. 2026 – 30. 6. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "700 Kč za 1. pololetí (10 setkání)",
+      "castka_kc": 700,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/1083",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1083-pohybova-skolicka-mzany",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-zaklady-elektroniky-mladsi",
+    "organizace_id": "ddm-horice",
+    "nazev": "Základy elektroniky – mladší",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Elektronika od úplných základů: stavba obvodů, pájení, čtení schémat a oživování světelných a zvukových konstrukcí.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "5. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "950 Kč za pololetí",
+      "castka_kc": 950,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/971",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/971-zaklady-elektroniky-mladsi",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-zaklady-elektroniky-starsi",
+    "organizace_id": "ddm-horice",
+    "nazev": "Základy elektroniky – starší",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Pokračování v elektronice: stavba a oživování konstrukcí, pájení, schémata, základy programování a drobné opravy.",
+    "pohlavi": null,
+    "vek_od": 11,
+    "vek_do": 18,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "17:15–18:15"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "5. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "950 Kč za pololetí",
+      "castka_kc": 950,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/972",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/972-zaklady-elektroniky-starsi",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-atleticko-gymnasticky-krouzek",
+    "organizace_id": "ddm-horice",
+    "nazev": "Atleticko-gymnastický kroužek",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Atletika (běh, skok, hod) a gymnastická průprava, za dobrého počasí venku na oválu. Možná účast na soutěžích.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "ZŠ Na Habru, Hořice",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/974",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/974-atleticko-gymnasticky-krouzek",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-hra-na-kytaru-zac",
+    "organizace_id": "ddm-horice",
+    "nazev": "Hra na kytaru – začátečníci",
+    "kategorie": [
+      "hudba"
+    ],
+    "popis": "Kytara pro začátečníky: základní akordy a doprovod písniček. Vlastní kytara a domácí cvičení podmínkou.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": null,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "5. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "1 200 Kč za pololetí",
+      "castka_kc": 1200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/975",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/975-hra-na-kytaru-zac",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-hra-na-kytaru-mirne-pokrocili",
+    "organizace_id": "ddm-horice",
+    "nazev": "Hra na kytaru mírně pokročilí",
+    "kategorie": [
+      "hudba"
+    ],
+    "popis": "Kytara pro ty, kdo do kroužku chodí déle než rok: akordy a doprovod písniček. Vlastní kytara a domácí cvičení podmínkou.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": null,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "5. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "1 200 Kč za pololetí",
+      "castka_kc": 1200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/976",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/976-hra-na-kytaru-mirne-pokrocili",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-letecky-modelar",
+    "organizace_id": "ddm-horice",
+    "nazev": "Letecký modelář",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Stavba modelů letadel a teorie leteckého sportu, za hezkého počasí návštěva letiště a soutěže. Otevře se při nejméně 4 dětech.",
+    "pohlavi": null,
+    "vek_od": 10,
+    "vek_do": 16,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/977",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/977-letecky-modelar",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-kuzelky-od-10-let",
+    "organizace_id": "ddm-horice",
+    "nazev": "Kuželky od 10 let",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Kuželky v kuželně SKK Hořice. Po dvou letech v kroužku je možná účast na soutěžích.",
+    "pohlavi": null,
+    "vek_od": 10,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "Sportovní zařízení města Hořice",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "15:30–16:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:30–16:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Trénink jednou týdně – v pondělí, nebo ve středu podle domluvy s trenérem.",
+      "dny": [
+        "po",
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/980",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/980-kuzelky-od-10-let",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-judo-zacatecnici-od-7-let",
+    "organizace_id": "ddm-horice",
+    "nazev": "Judo – začátečníci (od 7 let)",
+    "kategorie": [
+      "bojove"
+    ],
+    "popis": "Judo pro začátečníky. Zpočátku stačí tričko a tepláky, potom je nutné vlastní kimono.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 13,
+    "misto": {
+      "nazev": "Sportovní hala Gymnázia Hořice",
+      "adresa": "Šalounova 2164, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 25. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/981",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/981-judo-zacatecnici-od-7-let",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-zajmova-gymnastika",
+    "organizace_id": "ddm-horice",
+    "nazev": "Zájmová gymnastika",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Rekreační gymnastika pro holky i kluky: koordinace, základy akrobacie, nářadí i náčiní, posilování a hry.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "Sokolovna pod Sportovním areálem",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "18:00–19:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 500 Kč za pololetí",
+      "castka_kc": 1500,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/982",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/982-zajmova-gymnastika",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-judo-pokrocili",
+    "organizace_id": "ddm-horice",
+    "nazev": "Judo pokročilí",
+    "kategorie": [
+      "bojove"
+    ],
+    "popis": "Judo pro pokročilé, trénink dvakrát týdně. Vlastní kimono je povinné.",
+    "pohlavi": null,
+    "vek_od": 8,
+    "vek_do": 13,
+    "misto": {
+      "nazev": "Sportovní hala Gymnázia Hořice",
+      "adresa": "Šalounova 2164, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–17:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "29. 9. 2026 – 25. 5. 2027",
+      "poznamka": "Popis kroužku na webu uvádí oba dny 16:00–17:30, rozvrh ve čtvrtek 16:00–17:00.",
+      "dny": [
+        "ut",
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "2 000 Kč za pololetí",
+      "castka_kc": 2000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/983",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/983-judo-pokrocili",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-sachy-zacatecnici",
+    "organizace_id": "ddm-horice",
+    "nazev": "Šachy – začátečníci",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Šachy pro začátečníky. Účast na soutěžích v regionu.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 26. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/984",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/984-sachy-zacatecnici",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-mazoretky-phoenix-little-kadetky-2019-2022",
+    "organizace_id": "ddm-horice",
+    "nazev": "Mažoretky PHOENIX Little kadetky (2019–2022)",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Mažoretky pro nejmenší dívky: tanec, držení těla a práce s hůlkou. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "pohlavi": "divky",
+    "vek_od": 5,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": "Sokolovna pod Sportovním areálem"
+        }
+      ],
+      "obdobi": "14. 9. 2026 – 31. 5. 2027",
+      "poznamka": "V pondělí na ZŠ Na Daliborce, v úterý taneční průprava v Sokolovně. Dívky z roku 2019 jen jako úplné začátečnice.",
+      "dny": [
+        "po",
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 800 Kč za pololetí",
+      "castka_kc": 1800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/986",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/986-mazoretky-phoenix-little-kadetky-2019-2022",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-keramika-zaciname-s-hlinou",
+    "organizace_id": "ddm-horice",
+    "nazev": "Keramika – začínáme s hlínou",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Keramika pro začátečníky: seznámení s hlínou a nástroji, první výrobky – zvířátka, misky, dekorace.",
+    "pohlavi": null,
+    "vek_od": 5,
+    "vek_do": 8,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "14:00–15:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "7. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 300 Kč za pololetí",
+      "castka_kc": 1300,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-roztleskavacky-phoenix-kadetky-2019-2015",
+    "organizace_id": "ddm-horice",
+    "nazev": "Roztleskávačky PHOENIX Kadetky (2015–2019)",
+    "kategorie": [
+      "tanec",
+      "sport-ostatni"
+    ],
+    "popis": "Roztleskávačky: taneční, gymnastická a akrobatická průprava a práce s pompony. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "pohlavi": "divky",
+    "vek_od": 7,
+    "vek_do": 11,
+    "misto": {
+      "nazev": "Sokolovna pod Sportovním areálem",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "15:00–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–16:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–16:30"
+          ],
+          "misto": "tělocvična Zemědělské akademie"
+        }
+      ],
+      "obdobi": "14. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Časy jsou rozmezí z rozvrhu DDM. Ve středu jednou za 14 dní v tělocvičně Zemědělské akademie.",
+      "dny": [
+        "po",
+        "ut",
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1. pololetí 3 200 Kč, 2. pololetí 0 Kč",
       "castka_kc": null,
       "obdobi": null
     },
     "prihlaska": {
-      "zpusob": "Online přihláška přes web DDM (systém iDDM).",
+      "zpusob": "Online přihláška přes systém iDDM.",
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz",
-      "poznamka": "Některé kroužky se rychle plní. Začátek činnosti web uvádí nejednotně (29. 9. i 29. 10. 2026)."
+      "odkaz": "https://ddmhorice.iddm.cz/detail/988",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
     },
     "skolni_rok": "2026/2027",
-    "zdroj_url": "https://www.ddmhorice.cz/hlavni-udalosti/159-prihlasovani-do-krouzku-2026-2027-je-spusteno",
-    "overeno": "2026-10-12"
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/988-roztleskavacky-phoenix-kadetky-2019-2015",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-loutkove-divadlo-zvonecek-zacatecnici",
+    "organizace_id": "ddm-horice",
+    "nazev": "Loutkové divadlo Zvoneček začátečníci",
+    "kategorie": [
+      "divadlo"
+    ],
+    "popis": "Loutkové divadlo pro začátečníky: výroba loutek, představení, základy herectví formou písniček a her.",
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 11,
+    "misto": {
+      "nazev": "DK Koruna Hořice",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "15:30–16:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "2. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/991",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/991-loutkove-divadlo-zvonecek-zacatecnici",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-zeleznicni-modelari-zacatecnici",
+    "organizace_id": "ddm-horice",
+    "nazev": "Železniční modeláři začátečníci",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Železniční modelářství: stavba kolejišť a dioramat, stavebnice vagonů a budov, digitální ovládání kolejiště.",
+    "pohlavi": null,
+    "vek_od": 7,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "Gymnázium Hořice – sklepní prostory",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–17:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 27. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/992",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/992-zeleznicni-modelari-zacatecnici",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-zeleznicni-modelari-pokrocili",
+    "organizace_id": "ddm-horice",
+    "nazev": "Železniční modeláři pokročilí",
+    "kategorie": [
+      "technika"
+    ],
+    "popis": "Železniční modelářství pro pokročilé: kolejiště, dioramata, stavebnice a digitální ovládání, prezentace na výstavách.",
+    "pohlavi": null,
+    "vek_od": 10,
+    "vek_do": 18,
+    "misto": {
+      "nazev": "Gymnázium Hořice – sklepní prostory",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "17:30–19:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 27. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/993",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/993-zeleznicni-modelari-pokrocili",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-dancemix",
+    "organizace_id": "ddm-horice",
+    "nazev": "Dancemix",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Taneční aktivita na moderní hudbu s nácvikem choreografií. Dívky vystupují na akcích.",
+    "pohlavi": null,
+    "vek_od": 8,
+    "vek_do": 16,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "30. 9. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 000 Kč za pololetí",
+      "castka_kc": 1000,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/995",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/995-dancemix",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-palickovani",
+    "organizace_id": "ddm-horice",
+    "nazev": "Paličkování",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Paličkování krajek podle předlohy pro trpělivé dívky i dospělé. Vlastní pomůcky na paličkování.",
+    "pohlavi": null,
+    "vek_od": 8,
+    "vek_do": null,
+    "misto": {
+      "nazev": "DDM Hořice",
+      "adresa": "Žižkova 611, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "17:00–19:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "1. 10. 2026 – 31. 5. 2027",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "900 Kč za pololetí",
+      "castka_kc": 900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/996",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/996-palickovani",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-roztleskavacky-phoenix-little-kadetky-2019-2021",
+    "organizace_id": "ddm-horice",
+    "nazev": "Roztleskávačky PHOENIX Little Kadetky (2019–2021)",
+    "kategorie": [
+      "tanec",
+      "sport-ostatni"
+    ],
+    "popis": "Roztleskávačky pro nejmenší dívky: tanec, gymnastika a práce s pompony. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "pohlavi": "divky",
+    "vek_od": 5,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "17:05–18:05"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": "Sokolovna pod Sportovním areálem"
+        }
+      ],
+      "obdobi": "14. 9. 2026 – 31. 5. 2027",
+      "poznamka": "V pondělí na ZŠ Na Daliborce, v úterý taneční průprava v Sokolovně. Dívky z roku 2019 jen jako úplné začátečnice.",
+      "dny": [
+        "po",
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 800 Kč za pololetí",
+      "castka_kc": 1800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/998",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/998-roztleskavacky-phoenix-little-kadetky-2019-2021",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "ddm-horice-mazoretky-phoenix-kadetky-2019-2015",
+    "organizace_id": "ddm-horice",
+    "nazev": "Mažoretky PHOENIX Kadetky (2015–2019)",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Mažoretky: tanec a práce s hůlkou pro dívky, které se chtějí zdokonalovat. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "pohlavi": "divky",
+    "vek_od": 7,
+    "vek_do": 10,
+    "misto": {
+      "nazev": "Sokolovna pod Sportovním areálem",
+      "adresa": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "15:00–18:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "15:00–16:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "15:00–17:00"
+          ],
+          "misto": "tělocvična Zemědělské akademie"
+        }
+      ],
+      "obdobi": "14. 9. 2026 – 31. 5. 2027",
+      "poznamka": "Časy jsou rozmezí z rozvrhu DDM. Ve středu jednou za 14 dní v tělocvičně Zemědělské akademie.",
+      "dny": [
+        "po",
+        "ut",
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1. pololetí 2 200 Kč, 2. pololetí 0 Kč",
+      "castka_kc": null,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška přes systém iDDM.",
+      "od": "2026-08-26",
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://ddmhorice.iddm.cz/detail/999",
+      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/999-mazoretky-phoenix-kadetky-2019-2015",
+    "overeno": "2026-10-19"
   },
   {
     "id": "plavani-sporthorice-pulci",

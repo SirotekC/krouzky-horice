@@ -6,7 +6,7 @@
 
 | id | název | typ | web | stránka s kroužky | stránka s přihláškami | poznámka |
 |---|---|---|---|---|---|---|
-| ddm-horice | Dům dětí a mládeže Hořice | ddm | https://www.ddmhorice.cz | https://www.ddmhorice.cz/krouzky | https://ddmhorice.iddm.cz ; https://www.ddmhorice.cz/hlavni-udalosti/159-prihlasovani-do-krouzku-2026-2027-je-spusteno | Asi 70 dětských kroužků pro 2026/27 v HTML (věk, den, čas, místo, cena za pololetí). Přihlášky online od 26. 8. 2026. Rozpor v datu zahájení (29. 9. vs. 29. 10. 2026). |
+| ddm-horice | Dům dětí a mládeže Hořice | ddm | https://www.ddmhorice.cz | https://www.ddmhorice.cz/krouzky | https://ddmhorice.iddm.cz ; https://www.ddmhorice.cz/hlavni-udalosti/159-prihlasovani-do-krouzku-2026-2027-je-spusteno | 80 kroužků pro 2026/27, každý má detail `/krouzky/{číslo}-{slug}` se strukturovanými poli (věk, dny a časy, místo, cena za pololetí, zahájení a ukončení, volná místa) a odkazem do iDDM. Přihlášky online od 26. 8. 2026. |
 | plavani-sporthorice | Sportovní zařízení města Hořice – plavecké kroužky | jine | https://www.sporthorice.cz | https://www.sporthorice.cz/plavecke-krouzky/ ; https://www.sporthorice.cz/plavecky-oddil-rejnok/ | https://rezervace.sporthorice.cz | 6 kurzů + oddíl Rejnok, 2026/27, věk, čas, cena. |
 | florbal-horice | FBK Hořice, z.s. | sportovni-klub | https://www.florbalhorice.cz | https://www.florbalhorice.cz/treninky | https://www.florbalhorice.cz/pridej-se-k-nam | Asi 19 mládežnických skupin, ročníky narození, nábor od 2. 9. 2026. Bez cen. |
 | zus-horice | Základní umělecká škola Hořice | zus | https://zushorice.cz | https://zushorice.cz/o-skole/studium/ | https://zushorice.cz/o-skole/prihlaska/ | Ceník 2026/27: https://zushorice.cz/o-skole/cenik-skolneho/. Zápis byl v červnu 2026. Stránka „Studium“ má v nadpisu ještě 2024/2025. |
@@ -38,6 +38,21 @@
 - **Rebels Gym:** u Gymčat je „Kapacita: 0“, nejasné, zda jde o obsazený kurz.
 - **Volejbal a SPV:** k dispozici jen stránka na webu města, chybí časy a ceny.
 - **Osobní kontakty** (telefony trenérů, ředitelů, WhatsApp, osobní e-maily) záměrně vynechány.
+
+## Poznámky ze sběru (2026-10-19) – DDM po jednotlivých kroužcích
+
+- Souhrnná aktivita `ddm-horice-krouzky` byla nahrazena **63 samostatnými kroužky** (id `ddm-horice-{slug z webu}`). Údaje jsou z detailů kroužků, popisy jsou přepsané vlastními slovy.
+- **Vynecháno 17 kroužků jen pro dospělé:** Fit dance, H.I.I.T. (2×), Maminky v kondici, Francouzština, Cvičení s Ditou, Italština, Cvičení s Ivou, Angličtina na cesty, Keramika pondělní (senioři), Zdravotní cvičení, Keramika pro dospělé, Scrapbooking, Latina pro ženy, Kurz šití pro dospělé, Pole dance (2×).
+- Horní hranice věku nad 26 let (kytara, ukulele, paličkování, keramika 14+) je uložená jako „bez horní hranice“, protože schéma povoluje nejvýš 26.
+- `pohlavi: divky` jen tam, kde popis výslovně říká dívky, holčičky nebo slečny (mažoretky a roztleskávačky PHOENIX, Tanečky pro Berušky, Formace kadetek).
+- Volná místa jsou v poznámce k přihlášce se stavem k 19. 10. 2026 – rychle stárnou.
+- **Rozpory:**
+  - Novinka na hlavní stránce: „pravidelná činnost začíná od 29. října 2026“, ale detaily kroužků uvádějí zahájení od 14. 9. do 13. 10. 2026. Použita data z detailů.
+  - Judo pokročilí: popis „oba dny 16:00–17:30“, rozvrh ve čtvrtek 16:00–17:00. Použit rozvrh, rozpor je v poznámce aktivity.
+  - Mažoretky a roztleskávačky PHOENIX Kadetky: rozvrh uvádí tři dny s širokými časovými rozmezími, popis „2× týdně, středa jednou za 14 dní, přesné časy v září“. Použit rozvrh s poznámkou.
+  - Juniorky PHOENIX: místo „ZŠ Na Habru“, ale popis uvádí pondělí v Sokolovně. Pondělí má v rozvrhu vlastní místo.
+  - Kuželky: rozvrh uvádí pondělí i středu, ve skutečnosti jen jeden den podle domluvy (v poznámce).
+- Formace PHOENIX (seniorky), Formace kadetek a Formace Little kadetky nemají vyplněné datum zahájení a ukončení.
 
 ## Tipy od uživatele – čekají na hromadný import
 
