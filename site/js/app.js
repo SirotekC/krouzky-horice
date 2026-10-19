@@ -3,13 +3,24 @@
 import { KATEGORIE, SKUPINY_KATEGORII, nactiData, statistiky } from './data.js';
 import { POHLAVI_FILTRU, STAVY_FILTRU, filtruj, prazdneFiltry, seradi } from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
-import { chybovyStav, el, nastavOdkazy, pocetKrouzku, prazdnyStav, radekStatistik, seznamKaret } from './render.js';
-import { filtryDoUrl, filtryZUrl } from './url-state.js';
+import {
+  chybovyStav,
+  detailAktivity,
+  el,
+  nastavOdkazy,
+  nenalezenaAktivita,
+  pocetKrouzku,
+  prazdnyStav,
+  radekStatistik,
+  seznamKaret,
+} from './render.js';
+import { cestaZHashe, filtryDoUrl, filtryZUrl } from './url-state.js';
 
 const DEBOUNCE_MS = 150;
 const DESKTOP = '(min-width: 900px)';
 
 const $ = (selektor) => document.querySelector(selektor);
+const TITULEK = document.title;
 
 function sbalitelneFiltry() {
   const panel = $('#filtry-panel');
@@ -155,7 +166,46 @@ async function spust() {
   // Filtry bereme z formuláře, aby odpovídaly tomu, co je vidět (např. skupina, která v datech není).
   let filtry = prectiFormular(form);
 
+  const rozvrzeni = $('.rozvrzeni');
+  let cesta = cestaZHashe(window.location.hash) ?? { typ: 'seznam' };
+
+  /** Odkaz zpět na seznam; zachová filtry z URL a posune se na kartu, ze které uživatel přišel. */
+  const odkazZpet = (id) => {
+    const odkaz = el('a', {
+      trida: 'detail__zpet',
+      text: '← Všechny kroužky',
+      atributy: { href: `${window.location.pathname}${window.location.search}` },
+    });
+    odkaz.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.history.pushState(null, '', `${window.location.pathname}${window.location.search}`);
+      cesta = { typ: 'seznam' };
+      prekresli();
+      const karta = id && document.getElementById(`aktivita-${id}`);
+      if (karta) karta.scrollIntoView({ block: 'center' });
+      else window.scrollTo(0, 0);
+      (karta?.querySelector('.karta__nazev a') ?? $('#vysledky')).focus({ preventScroll: true });
+    });
+    return odkaz;
+  };
+
+  const vykresliDetail = () => {
+    const aktivita = data.aktivity.find((a) => a.id === cesta.id);
+    rozvrzeni.classList.add('rozvrzeni--detail');
+    pocet.textContent = '';
+    if (aktivita) {
+      document.title = `${aktivita.nazev} – Kroužky Hořice`;
+      seznam.replaceChildren(detailAktivity(aktivita, dnes, odkazZpet(aktivita.id)));
+    } else {
+      document.title = `Kroužek nenalezen – Kroužky Hořice`;
+      seznam.replaceChildren(nenalezenaAktivita(odkazZpet(null)));
+    }
+  };
+
   const prekresli = () => {
+    if (cesta.typ === 'aktivita') return vykresliDetail();
+    rozvrzeni.classList.remove('rozvrzeni--detail');
+    document.title = TITULEK;
     const vysledky = seradi(filtruj(data.aktivity, filtry, kontext), dnes);
     if (vysledky.length) {
       pocet.textContent = `Nalezeno ${pocetKrouzku(vysledky.length)}`;
@@ -197,6 +247,25 @@ async function spust() {
   form.addEventListener('reset', (e) => {
     e.preventDefault();
     zrusFiltry();
+  });
+
+  window.addEventListener('hashchange', () => {
+    const nova = cestaZHashe(window.location.hash);
+    // Ostatní kotvy (např. „Přeskočit na výsledky“) zobrazení nemění.
+    if (!nova) return;
+    cesta = nova;
+    prekresli();
+    if (cesta.typ === 'aktivita') {
+      window.scrollTo(0, 0);
+      $('#vysledky').focus({ preventScroll: true });
+    }
+  });
+  // Tlačítko zpět v prohlížeči po návratu na seznam přes „← Všechny kroužky“.
+  window.addEventListener('popstate', () => {
+    const nova = cestaZHashe(window.location.hash);
+    if (!nova || (nova.typ === cesta.typ && nova.id === cesta.id)) return;
+    cesta = nova;
+    prekresli();
   });
 
   prekresli();

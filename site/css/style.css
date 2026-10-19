@@ -673,3 +673,55 @@ select {
     transition: none !important;
   }
 }
+
+/* Detail jedné aktivity (#/aktivita/{id}) */
+
+.rozvrzeni--detail .filtry {
+  display: none;
+}
+
+.detail {
+  display: grid;
+  gap: var(--mezera);
+  max-width: 42rem;
+}
+
+.detail__zpet {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-weight: 600;
+}
+
+.karta__nazev a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.karta__nazev a:hover {
+  text-decoration: underline;
+}
+
+.sdilet {
+  min-height: 2.75rem;
+  margin-left: auto;
+  padding: 0 0.25rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--akcent);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (min-width: 900px) {
+  .rozvrzeni--detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rozvrzeni--detail .vysledky__pocet {
+  display: none;
+}

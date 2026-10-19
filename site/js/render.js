@@ -4,8 +4,10 @@
 import { CHYBA_URL, REPO_URL } from './config.js';
 import { KATEGORIE, POHLAVI } from './data.js';
 import { cisloDne, formatDatum, formatObdobi, stavPrihlasky } from './registration.js';
+import { odkazNaAktivitu } from './url-state.js';
 
 const ZASTARALE_DNI = 90;
+const POTVRZENI_MS = 2500;
 
 const DNY = { po: 'Po', ut: 'Út', st: 'St', ct: 'Čt', pa: 'Pá', so: 'So', ne: 'Ne' };
 const DNY_CELE = { po: 'Pondělí', ut: 'Úterý', st: 'Středa', ct: 'Čtvrtek', pa: 'Pátek', so: 'Sobota', ne: 'Neděle' };
@@ -184,7 +186,7 @@ export function kartaAktivity(a, dnes) {
   const hlavicka = el(
     'header',
     { trida: 'karta__hlavicka' },
-    el('h3', { trida: 'karta__nazev', text: a.nazev }),
+    el('h3', { trida: 'karta__nazev' }, el('a', { text: a.nazev, atributy: { href: odkazNaAktivitu(a.id) } })),
     el('p', { trida: 'karta__organizace', text: a.organizace?.nazev ?? a.organizace_id }),
     el('p', { trida: `stav stav--${stav.stav}` }, el('span', { trida: 'jen-ctecka', text: 'Stav přihlášek: ' }), stav.text),
   );
@@ -221,6 +223,7 @@ export function kartaAktivity(a, dnes) {
     el('span', {}, 'Zdroj: ', externiOdkaz(a.zdroj_url, domena(a.zdroj_url))),
     el('span', { text: `Ověřeno ${formatDatum(a.overeno)}` }),
     stari > ZASTARALE_DNI ? el('span', { trida: 'zastarale', text: 'Údaje mohou být zastaralé' }) : null,
+    tlacitkoSdilet(a),
   );
 
   return el(
@@ -232,6 +235,69 @@ export function kartaAktivity(a, dnes) {
     udaje,
     prihlaska,
     paticka,
+  );
+}
+
+/** Úplná adresa detailu aktivity bez filtrů, např. `https://…/krouzky-horice/#/aktivita/{id}`. */
+function adresaAktivity(id) {
+  return `${window.location.origin}${window.location.pathname}${odkazNaAktivitu(id)}`;
+}
+
+/**
+ * Tlačítko pro sdílení odkazu na aktivitu. Na mobilu otevře systémové sdílení,
+ * jinde odkaz zkopíruje do schránky. Když nejde ani jedno, otevře detail, aby šel
+ * odkaz zkopírovat z adresního řádku.
+ */
+function tlacitkoSdilet(a) {
+  const popisek = 'Sdílet odkaz';
+  const tlacitko = el('button', {
+    trida: 'sdilet',
+    text: popisek,
+    atributy: { type: 'button', 'aria-label': `Sdílet odkaz na kroužek ${a.nazev}` },
+  });
+  const potvrd = (text) => {
+    tlacitko.textContent = text;
+    setTimeout(() => {
+      tlacitko.textContent = popisek;
+    }, POTVRZENI_MS);
+  };
+  tlacitko.addEventListener('click', async () => {
+    const url = adresaAktivity(a.id);
+    if (navigator.share && window.matchMedia('(pointer: coarse)').matches) {
+      try {
+        await navigator.share({ title: `${a.nazev} – Kroužky Hořice`, url });
+        return;
+      } catch (chyba) {
+        // Uživatel sdílení zavřel.
+        if (chyba?.name === 'AbortError') return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      potvrd('Odkaz zkopírován');
+    } catch {
+      window.location.hash = odkazNaAktivitu(a.id);
+    }
+  });
+  return tlacitko;
+}
+
+/** Detail jedné aktivity s odkazem zpět na seznam. */
+export function detailAktivity(a, dnes, odkazZpet) {
+  return el('div', { trida: 'detail' }, odkazZpet, kartaAktivity(a, dnes));
+}
+
+/** Stav pro odkaz na aktivitu, která neexistuje (např. byla smazána). */
+export function nenalezenaAktivita(odkazZpet) {
+  return el(
+    'div',
+    { trida: 'detail' },
+    odkazZpet,
+    el(
+      'div',
+      { trida: 'stav-stranky' },
+      el('p', { text: 'Tento kroužek jsme nenašli. Možná už se nekoná nebo se změnil odkaz.' }),
+    ),
   );
 }
 

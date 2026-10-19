@@ -57,3 +57,30 @@ export function filtryDoUrl(filtry) {
   if (filtry.pohlavi) casti.push(`pohlavi=${encodeURIComponent(filtry.pohlavi)}`);
   return casti.length ? `?${casti.join('&')}` : '';
 }
+
+const PREFIX_AKTIVITY = '#/aktivita/';
+
+/** Odkaz (hash) na detail jedné aktivity, např. `#/aktivita/zus-horice-klavir`. */
+export function odkazNaAktivitu(id) {
+  return `${PREFIX_AKTIVITY}${encodeURIComponent(id)}`;
+}
+
+/**
+ * Přečte cestu z `location.hash`.
+ * - `{ typ: 'seznam' }` pro prázdný hash,
+ * - `{ typ: 'aktivita', id }` pro `#/aktivita/{id}` (id ve tvaru `a-z0-9-`, jinak `id: null` = nenalezeno),
+ * - `null` pro ostatní kotvy (např. `#vysledky`), které zobrazení nemění.
+ * @param {string} hash
+ */
+export function cestaZHashe(hash) {
+  if (!hash || hash === '#' || hash === '#/') return { typ: 'seznam' };
+  if (!hash.startsWith('#/')) return null;
+  if (!hash.startsWith(PREFIX_AKTIVITY)) return { typ: 'aktivita', id: null };
+  let id;
+  try {
+    id = decodeURIComponent(hash.slice(PREFIX_AKTIVITY.length)).replace(/\/$/, '');
+  } catch {
+    id = '';
+  }
+  return { typ: 'aktivita', id: VZOR_ID.test(id) ? id : null };
+}

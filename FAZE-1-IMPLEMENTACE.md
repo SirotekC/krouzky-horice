@@ -495,7 +495,7 @@ Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy
 
 ## 9. Navazující fáze (mimo rozsah, jen pro orientaci)
 
-- **Fáze 2:** mapa (Leaflet + OSM, využije `misto.gps`), detail aktivity, filtr dne v týdnu, export do .ics.
+- **Fáze 2:** detail aktivity, filtr dne v týdnu, export do .ics. Mapa (Leaflet + OSM, využije `misto.gps`) je přesunutá do možných rozšíření s nejnižší prioritou.
 - **Fáze 3:** skript pro monitoring změn zdrojů (hash obsahu), denní cron v GitHub Actions a issue při změně.
 - **Fáze 4:** AI extrakce změněných stránek (Claude API) do JSON, validace a pull request ke schválení.
 

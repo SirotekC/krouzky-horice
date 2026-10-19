@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { prazdneFiltry } from '../site/js/filters.js';
-import { filtryDoUrl, filtryZUrl } from '../site/js/url-state.js';
+import { cestaZHashe, filtryDoUrl, filtryZUrl, odkazNaAktivitu } from '../site/js/url-state.js';
 
 test('převod URL tam a zpět', () => {
   const filtry = { q: 'klavír', vek: 8, skup: 'umeni', kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
@@ -56,4 +56,21 @@ test('skupina kategorií a podkategorie mimo skupinu', () => {
   assert.deepEqual(filtryZUrl('?skup=sport&kat=hudba,plavani'), { ...prazdneFiltry(), skup: 'sport', kat: ['plavani'] });
   // Starší odkaz bez skupiny: skupina se odvodí z první kategorie.
   assert.deepEqual(filtryZUrl('?kat=plavani,hudba'), { ...prazdneFiltry(), skup: 'sport', kat: ['plavani'] });
+});
+
+test('odkaz na aktivitu tam a zpět', () => {
+  assert.equal(odkazNaAktivitu('zus-horice-klavir'), '#/aktivita/zus-horice-klavir');
+  assert.deepEqual(cestaZHashe(odkazNaAktivitu('zus-horice-klavir')), { typ: 'aktivita', id: 'zus-horice-klavir' });
+  assert.deepEqual(cestaZHashe('#/aktivita/zus-horice-klavir/'), { typ: 'aktivita', id: 'zus-horice-klavir' });
+});
+
+test('prázdný hash je seznam, ostatní kotvy zobrazení nemění', () => {
+  for (const hash of ['', '#', '#/']) assert.deepEqual(cestaZHashe(hash), { typ: 'seznam' });
+  assert.equal(cestaZHashe('#vysledky'), null);
+});
+
+test('neplatná cesta nebo id vede na „nenalezeno“', () => {
+  for (const hash of ['#/neco', '#/aktivita/', '#/aktivita/<script>', '#/aktivita/%E0%A4%A', '#/aktivita/Velka']) {
+    assert.deepEqual(cestaZHashe(hash), { typ: 'aktivita', id: null }, hash);
+  }
 });

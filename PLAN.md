@@ -95,7 +95,7 @@ Nejdůležitější pole aktivity: `nazev`, `organizace_id`, `kategorie`, `vek_o
 |---|---|---|
 | Frontend | HTML, CSS, čistý JavaScript (ES moduly) bez build kroku | Nejjednodušší, bez závislostí, snadno pochopitelné |
 | Vyhledávání | Vlastní normalizace (bez diakritiky, malá písmena), později případně Fuse.js | Pro stovky záznamů stačí |
-| Mapa (fáze 2) | Leaflet + OpenStreetMap | Zdarma, bez API klíče |
+| Mapa (možné rozšíření) | Leaflet + OpenStreetMap | Zdarma, bez API klíče |
 | Validace dat | JSON Schema + Node.js skript (`ajv`) | Kontrola v CI při každém pushi |
 | CI/CD | GitHub Actions | Zdarma pro veřejné repozitáře |
 | Hosting | GitHub Pages | Zdarma |
@@ -125,12 +125,12 @@ Nejdůležitější pole aktivity: `nazev`, `organizace_id`, `kategorie`, `vek_o
 
 ### Fáze 2: Vylepšení frontendu
 
-- Mapa aktivit (Leaflet).
-- Detail aktivity na samostatné URL (`#/aktivita/{id}`).
+- Detail aktivity na samostatné URL (`#/aktivita/{id}`), odkaz lze sdílet. *(Hotovo 2026-10-19: odkaz v názvu karty a tlačítko „Sdílet odkaz“.)*
 - Filtry uložené v URL, takže odkaz lze sdílet.
 - Zvýraznění „Přihlášky probíhají / končí za X dní“.
 - Den v týdnu jako filtr (vyžaduje strukturované termíny).
 - ~~Export do kalendáře (.ics) pro termíny přihlášek.~~ Zatím odloženo (rozhodnutí 2026-10-13).
+- ~~Mapa aktivit.~~ Přesunuto do možných rozšíření (rozhodnutí 2026-10-19).
 
 ### Fáze 3: Automatický monitoring zdrojů
 
@@ -159,6 +159,10 @@ Nejdůležitější pole aktivity: `nazev`, `organizace_id`, `kategorie`, `vek_o
 - Stránka „O projektu“, kontakt, informace o zdrojích a ochraně údajů.
 - Oslovení spolků a radnice, aby data posílaly samy.
 - Podpora více měst (stejný kód, jiná konfigurace a data).
+
+### Možná rozšíření (nejnižší priorita, až nakonec)
+
+- Mapa aktivit (Leaflet + OpenStreetMap, využije `misto.gps`). Přesunuto z fáze 2 (rozhodnutí 2026-10-19).
 
 ---
 
