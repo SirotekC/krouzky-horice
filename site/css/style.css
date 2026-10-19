@@ -1,54 +1,90 @@
-/* Kroužky – styly. Mobile first, tmavý režim přes prefers-color-scheme. */
+/* Kroužky – styly. Mobile first, tmavý režim přes prefers-color-scheme.
+   Barvy a písmo podle identity Čenda S. (varianta C, viz značka/vyber/VYBER.md). */
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url("../fonts/nunito-sans-latin-ext-wght-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url("../fonts/nunito-sans-latin-wght-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 :root {
   color-scheme: light dark;
 
-  --pozadi: #f6f7f9;
+  /* Paleta značky */
+  --znacka-tmava: #2f4a3f;
+  --znacka-tepla: #b98a6a;
+  --znacka-salvej: #8a9b8e;
+  --znacka-svetla: #e8dcc8;
+
+  --pozadi: #f6f5f0;
   --povrch: #ffffff;
-  --text: #1c2430;
-  --text-tlumeny: #4f5b6b;
-  --okraj: #d6dbe2;
-  --akcent: #1f5f8b;
+  --text: #2f4a3f;
+  --text-tlumeny: #55665d;
+  --okraj: #e8dcc8;
+  --okraj-pole: #6f8075;
+  --akcent: #2f4a3f;
   --akcent-text: #ffffff;
-  --akcent-jemny: #e4eef6;
-  --focus: #c25e00;
+  --akcent-jemny: #efe7da;
+  --zvyrazneni: #b98a6a;
+  --focus: #9a6a48;
 
-  --probiha-pozadi: #dff3e5;
-  --probiha-text: #14532d;
-  --brzy-pozadi: #fdecd5;
-  --brzy-text: #7a3a00;
-  --prubezne-pozadi: #dde9fa;
-  --prubezne-text: #173f7a;
-  --sedy-pozadi: #e9ecf0;
-  --sedy-text: #3c4654;
-  --varovani-text: #7a3a00;
+  --probiha-pozadi: #dcebdf;
+  --probiha-text: #1f4a30;
+  --brzy-pozadi: #f4e3d3;
+  --brzy-text: #6b3f1f;
+  --prubezne-pozadi: #dfe7ef;
+  --prubezne-text: #2c4560;
+  --sedy-pozadi: #eceae3;
+  --sedy-text: #4a5550;
+  --varovani-text: #8a4a1c;
 
-  --polomer: 10px;
-  --stin: 0 1px 2px rgb(16 24 40 / 6%), 0 1px 3px rgb(16 24 40 / 8%);
+  --paticka-pozadi: #2f4a3f;
+  --paticka-text: #e8dcc8;
+
+  --polomer: 12px;
+  --polomer-maly: 8px;
+  --stin: 0 1px 2px rgb(47 74 63 / 6%);
   --mezera: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --pozadi: #12161c;
-    --povrch: #1b2129;
-    --text: #e7ebf0;
-    --text-tlumeny: #a9b3c1;
-    --okraj: #323b47;
-    --akcent: #7cb8e4;
-    --akcent-text: #0b1620;
-    --akcent-jemny: #1d3346;
-    --focus: #ffb056;
+    --pozadi: #1f2e28;
+    --povrch: #2a3d35;
+    --text: #ede6da;
+    --text-tlumeny: #b9c2bb;
+    --okraj: #3e5a4e;
+    --okraj-pole: #8a9b8e;
+    --akcent: #e8dcc8;
+    --akcent-text: #1f2e28;
+    --akcent-jemny: #34493f;
+    --zvyrazneni: #d2a888;
+    --focus: #d2a888;
 
-    --probiha-pozadi: #15381f;
-    --probiha-text: #b5ecc5;
-    --brzy-pozadi: #43290b;
-    --brzy-text: #ffd29e;
-    --prubezne-pozadi: #182c4a;
-    --prubezne-text: #bcd5fb;
-    --sedy-pozadi: #2a313b;
-    --sedy-text: #c5cdd8;
-    --varovani-text: #ffd29e;
+    --probiha-pozadi: #1e4430;
+    --probiha-text: #cde8d3;
+    --brzy-pozadi: #4a3020;
+    --brzy-text: #f4d6bc;
+    --prubezne-pozadi: #22364a;
+    --prubezne-text: #cfddec;
+    --sedy-pozadi: #34433c;
+    --sedy-text: #d0d6d2;
+    --varovani-text: #f0be94;
+
+    --paticka-pozadi: #18241f;
+    --paticka-text: #e8dcc8;
 
     --stin: none;
   }
@@ -66,9 +102,9 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Nunito Sans", Arial, sans-serif;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text);
   background: var(--pozadi);
 }
@@ -113,7 +149,7 @@ a {
 
 .obal {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1160px;
   margin-inline: auto;
   padding-inline: var(--mezera);
 }
@@ -134,9 +170,24 @@ a {
   padding-block: 1rem;
 }
 
+.hlavicka__znacka {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hlavicka__logo {
+  display: block;
+  flex: none;
+  width: 2.5rem;
+  height: auto;
+}
+
 .hlavicka__nazev {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 800;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .hlavicka__nazev a {
@@ -146,6 +197,10 @@ a {
 
 .hlavicka__podtitul {
   color: var(--text-tlumeny);
+}
+
+.hlavicka nav a {
+  font-weight: 600;
 }
 
 /* Rozvržení */
@@ -213,8 +268,8 @@ select {
   font: inherit;
   color: var(--text);
   background: var(--povrch);
-  border: 1px solid var(--text-tlumeny);
-  border-radius: 8px;
+  border: 1px solid var(--okraj-pole);
+  border-radius: var(--polomer-maly);
 }
 
 .chipy {
@@ -237,7 +292,7 @@ select {
 .chipy--pod {
   margin-top: 0.5rem;
   padding-left: 0.75rem;
-  border-left: 3px solid var(--akcent);
+  border-left: 3px solid var(--zvyrazneni);
 }
 
 .chipy--pod .chip span {
@@ -256,7 +311,7 @@ select {
 .chip span {
   display: inline-block;
   padding: 0.35rem 0.75rem;
-  border: 1px solid var(--text-tlumeny);
+  border: 1px solid var(--okraj-pole);
   border-radius: 999px;
   font-size: 0.9rem;
   background: var(--povrch);
@@ -292,7 +347,7 @@ select {
   color: var(--akcent-text);
   background: var(--akcent);
   border: 1px solid var(--akcent);
-  border-radius: 8px;
+  border-radius: var(--polomer-maly);
   cursor: pointer;
 }
 
@@ -515,9 +570,30 @@ select {
 
 .paticka {
   padding-block: 1.5rem 2rem;
-  background: var(--povrch);
-  border-top: 1px solid var(--okraj);
+  background: var(--paticka-pozadi);
+  color: var(--paticka-text);
   font-size: 0.95rem;
+}
+
+.paticka a {
+  color: inherit;
+}
+
+.paticka :focus-visible {
+  outline-color: var(--paticka-text);
+}
+
+/* „Projekt Čenda S.“ – označení autora podle pravidel značky. */
+.paticka__znacka {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.paticka__znacka img {
+  width: 1.5rem;
+  height: auto;
 }
 
 .paticka .obal {

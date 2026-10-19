@@ -298,7 +298,7 @@ Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy
 
 ### 5.5 Vzhled
 
-- Čistý, vzdušný design. Systémové písmo (`system-ui`).
+- Čistý, vzdušný design podle identity **Čenda S.** *(změněno 2026-10-19)*: písmo Nunito Sans uložené přímo na webu (`site/fonts/`, licence OFL; žádné Google Fonts), barvy varianty C z `../značka/vyber/VYBER.md`, logo v hlavičce (`site/img/logo.svg`, v tmavém režimu `logo-negativni.svg`), v patičce „Projekt Čenda S.“.
 - CSS proměnné na `:root` pro barvy. Podpora tmavého režimu přes `prefers-color-scheme`.
 - Barvy stavů (vždy doplněné textem):
   - `probiha` zelená,

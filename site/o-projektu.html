@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>O projektu – Kroužky Hořice</title>
   <meta name="description" content="Co je projekt Kroužky Hořice, odkud bereme údaje, jak nahlásit chybu a jak zacházíme s osobními údaji.">
-  <meta name="theme-color" content="#1f5f8b">
+  <meta name="theme-color" content="#2f4a3f">
   <meta property="og:type" content="website">
   <meta property="og:title" content="O projektu – Kroužky Hořice">
   <meta property="og:description" content="Odkud bereme údaje o kroužcích pro děti v Hořicích a jak nahlásit chybu.">
   <meta property="og:locale" content="cs_CZ">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/nunito-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/o-projektu.js"></script>
 </head>
@@ -19,9 +20,15 @@
 
   <header class="hlavicka">
     <div class="obal hlavicka__obsah">
-      <div>
-        <p class="hlavicka__nazev"><a href="./">Kroužky Hořice</a></p>
-        <p class="hlavicka__podtitul">Všechny kroužky pro děti na jednom místě</p>
+      <div class="hlavicka__znacka">
+        <picture>
+          <source srcset="img/logo-negativni.svg" media="(prefers-color-scheme: dark)">
+          <img class="hlavicka__logo" src="img/logo.svg" alt="" width="40" height="47">
+        </picture>
+        <div>
+          <p class="hlavicka__nazev"><a href="./">Kroužky Hořice</a></p>
+          <p class="hlavicka__podtitul">Všechny kroužky pro děti na jednom místě</p>
+        </div>
       </div>
       <nav aria-label="Hlavní">
         <a href="./">Přehled kroužků</a>
@@ -66,6 +73,7 @@
         <a href="./">Přehled kroužků</a>
         <a data-odkaz="repo" hidden>Zdrojový kód</a>
       </p>
+      <p class="paticka__znacka"><img src="img/logo-negativni.svg" alt="" width="24" height="28"> <span>Projekt <strong>Čenda S.</strong></span></p>
     </div>
   </footer>
 </body>
