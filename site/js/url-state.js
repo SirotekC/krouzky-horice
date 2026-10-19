@@ -5,10 +5,15 @@ import { POHLAVI_FILTRU, STAVY_FILTRU, prazdneFiltry } from './filters.js';
 
 const VZOR_ID = /^[a-z0-9-]+$/;
 
+/** Skupiny bez duplicit v pořadí podle `SKUPINY_KATEGORII`, aby URL byla stabilní. */
+function poradiSkupin(skupiny) {
+  return Object.keys(SKUPINY_KATEGORII).filter((k) => skupiny.includes(k));
+}
+
 /**
- * Načte filtry z query stringu (např. `?q=klavir&vek=8&skup=umeni&kat=hudba,tanec&org=zus&stav=probiha&pohlavi=divky`).
- * Neplatné hodnoty tiše ignoruje. Podkategorie (`kat`) musí patřit do vybrané skupiny (`skup`);
- * chybí-li skupina, odvodí se z první platné kategorie (kvůli starším odkazům).
+ * Načte filtry z query stringu (např. `?q=klavir&vek=8&skup=umeni,sport&kat=hudba,tanec&org=zus&stav=probiha&pohlavi=divky`).
+ * Neplatné hodnoty tiše ignoruje. Podkategorie (`kat`) musí patřit do některé z vybraných skupin (`skup`);
+ * chybí-li skupiny, odvodí se z platných kategorií (kvůli starším odkazům).
  * @param {string} search obsah `location.search`
  * @param {string[] | null} platneOrganizace pokud je zadáno, `org` mimo seznam se ignoruje
  */
@@ -23,13 +28,13 @@ export function filtryZUrl(search, platneOrganizace = null) {
   if (vek !== null && /^\d{1,2}$/.test(vek) && Number(vek) <= 26) filtry.vek = Number(vek);
 
   const skup = parametry.get('skup');
-  if (skup && Object.hasOwn(SKUPINY_KATEGORII, skup)) filtry.skup = skup;
+  if (skup) filtry.skup = poradiSkupin(skup.split(',').filter((k) => Object.hasOwn(SKUPINY_KATEGORII, k)));
 
   const kat = parametry.get('kat');
   if (kat) {
     const platne = [...new Set(kat.split(','))].filter((k) => skupinaKategorie(k) !== null);
-    if (!filtry.skup && platne.length) filtry.skup = skupinaKategorie(platne[0]);
-    filtry.kat = platne.filter((k) => skupinaKategorie(k) === filtry.skup);
+    if (!filtry.skup.length) filtry.skup = poradiSkupin(platne.map(skupinaKategorie));
+    filtry.kat = platne.filter((k) => filtry.skup.includes(skupinaKategorie(k)));
   }
 
   const org = parametry.get('org');
@@ -50,7 +55,7 @@ export function filtryDoUrl(filtry) {
   const q = filtry.q?.trim();
   if (q) casti.push(`q=${encodeURIComponent(q)}`);
   if (Number.isInteger(filtry.vek)) casti.push(`vek=${filtry.vek}`);
-  if (filtry.skup) casti.push(`skup=${encodeURIComponent(filtry.skup)}`);
+  if (filtry.skup?.length) casti.push(`skup=${filtry.skup.map(encodeURIComponent).join(',')}`);
   if (filtry.kat?.length) casti.push(`kat=${filtry.kat.map(encodeURIComponent).join(',')}`);
   if (filtry.org) casti.push(`org=${encodeURIComponent(filtry.org)}`);
   if (filtry.stav) casti.push(`stav=${encodeURIComponent(filtry.stav)}`);

@@ -22,7 +22,7 @@ export const POHLAVI_FILTRU = Object.freeze({
 
 /** Prázdné filtry. */
 export function prazdneFiltry() {
-  return { q: '', vek: null, skup: '', kat: [], org: '', stav: '', pohlavi: '' };
+  return { q: '', vek: null, skup: [], kat: [], org: '', stav: '', pohlavi: '' };
 }
 
 /** Malá písmena bez diakritiky, např. „Klavír“ → „klavir“. */
@@ -51,18 +51,27 @@ function odpovidaVeku(aktivita, vek) {
 }
 
 /**
- * Kategorie, kterým musí aktivita odpovídat (alespoň jedné): vybrané podkategorie,
- * jinak všechny kategorie vybrané skupiny. Prázdná množina znamená bez omezení.
+ * Kategorie, kterým musí aktivita odpovídat (alespoň jedné). Za každou vybranou skupinu se vezmou
+ * její vybrané podkategorie, a pokud žádné nejsou, celá skupina; výsledky skupin se sečtou.
+ * Bez vybrané skupiny platí přímo `kat`. Prázdná množina znamená bez omezení.
  */
 function hledaneKategorie(filtry) {
-  if (filtry.kat?.length) return new Set(filtry.kat);
-  return new Set(SKUPINY_KATEGORII[filtry.skup]?.kategorie ?? []);
+  const kat = filtry.kat ?? [];
+  const skup = filtry.skup ?? [];
+  if (!skup.length) return new Set(kat);
+  const vysledek = new Set();
+  for (const klic of skup) {
+    const vSkupine = SKUPINY_KATEGORII[klic]?.kategorie ?? [];
+    const vybrane = vSkupine.filter((k) => kat.includes(k));
+    for (const k of vybrane.length ? vybrane : vSkupine) vysledek.add(k);
+  }
+  return vysledek;
 }
 
 /**
- * Vrátí aktivity odpovídající filtrům. Mezi skupinami filtrů platí AND, v kategoriích OR.
+ * Vrátí aktivity odpovídající filtrům. Mezi skupinami filtrů platí AND, ve skupinách zaměření a kategoriích OR.
  * @param {object[]} aktivity aktivity s vlastností `organizace` (viz `pripravData`)
- * @param {{ q?: string, vek?: number|null, skup?: string, kat?: string[], org?: string, stav?: string }} filtry
+ * @param {{ q?: string, vek?: number|null, skup?: string[], kat?: string[], org?: string, stav?: string }} filtry
  * @param {{ dnes: string, kategorie?: Record<string, string> }} kontext
  */
 export function filtruj(aktivity, filtry, kontext) {
@@ -99,5 +108,5 @@ export function seradi(aktivity, dnes) {
 
 /** Jsou všechny filtry prázdné? */
 export function jsouPrazdne(filtry) {
-  return !filtry.q && filtry.vek == null && !filtry.skup && !(filtry.kat?.length) && !filtry.org && !filtry.stav && !filtry.pohlavi;
+  return !filtry.q && filtry.vek == null && !(filtry.skup?.length) && !(filtry.kat?.length) && !filtry.org && !filtry.stav && !filtry.pohlavi;
 }

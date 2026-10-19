@@ -300,11 +300,32 @@ select {
   display: none;
 }
 
-/* Podkategorie vybrané skupiny: menší a odsazené, aby bylo vidět, že skupinu upřesňují. */
+/* Podkategorie vybraných skupin: menší a odsazené, aby bylo vidět, že skupinu upřesňují. */
+.podkategorie[hidden] {
+  display: none;
+}
+
+/* Každá skupina má vlastní podbarvený rámeček s nadpisem, aby se řádky více skupin neslévaly. */
 .chipy--pod {
-  margin-top: 0.5rem;
-  padding-left: 0.75rem;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.6rem 0.6rem;
+  background: var(--akcent-jemny);
+  background: color-mix(in srgb, var(--akcent-jemny) 30%, var(--povrch));
   border-left: 3px solid var(--zvyrazneni);
+  border-radius: 0 var(--polomer-maly) var(--polomer-maly) 0;
+}
+
+.chipy__nadpis {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.chipy__nadpis::before {
+  content: "↳ ";
+  color: var(--zvyrazneni);
 }
 
 .chipy--pod .chip span {

@@ -39,12 +39,15 @@ function chip(typ, jmeno, hodnota, popisek) {
   return el('label', { trida: 'chip' }, vstup, el('span', { text: popisek }));
 }
 
-/** Skupiny zaměření se vykreslí ještě před načtením dat, aby filtry pod nimi neposkočily. */
+/**
+ * Skupiny zaměření se vykreslí ještě před načtením dat, aby filtry pod nimi neposkočily.
+ * Skupin lze vybrat víc; „Vše“ není samostatná hodnota, jen svítí, když není vybraná žádná skupina.
+ */
 function vykresliSkupiny() {
   const skupiny = $('#f-skup');
-  skupiny.append(chip('radio', 'skup', '', 'Vše'));
+  skupiny.append(chip('checkbox', 'vse', '', 'Vše'));
   for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
-    skupiny.append(chip('radio', 'skup', klic, skupina.popisek));
+    skupiny.append(chip('checkbox', 'skup', klic, skupina.popisek));
   }
 }
 
@@ -60,11 +63,15 @@ function naplnFormular(data) {
     }
     // Upřesnění má smysl, jen když skupina obsahuje víc kategorií.
     if (kategorie.length < 2) continue;
-    for (const k of kategorie) {
-      const stitek = chip('checkbox', 'kat', k, KATEGORIE[k]);
-      stitek.dataset.skupina = klic;
-      podkategorie.append(stitek);
-    }
+    const radek = el(
+      'div',
+      { trida: 'chipy chipy--pod', atributy: { role: 'group', 'aria-label': `Upřesnit: ${skupina.popisek}` } },
+      el('span', { trida: 'chipy__nadpis', text: skupina.popisek }),
+      ...kategorie.map((k) => chip('checkbox', 'kat', k, KATEGORIE[k])),
+    );
+    radek.dataset.skupina = klic;
+    radek.hidden = true;
+    podkategorie.append(radek);
   }
 
   const porovnej = new Intl.Collator('cs').compare;
@@ -87,10 +94,8 @@ function naplnFormular(data) {
 function zapisDoFormulare(form, filtry) {
   form.q.value = filtry.q;
   form.vek.value = filtry.vek ?? '';
-  const skupiny = [...form.querySelectorAll('input[name="skup"]')];
-  // Skupina, která v datech není, se zobrazí jako „Vše“.
-  const vybrana = skupiny.find((v) => v.value === filtry.skup) ?? skupiny[0];
-  for (const vstup of skupiny) vstup.checked = vstup === vybrana;
+  // Skupina, která v datech není, se ignoruje.
+  for (const vstup of form.querySelectorAll('input[name="skup"]')) vstup.checked = filtry.skup.includes(vstup.value);
   for (const vstup of form.querySelectorAll('input[name="kat"]')) vstup.checked = filtry.kat.includes(vstup.value);
   zobrazPodkategorie(form);
   form.org.value = filtry.org;
@@ -98,19 +103,24 @@ function zapisDoFormulare(form, filtry) {
   form.pohlavi.value = filtry.pohlavi;
 }
 
-function vybranaSkupina(form) {
-  return form.querySelector('input[name="skup"]:checked')?.value ?? '';
+function vybraneSkupiny(form) {
+  return [...form.querySelectorAll('input[name="skup"]:checked')].map((v) => v.value);
 }
 
-/** Ukáže jen podkategorie vybrané skupiny; bez nich skryje celý řádek. */
+/**
+ * Ukáže řádky podkategorií jen u vybraných skupin; podkategorie skrytých řádků odškrtne,
+ * aby se po novém výběru skupina zobrazila celá. Nastaví také chip „Vše“.
+ */
 function zobrazPodkategorie(form) {
-  const skup = vybranaSkupina(form);
+  const skup = vybraneSkupiny(form);
   let viditelne = 0;
-  for (const stitek of $('#f-kat').children) {
-    stitek.hidden = stitek.dataset.skupina !== skup;
-    if (!stitek.hidden) viditelne++;
+  for (const radek of $('#f-kat').children) {
+    radek.hidden = !skup.includes(radek.dataset.skupina);
+    if (radek.hidden) for (const vstup of radek.querySelectorAll('input')) vstup.checked = false;
+    else viditelne++;
   }
   $('#f-kat').hidden = viditelne === 0;
+  form.vse.checked = skup.length === 0;
 }
 
 function prectiFormular(form) {
@@ -119,10 +129,8 @@ function prectiFormular(form) {
   return {
     q: form.q.value.trim(),
     vek: vek !== '' && Number.isInteger(vekCislo) && vekCislo >= 0 && vekCislo <= 26 ? vekCislo : null,
-    skup: vybranaSkupina(form),
-    kat: [...form.querySelectorAll('input[name="kat"]:checked')]
-      .filter((v) => v.closest('.chip').dataset.skupina === vybranaSkupina(form))
-      .map((v) => v.value),
+    skup: vybraneSkupiny(form),
+    kat: [...form.querySelectorAll('input[name="kat"]:checked')].map((v) => v.value),
     org: form.org.value,
     stav: form.stav.value,
     pohlavi: form.pohlavi.value,
@@ -233,11 +241,11 @@ async function spust() {
   const aktualizujSOdkladem = debounce(aktualizuj, DEBOUNCE_MS);
   form.addEventListener('input', (e) => {
     if (e.target.name === 'q') return aktualizujSOdkladem();
-    if (e.target.name === 'skup') {
-      // Nová skupina začíná bez upřesnění.
-      for (const vstup of form.querySelectorAll('input[name="kat"]')) vstup.checked = false;
-      zobrazPodkategorie(form);
+    if (e.target.name === 'vse') {
+      // „Vše“ zruší výběr skupin; odškrtnout samo o sobě nejde.
+      for (const vstup of form.querySelectorAll('input[name="skup"]')) vstup.checked = false;
     }
+    if (e.target.name === 'vse' || e.target.name === 'skup') zobrazPodkategorie(form);
     aktualizuj();
   });
   form.addEventListener('submit', (e) => {
