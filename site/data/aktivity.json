@@ -5444,5 +5444,169 @@
     "skolni_rok": null,
     "zdroj_url": "https://www.curlingjicin.cz/",
     "overeno": "2026-10-19"
+  },
+  {
+    "id": "kluho-bruslarska-skola",
+    "organizace_id": "kluho",
+    "nazev": "Bruslařská škola Hořice do bruslí",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Kurz bruslení pro začátečníky i pokročilé ve skupinách podle věku a dovedností. Vločky (4–7 let) hravou formou a s rodiči na ledě, Rampouchy (8–12 let) zdokonalují techniku. Vede tým trenérů.",
+    "vek_od": 4,
+    "vek_do": 12,
+    "misto": {
+      "nazev": "Městské kluziště Hořice",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": "Vločky A (4–7 let)",
+          "den": "st",
+          "casy": [
+            "15:15–16:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Rampouchy A (8–12 let)",
+          "den": "st",
+          "casy": [
+            "16:30–17:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Vločky B (4–7 let)",
+          "den": "so",
+          "casy": [
+            "9:30–10:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Rampouchy B (8–12 let)",
+          "den": "ne",
+          "casy": [
+            "9:30–10:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "8 lekcí, prosinec 2026 – únor 2027 (první lekce 2. 12. 2026)",
+      "poznamka": "Dítě chodí do jedné skupiny. Kapacita Vloček je 25 dětí, Rampouchů 30. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
+      "dny": [
+        "st",
+        "so",
+        "ne"
+      ]
+    },
+    "cena": {
+      "text": "700 Kč za kurz (8 lekcí)",
+      "castka_kc": 700,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "zpusob": "Online formulář na webu spolku, přijímá se podle pořadí přihlášení a kapacity skupin.",
+      "od": "2026-09-01",
+      "do": "2026-09-14",
+      "prubezne": false,
+      "odkaz": "https://www.kluho.cz/horicedobrusli",
+      "poznamka": "Registrace na sezónu 2026/2027 je uzavřená. Každá skupina má 5 náhradníků, do běžícího kurzu nelze přistoupit."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.kluho.cz/horicedobrusli",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "kluho-hokejova-pripravka",
+    "organizace_id": "kluho",
+    "nazev": "Hokejová přípravka Hořice do bruslí",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "První kroky k lednímu hokeji pro děti, které už samostatně bruslí: práce s hokejkou a pukem, přihrávky, střelba a jednoduché herní situace. Navazuje na bruslařskou školu.",
+    "vek_od": 6,
+    "vek_do": 12,
+    "misto": {
+      "nazev": "Městské kluziště Hořice",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "so",
+          "casy": [
+            "11:00–12:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "8 lekcí, prosinec 2026 – únor 2027",
+      "poznamka": "Kapacita 25 dětí. Dítě by mělo samostatně jezdit vpřed, bezpečně zastavit a změnit směr. Povinná hokejová výstroj: helma s košíkem, chrániče holení a loktů, hokejové rukavice, brusle a hokejka.",
+      "dny": [
+        "so"
+      ]
+    },
+    "cena": {
+      "text": "700 Kč za kurz (8 lekcí)",
+      "castka_kc": 700,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "zpusob": "Online formulář na webu spolku, přijímá se podle pořadí přihlášení a kapacity.",
+      "od": "2026-09-14",
+      "do": "2026-09-27",
+      "prubezne": false,
+      "odkaz": "https://forms.gle/wZ196hMfCX75d2tQ9",
+      "poznamka": "Registrace podle průvodce skončila 27. 9. 2026, evidováno je 5 náhradníků."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.kluho.cz/hokejovapripravka",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "kluho-rozjezd-dvur-kralove",
+    "organizace_id": "kluho",
+    "nazev": "Rozjezd sezóny – hokej a bruslení ve Dvoře Králové",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Nedělní bloky na zimním stadionu ve Dvoře Králové pro děti z Hořic před zahájením hořické přípravky: hokejová přípravka (25 dětí) nebo veřejné bruslení s trenéry (30 dětí). Doprava je individuální.",
+    "vek_od": 6,
+    "vek_do": 12,
+    "misto": {
+      "nazev": "Zimní stadion Dvůr Králové nad Labem",
+      "adresa": "Dvůr Králové nad Labem",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Neděle odpoledne, 8 bloků v říjnu a listopadu 2026. Přesný čas upřesní organizátor.",
+      "obdobi": "Říjen – listopad 2026",
+      "poznamka": "Na hokejovou přípravku je povinná hokejová výstroj, na bruslení helma a rukavice.",
+      "dny": [
+        "ne"
+      ]
+    },
+    "cena": {
+      "text": "50 Kč za lekci, platí se QR kódem na místě",
+      "castka_kc": 50,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "E-mailem Sportovnímu zařízení města Hořice (adresa je v průvodci na webu spolku): jméno a rok narození dítěte, kontakt na rodiče a zvolený program.",
+      "od": "2026-09-01",
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.sporthorice.cz/bruslarska-skola-skolicka/",
+      "poznamka": "Web spolku uvádí přihlášky průběžně od 1. 9. 2026, web Sportovního zařízení jen od 1. do 14. 9. Volná místa ověřte na info@sporthorice.cz."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.kluho.cz/hokejovapripravka",
+    "overeno": "2026-10-19"
   }
 ]

@@ -16,6 +16,7 @@
 | ob-horice | TJ Jiskra Hořice, oddíl orientačního běhu | sportovni-klub | https://www.obhorice.cz | kalendář akcí (Google tabulka odkazovaná z webu jako „Přehled oddílových akcí“) | https://www.obhorice.cz/kontakt/ | Úterní tréninky mládeže, bez časů a cen. Tip uživatele. |
 | kct-horice-turistacek | KČT Hořice – oddíl Turisťáček | spolek | https://turistacek-horice.webnode.cz | https://turistacek-horice.webnode.cz/zajmovy-krouzek/ (rozvrh a leták jako obrázky) | Google formulář odkazovaný ze stránky kroužku | Nábor na 1. pololetí 2026/27. Tip uživatele. |
 | curling-jicin | Curlingový club Loupežníci Jičín | sportovni-klub | https://www.curlingjicin.cz | https://www.curlingjicin.cz/ | – (stačí přijít) | **Mimo Hořice** (Jičín, asi 20 km), zařazeno jako tip uživatele. Bez cen a začátku sezóny. |
+| kluho | KLUHO – kluziště Hořice, z.s. (program Hořice do bruslí) | spolek | https://www.kluho.cz | https://www.kluho.cz/horicedobrusli ; https://www.kluho.cz/hokejovapripravka (rozpisy v PDF průvodcích) | online formuláře na stránkách programů | Bruslařská škola, hokejová přípravka a výjezdy do Dvora Králové, sezóna 2026/27. Tip uživatele. |
 | tj-sokol-horice | T. J. Sokol Hořice | sportovni-klub | https://www.sokol.eu/sokolovna/tj-sokol-horice | tamtéž | – | Vlastní web nenalezen. 4 dětské skupiny. Údaje se liší od webu města. Bez cen. |
 | junak-horice | Junák – český skaut, středisko Hořice | spolek | https://www.junakhorice.cz | https://www.junakhorice.cz/hledam-oddil/ | https://www.junakhorice.cz/hledam-oddil/pro-rodice/ | 3 oddíly, věk a den schůzky. Web oddílu Jitřenka se nenačetl. |
 | fotbal-jiskra-horice | TJ Jiskra Hořice – fotbal | sportovni-klub | https://www.horickyfotbal.cz | soupisky kategorií U7–U19 | – | Bez tréninků, náboru a cen. |
@@ -88,6 +89,15 @@
 - **Orientační běh:** dřívější poznámka „web neuvádí trénink mládeže“ už neplatí, úterní tréninky jsou v kalendáři akcí 2026. Časy v kalendáři chybí. Archiv 2021 a 2024 uvádí začátek v 16:30, proto jen v poznámce a `casy` prázdné. Místo v zimě je „tělocvična“ (web města a archiv uvádějí sokolovnu). Věk ani cena neuvedeny. Na webu jsou jen osobní kontakty trenérů, organizace je bez e-mailu a telefonu.
 - **Turisťáček:** rozvrh 1. pololetí 2026/27 z obrázku (vyhotoven 6. 10. 2026). Web uvádí „od září do června“, první schůzka je ale až 7. 10. Věta „Členský příspěvek na II. pololetí je 700 Kč“ je zjevně ze starší verze stránky, cena je vedena jako 700 Kč za pololetí. Stránka `/prihlasovaci-formular/` má starý formulář (platba do 20. 1. 2025), použit formulář ze stránky kroužku. Leták uvádí „sokolovna“, web „sportovní hala TJ Jiskra“, adresa stejná (Erbenova 1081). Příměstský tábor a pochody pro veřejnost nezařazeny.
 - **Curling Jičín:** trénink dětí v pátek 15:00–16:30 na zimním stadionu v Jičíně. Časy jsou bez data platnosti, proto `skolni_rok` null. Věk „od 10 let“ je jen obecná věta o curlingu, nevyplněno. Kalendář tréninků na webu vrací chybu 500.
+
+## Poznámky ze sběru (2026-10-19) – KLUHO (Hořice do bruslí)
+
+- Zdroj od uživatele. Zapsány 3 aktivity: bruslařská škola, hokejová přípravka na hořickém kluzišti a podzimní „Rozjezd sezóny“ na stadionu ve Dvoře Králové. Hobby liga a akce kluziště nejsou dětské kroužky, nezařazeny.
+- Rozpis bruslařské školy je z PDF průvodce, kde se tabulka přečetla rozházeně. Přiřazení je odvozené z rozpisu lekcí (Vločky A + Rampouchy A ve středu, Vločky B v sobotu, Rampouchy B v neděli) a z kapacit (Vločky 25, Rampouchy 30): Vločky A 15:15–16:15, Rampouchy A 16:30–17:30, oba víkendové kurzy 9:30–10:30. Při další aktualizaci ověřit.
+- Registrace do bruslařské školy (1.–14. 9.) i hokejové přípravky (14.–27. 9.) podle průvodců skončily. Stránka školy píše „Registrace uzavřena“, stránka přípravky má dál tlačítko „Přihlásit dítě na kurz“.
+- Rozjezd ve Dvoře Králové: úvodní dvě lekce 20. a 28. 9. 2026 v 17:15–18:15 (už proběhly, místo nejasné), potom 8 nedělních bloků v říjnu a listopadu, čas „bude upřesněn“. Přihlášky jsou na pracovní e-mail ředitele Sportovního zařízení (jméno v adrese), proto se do dat nepřebírá, karta odkazuje na průvodce.
+- Přehledné shrnutí všech tří programů je i na https://www.sporthorice.cz/bruslarska-skola-skolicka/ (tip uživatele). Údaje se shodují, časy skupin bruslařské školy tam ale nejsou. Rozpor: přihlášky na Rozjezd ve Dvoře Králové podle KLUHO „od 1. září průběžně“, podle Sportovního zařízení „od 1. do 14. 9.“. Ponecháno jako průběžné s poznámkou na kartě.
+- Adresu kluziště web neuvádí. Telefon spolku je zároveň telefon předsedy, nepřebírá se. Obecný e-mail info@kluho.cz.
 
 ## Zjištění pro fázi 3–4
 

@@ -190,5 +190,17 @@
     "popis": "Curlingový oddíl v Jičíně (asi 20 km od Hořic) s týmem žáků a juniorů, který jezdí na mistrovství ČR.",
     "zdroj_url": "https://www.curlingjicin.cz/kontakt",
     "overeno": "2026-10-19"
+  },
+  {
+    "id": "kluho",
+    "nazev": "KLUHO – kluziště Hořice, z.s.",
+    "typ": "spolek",
+    "web": "https://www.kluho.cz",
+    "email": "info@kluho.cz",
+    "telefon": null,
+    "adresa": "Janderova 2156, 508 01 Hořice",
+    "popis": "Spolek, který s městem a Sportovním zařízením města Hořice rozvíjí městské kluziště. Pořádá program Hořice do bruslí: bruslařskou školu a hokejovou přípravku pro děti.",
+    "zdroj_url": "https://www.kluho.cz",
+    "overeno": "2026-10-19"
   }
 ]
