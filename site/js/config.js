@@ -1,7 +1,7 @@
 // Nastavení webu. Po založení repozitáře na GitHubu doplňte adresu,
 // např. 'https://github.com/uzivatel/clubs-horice'. Dokud je `null`,
 // odkaz na repozitář se nezobrazuje.
-export const REPO_URL = null;
+export const REPO_URL = 'https://github.com/SirotekC/krouzky-horice';
 
 /** Veřejný e-mail pro opravy a dotazy, nebo `null`. */
 export const KONTAKT_EMAIL = 'cenek.sirotek@gmail.com';
