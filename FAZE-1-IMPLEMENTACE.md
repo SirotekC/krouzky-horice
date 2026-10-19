@@ -321,7 +321,7 @@ Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy
 2. `package.json` s `"type": "module"` a těmito skripty:
    - `"dev": "npx --yes http-server site -p 8080 -c-1"` (případně `npx serve site`),
    - `"validate": "node scripts/validate.mjs"`,
-   - `"test": "node --test tests/"`.
+   - `"test": "node --test"` (bez cesty; Node 22+ nepřijímá jako argument složku).
 3. `devDependencies`: `ajv`, `ajv-formats`.
 4. `.gitignore`, `LICENSE` (MIT) a základní `README.md` (co to je, `npm install`, `npm run dev`, `npm run validate`, jak přidat aktivitu).
 5. `git init` a první commit.
@@ -444,8 +444,8 @@ Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy
 
 **Kritéria přijetí:**
 
-- [ ] Web je dostupný na `https://{GITHUB_USER}.github.io/{REPO}/`.
-- [ ] Nevalidní data zastaví nasazení.
+- [x] Web je dostupný na `https://{GITHUB_USER}.github.io/{REPO}/`. *(2026-10-19: https://sirotekc.github.io/krouzky-horice/, testovací provoz s `noindex`)*
+- [x] Nevalidní data zastaví nasazení. *(ověřeno nechtěně: neprošlé testy nasazení zastavily)*
 
 ### Úkol 8: Ověření s uživateli a předání
 
