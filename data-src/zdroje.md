@@ -13,6 +13,9 @@
 | zus-melodie | Základní umělecká škola Melodie (soukromá) | zus | https://www.zusmelodie.cz | https://www.zusmelodie.cz/obory.php ; https://www.zusmelodie.cz/pobocky.php | https://www.zusmelodie.cz/ (tlačítko „Přihláška“, formulář v okně) | Ceník a organizace roku 2026/27 v PDF na https://www.zusmelodie.cz/dokumenty.php. Rozvrhy tanečního a výtvarného oboru jen na obrázcích v aktualitě „Poslední volná místa“ (9. 9. 2026). Hudební obor bez rozvrhu. |
 | rc-konvicka | Rodinné centrum Konvička, z. s. | spolek | https://rckonvicka.cz | https://rckonvicka.cz/aktualni-pravidelny-program/ (rozvrh jen na obrázku letáku) | rezervace přes Facebook (Messenger) nebo rckonvicka@seznam.cz | Kroužky pro malé děti s rodiči, platí se za lekci. Leták je „od září 2025“, program na 2026/27 zatím nezveřejněn (článek z 1. 8. 2026 slibuje návrat programů a novinky od září). Tip uživatele. |
 | horolezci-horice | HO-HO Horolezecký klub Hořice, z.s. | sportovni-klub | https://www.hohohorice.cz | https://www.hohohorice.cz/detsky-krouzek-lezeni ; ceník: https://www.hohohorice.cz/lezecka-stena-horice | – (platí se na místě) | Dětský kroužek každou středu 16:30–18:00, 60 Kč za lekci. Tip uživatele. |
+| ob-horice | TJ Jiskra Hořice, oddíl orientačního běhu | sportovni-klub | https://www.obhorice.cz | kalendář akcí (Google tabulka odkazovaná z webu jako „Přehled oddílových akcí“) | https://www.obhorice.cz/kontakt/ | Úterní tréninky mládeže, bez časů a cen. Tip uživatele. |
+| kct-horice-turistacek | KČT Hořice – oddíl Turisťáček | spolek | https://turistacek-horice.webnode.cz | https://turistacek-horice.webnode.cz/zajmovy-krouzek/ (rozvrh a leták jako obrázky) | Google formulář odkazovaný ze stránky kroužku | Nábor na 1. pololetí 2026/27. Tip uživatele. |
+| curling-jicin | Curlingový club Loupežníci Jičín | sportovni-klub | https://www.curlingjicin.cz | https://www.curlingjicin.cz/ | – (stačí přijít) | **Mimo Hořice** (Jičín, asi 20 km), zařazeno jako tip uživatele. Bez cen a začátku sezóny. |
 | tj-sokol-horice | T. J. Sokol Hořice | sportovni-klub | https://www.sokol.eu/sokolovna/tj-sokol-horice | tamtéž | – | Vlastní web nenalezen. 4 dětské skupiny. Údaje se liší od webu města. Bez cen. |
 | junak-horice | Junák – český skaut, středisko Hořice | spolek | https://www.junakhorice.cz | https://www.junakhorice.cz/hledam-oddil/ | https://www.junakhorice.cz/hledam-oddil/pro-rodice/ | 3 oddíly, věk a den schůzky. Web oddílu Jitřenka se nenačetl. |
 | fotbal-jiskra-horice | TJ Jiskra Hořice – fotbal | sportovni-klub | https://www.horickyfotbal.cz | soupisky kategorií U7–U19 | – | Bez tréninků, náboru a cen. |
@@ -24,11 +27,10 @@
 
 | id | název | důvod |
 |---|---|---|
-| ob-horice | Orientační běh Hořice (https://www.obhorice.cz) | Web neuvádí trénink mládeže. |
 | knihovna-horice | Městská knihovna Hořice | Nemá pravidelné kroužky, jen jednorázové akce. |
 | lmk-horice | Leteckomodelářský klub Hořice | Kroužek běží v DDM (duplicita), zmínka z roku 2019. |
 | stolni-tenis-horice | Stolní tenis TJ Jiskra Hořice | Informace z roku 2022. |
-| tenis-horice | TC Hořice | Web neaktualizovaný od 2022, nábor z 2019. |
+| tenis-horice | TC Hořice | Web neaktualizovaný od 2022, nábor z 2019. Znovu ověřeno 2026-10-19 (tip uživatele), stav stejný. Facebook klubu neprověřen. |
 | – | Šachy, basketbal, box, MMA, SDH (mladí hasiči) | Bez ověřitelné nabídky pro děti nebo jen Facebook. Šachy pokrývá DDM. |
 
 ## Poznámky ze sběru (2026-10-12)
@@ -79,6 +81,13 @@
 - Rozdílná data začátku: úvodní stránka uvádí „Lezení pro děti začíná 16. 9. od 16:30“, stránka stěny „Halová sezóna 2026/2027 začínáme 15. 10. 2026 (čtvrtek, 18 h)“. Druhé se týká čtvrtečního veřejného lezení, pro kroužek platí 16. 9. 2026.
 - Věk web neuvádí („děti a mládež“). Juniorský tým jezdí na soutěž Mladí horalové (U14, U18), samostatně nezapsáno.
 - Kontakty na funkcionáře jsou osobní, uveden jen e-mail klubu.
+
+## Poznámky ze sběru (2026-10-19) – tenis, orientační běh, Turisťáček, curling
+
+- **Tenis (tenishorice.cz):** web naposledy aktualizován 2022, jediný dětský nábor z 2019 (plakát). Nezařazeno, zůstává ve „Zvažovaných“.
+- **Orientační běh:** dřívější poznámka „web neuvádí trénink mládeže“ už neplatí, úterní tréninky jsou v kalendáři akcí 2026. Časy v kalendáři chybí. Archiv 2021 a 2024 uvádí začátek v 16:30, proto jen v poznámce a `casy` prázdné. Místo v zimě je „tělocvična“ (web města a archiv uvádějí sokolovnu). Věk ani cena neuvedeny. Na webu jsou jen osobní kontakty trenérů, organizace je bez e-mailu a telefonu.
+- **Turisťáček:** rozvrh 1. pololetí 2026/27 z obrázku (vyhotoven 6. 10. 2026). Web uvádí „od září do června“, první schůzka je ale až 7. 10. Věta „Členský příspěvek na II. pololetí je 700 Kč“ je zjevně ze starší verze stránky, cena je vedena jako 700 Kč za pololetí. Stránka `/prihlasovaci-formular/` má starý formulář (platba do 20. 1. 2025), použit formulář ze stránky kroužku. Leták uvádí „sokolovna“, web „sportovní hala TJ Jiskra“, adresa stejná (Erbenova 1081). Příměstský tábor a pochody pro veřejnost nezařazeny.
+- **Curling Jičín:** trénink dětí v pátek 15:00–16:30 na zimním stadionu v Jičíně. Časy jsou bez data platnosti, proto `skolni_rok` null. Věk „od 10 let“ je jen obecná věta o curlingu, nevyplněno. Kalendář tréninků na webu vrací chybu 500.
 
 ## Zjištění pro fázi 3–4
 

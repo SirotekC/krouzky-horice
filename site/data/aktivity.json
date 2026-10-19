@@ -5289,5 +5289,160 @@
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.hohohorice.cz/detsky-krouzek-lezeni",
     "overeno": "2026-10-19"
+  },
+  {
+    "id": "ob-horice-orientacni-beh-mladez",
+    "organizace_id": "ob-horice",
+    "nazev": "Orientační běh – tréninky mládeže",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Tréninky orientačního běhu pro žáky a dorost. Od jara do podzimu mapové tréninky v lesích kolem Hořic, v zimě pohyb, hry a mapová teorie v tělocvičně. O víkendech závody v oblastních i celostátních soutěžích.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "Tělocvična (v zimě), v sezóně lesy v okolí Hořic",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "V terénu",
+          "termin": "8. 9. – 20. 10. 2026"
+        },
+        {
+          "nazev": "V tělocvičně",
+          "termin": "3. 11. – 22. 12. 2026"
+        }
+      ],
+      "poznamka": "Časy nejsou v kalendáři 2026 uvedeny, podle starších zpráv oddílu začínal trénink v 16:30. Některá úterý odpadají kvůli závodům, přehled je v kalendáři akcí na webu oddílu.",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Stačí přijít na úterní trénink. Tréninky v tělocvičně jsou podle kalendáře oddílu bez nutnosti přihlášení.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.obhorice.cz/kontakt/",
+      "poznamka": "Kontakty na trenéry mládeže jsou na webu oddílu."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.obhorice.cz/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "kct-horice-turistacek-krouzek",
+    "organizace_id": "kct-horice-turistacek",
+    "nazev": "Turisťáček – turistický kroužek",
+    "kategorie": [
+      "priroda"
+    ],
+    "popis": "Výlety do okolí, hry, úkoly a hledání pokladů se skřítkem Turisťáčkem. Děti se učí orientaci v přírodě a práci s mapou. Občas sobotní pochody a víkendové výpravy, v kroužku je nejvýš 15 dětí.",
+    "vek_od": 6,
+    "vek_do": 15,
+    "misto": {
+      "nazev": "Klubovna ve sportovní hale TJ Jiskra Hořice",
+      "adresa": "Erbenova 1081, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": [
+        {
+          "nazev": "1. pololetí",
+          "termin": "7. 10. 2026 – 27. 1. 2027"
+        }
+      ],
+      "poznamka": "Jednou za 14 dní. V 1. pololetí 7. 10., 21. 10., 4. 11., 18. 11., 2. 12. a 16. 12. 2026, 13. 1. a 27. 1. 2027. Navíc občasné sobotní pochody a víkendové výpravy.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "700 Kč za pololetí včetně pojištění a členství v KČT, platí se bezhotovostně",
+      "castka_kc": 700,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online formulář na webu oddílu, potom bezhotovostní platba příspěvku. Na první schůzce zákonný zástupce podpisem potvrdí údaje.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://docs.google.com/forms/d/e/1FAIpQLSdasduZ7anCORlFQ6dDFdTWqLrR51yeZped1Rp_YixnpuFKtw/viewform",
+      "poznamka": "Nábor na 1. pololetí 2026/2027, kapacita 15 dětí."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://turistacek-horice.webnode.cz/zajmovy-krouzek/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "curling-jicin-curling-deti",
+    "organizace_id": "curling-jicin",
+    "nazev": "Curling – tréninky dětí (Jičín)",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Páteční tréninky curlingu pro děti na zimním stadionu v Jičíně, klub připravuje žáky a juniory na mistrovství ČR. Vyzkoušení je zdarma. S sebou teplé oblečení a čistou hladkou obuv, nejlépe sálovou.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "Zimní stadion Jičín",
+      "adresa": "Jičín",
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "pa",
+          "casy": [
+            "15:00–16:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Trénuje se v Jičíně, asi 20 km od Hořic. Začátek sezóny web neuvádí.",
+      "dny": [
+        "pa"
+      ]
+    },
+    "cena": {
+      "text": "Vyzkoušení zdarma, členský příspěvek web neuvádí.",
+      "castka_kc": null,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "zpusob": "Stačí přijít na trénink. Po vyzkoušení se lze stát členem oddílu.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.curlingjicin.cz/",
+      "poznamka": null
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.curlingjicin.cz/",
+    "overeno": "2026-10-19"
   }
 ]

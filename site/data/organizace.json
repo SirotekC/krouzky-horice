@@ -154,5 +154,41 @@
     "popis": "Horolezecký klub: provozuje lezeckou stěnu ve Sportovní hale, dětský lezecký kroužek, juniorský tým a Horoškolu.",
     "zdroj_url": "https://www.hohohorice.cz/kontakty",
     "overeno": "2026-10-19"
+  },
+  {
+    "id": "ob-horice",
+    "nazev": "TJ Jiskra Hořice z. s., oddíl orientačního běhu",
+    "typ": "sportovni-klub",
+    "web": "https://www.obhorice.cz",
+    "email": null,
+    "telefon": null,
+    "adresa": "Erbenova 1081, 508 01 Hořice",
+    "popis": "Oddíl orientačního běhu s pravidelnými tréninky mládeže. Víc než polovina členů jsou žáci a dorostenci, závodí v oblastních i celostátních soutěžích.",
+    "zdroj_url": "https://www.obhorice.cz/kontakt/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "kct-horice-turistacek",
+    "nazev": "Klub českých turistů, odbor Hořice – oddíl Turisťáček",
+    "typ": "spolek",
+    "web": "https://turistacek-horice.webnode.cz",
+    "email": "turistacekhorice@seznam.cz",
+    "telefon": null,
+    "adresa": "Erbenova 1081, Hořice",
+    "popis": "Dětský turistický oddíl KČT v Hořicích: kroužek, víkendové výlety, příměstské tábory a pochody pro veřejnost.",
+    "zdroj_url": "https://turistacek-horice.webnode.cz/kontakt/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "curling-jicin",
+    "nazev": "Curlingový club Loupežníci Jičín z. s.",
+    "typ": "sportovni-klub",
+    "web": "https://www.curlingjicin.cz",
+    "email": "info@curlingjicin.cz",
+    "telefon": null,
+    "adresa": "Revoluční 863, 506 01 Jičín",
+    "popis": "Curlingový oddíl v Jičíně (asi 20 km od Hořic) s týmem žáků a juniorů, který jezdí na mistrovství ČR.",
+    "zdroj_url": "https://www.curlingjicin.cz/kontakt",
+    "overeno": "2026-10-19"
   }
 ]
