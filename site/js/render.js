@@ -228,8 +228,11 @@ export function nastavOdkazy() {
     if (!url) continue;
     for (const odkaz of document.querySelectorAll(`[data-odkaz="${klic}"]`)) {
       odkaz.href = url;
-      odkaz.target = '_blank';
-      odkaz.rel = 'noopener';
+      // E-mailový odkaz otevře poštovního klienta, nový panel nedává smysl.
+      if (!url.startsWith('mailto:')) {
+        odkaz.target = '_blank';
+        odkaz.rel = 'noopener';
+      }
       odkaz.hidden = false;
     }
   }
