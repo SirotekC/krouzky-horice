@@ -5446,14 +5446,72 @@
     "overeno": "2026-10-19"
   },
   {
-    "id": "kluho-bruslarska-skola",
+    "id": "kluho-bruslarska-skola-vlocky",
     "organizace_id": "kluho",
-    "nazev": "Bruslařská škola Hořice do bruslí",
+    "nazev": "Bruslařská škola – Vločky (4–7 let)",
     "kategorie": [
       "sport-ostatni"
     ],
-    "popis": "Kurz bruslení pro začátečníky i pokročilé ve skupinách podle věku a dovedností. Vločky (4–7 let) hravou formou a s rodiči na ledě, Rampouchy (8–12 let) zdokonalují techniku. Vede tým trenérů.",
+    "popis": "První krůčky na ledě hravou formou: rovnováha, základní bruslařské dovednosti a jistota na ledě. Vhodné i pro úplné začátečníky. Počítá se s aktivním zapojením rodičů přímo na ledě (na bruslích).",
     "vek_od": 4,
+    "vek_do": 7,
+    "misto": {
+      "nazev": "Městské kluziště Hořice",
+      "adresa": null,
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": "Vločky A",
+          "den": "st",
+          "casy": [
+            "15:15–16:15"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "Vločky B",
+          "den": "so",
+          "casy": [
+            "9:30–10:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "8 lekcí, prosinec 2026 – únor 2027 (první lekce 2. 12. 2026)",
+      "poznamka": "Dítě chodí do jedné skupiny (A nebo B), kapacita skupiny je 25 dětí. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
+      "dny": [
+        "st",
+        "so"
+      ]
+    },
+    "cena": {
+      "text": "700 Kč za kurz (8 lekcí)",
+      "castka_kc": 700,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "zpusob": "Online formulář na webu spolku, přijímá se podle pořadí přihlášení a kapacity skupin.",
+      "od": "2026-09-01",
+      "do": "2026-09-14",
+      "prubezne": false,
+      "odkaz": "https://www.kluho.cz/horicedobrusli",
+      "poznamka": "Registrace na sezónu 2026/2027 je uzavřená. Každá skupina má 5 náhradníků, do běžícího kurzu nelze přistoupit."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.kluho.cz/horicedobrusli",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "kluho-bruslarska-skola-rampouchy",
+    "organizace_id": "kluho",
+    "nazev": "Bruslařská škola – Rampouchy (8–12 let)",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Zdokonalování techniky a bruslařských dovedností a příprava na samostatné bruslení. Pro začátečníky i pokročilé, děti jsou ve skupinách podle dovedností. Vede tým trenérů.",
+    "vek_od": 8,
     "vek_do": 12,
     "misto": {
       "nazev": "Městské kluziště Hořice",
@@ -5463,15 +5521,7 @@
     "terminy": {
       "rozvrh": [
         {
-          "skupina": "Vločky A (4–7 let)",
-          "den": "st",
-          "casy": [
-            "15:15–16:15"
-          ],
-          "misto": null
-        },
-        {
-          "skupina": "Rampouchy A (8–12 let)",
+          "skupina": "Rampouchy A",
           "den": "st",
           "casy": [
             "16:30–17:30"
@@ -5479,15 +5529,7 @@
           "misto": null
         },
         {
-          "skupina": "Vločky B (4–7 let)",
-          "den": "so",
-          "casy": [
-            "9:30–10:30"
-          ],
-          "misto": null
-        },
-        {
-          "skupina": "Rampouchy B (8–12 let)",
+          "skupina": "Rampouchy B",
           "den": "ne",
           "casy": [
             "9:30–10:30"
@@ -5496,10 +5538,9 @@
         }
       ],
       "obdobi": "8 lekcí, prosinec 2026 – únor 2027 (první lekce 2. 12. 2026)",
-      "poznamka": "Dítě chodí do jedné skupiny. Kapacita Vloček je 25 dětí, Rampouchů 30. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
+      "poznamka": "Dítě chodí do jedné skupiny (A nebo B), kapacita skupiny je 30 dětí. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
       "dny": [
         "st",
-        "so",
         "ne"
       ]
     },

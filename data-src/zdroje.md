@@ -92,7 +92,7 @@
 
 ## Poznámky ze sběru (2026-10-19) – KLUHO (Hořice do bruslí)
 
-- Zdroj od uživatele. Zapsány 3 aktivity: bruslařská škola, hokejová přípravka na hořickém kluzišti a podzimní „Rozjezd sezóny“ na stadionu ve Dvoře Králové. Hobby liga a akce kluziště nejsou dětské kroužky, nezařazeny.
+- Zdroj od uživatele. Zapsány 4 aktivity: bruslařská škola rozdělená na Vločky (4–7) a Rampouchy (8–12) podle přání uživatele, hokejová přípravka na hořickém kluzišti a podzimní „Rozjezd sezóny“ na stadionu ve Dvoře Králové. Hobby liga a akce kluziště nejsou dětské kroužky, nezařazeny.
 - Rozpis bruslařské školy je z PDF průvodce, kde se tabulka přečetla rozházeně. Přiřazení je odvozené z rozpisu lekcí (Vločky A + Rampouchy A ve středu, Vločky B v sobotu, Rampouchy B v neděli) a z kapacit (Vločky 25, Rampouchy 30): Vločky A 15:15–16:15, Rampouchy A 16:30–17:30, oba víkendové kurzy 9:30–10:30. Při další aktualizaci ověřit.
 - Registrace do bruslařské školy (1.–14. 9.) i hokejové přípravky (14.–27. 9.) podle průvodců skončily. Stránka školy píše „Registrace uzavřena“, stránka přípravky má dál tlačítko „Přihlásit dítě na kurz“.
 - Rozjezd ve Dvoře Králové: úvodní dvě lekce 20. a 28. 9. 2026 v 17:15–18:15 (už proběhly, místo nejasné), potom 8 nedělních bloků v říjnu a listopadu, čas „bude upřesněn“. Přihlášky jsou na pracovní e-mail ředitele Sportovního zařízení (jméno v adrese), proto se do dat nepřebírá, karta odkazuje na průvodce.
