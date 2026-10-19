@@ -4067,6 +4067,256 @@
     "overeno": "2026-10-12"
   },
   {
+    "id": "zus-melodie-hudebni-obor",
+    "organizace_id": "zus-melodie",
+    "nazev": "Hudební obor",
+    "kategorie": [
+      "hudba"
+    ],
+    "popis": "Klavír, keyboard, kytara (klasická, elektrická, basová), housle, bicí, zobcová i příčná flétna, trubka a zpěv. Nejdřív přípravné studium s hudební výchovou, potom individuální výuka nástroje a hudební teorie.",
+    "vek_od": 6,
+    "vek_do": 19,
+    "misto": {
+      "nazev": "ZUŠ Melodie",
+      "adresa": "Komenského 334, Hořice",
+      "gps": null
+    },
+    "terminy": null,
+    "cena": {
+      "text": "Přípravné studium 1 000 Kč, nebo 1 500 Kč (1 žák) / 1 000 Kč (2 žáci). Základní studium 1 500 Kč (1 žák ve výuce), 1 200 Kč (2 žáci). Vše za pololetí, podle ceníku 2026/2027.",
+      "castka_kc": null,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy (tlačítko „Přihláška“). Přijímá se po talentové zkoušce.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.zusmelodie.cz/",
+      "poznamka": "Talentové zkoušky se konají zpravidla na přelomu května a června. U zpěvu a některých dechových nástrojů škola požaduje potvrzení od lékaře."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.zusmelodie.cz/obory.php",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "zus-melodie-tanecni-obor",
+    "organizace_id": "zus-melodie",
+    "nazev": "Taneční obor",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Street dance, contemporary, art dance, show dance a improvizace. Základy klasické taneční techniky, lidový i moderní tanec a akrobacie. Vystoupení, soutěže a závěrečné taneční představení.",
+    "vek_od": 6,
+    "vek_do": 19,
+    "misto": {
+      "nazev": "ZUŠ Melodie",
+      "adresa": "Komenského 334, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": "6–7 let",
+          "den": "po",
+          "casy": [
+            "16:00–17:10"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "6–7 let",
+          "den": "st",
+          "casy": [
+            "14:40–15:50"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "9 let",
+          "den": "ut",
+          "casy": [
+            "14:40–15:50"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "9 let",
+          "den": "st",
+          "casy": [
+            "13:20–14:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "10 let",
+          "den": "po",
+          "casy": [
+            "14:40–15:50"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "10 let",
+          "den": "ut",
+          "casy": [
+            "13:20–14:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Školní rok 1. 9. 2026 – 30. 6. 2027",
+      "poznamka": "Tančí se 2× týdně po 70 minutách. Rozvrh je jen pro skupiny s volnými místy podle letáku z 9. 9. 2026. Leták neuvádí pobočku.",
+      "dny": [
+        "po",
+        "ut",
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "1 500 Kč za pololetí",
+      "castka_kc": 1500,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy (tlačítko „Přihláška“).",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.zusmelodie.cz/",
+      "poznamka": "Podle webu školy (aktualita z 9. 9. 2026) má škola poslední volná místa ve skupinách uvedených v rozvrhu. Na zařazení do jiné věkové skupiny se lze zeptat."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.zusmelodie.cz/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "zus-melodie-vytvarny-obor",
+    "organizace_id": "zus-melodie",
+    "nazev": "Výtvarný obor",
+    "kategorie": [
+      "vytvarne"
+    ],
+    "popis": "Kresba, malba, modelování, grafika a další výtvarné techniky. Hodí se i pro přípravu na umělecké školy. Veškerý materiál je v ceně, s sebou jen přezůvky a zástěru.",
+    "vek_od": 6,
+    "vek_do": 19,
+    "misto": {
+      "nazev": "ZUŠ Melodie",
+      "adresa": "Komenského 334, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": "1. třída (6 let)",
+          "den": "ct",
+          "casy": [
+            "13:30–15:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "2.–3. třída (7–8 let)",
+          "den": "ct",
+          "casy": [
+            "15:15–17:30"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "3.–4. třída (8–9 let)",
+          "den": "po",
+          "casy": [
+            "13:20–15:35"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": "4.–5. třída (9–10 let)",
+          "den": "ut",
+          "casy": [
+            "13:30–15:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Školní rok 1. 9. 2026 – 30. 6. 2027",
+      "poznamka": "Výuka 2–3 vyučovací hodiny vkuse. Rozvrh je jen pro skupiny s volnými místy podle letáku z 9. 9. 2026.",
+      "dny": [
+        "po",
+        "ut",
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 500 Kč za pololetí včetně veškerého materiálu",
+      "castka_kc": 1500,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy (tlačítko „Přihláška“).",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.zusmelodie.cz/",
+      "poznamka": "Podle webu školy (aktualita z 9. 9. 2026) má škola poslední volná místa ve skupinách uvedených v rozvrhu. Na zařazení do jiné věkové skupiny se lze zeptat."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.zusmelodie.cz/",
+    "overeno": "2026-10-19"
+  },
+  {
+    "id": "zus-melodie-trojlistek",
+    "organizace_id": "zus-melodie",
+    "nazev": "Trojlístek – přípravné studium pro předškoláky",
+    "kategorie": [
+      "hudba",
+      "tanec",
+      "vytvarne"
+    ],
+    "popis": "Roční program pro předškoláky: po třech měsících si děti vyzkouší výtvarný, taneční i hudební obor. Na konci každého bloku je ukázková hodina pro rodiče, na konci roku se vybírá obor.",
+    "vek_od": 5,
+    "vek_do": 6,
+    "misto": {
+      "nazev": "ZUŠ Melodie",
+      "adresa": "Komenského 334, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:00–16:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Školní rok 1. 9. 2026 – 30. 6. 2027",
+      "poznamka": "Jednou týdně 45 minut.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "800 Kč za pololetí",
+      "castka_kc": 800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Elektronická přihláška na webu školy (tlačítko „Přihláška“).",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.zusmelodie.cz/",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.zusmelodie.cz/obory.php",
+    "overeno": "2026-10-19"
+  },
+  {
     "id": "tj-sokol-horice-rodice-s-detmi",
     "organizace_id": "tj-sokol-horice",
     "nazev": "Cvičení pro rodiče s dětmi",

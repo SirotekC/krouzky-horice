@@ -10,6 +10,7 @@
 | plavani-sporthorice | Sportovní zařízení města Hořice – plavecké kroužky | jine | https://www.sporthorice.cz | https://www.sporthorice.cz/plavecke-krouzky/ ; https://www.sporthorice.cz/plavecky-oddil-rejnok/ | https://rezervace.sporthorice.cz | 6 kurzů + oddíl Rejnok, 2026/27, věk, čas, cena. |
 | florbal-horice | FBK Hořice, z.s. | sportovni-klub | https://www.florbalhorice.cz | https://www.florbalhorice.cz/treninky | https://www.florbalhorice.cz/pridej-se-k-nam | Asi 19 mládežnických skupin, ročníky narození, nábor od 2. 9. 2026. Bez cen. |
 | zus-horice | Základní umělecká škola Hořice | zus | https://zushorice.cz | https://zushorice.cz/o-skole/studium/ | https://zushorice.cz/o-skole/prihlaska/ | Ceník 2026/27: https://zushorice.cz/o-skole/cenik-skolneho/. Zápis byl v červnu 2026. Stránka „Studium“ má v nadpisu ještě 2024/2025. |
+| zus-melodie | Základní umělecká škola Melodie (soukromá) | zus | https://www.zusmelodie.cz | https://www.zusmelodie.cz/obory.php ; https://www.zusmelodie.cz/pobocky.php | https://www.zusmelodie.cz/ (tlačítko „Přihláška“, formulář v okně) | Ceník a organizace roku 2026/27 v PDF na https://www.zusmelodie.cz/dokumenty.php. Rozvrhy tanečního a výtvarného oboru jen na obrázcích v aktualitě „Poslední volná místa“ (9. 9. 2026). Hudební obor bez rozvrhu. |
 | tj-sokol-horice | T. J. Sokol Hořice | sportovni-klub | https://www.sokol.eu/sokolovna/tj-sokol-horice | tamtéž | – | Vlastní web nenalezen. 4 dětské skupiny. Údaje se liší od webu města. Bez cen. |
 | junak-horice | Junák – český skaut, středisko Hořice | spolek | https://www.junakhorice.cz | https://www.junakhorice.cz/hledam-oddil/ | https://www.junakhorice.cz/hledam-oddil/pro-rodice/ | 3 oddíly, věk a den schůzky. Web oddílu Jitřenka se nenačetl. |
 | fotbal-jiskra-horice | TJ Jiskra Hořice – fotbal | sportovni-klub | https://www.horickyfotbal.cz | soupisky kategorií U7–U19 | – | Bez tréninků, náboru a cen. |
@@ -53,6 +54,13 @@
   - Juniorky PHOENIX: místo „ZŠ Na Habru“, ale popis uvádí pondělí v Sokolovně. Pondělí má v rozvrhu vlastní místo.
   - Kuželky: rozvrh uvádí pondělí i středu, ve skutečnosti jen jeden den podle domluvy (v poznámce).
 - Formace PHOENIX (seniorky), Formace kadetek a Formace Little kadetky nemají vyplněné datum zahájení a ukončení.
+
+## Poznámky ze sběru (2026-10-19) – ZUŠ Melodie
+
+- Přidána soukromá ZUŠ Melodie (Komenského 334, Hořice) se 4 aktivitami: hudební, taneční a výtvarný obor a přípravné studium Trojlístek. Pobočky v okolních obcích (Miletín, Ostroměř, Pecka…) nejsou zahrnuté, místo je vždy sídlo v Hořicích.
+- Rozvrhy tanečního a výtvarného oboru jsou přepsané z obrázků (letáky „Poslední volná místa“) a obsahují jen skupiny s volnými místy. Leták tanečního oboru neuvádí pobočku. Taneční obor se v Hořicích vyučuje, takže je zapsaný tam.
+- Ceník hudebního přípravného studia (varianta B „1–2 žáci 1500 / 1000 Kč“) je vyložený jako 1 500 Kč pro 1 žáka a 1 000 Kč pro 2 žáky.
+- Kontakty vedení a kanceláře obsahují osobní jméno, proto je uvedený jen telefon studijního oddělení.
 
 ## Zjištění pro fázi 3–4
 

@@ -48,6 +48,18 @@
     "overeno": "2026-10-12"
   },
   {
+    "id": "zus-melodie",
+    "nazev": "Základní umělecká škola Melodie",
+    "typ": "zus",
+    "web": "https://www.zusmelodie.cz",
+    "email": null,
+    "telefon": "733 269 814",
+    "adresa": "Komenského 334, 508 01 Hořice v Podkrkonoší",
+    "popis": "Soukromá umělecká škola s hudebním, tanečním a výtvarným oborem pro děti od 5 do 19 let. Sídlí vedle ZŠ Komenského, další pobočky má v okolních obcích.",
+    "zdroj_url": "https://www.zusmelodie.cz/o-skole.php",
+    "overeno": "2026-10-19"
+  },
+  {
     "id": "tj-sokol-horice",
     "nazev": "T. J. Sokol Hořice",
     "typ": "sportovni-klub",
