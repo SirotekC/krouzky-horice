@@ -12,6 +12,7 @@
 | zus-horice | Základní umělecká škola Hořice | zus | https://zushorice.cz | https://zushorice.cz/o-skole/studium/ | https://zushorice.cz/o-skole/prihlaska/ | Ceník 2026/27: https://zushorice.cz/o-skole/cenik-skolneho/. Zápis byl v červnu 2026. Stránka „Studium“ má v nadpisu ještě 2024/2025. |
 | zus-melodie | Základní umělecká škola Melodie (soukromá) | zus | https://www.zusmelodie.cz | https://www.zusmelodie.cz/obory.php ; https://www.zusmelodie.cz/pobocky.php | https://www.zusmelodie.cz/ (tlačítko „Přihláška“, formulář v okně) | Ceník a organizace roku 2026/27 v PDF na https://www.zusmelodie.cz/dokumenty.php. Rozvrhy tanečního a výtvarného oboru jen na obrázcích v aktualitě „Poslední volná místa“ (9. 9. 2026). Hudební obor bez rozvrhu. |
 | rc-konvicka | Rodinné centrum Konvička, z. s. | spolek | https://rckonvicka.cz | https://rckonvicka.cz/aktualni-pravidelny-program/ (rozvrh jen na obrázku letáku) | rezervace přes Facebook (Messenger) nebo rckonvicka@seznam.cz | Kroužky pro malé děti s rodiči, platí se za lekci. Leták je „od září 2025“, program na 2026/27 zatím nezveřejněn (článek z 1. 8. 2026 slibuje návrat programů a novinky od září). Tip uživatele. |
+| horolezci-horice | HO-HO Horolezecký klub Hořice, z.s. | sportovni-klub | https://www.hohohorice.cz | https://www.hohohorice.cz/detsky-krouzek-lezeni ; ceník: https://www.hohohorice.cz/lezecka-stena-horice | – (platí se na místě) | Dětský kroužek každou středu 16:30–18:00, 60 Kč za lekci. Tip uživatele. |
 | tj-sokol-horice | T. J. Sokol Hořice | sportovni-klub | https://www.sokol.eu/sokolovna/tj-sokol-horice | tamtéž | – | Vlastní web nenalezen. 4 dětské skupiny. Údaje se liší od webu města. Bez cen. |
 | junak-horice | Junák – český skaut, středisko Hořice | spolek | https://www.junakhorice.cz | https://www.junakhorice.cz/hledam-oddil/ | https://www.junakhorice.cz/hledam-oddil/pro-rodice/ | 3 oddíly, věk a den schůzky. Web oddílu Jitřenka se nenačetl. |
 | fotbal-jiskra-horice | TJ Jiskra Hořice – fotbal | sportovni-klub | https://www.horickyfotbal.cz | soupisky kategorií U7–U19 | – | Bez tréninků, náboru a cen. |
@@ -71,6 +72,13 @@
 - Leták uvádí jen začátek lekce („od 9:00“), proto termíny jako `text` místo `rozvrh`.
 - Hernička: věk 0–1 odvozen z popisu „první rok s děťátkem“. SENZAční hraní: „od cca 1,5 roku“ je jen v popisu, `vek_od` nevyplněn (celá čísla).
 - Lektorky jsou na webu jen křestními jmény, do dat se nepřebírají. Telefon u Maminek v kondici je osobní.
+
+## Poznámky ze sběru (2026-10-19) – Horolezci Hořice
+
+- Zdroj od uživatele. Zapsán 1 kroužek (dětský lezecký kroužek). Horoškola, klubový trénink a veřejné lezení nejsou dětské kroužky, vynechány.
+- Rozdílná data začátku: úvodní stránka uvádí „Lezení pro děti začíná 16. 9. od 16:30“, stránka stěny „Halová sezóna 2026/2027 začínáme 15. 10. 2026 (čtvrtek, 18 h)“. Druhé se týká čtvrtečního veřejného lezení, pro kroužek platí 16. 9. 2026.
+- Věk web neuvádí („děti a mládež“). Juniorský tým jezdí na soutěž Mladí horalové (U14, U18), samostatně nezapsáno.
+- Kontakty na funkcionáře jsou osobní, uveden jen e-mail klubu.
 
 ## Zjištění pro fázi 3–4
 

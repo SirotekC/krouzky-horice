@@ -5240,5 +5240,54 @@
     "skolni_rok": "2025/2026",
     "zdroj_url": "https://rckonvicka.cz/senzacni-hrani/",
     "overeno": "2026-10-19"
+  },
+  {
+    "id": "horolezci-horice-lezecky-krouzek",
+    "organizace_id": "horolezci-horice",
+    "nazev": "Lezecký kroužek pro děti a mládež",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Lezení na umělé stěně (12 m, cesty od úplných začátečníků po těžké převisy) s instruktory. Vybavení je k dispozici, mezi pokusy si děti mohou hrát v tělocvičně s míči, žíněnkami a žebřinami.",
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "Lezecká stěna, Sportovní hala Hořice",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "16:30–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Září–květen, v sezóně 2026/2027 od 16. 9. 2026",
+      "poznamka": "S sebou horolezecký úvazek (lze zapůjčit), sportovní oblečení a obuv. Začátečníkům stačí běžná sportovní obuv.",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "60 Kč za lekci, platí se na místě. Zapůjčení vybavení 30 Kč za položku.",
+      "castka_kc": 60,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Přihlašování předem web neuvádí. Poplatek se platí na místě pokladníkovi. Dotazy na e-mail klubu.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.hohohorice.cz/detsky-krouzek-lezeni",
+      "poznamka": "Členové klubu mají ve středu klubový trénink zdarma. Členský příspěvek do 15 let je 600 Kč za pololetí."
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.hohohorice.cz/detsky-krouzek-lezeni",
+    "overeno": "2026-10-19"
   }
 ]

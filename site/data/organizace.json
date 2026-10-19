@@ -142,5 +142,17 @@
     "popis": "Rodinné centrum pro rodiče s malými dětmi: dopolední kroužky s rodiči, hernička, přednášky a akce.",
     "zdroj_url": "https://rckonvicka.cz/kontakt/",
     "overeno": "2026-10-19"
+  },
+  {
+    "id": "horolezci-horice",
+    "nazev": "HO-HO Horolezecký klub Hořice, z.s.",
+    "typ": "sportovni-klub",
+    "web": "https://www.hohohorice.cz",
+    "email": "hohohorice189@gmail.com",
+    "telefon": null,
+    "adresa": "Riegrova 1024, 508 01 Hořice",
+    "popis": "Horolezecký klub: provozuje lezeckou stěnu ve Sportovní hale, dětský lezecký kroužek, juniorský tým a Horoškolu.",
+    "zdroj_url": "https://www.hohohorice.cz/kontakty",
+    "overeno": "2026-10-19"
   }
 ]
