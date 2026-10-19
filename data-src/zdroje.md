@@ -54,6 +54,14 @@
   - Kuželky: rozvrh uvádí pondělí i středu, ve skutečnosti jen jeden den podle domluvy (v poznámce).
 - Formace PHOENIX (seniorky), Formace kadetek a Formace Little kadetky nemají vyplněné datum zahájení a ukončení.
 
+## Ověřit aktuálnost dat (nižší priorita)
+
+> Přidáno 2026-10-19. Pomůže to dotáhnout aktuálnost dat, nespěchá.
+
+1. **Volejbal:** ověřit data (zatím jen stránka města, chybí časy a ceny). Zkusit oslovit Ondrouše.
+2. **Kuželky:** ověřit data (rozvrh uvádí Po i St, ve skutečnosti jeden den podle domluvy).
+3. **Holubáři:** zkusit je oslovit (zatím v datech nejsou).
+
 ## Tipy od uživatele – čekají na hromadný import
 
 > Průběžně sbírané tipy. Zatím neověřeno, zpracuje se hromadně později.
