@@ -70,6 +70,15 @@ export function pripravData(organizace, aktivity) {
   return { organizace, organizaceMapa, aktivity: spojene };
 }
 
+/** Počty pro hlavičku: kroužky, použité kategorie a organizace, které mají aspoň jeden kroužek. */
+export function statistiky(aktivity) {
+  return {
+    krouzky: aktivity.length,
+    kategorie: new Set(aktivity.flatMap((a) => a.kategorie)).size,
+    organizace: new Set(aktivity.map((a) => a.organizace_id)).size,
+  };
+}
+
 /** Načte všechny tři datové soubory paralelně. */
 export async function nactiData(zaklad = 'data/') {
   const [organizace, aktivity, meta] = await Promise.all([

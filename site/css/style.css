@@ -199,6 +199,18 @@ a {
   color: var(--text-tlumeny);
 }
 
+.hlavicka__statistiky {
+  /* Místo je rezervované předem, aby hlavička po načtení dat neposkočila. */
+  min-height: 1.5em;
+  font-size: 0.9rem;
+  color: var(--text-tlumeny);
+}
+
+.hlavicka__statistiky strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
 .hlavicka nav a {
   font-weight: 600;
 }

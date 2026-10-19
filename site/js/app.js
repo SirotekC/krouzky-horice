@@ -1,9 +1,9 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
-import { KATEGORIE, SKUPINY_KATEGORII, nactiData } from './data.js';
+import { KATEGORIE, SKUPINY_KATEGORII, nactiData, statistiky } from './data.js';
 import { POHLAVI_FILTRU, STAVY_FILTRU, filtruj, prazdneFiltry, seradi } from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
-import { chybovyStav, el, nastavOdkazy, pocetKrouzku, prazdnyStav, seznamKaret } from './render.js';
+import { chybovyStav, el, nastavOdkazy, pocetKrouzku, prazdnyStav, radekStatistik, seznamKaret } from './render.js';
 import { filtryDoUrl, filtryZUrl } from './url-state.js';
 
 const DEBOUNCE_MS = 150;
@@ -148,6 +148,7 @@ async function spust() {
   const dnes = dnesPraha();
   const kontext = { dnes, kategorie: KATEGORIE };
   $('#aktualizovano').textContent = `Data aktualizována ${formatDatum(data.meta.aktualizovano)}.`;
+  $('#statistiky').replaceChildren(...radekStatistik(statistiky(data.aktivity)));
 
   naplnFormular(data);
   zapisDoFormulare(form, filtryZUrl(window.location.search, data.organizace.map((o) => o.id)));

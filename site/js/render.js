@@ -143,11 +143,31 @@ export function domena(url) {
   }
 }
 
+/** Tvar slova podle počtu: `tvary` = [1, 2–4, 5 a víc], např. ['kroužek', 'kroužky', 'kroužků']. */
+export function sklonuj(n, [jeden, dva, pet]) {
+  if (n === 1) return jeden;
+  if (n >= 2 && n <= 4) return dva;
+  return pet;
+}
+
 /** „1 kroužek“, „3 kroužky“, „12 kroužků“. */
 export function pocetKrouzku(n) {
-  if (n === 1) return '1 kroužek';
-  if (n >= 2 && n <= 4) return `${n} kroužky`;
-  return `${n} kroužků`;
+  return `${n} ${sklonuj(n, ['kroužek', 'kroužky', 'kroužků'])}`;
+}
+
+/** Řádek „93 kroužků · 12 zaměření · 10 organizací“ s čísly zvýrazněnými tučně. */
+export function radekStatistik({ krouzky, kategorie, organizace }) {
+  const polozky = [
+    [krouzky, ['kroužek', 'kroužky', 'kroužků']],
+    [kategorie, ['zaměření', 'zaměření', 'zaměření']],
+    [organizace, ['organizace', 'organizace', 'organizací']],
+  ];
+  const casti = [];
+  for (const [n, tvary] of polozky) {
+    if (casti.length) casti.push(' · ');
+    casti.push(el('strong', { text: String(n) }), ` ${sklonuj(n, tvary)}`);
+  }
+  return casti;
 }
 
 function udaj(nazev, hodnota) {
