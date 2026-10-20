@@ -229,27 +229,69 @@ a {
 /* Filtry */
 
 .filtry__panel {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem 1rem;
   background: var(--povrch);
   border: 1px solid var(--okraj);
   border-radius: var(--polomer);
   box-shadow: var(--stin);
 }
 
-.filtry__souhrn {
-  cursor: pointer;
-  padding: 0.75rem 1rem;
-  border-radius: var(--polomer);
+/* Na mobilu je nadpis jen pro čtečky; hledání je vždy vidět a ostatní filtry jsou sbalené pod ním. */
+.filtry__nadpis {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  font-size: 1.1rem;
 }
 
-.filtry__souhrn h2 {
-  display: inline;
-  font-size: 1.1rem;
+.filtry__souhrn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--akcent);
+  list-style: none;
+}
+
+.filtry__souhrn::-webkit-details-marker {
+  display: none;
+}
+
+.filtry__souhrn::before {
+  content: "▸";
+  transition: transform 0.15s;
+}
+
+.filtry__dalsi[open] > .filtry__souhrn::before {
+  transform: rotate(90deg);
+}
+
+/* Počet aktivních filtrů ve sbalené části, např. „Další filtry (2)“. */
+.filtry__pocet:not(:empty) {
+  padding: 0.05rem 0.5rem;
+  font-size: 0.8rem;
+  color: var(--akcent-text);
+  background: var(--akcent);
+  border-radius: 999px;
 }
 
 .filtry__formular {
   display: grid;
   gap: 1rem;
-  padding: 0 1rem 1rem;
+  padding-top: 0.5rem;
+}
+
+/* Bez aktivních filtrů není na mobilu co rušit. */
+.filtry__panel--prazdne > [type="reset"] {
+  display: none;
 }
 
 .pole {
@@ -674,13 +716,32 @@ select {
     overflow-y: auto;
   }
 
-  .filtry__souhrn {
-    pointer-events: none;
-    list-style: none;
+  .filtry__panel {
+    gap: 1rem;
+    padding: 0.75rem 1rem 1rem;
   }
 
-  .filtry__souhrn::-webkit-details-marker {
+  .filtry__nadpis {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    clip-path: none;
+    white-space: normal;
+  }
+
+  /* Na desktopu jsou filtry vždy rozbalené, přepínač „Další filtry“ není potřeba. */
+  .filtry__souhrn {
     display: none;
+  }
+
+  .filtry__formular {
+    padding-top: 0;
+  }
+
+  .filtry__panel--prazdne > [type="reset"] {
+    display: inline-flex;
   }
 
   .karty {

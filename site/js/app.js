@@ -1,7 +1,7 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
 import { KATEGORIE, SKUPINY_KATEGORII, nactiData, statistiky } from './data.js';
-import { POHLAVI_FILTRU, STAVY_FILTRU, filtruj, prazdneFiltry, seradi } from './filters.js';
+import { DNY_FILTRU, POHLAVI_FILTRU, STAVY_FILTRU, filtruj, jsouPrazdne, prazdneFiltry, seradi } from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
 import {
   chybovyStav,
@@ -40,10 +40,11 @@ function chip(typ, jmeno, hodnota, popisek) {
 }
 
 /**
- * Skupiny zaměření se vykreslí ještě před načtením dat, aby filtry pod nimi neposkočily.
+ * Dny a skupiny zaměření se vykreslí ještě před načtením dat, aby filtry pod nimi neposkočily.
  * Skupin lze vybrat víc; „Vše“ není samostatná hodnota, jen svítí, když není vybraná žádná skupina.
  */
-function vykresliSkupiny() {
+function vykresliChipy() {
+  $('#f-dny').append(...Object.entries(DNY_FILTRU).map(([klic, popisek]) => chip('checkbox', 'den', klic, popisek)));
   const skupiny = $('#f-skup');
   skupiny.append(chip('checkbox', 'vse', '', 'Vše'));
   for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
@@ -94,6 +95,7 @@ function naplnFormular(data) {
 function zapisDoFormulare(form, filtry) {
   form.q.value = filtry.q;
   form.vek.value = filtry.vek ?? '';
+  for (const vstup of form.querySelectorAll('input[name="den"]')) vstup.checked = filtry.dny.includes(vstup.value);
   // Skupina, která v datech není, se ignoruje.
   for (const vstup of form.querySelectorAll('input[name="skup"]')) vstup.checked = filtry.skup.includes(vstup.value);
   for (const vstup of form.querySelectorAll('input[name="kat"]')) vstup.checked = filtry.kat.includes(vstup.value);
@@ -129,12 +131,21 @@ function prectiFormular(form) {
   return {
     q: form.q.value.trim(),
     vek: vek !== '' && Number.isInteger(vekCislo) && vekCislo >= 0 && vekCislo <= 26 ? vekCislo : null,
+    dny: [...form.querySelectorAll('input[name="den"]:checked')].map((v) => v.value),
     skup: vybraneSkupiny(form),
     kat: [...form.querySelectorAll('input[name="kat"]:checked')].map((v) => v.value),
     org: form.org.value,
     stav: form.stav.value,
     pohlavi: form.pohlavi.value,
   };
+}
+
+/** Počet aktivních filtrů ve sbalené části (bez hledání, které je vidět vždy). */
+function oznacAktivniFiltry(form, filtry) {
+  const pocet = [filtry.vek != null, filtry.dny.length, filtry.pohlavi, filtry.skup.length, filtry.org, filtry.stav].filter(Boolean).length;
+  $('#filtry-pocet').textContent = pocet ? String(pocet) : '';
+  $('#filtry-pocet').title = pocet ? `Aktivní filtry: ${pocet}` : '';
+  form.classList.toggle('filtry__panel--prazdne', jsouPrazdne(filtry));
 }
 
 function debounce(fn, ms) {
@@ -148,7 +159,7 @@ function debounce(fn, ms) {
 async function spust() {
   nastavOdkazy();
   sbalitelneFiltry();
-  vykresliSkupiny();
+  vykresliChipy();
 
   const seznam = $('#seznam');
   const pocet = $('#pocet');
@@ -211,6 +222,7 @@ async function spust() {
   };
 
   const prekresli = () => {
+    oznacAktivniFiltry(form, filtry);
     if (cesta.typ === 'aktivita') return vykresliDetail();
     rozvrzeni.classList.remove('rozvrzeni--detail');
     document.title = TITULEK;

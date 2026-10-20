@@ -15,13 +15,13 @@ const prihlaska = (od, doData, prubezne = false) => ({ zpusob: 'x', od, do: doDa
 
 const { aktivity } = pripravData(organizace, [
   { id: 'klavir', organizace_id: 'zus', nazev: 'Hra na klavír', kategorie: ['hudba'], vek_od: 7, vek_do: 18,
-    prihlaska: prihlaska('2027-05-01', '2027-06-15') },
+    prihlaska: prihlaska('2027-05-01', '2027-06-15'), terminy: null },
   { id: 'tanec', organizace_id: 'zus', nazev: 'Taneční obor', popis: 'Současný TANEC', kategorie: ['tanec'], vek_od: 5, vek_do: null,
-    prihlaska: prihlaska('2026-10-01', '2026-10-20') },
+    prihlaska: prihlaska('2026-10-01', '2026-10-20'), terminy: { dny: ['po', 'st'] } },
   { id: 'florbal', organizace_id: 'sokol', nazev: 'Florbal', kategorie: ['sport-mickove'], vek_od: null, vek_do: 12, pohlavi: 'chlapci',
-    prihlaska: prihlaska(null, null, true) },
+    prihlaska: prihlaska(null, null, true), terminy: { dny: ['ut'] } },
   { id: 'cviceni', organizace_id: 'sokol', nazev: 'Cvičení rodičů s dětmi', kategorie: ['sport-ostatni', 'tanec'], pohlavi: null,
-    prihlaska: prihlaska('2026-10-20', '2026-11-30') },
+    prihlaska: prihlaska('2026-10-20', '2026-11-30'), terminy: { dny: ['st', 'so'] } },
   { id: 'zpev', organizace_id: 'zus', nazev: 'Zpěv', kategorie: ['hudba'], vek_od: 6, vek_do: 18, pohlavi: 'divky', klicova_slova: ['pěvecký sbor', 'zpívání'],
     prihlaska: prihlaska('2026-06-01', '2026-06-30') },
 ]);
@@ -134,4 +134,11 @@ test('seradi nemění vstupní pole', () => {
   const kopie = [...aktivity];
   seradi(aktivity, DNES);
   assert.deepEqual(aktivity, kopie);
+});
+
+test('filtr dnů: OR mezi dny, aktivity bez pevného dne patří ke každému dni', () => {
+  assert.deepEqual(ids(filtruj(aktivity, f({ dny: ['st'] }), kontext)), ['cviceni', 'klavir', 'tanec', 'zpev']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ dny: ['ut', 'so'] }), kontext)), ['cviceni', 'florbal', 'klavir', 'zpev']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ dny: ['ne'] }), kontext)), ['klavir', 'zpev']);
+  assert.equal(jsouPrazdne(f({ dny: ['po'] })), false);
 });

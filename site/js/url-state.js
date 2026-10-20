@@ -1,7 +1,7 @@
 // Synchronizace filtrů s query stringem URL. Čisté funkce bez přístupu k DOM.
 
 import { SKUPINY_KATEGORII, skupinaKategorie } from './data.js';
-import { POHLAVI_FILTRU, STAVY_FILTRU, prazdneFiltry } from './filters.js';
+import { DNY_FILTRU, POHLAVI_FILTRU, STAVY_FILTRU, prazdneFiltry } from './filters.js';
 
 const VZOR_ID = /^[a-z0-9-]+$/;
 
@@ -11,7 +11,7 @@ function poradiSkupin(skupiny) {
 }
 
 /**
- * Načte filtry z query stringu (např. `?q=klavir&vek=8&skup=umeni,sport&kat=hudba,tanec&org=zus&stav=probiha&pohlavi=divky`).
+ * Načte filtry z query stringu (např. `?q=klavir&vek=8&dny=po,st&skup=umeni,sport&kat=hudba,tanec&org=zus&stav=probiha&pohlavi=divky`).
  * Neplatné hodnoty tiše ignoruje. Podkategorie (`kat`) musí patřit do některé z vybraných skupin (`skup`);
  * chybí-li skupiny, odvodí se z platných kategorií (kvůli starším odkazům).
  * @param {string} search obsah `location.search`
@@ -26,6 +26,9 @@ export function filtryZUrl(search, platneOrganizace = null) {
 
   const vek = parametry.get('vek');
   if (vek !== null && /^\d{1,2}$/.test(vek) && Number(vek) <= 26) filtry.vek = Number(vek);
+
+  const dny = parametry.get('dny');
+  if (dny) filtry.dny = Object.keys(DNY_FILTRU).filter((d) => dny.split(',').includes(d));
 
   const skup = parametry.get('skup');
   if (skup) filtry.skup = poradiSkupin(skup.split(',').filter((k) => Object.hasOwn(SKUPINY_KATEGORII, k)));
@@ -55,6 +58,7 @@ export function filtryDoUrl(filtry) {
   const q = filtry.q?.trim();
   if (q) casti.push(`q=${encodeURIComponent(q)}`);
   if (Number.isInteger(filtry.vek)) casti.push(`vek=${filtry.vek}`);
+  if (filtry.dny?.length) casti.push(`dny=${filtry.dny.join(',')}`);
   if (filtry.skup?.length) casti.push(`skup=${filtry.skup.map(encodeURIComponent).join(',')}`);
   if (filtry.kat?.length) casti.push(`kat=${filtry.kat.map(encodeURIComponent).join(',')}`);
   if (filtry.org) casti.push(`org=${encodeURIComponent(filtry.org)}`);

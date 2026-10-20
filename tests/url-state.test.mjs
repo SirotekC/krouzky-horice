@@ -4,15 +4,15 @@ import { prazdneFiltry } from '../site/js/filters.js';
 import { cestaZHashe, filtryDoUrl, filtryZUrl, odkazNaAktivitu } from '../site/js/url-state.js';
 
 test('převod URL tam a zpět', () => {
-  const filtry = { q: 'klavír', vek: 8, skup: ['sport', 'umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
+  const filtry = { q: 'klavír', vek: 8, dny: ['po', 'st'], skup: ['sport', 'umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
   const url = filtryDoUrl(filtry);
-  assert.equal(url, '?q=klav%C3%ADr&vek=8&skup=sport,umeni&kat=hudba,tanec&org=zus-mesto&stav=probiha&pohlavi=divky');
+  assert.equal(url, '?q=klav%C3%ADr&vek=8&dny=po,st&skup=sport,umeni&kat=hudba,tanec&org=zus-mesto&stav=probiha&pohlavi=divky');
   assert.deepEqual(filtryZUrl(url), filtry);
 });
 
 test('příklad URL ze zadání', () => {
   assert.deepEqual(filtryZUrl('?q=klavir&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha'), {
-    q: 'klavir', vek: 8, skup: ['umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: '',
+    q: 'klavir', vek: 8, dny: [], skup: ['umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: '',
   });
 });
 
@@ -79,4 +79,9 @@ test('neplatná cesta nebo id vede na „nenalezeno“', () => {
   for (const hash of ['#/neco', '#/aktivita/', '#/aktivita/<script>', '#/aktivita/%E0%A4%A', '#/aktivita/Velka']) {
     assert.deepEqual(cestaZHashe(hash), { typ: 'aktivita', id: null }, hash);
   }
+});
+
+test('dny z URL: neplatné se ignorují, pořadí po → ne', () => {
+  assert.deepEqual(filtryZUrl('?dny=st,xx,po,st').dny, ['po', 'st']);
+  assert.deepEqual(filtryZUrl('?dny=').dny, []);
 });

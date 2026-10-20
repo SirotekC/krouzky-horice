@@ -20,9 +20,20 @@ export const POHLAVI_FILTRU = Object.freeze({
   chlapci: 'Chlapec',
 });
 
+/** Hodnoty filtru „Den v týdnu“ v pořadí po → ne. */
+export const DNY_FILTRU = Object.freeze({
+  po: 'Po',
+  ut: 'Út',
+  st: 'St',
+  ct: 'Čt',
+  pa: 'Pá',
+  so: 'So',
+  ne: 'Ne',
+});
+
 /** Prázdné filtry. */
 export function prazdneFiltry() {
-  return { q: '', vek: null, skup: [], kat: [], org: '', stav: '', pohlavi: '' };
+  return { q: '', vek: null, dny: [], skup: [], kat: [], org: '', stav: '', pohlavi: '' };
 }
 
 /** Malá písmena bez diakritiky, např. „Klavír“ → „klavir“. */
@@ -50,6 +61,12 @@ function odpovidaVeku(aktivita, vek) {
   return od <= vek && vek <= doVeku;
 }
 
+/** Aktivity bez pevného dne (např. ZUŠ, kde se rozvrh domlouvá individuálně) patří ke každému dni. */
+function odpovidaDnum(aktivita, dny) {
+  const dnyAktivity = aktivita.terminy?.dny ?? [];
+  return !dnyAktivity.length || dnyAktivity.some((d) => dny.includes(d));
+}
+
 /**
  * Kategorie, kterým musí aktivita odpovídat (alespoň jedné). Za každou vybranou skupinu se vezmou
  * její vybrané podkategorie, a pokud žádné nejsou, celá skupina; výsledky skupin se sečtou.
@@ -69,9 +86,9 @@ function hledaneKategorie(filtry) {
 }
 
 /**
- * Vrátí aktivity odpovídající filtrům. Mezi skupinami filtrů platí AND, ve skupinách zaměření a kategoriích OR.
+ * Vrátí aktivity odpovídající filtrům. Mezi skupinami filtrů platí AND, ve dnech, skupinách zaměření a kategoriích OR.
  * @param {object[]} aktivity aktivity s vlastností `organizace` (viz `pripravData`)
- * @param {{ q?: string, vek?: number|null, skup?: string[], kat?: string[], org?: string, stav?: string }} filtry
+ * @param {{ q?: string, vek?: number|null, dny?: string[], skup?: string[], kat?: string[], org?: string, stav?: string }} filtry
  * @param {{ dnes: string, kategorie?: Record<string, string> }} kontext
  */
 export function filtruj(aktivity, filtry, kontext) {
@@ -85,6 +102,7 @@ export function filtruj(aktivity, filtry, kontext) {
       if (!slova.every((s) => text.includes(s))) return false;
     }
     if (vek !== null && !odpovidaVeku(a, vek)) return false;
+    if (filtry.dny?.length && !odpovidaDnum(a, filtry.dny)) return false;
     if (kategorie.size && !(a.kategorie ?? []).some((k) => kategorie.has(k))) return false;
     if (filtry.org && a.organizace_id !== filtry.org) return false;
     // Aktivity bez určení pohlaví jsou pro všechny.
@@ -108,5 +126,5 @@ export function seradi(aktivity, dnes) {
 
 /** Jsou všechny filtry prázdné? */
 export function jsouPrazdne(filtry) {
-  return !filtry.q && filtry.vek == null && !(filtry.skup?.length) && !(filtry.kat?.length) && !filtry.org && !filtry.stav && !filtry.pohlavi;
+  return !filtry.q && filtry.vek == null && !(filtry.dny?.length) && !(filtry.skup?.length) && !(filtry.kat?.length) && !filtry.org && !filtry.stav && !filtry.pohlavi;
 }
