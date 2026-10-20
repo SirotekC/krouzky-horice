@@ -38,7 +38,7 @@ function textProHledani(aktivita, kontext) {
   const popiskyKategorii = kategorie.map((k) => kontext.kategorie?.[k] ?? k);
   const popiskySkupin = kategorie.map((k) => SKUPINY_KATEGORII[skupinaKategorie(k)]?.popisek);
   return normalizuj(
-    [aktivita.nazev, aktivita.popis, aktivita.organizace?.nazev, ...popiskyKategorii, ...popiskySkupin]
+    [aktivita.nazev, aktivita.popis, aktivita.organizace?.nazev, ...popiskyKategorii, ...popiskySkupin, ...(aktivita.klicova_slova ?? [])]
       .filter(Boolean)
       .join(' '),
   );

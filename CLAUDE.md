@@ -26,6 +26,7 @@ Statický web (GitHub Pages) s přehledem kroužků pro děti v Hořicích. Žá
 ## Obecná pravidla polí
 
 - Texty česky, `popis` vlastními slovy, max. 300 znaků.
+- `klicova_slova`: 2–3 slova, podle kterých by rodič kroužek hledal a která nejsou v názvu ani popisu (činnost, předmět, synonymum: `["brusle", "bruslení", "kluziště"]`). Malými písmeny, s diakritikou. Na kartě se nezobrazují, slouží jen pro vyhledávání. U ZUŠ uveď všechny nástroje, které zdroj výslovně jmenuje, a vždy `klavír`, `flétna`, `housle`, `bicí` (přání uživatele). Každý nový kroužek je má dostat rovnou.
 - **Žádné osobní kontakty** (telefony a e-maily trenérů, ředitelů, WhatsApp). Jen obecné kontakty organizace (např. `sekretar@…`, `info@…`).
 - Data ve formátu `YYYY-MM-DD`. Pomlčka v rozsazích je vždy `–` (en dash), ne `-`.
 - `vek_od` / `vek_do`: celá čísla. Pokud zdroj uvádí ročníky narození, dopočítej věk k aktuálnímu školnímu roku a zmiň to v poznámkách ze sběru.

@@ -119,6 +119,12 @@
           "poznamka": { "type": ["string", "null"] }
         }
       },
+      "klicova_slova": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": { "type": "string", "pattern": "^[a-z0-9áčďéěíňóřšťúůýž]+( [a-z0-9áčďéěíňóřšťúůýž]+)*$", "maxLength": 40 },
+        "description": "Skrytá slova pro vyhledávání (malými písmeny), např. nástroje nebo činnost: [\"brusle\", \"bruslení\"]."
+      },
       "skolni_rok": { "type": ["string", "null"], "pattern": "^\\d{4}/\\d{4}$" },
       "zdroj_url": { "type": "string", "format": "uri" },
       "overeno": { "type": "string", "format": "date" }

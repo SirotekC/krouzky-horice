@@ -22,7 +22,7 @@ const { aktivity } = pripravData(organizace, [
     prihlaska: prihlaska(null, null, true) },
   { id: 'cviceni', organizace_id: 'sokol', nazev: 'Cvičení rodičů s dětmi', kategorie: ['sport-ostatni', 'tanec'], pohlavi: null,
     prihlaska: prihlaska('2026-10-20', '2026-11-30') },
-  { id: 'zpev', organizace_id: 'zus', nazev: 'Zpěv', kategorie: ['hudba'], vek_od: 6, vek_do: 18, pohlavi: 'divky',
+  { id: 'zpev', organizace_id: 'zus', nazev: 'Zpěv', kategorie: ['hudba'], vek_od: 6, vek_do: 18, pohlavi: 'divky', klicova_slova: ['pěvecký sbor', 'zpívání'],
     prihlaska: prihlaska('2026-06-01', '2026-06-30') },
 ]);
 
@@ -49,6 +49,11 @@ test('vyhledávání bez diakritiky a velikosti písmen', () => {
 test('vyhledávání v názvu organizace a popiscích kategorií', () => {
   assert.deepEqual(ids(filtruj(aktivity, f({ q: 'sokol' }), kontext)), ['cviceni', 'florbal']);
   assert.deepEqual(ids(filtruj(aktivity, f({ q: 'micove' }), kontext)), ['florbal']);
+});
+
+test('vyhledávání v klíčových slovech', () => {
+  assert.deepEqual(ids(filtruj(aktivity, f({ q: 'zpivani' }), kontext)), ['zpev']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ q: 'Pěvecký' }), kontext)), ['zpev']);
 });
 
 test('vyhledávání více slovy vyžaduje všechna slova', () => {

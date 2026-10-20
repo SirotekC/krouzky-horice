@@ -7,6 +7,11 @@
       "tanec"
     ],
     "popis": "Latinsko-americké tance s přípravou na vystoupení a soutěže. Před soutěžemi může být trénink delší. Taneční obuv a oblečení se dokupují.",
+    "klicova_slova": [
+      "latina",
+      "tanec",
+      "taneční soutěže"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 11,
@@ -56,6 +61,11 @@
       "vytvarne"
     ],
     "popis": "Výtvarné techniky a práce s různými materiály včetně keramické hlíny a točení na kruhu. Rozvíjí fantazii a jemnou motoriku.",
+    "klicova_slova": [
+      "malování",
+      "keramika",
+      "hrnčířský kruh"
+    ],
     "pohlavi": null,
     "vek_od": 5,
     "vek_do": 12,
@@ -105,6 +115,11 @@
       "tanec"
     ],
     "popis": "Mažoretkový sport a roztleskávání: nácvik sestav na vystoupení a malé formace. Jen pro vybrané děti po dohodě s vedoucími.",
+    "klicova_slova": [
+      "mažoretky",
+      "roztleskávačky",
+      "cheerleading"
+    ],
     "pohlavi": null,
     "vek_od": 11,
     "vek_do": 15,
@@ -164,6 +179,11 @@
       "sport-ostatni"
     ],
     "popis": "Teorie bezpečné jízdy, pravidla silničního provozu a závodů, jízda na simulátoru a za dobrého počasí na minibiku v autokempu. Ochranná výbava vítána.",
+    "klicova_slova": [
+      "minibike",
+      "motorka",
+      "simulátor"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 17,
@@ -222,6 +242,10 @@
       "tanec"
     ],
     "popis": "Taneční formace pro pokročilé tanečnice.",
+    "klicova_slova": [
+      "mažoretky",
+      "taneční formace"
+    ],
     "pohlavi": null,
     "vek_od": 15,
     "vek_do": 26,
@@ -271,6 +295,11 @@
       "divadlo"
     ],
     "popis": "Loutkové divadlo: děti si vyrábějí loutky, hrají s nimi představení a učí se základy herectví. Vystupují na akcích a soutěžích.",
+    "klicova_slova": [
+      "loutky",
+      "divadlo",
+      "herectví"
+    ],
     "pohlavi": null,
     "vek_od": 12,
     "vek_do": 15,
@@ -320,6 +349,11 @@
       "sport-ostatni"
     ],
     "popis": "Všestranná pohybová průprava pro předškoláky bez rodičů: běh, skoky, hody, hry venku i v sále, tanec a cvičení s pomůckami.",
+    "klicova_slova": [
+      "předškoláci",
+      "cvičení",
+      "pohybové hry"
+    ],
     "pohlavi": null,
     "vek_od": 4,
     "vek_do": 7,
@@ -369,6 +403,11 @@
       "vytvarne"
     ],
     "popis": "Šití, háčkování a vyšívání: figurky, hračky nebo taštička s vlastní výšivkou. Pro začátečníky i ty, kdo už něco umí.",
+    "klicova_slova": [
+      "šití",
+      "háčkování",
+      "vyšívání"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 14,
@@ -418,6 +457,11 @@
       "vytvarne"
     ],
     "popis": "Návrhy oblečení a módních doplňků, stříhání látek a šití na stroji. Šicí stroj je k dispozici v DDM.",
+    "klicova_slova": [
+      "móda",
+      "šití",
+      "šicí stroj"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 17,
@@ -467,6 +511,11 @@
       "vytvarne"
     ],
     "popis": "Vlastní doplňky z látek, vlny a recyklovaných materiálů – šití na stroji, háčkování, vyšívání, korálkování, úpravy oblečení.",
+    "klicova_slova": [
+      "šití",
+      "háčkování",
+      "korálkování"
+    ],
     "pohlavi": null,
     "vek_od": 10,
     "vek_do": 18,
@@ -516,6 +565,11 @@
       "priroda"
     ],
     "popis": "Zvířata, rostliny a ochrana přírody. Pravidelné vycházky do terénu, rukodělné činnosti a jednou za pololetí sobotní výprava.",
+    "klicova_slova": [
+      "zvířata",
+      "rostliny",
+      "příroda"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 14,
@@ -565,6 +619,11 @@
       "technika"
     ],
     "popis": "Stavění modelů z kostek LEGO podle zadání i vlastní fantazie.",
+    "klicova_slova": [
+      "lego",
+      "stavebnice",
+      "kostky"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 10,
@@ -614,6 +673,11 @@
       "technika"
     ],
     "popis": "Scénky z kostek LEGO, vlastní příběhy a jejich převod do jednoduchých animací s efekty. S sebou flash disk.",
+    "klicova_slova": [
+      "lego",
+      "animace",
+      "film"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 15,
@@ -663,6 +727,11 @@
       "vytvarne"
     ],
     "popis": "Volné výtvarné tvoření bez hodnocení: různé techniky, spontánní a abstraktní tvorba, radost z procesu.",
+    "klicova_slova": [
+      "malování",
+      "kreslení",
+      "výtvarka"
+    ],
     "pohlavi": null,
     "vek_od": 10,
     "vek_do": 16,
@@ -712,6 +781,11 @@
       "ostatni"
     ],
     "popis": "Vaření a pečení sladkých i slaných dobrot podle nových receptů, pro holky i kluky. S sebou zástěra a krabička.",
+    "klicova_slova": [
+      "vaření",
+      "pečení",
+      "kuchyně"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 14,
@@ -761,6 +835,11 @@
       "sport-ostatni"
     ],
     "popis": "Pohybové aktivity pro malé děti s rodičem: tanec, básničky a říkanky, na závěr opičí dráha.",
+    "klicova_slova": [
+      "rodiče s dětmi",
+      "batolata",
+      "cvičení"
+    ],
     "pohlavi": null,
     "vek_od": 2,
     "vek_do": 4,
@@ -810,6 +889,11 @@
       "ostatni"
     ],
     "popis": "Setkávání nejmenších s vrstevníky za účasti rodičů: hry, básničky a říkanky.",
+    "klicova_slova": [
+      "batolata",
+      "rodiče s dětmi",
+      "hernička"
+    ],
     "pohlavi": null,
     "vek_od": 1,
     "vek_do": 2,
@@ -859,6 +943,11 @@
       "tanec"
     ],
     "popis": "Hravé tancování různých stylů, cvičení s náčiním a všestranná pohybová průprava pro holčičky.",
+    "klicova_slova": [
+      "tancování",
+      "předškoláci",
+      "holčičky"
+    ],
     "pohlavi": "divky",
     "vek_od": 4,
     "vek_do": 7,
@@ -908,6 +997,11 @@
       "sport-ostatni"
     ],
     "popis": "Gymnastická průprava jen pro děti, které chodí do kroužku roztleskávaček.",
+    "klicova_slova": [
+      "gymnastika",
+      "roztleskávačky",
+      "akrobacie"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 11,
@@ -957,6 +1051,11 @@
       "vytvarne"
     ],
     "popis": "Keramika pro děti, které už zvládají základní techniky: složitější tvary, vlastní nápady a pečlivé dokončení výrobků.",
+    "klicova_slova": [
+      "keramika",
+      "hlína",
+      "modelování"
+    ],
     "pohlavi": null,
     "vek_od": 8,
     "vek_do": 13,
@@ -1006,6 +1105,11 @@
       "technika"
     ],
     "popis": "Teorie bezpečné jízdy, pravidla silničního provozu a závodů a trénink na simulátoru. Varianta s praktickou jízdou je samostatný kroužek.",
+    "klicova_slova": [
+      "simulátor",
+      "motorka",
+      "dopravní výchova"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 18,
@@ -1055,6 +1159,10 @@
       "tanec"
     ],
     "popis": "Mažoretková formace pro dívky po domluvě s vedoucí kroužku.",
+    "klicova_slova": [
+      "mažoretky",
+      "taneční formace"
+    ],
     "pohlavi": "divky",
     "vek_od": 8,
     "vek_do": 11,
@@ -1104,6 +1212,11 @@
       "priroda"
     ],
     "popis": "Fauna a flóra, návštěvy lesa, stavba krmelců a přikrmování v zimě, návštěva bažantnice a střelba ze vzduchovky pod dohledem.",
+    "klicova_slova": [
+      "myslivost",
+      "les",
+      "zvířata"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 16,
@@ -1153,6 +1266,11 @@
       "priroda"
     ],
     "popis": "Teorie i praxe v přírodě s cílem získat rybářské oprávnění. Pokračující členové mají připravený další program.",
+    "klicova_slova": [
+      "rybaření",
+      "ryby",
+      "rybářský lístek"
+    ],
     "pohlavi": null,
     "vek_od": 8,
     "vek_do": 15,
@@ -1202,6 +1320,11 @@
       "vytvarne"
     ],
     "popis": "Keramika pro děti, které už zvládají základní techniky: složitější tvary, kombinace technik a vlastní nápady.",
+    "klicova_slova": [
+      "keramika",
+      "hlína",
+      "modelování"
+    ],
     "pohlavi": null,
     "vek_od": 8,
     "vek_do": 12,
@@ -1251,6 +1374,11 @@
       "sport-ostatni"
     ],
     "popis": "Parkourové dovednosti – síla, obratnost a nové triky. Trénuje se v tělocvičně nebo na venkovním parkourovém hřišti, možná i soutěže.",
+    "klicova_slova": [
+      "parkour",
+      "triky",
+      "akrobacie"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 12,
@@ -1300,6 +1428,11 @@
       "sport-ostatni"
     ],
     "popis": "Parkour pro zdatnější děti; do skupiny je zařazuje trenér. Tělocvična nebo venkovní parkourové hřiště, případně soutěže.",
+    "klicova_slova": [
+      "parkour",
+      "triky",
+      "akrobacie"
+    ],
     "pohlavi": null,
     "vek_od": 8,
     "vek_do": 16,
@@ -1349,6 +1482,10 @@
       "tanec"
     ],
     "popis": "Malé formace v mažoretkovém sportu. Jen pro vybrané děti po dohodě s vedoucími.",
+    "klicova_slova": [
+      "mažoretky",
+      "taneční formace"
+    ],
     "pohlavi": null,
     "vek_od": 5,
     "vek_do": 7,
@@ -1398,6 +1535,11 @@
       "ostatni"
     ],
     "popis": "Šachy pro děti, které už hrají. Účast na soutěžích v regionu.",
+    "klicova_slova": [
+      "šachy",
+      "deskové hry",
+      "logika"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 15,
@@ -1447,6 +1589,11 @@
       "technika"
     ],
     "popis": "Základy 3D modelování, příprava návrhů a práce s 3D tiskárnou – od nápadu ke skutečnému výrobku. S sebou vlastní notebook a myš.",
+    "klicova_slova": [
+      "3d tisk",
+      "modelování",
+      "tiskárna"
+    ],
     "pohlavi": null,
     "vek_od": 11,
     "vek_do": 18,
@@ -1496,6 +1643,11 @@
       "jazyky"
     ],
     "popis": "Pomoc s angličtinou pro 5.–8. třídu: opakování konverzačních témat a slovní zásoby, procvičení učiva podle potřeb dítěte.",
+    "klicova_slova": [
+      "angličtina",
+      "anglický jazyk",
+      "doučování"
+    ],
     "pohlavi": null,
     "vek_od": 10,
     "vek_do": 14,
@@ -1545,6 +1697,11 @@
       "vytvarne"
     ],
     "popis": "Keramika pro starší děti, středoškoláky i dospělé: vlastní nápady, detail a práce na hrnčířském kruhu.",
+    "klicova_slova": [
+      "keramika",
+      "hrnčířský kruh",
+      "hlína"
+    ],
     "pohlavi": null,
     "vek_od": 14,
     "vek_do": null,
@@ -1594,6 +1751,11 @@
       "jazyky"
     ],
     "popis": "Angličtina hrou pro předškoláky a prvňáčky: slovíčka, básničky, písničky a tvoření.",
+    "klicova_slova": [
+      "angličtina",
+      "anglický jazyk",
+      "předškoláci"
+    ],
     "pohlavi": null,
     "vek_od": 5,
     "vek_do": 7,
@@ -1643,6 +1805,10 @@
       "jazyky"
     ],
     "popis": "Angličtina hrou pro 2.–4. třídu: komunikace, slovní zásoba a gramatika přiměřená věku.",
+    "klicova_slova": [
+      "angličtina",
+      "anglický jazyk"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 10,
@@ -1692,6 +1858,11 @@
       "ostatni"
     ],
     "popis": "Druhá skupina kroužku vaření a pečení pro holky i kluky. Otevře se při nejméně 4 přihlášených.",
+    "klicova_slova": [
+      "vaření",
+      "pečení",
+      "kuchyně"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 10,
@@ -1741,6 +1912,11 @@
       "jazyky"
     ],
     "popis": "Angličtina hrou pro předškoláky a prvňáčky: slovíčka, básničky, písničky a tvoření.",
+    "klicova_slova": [
+      "angličtina",
+      "anglický jazyk",
+      "předškoláci"
+    ],
     "pohlavi": null,
     "vek_od": 4,
     "vek_do": 7,
@@ -1790,6 +1966,11 @@
       "hudba"
     ],
     "popis": "Ukulele pro začátečníky všech věků, i rodiče s dětmi: základy rytmu a melodie, lidovky i moderní písně. Vlastní ukulele podmínkou.",
+    "klicova_slova": [
+      "ukulele",
+      "hudební nástroj",
+      "písničky"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": null,
@@ -1839,6 +2020,11 @@
       "ostatni"
     ],
     "popis": "Vaření a pečení jednoduchých sladkých i slaných jídel a základy práce v kuchyni.",
+    "klicova_slova": [
+      "vaření",
+      "pečení",
+      "kuchyně"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 14,
@@ -1888,6 +2074,11 @@
       "vytvarne"
     ],
     "popis": "Výtvarné a rukodělné tvoření na ZŠ Dobrá Voda: dřevo, korálky, drátky, modelovací hmoty, háčkování a vyšívání.",
+    "klicova_slova": [
+      "rukodělky",
+      "korálky",
+      "háčkování"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 13,
@@ -1937,6 +2128,11 @@
       "ostatni"
     ],
     "popis": "Šachy pro začátečníky i hráče na ZŠ Dobrá Voda.",
+    "klicova_slova": [
+      "šachy",
+      "deskové hry",
+      "logika"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 13,
@@ -1986,6 +2182,11 @@
       "sport-ostatni"
     ],
     "popis": "Pohybové hry a základy atletiky a gymnastiky na ZŠ Mžany.",
+    "klicova_slova": [
+      "sport",
+      "atletika",
+      "gymnastika"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 10,
@@ -2035,6 +2236,11 @@
       "sport-ostatni"
     ],
     "popis": "Všestranná pohybová průprava pro předškoláky bez rodičů na ZŠ Mžany, za dobrého počasí venku.",
+    "klicova_slova": [
+      "předškoláci",
+      "cvičení",
+      "pohybové hry"
+    ],
     "pohlavi": null,
     "vek_od": 2,
     "vek_do": 6,
@@ -2084,6 +2290,11 @@
       "technika"
     ],
     "popis": "Elektronika od úplných základů: stavba obvodů, pájení, čtení schémat a oživování světelných a zvukových konstrukcí.",
+    "klicova_slova": [
+      "elektronika",
+      "pájení",
+      "obvody"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 10,
@@ -2133,6 +2344,11 @@
       "technika"
     ],
     "popis": "Pokračování v elektronice: stavba a oživování konstrukcí, pájení, schémata, základy programování a drobné opravy.",
+    "klicova_slova": [
+      "elektronika",
+      "pájení",
+      "programování"
+    ],
     "pohlavi": null,
     "vek_od": 11,
     "vek_do": 18,
@@ -2182,6 +2398,11 @@
       "sport-ostatni"
     ],
     "popis": "Atletika (běh, skok, hod) a gymnastická průprava, za dobrého počasí venku na oválu. Možná účast na soutěžích.",
+    "klicova_slova": [
+      "atletika",
+      "gymnastika",
+      "běh"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 10,
@@ -2231,6 +2452,11 @@
       "hudba"
     ],
     "popis": "Kytara pro začátečníky: základní akordy a doprovod písniček. Vlastní kytara a domácí cvičení podmínkou.",
+    "klicova_slova": [
+      "kytara",
+      "akordy",
+      "hudební nástroj"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": null,
@@ -2280,6 +2506,11 @@
       "hudba"
     ],
     "popis": "Kytara pro ty, kdo do kroužku chodí déle než rok: akordy a doprovod písniček. Vlastní kytara a domácí cvičení podmínkou.",
+    "klicova_slova": [
+      "kytara",
+      "akordy",
+      "hudební nástroj"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": null,
@@ -2329,6 +2560,11 @@
       "technika"
     ],
     "popis": "Stavba modelů letadel a teorie leteckého sportu, za hezkého počasí návštěva letiště a soutěže. Otevře se při nejméně 4 dětech.",
+    "klicova_slova": [
+      "modelářství",
+      "letadla",
+      "modely"
+    ],
     "pohlavi": null,
     "vek_od": 10,
     "vek_do": 16,
@@ -2378,6 +2614,11 @@
       "sport-ostatni"
     ],
     "popis": "Kuželky v kuželně SKK Hořice. Po dvou letech v kroužku je možná účast na soutěžích.",
+    "klicova_slova": [
+      "kuželky",
+      "kuželna",
+      "bowling"
+    ],
     "pohlavi": null,
     "vek_od": 10,
     "vek_do": 15,
@@ -2436,6 +2677,11 @@
       "bojove"
     ],
     "popis": "Judo pro začátečníky. Zpočátku stačí tričko a tepláky, potom je nutné vlastní kimono.",
+    "klicova_slova": [
+      "judo",
+      "bojový sport",
+      "sebeobrana"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 13,
@@ -2485,6 +2731,11 @@
       "sport-ostatni"
     ],
     "popis": "Rekreační gymnastika pro holky i kluky: koordinace, základy akrobacie, nářadí i náčiní, posilování a hry.",
+    "klicova_slova": [
+      "gymnastika",
+      "akrobacie",
+      "cvičení"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 15,
@@ -2534,6 +2785,11 @@
       "bojove"
     ],
     "popis": "Judo pro pokročilé, trénink dvakrát týdně. Vlastní kimono je povinné.",
+    "klicova_slova": [
+      "judo",
+      "bojový sport",
+      "sebeobrana"
+    ],
     "pohlavi": null,
     "vek_od": 8,
     "vek_do": 13,
@@ -2592,6 +2848,11 @@
       "ostatni"
     ],
     "popis": "Šachy pro začátečníky. Účast na soutěžích v regionu.",
+    "klicova_slova": [
+      "šachy",
+      "deskové hry",
+      "logika"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 15,
@@ -2641,6 +2902,11 @@
       "tanec"
     ],
     "popis": "Mažoretky pro nejmenší dívky: tanec, držení těla a práce s hůlkou. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "klicova_slova": [
+      "mažoretky",
+      "hůlka",
+      "tanec"
+    ],
     "pohlavi": "divky",
     "vek_od": 5,
     "vek_do": 7,
@@ -2699,6 +2965,11 @@
       "vytvarne"
     ],
     "popis": "Keramika pro začátečníky: seznámení s hlínou a nástroji, první výrobky – zvířátka, misky, dekorace.",
+    "klicova_slova": [
+      "keramika",
+      "hlína",
+      "modelování"
+    ],
     "pohlavi": null,
     "vek_od": 5,
     "vek_do": 8,
@@ -2749,6 +3020,11 @@
       "sport-ostatni"
     ],
     "popis": "Roztleskávačky: taneční, gymnastická a akrobatická průprava a práce s pompony. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "klicova_slova": [
+      "roztleskávačky",
+      "cheerleading",
+      "pompony"
+    ],
     "pohlavi": "divky",
     "vek_od": 7,
     "vek_do": 11,
@@ -2816,6 +3092,11 @@
       "divadlo"
     ],
     "popis": "Loutkové divadlo pro začátečníky: výroba loutek, představení, základy herectví formou písniček a her.",
+    "klicova_slova": [
+      "loutky",
+      "divadlo",
+      "herectví"
+    ],
     "pohlavi": null,
     "vek_od": 6,
     "vek_do": 11,
@@ -2865,6 +3146,11 @@
       "technika"
     ],
     "popis": "Železniční modelářství: stavba kolejišť a dioramat, stavebnice vagonů a budov, digitální ovládání kolejiště.",
+    "klicova_slova": [
+      "modelářství",
+      "vláčky",
+      "železnice"
+    ],
     "pohlavi": null,
     "vek_od": 7,
     "vek_do": 10,
@@ -2914,6 +3200,11 @@
       "technika"
     ],
     "popis": "Železniční modelářství pro pokročilé: kolejiště, dioramata, stavebnice a digitální ovládání, prezentace na výstavách.",
+    "klicova_slova": [
+      "modelářství",
+      "vláčky",
+      "železnice"
+    ],
     "pohlavi": null,
     "vek_od": 10,
     "vek_do": 18,
@@ -2963,6 +3254,11 @@
       "tanec"
     ],
     "popis": "Taneční aktivita na moderní hudbu s nácvikem choreografií. Dívky vystupují na akcích.",
+    "klicova_slova": [
+      "tanec",
+      "choreografie",
+      "moderní tanec"
+    ],
     "pohlavi": null,
     "vek_od": 8,
     "vek_do": 16,
@@ -3012,6 +3308,11 @@
       "vytvarne"
     ],
     "popis": "Paličkování krajek podle předlohy pro trpělivé dívky i dospělé. Vlastní pomůcky na paličkování.",
+    "klicova_slova": [
+      "paličkování",
+      "krajky",
+      "ruční práce"
+    ],
     "pohlavi": null,
     "vek_od": 8,
     "vek_do": null,
@@ -3062,6 +3363,11 @@
       "sport-ostatni"
     ],
     "popis": "Roztleskávačky pro nejmenší dívky: tanec, gymnastika a práce s pompony. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "klicova_slova": [
+      "roztleskávačky",
+      "cheerleading",
+      "pompony"
+    ],
     "pohlavi": "divky",
     "vek_od": 5,
     "vek_do": 7,
@@ -3120,6 +3426,11 @@
       "tanec"
     ],
     "popis": "Mažoretky: tanec a práce s hůlkou pro dívky, které se chtějí zdokonalovat. Kostýmy, obuv a soutěže se platí zvlášť.",
+    "klicova_slova": [
+      "mažoretky",
+      "hůlka",
+      "tanec"
+    ],
     "pohlavi": "divky",
     "vek_od": 7,
     "vek_do": 10,
@@ -3187,6 +3498,11 @@
       "plavani"
     ],
     "popis": "Pro předškoláky, navazuje na kojenecké plavání. 15 lekcí po 50 minutách za pololetí.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "předškoláci"
+    ],
     "vek_od": 4,
     "vek_do": 5,
     "terminy": {
@@ -3240,6 +3556,11 @@
       "plavani"
     ],
     "popis": "Pro děti, které se s vodou teprve seznamují. 15 lekcí po 50 minutách za pololetí.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "výuka plavání"
+    ],
     "vek_od": 4,
     "vek_do": 6,
     "terminy": {
@@ -3294,6 +3615,11 @@
       "plavani"
     ],
     "popis": "Pro děti, které už zvládají základní orientaci ve vodě. 15 lekcí po 50 minutách za pololetí.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "výuka plavání"
+    ],
     "vek_od": 5,
     "vek_do": 6,
     "terminy": {
@@ -3348,6 +3674,11 @@
       "plavani"
     ],
     "popis": "Pro děti, které zvládají alespoň jeden plavecký způsob, skoky a potápění. 15 lekcí po 50 minutách za pololetí.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "potápění"
+    ],
     "vek_od": 6,
     "vek_do": 9,
     "terminy": {
@@ -3401,6 +3732,11 @@
       "plavani"
     ],
     "popis": "Další plavecké způsoby a zdokonalování techniky. Skupiny 9–13 a 13–16 let, 15 lekcí po 50 minutách za pololetí.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "plavecké styly"
+    ],
     "vek_od": 9,
     "vek_do": 16,
     "terminy": {
@@ -3456,6 +3792,11 @@
       "plavani"
     ],
     "popis": "Plavání malých dětí s rodičem, navazuje na kojenecké plavání. Lekce trvají 40 minut.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "rodiče s dětmi"
+    ],
     "vek_od": 3,
     "vek_do": 4,
     "terminy": {
@@ -3518,6 +3859,11 @@
       "plavani"
     ],
     "popis": "Plavecký oddíl pro plavce žákovského věku: přípravný a základní trénink, krajské závody.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "závodní plavání"
+    ],
     "vek_od": null,
     "vek_do": null,
     "terminy": {
@@ -3576,6 +3922,11 @@
       "sport-mickove"
     ],
     "popis": "Florbal pro nejmenší (ročníky 2020–2022) se zaměřením na všestranný pohyb, pro kluky i holky.",
+    "klicova_slova": [
+      "florbal",
+      "hokejka",
+      "míčové hry"
+    ],
     "vek_od": 4,
     "vek_do": 6,
     "misto": {
@@ -3639,6 +3990,11 @@
       "sport-mickove"
     ],
     "popis": "Florbal pro děti z ročníků 2016–2019, pro kluky i holky. Tréninky 2–3× týdně.",
+    "klicova_slova": [
+      "florbal",
+      "hokejka",
+      "míčové hry"
+    ],
     "vek_od": 7,
     "vek_do": 10,
     "terminy": {
@@ -3754,6 +4110,11 @@
       "sport-mickove"
     ],
     "popis": "Florbal pro žáky z ročníků 2013–2015, tréninky 3× týdně.",
+    "klicova_slova": [
+      "florbal",
+      "hokejka",
+      "míčové hry"
+    ],
     "vek_od": 11,
     "vek_do": 13,
     "terminy": {
@@ -3812,6 +4173,11 @@
       "sport-mickove"
     ],
     "popis": "Florbal pro starší mládež: dívky z ročníků 2010–2013, chlapci 2010–2012 a junioři 2008–2009.",
+    "klicova_slova": [
+      "florbal",
+      "hokejka",
+      "míčové hry"
+    ],
     "vek_od": 13,
     "vek_do": 18,
     "terminy": {
@@ -3919,6 +4285,21 @@
       "hudba"
     ],
     "popis": "Výuka hry na nástroje a zpěvu: nejprve dva přípravné ročníky, potom základní studium. Kromě klasických nástrojů i kytara, popový zpěv a bicí.",
+    "klicova_slova": [
+      "klavír",
+      "flétna",
+      "zobcová flétna",
+      "housle",
+      "kytara",
+      "bicí",
+      "klávesy",
+      "klarinet",
+      "saxofon",
+      "trubka",
+      "kontrabas",
+      "akordeon",
+      "zpěv"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": null,
@@ -3948,6 +4329,11 @@
       "divadlo"
     ],
     "popis": "Tvořivá dramatická hra, přednes, práce v souboru a s dramatickým textem.",
+    "klicova_slova": [
+      "divadlo",
+      "herectví",
+      "přednes"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -3981,6 +4367,11 @@
       "vytvarne"
     ],
     "popis": "Výtvarné dovednosti v tematických řadách a projektech, exkurze, galerie a plenéry. Starší žáci se mohou připravit na umělecké školy.",
+    "klicova_slova": [
+      "malování",
+      "kreslení",
+      "výtvarka"
+    ],
     "vek_od": 5,
     "vek_do": null,
     "misto": {
@@ -4016,6 +4407,11 @@
       "vytvarne"
     ],
     "popis": "Přípravné ročníky před základním studiem v hudebním, literárně-dramatickém a výtvarném oboru.",
+    "klicova_slova": [
+      "předškoláci",
+      "hudební nauka",
+      "výtvarka"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": null,
@@ -4045,6 +4441,11 @@
       "hudba"
     ],
     "popis": "Dva pěvecké sbory ZUŠ Hořice.",
+    "klicova_slova": [
+      "zpěv",
+      "sbor",
+      "zpívání"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": null,
@@ -4074,6 +4475,21 @@
       "hudba"
     ],
     "popis": "Klavír, keyboard, kytara (klasická, elektrická, basová), housle, bicí, zobcová i příčná flétna, trubka a zpěv. Nejdřív přípravné studium s hudební výchovou, potom individuální výuka nástroje a hudební teorie.",
+    "klicova_slova": [
+      "klavír",
+      "keyboard",
+      "klávesy",
+      "flétna",
+      "zobcová flétna",
+      "příčná flétna",
+      "housle",
+      "kytara",
+      "elektrická kytara",
+      "baskytara",
+      "bicí",
+      "trubka",
+      "zpěv"
+    ],
     "vek_od": 6,
     "vek_do": 19,
     "misto": {
@@ -4107,6 +4523,11 @@
       "tanec"
     ],
     "popis": "Street dance, contemporary, art dance, show dance a improvizace. Základy klasické taneční techniky, lidový i moderní tanec a akrobacie. Vystoupení, soutěže a závěrečné taneční představení.",
+    "klicova_slova": [
+      "tancování",
+      "street dance",
+      "moderní tanec"
+    ],
     "vek_od": 6,
     "vek_do": 19,
     "misto": {
@@ -4198,6 +4619,11 @@
       "vytvarne"
     ],
     "popis": "Kresba, malba, modelování, grafika a další výtvarné techniky. Hodí se i pro přípravu na umělecké školy. Veškerý materiál je v ceně, s sebou jen přezůvky a zástěru.",
+    "klicova_slova": [
+      "malování",
+      "kreslení",
+      "výtvarka"
+    ],
     "vek_od": 6,
     "vek_do": 19,
     "misto": {
@@ -4275,6 +4701,11 @@
       "vytvarne"
     ],
     "popis": "Roční program pro předškoláky: po třech měsících si děti vyzkouší výtvarný, taneční i hudební obor. Na konci každého bloku je ukázková hodina pro rodiče, na konci roku se vybírá obor.",
+    "klicova_slova": [
+      "předškoláci",
+      "hudba",
+      "malování"
+    ],
     "vek_od": 5,
     "vek_do": 6,
     "misto": {
@@ -4324,6 +4755,11 @@
       "sport-ostatni"
     ],
     "popis": "Společné pohybové cvičení rodičů a dětí v sokolovně.",
+    "klicova_slova": [
+      "rodiče s dětmi",
+      "cvičení",
+      "sokolovna"
+    ],
     "vek_od": 2,
     "vek_do": 6,
     "misto": {
@@ -4369,6 +4805,11 @@
       "sport-ostatni"
     ],
     "popis": "Všestranné pohybové cvičení pro děti.",
+    "klicova_slova": [
+      "cvičení",
+      "gymnastika",
+      "sokolovna"
+    ],
     "vek_od": 6,
     "vek_do": 15,
     "misto": {
@@ -4414,6 +4855,11 @@
       "sport-ostatni"
     ],
     "popis": "Cvičení pro mladší dívky.",
+    "klicova_slova": [
+      "cvičení",
+      "gymnastika",
+      "dívky"
+    ],
     "pohlavi": "divky",
     "vek_od": 6,
     "vek_do": 10,
@@ -4460,6 +4906,11 @@
       "sport-ostatni"
     ],
     "popis": "Cvičení pro starší dívky.",
+    "klicova_slova": [
+      "cvičení",
+      "gymnastika",
+      "dívky"
+    ],
     "pohlavi": "divky",
     "vek_od": 10,
     "vek_do": 15,
@@ -4506,6 +4957,11 @@
       "priroda"
     ],
     "popis": "Skautský oddíl pro holky a kluky. Nejmladší družina je pro děti od 5 do 7 let.",
+    "klicova_slova": [
+      "skaut",
+      "skauting",
+      "tábor"
+    ],
     "vek_od": 5,
     "vek_do": null,
     "misto": null,
@@ -4547,6 +5003,11 @@
       "priroda"
     ],
     "popis": "Skautský oddíl pro kluky a holky od 5 let.",
+    "klicova_slova": [
+      "skaut",
+      "skauting",
+      "tábor"
+    ],
     "vek_od": 5,
     "vek_do": null,
     "misto": null,
@@ -4593,6 +5054,11 @@
       "priroda"
     ],
     "popis": "Chlapecký skautský oddíl: vlčata od 6 do 10 let, skauti od 11 do 14 let.",
+    "klicova_slova": [
+      "skaut",
+      "vlčata",
+      "tábor"
+    ],
     "pohlavi": "chlapci",
     "vek_od": 6,
     "vek_do": 14,
@@ -4623,6 +5089,11 @@
       "sport-mickove"
     ],
     "popis": "Fotbal pro nejmenší: školička a předpřípravka (U7), mladší přípravka (U9) a starší přípravka (U11).",
+    "klicova_slova": [
+      "fotbal",
+      "kopaná",
+      "míč"
+    ],
     "vek_od": 4,
     "vek_do": 10,
     "misto": {
@@ -4717,6 +5188,11 @@
       "sport-mickove"
     ],
     "popis": "Mladší (U13) a starší (U15) žáci. Hrají krajské a okresní soutěže.",
+    "klicova_slova": [
+      "fotbal",
+      "kopaná",
+      "míč"
+    ],
     "vek_od": 11,
     "vek_do": 14,
     "misto": {
@@ -4796,6 +5272,11 @@
       "sport-mickove"
     ],
     "popis": "Mladší (U17) a starší (U19) dorost. Hrají krajský přebor.",
+    "klicova_slova": [
+      "fotbal",
+      "kopaná",
+      "míč"
+    ],
     "vek_od": 15,
     "vek_do": 18,
     "misto": {
@@ -4866,6 +5347,11 @@
       "sport-ostatni"
     ],
     "popis": "Všestranná pohybová průprava pro školkové děti formou jednoduchých cvičení a her. V prvních lekcích je nutná účast rodičů.",
+    "klicova_slova": [
+      "cvičení",
+      "předškoláci",
+      "pohybové hry"
+    ],
     "vek_od": 3,
     "vek_do": 5,
     "misto": {
@@ -4913,6 +5399,11 @@
       "sport-ostatni"
     ],
     "popis": "Dětské tréninky v malých skupinách (max. 8 dětí) zaměřené na všestranný pohybový a sportovní rozvoj.",
+    "klicova_slova": [
+      "cvičení",
+      "kondice",
+      "pohybové hry"
+    ],
     "vek_od": 6,
     "vek_do": 12,
     "misto": {
@@ -4978,6 +5469,11 @@
       "sport-mickove"
     ],
     "popis": "Barevný minivolejbal pro děti, trénink dvakrát týdně. Oddíl pořádá dvě volejbalová soustředění ročně.",
+    "klicova_slova": [
+      "volejbal",
+      "míč",
+      "míčové hry"
+    ],
     "vek_od": 6,
     "vek_do": 14,
     "misto": null,
@@ -5022,6 +5518,11 @@
       "sport-ostatni"
     ],
     "popis": "Obratnost, základy gymnastiky, atletika a pohybové hry venku. Děti závodí v zimním pětiboji a atletickém čtyřboji.",
+    "klicova_slova": [
+      "atletika",
+      "gymnastika",
+      "cvičení"
+    ],
     "vek_od": 4,
     "vek_do": null,
     "misto": {
@@ -5049,6 +5550,11 @@
       "ostatni"
     ],
     "popis": "Setkávání rodičů s miminky v prvním roce: hračky a podněty pro miminka a prostor sdílet radosti i starosti s ostatními rodiči.",
+    "klicova_slova": [
+      "miminka",
+      "rodiče s dětmi",
+      "hernička"
+    ],
     "vek_od": 0,
     "vek_do": 1,
     "misto": {
@@ -5089,6 +5595,11 @@
       "sport-ostatni"
     ],
     "popis": "Cvičení pro chodící děti s rodičem: tanec, cvičení s pohádkou nebo říkankou, padák a míčky, pak opičí dráhy a balanční pomůcky. Rodiče cvičí s dětmi.",
+    "klicova_slova": [
+      "cvičení",
+      "batolata",
+      "rodiče s dětmi"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -5129,6 +5640,11 @@
       "hudba"
     ],
     "popis": "Hudební kroužek pro malé děti s rodiči: písničky a básničky s kytarou nebo klávesy, hraní na hudební nástroje včetně méně obvyklých a poslech klasické hudby.",
+    "klicova_slova": [
+      "písničky",
+      "hudební nástroje",
+      "rodiče s dětmi"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -5169,6 +5685,11 @@
       "vytvarne"
     ],
     "popis": "Výtvarný kroužek pro batolata a malé děti s rodiči: každé setkání má téma (barvy, tvary, zvířátka…), cvičení jemné i hrubé motoriky a na závěr malé výtvarné dílo.",
+    "klicova_slova": [
+      "malování",
+      "batolata",
+      "rodiče s dětmi"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -5209,6 +5730,11 @@
       "ostatni"
     ],
     "popis": "Smyslová hra (sensory play) pro děti zhruba od 1,5 roku s rodiči: voda, písek, rýže, kinetický písek, modelína, sliz a jednoduché pokusy. Baví i předškoláky a školáky.",
+    "klicova_slova": [
+      "sensory play",
+      "smyslová hra",
+      "rodiče s dětmi"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -5249,6 +5775,11 @@
       "sport-ostatni"
     ],
     "popis": "Lezení na umělé stěně (12 m, cesty od úplných začátečníků po těžké převisy) s instruktory. Vybavení je k dispozici, mezi pokusy si děti mohou hrát v tělocvičně s míči, žíněnkami a žebřinami.",
+    "klicova_slova": [
+      "lezení",
+      "horolezectví",
+      "lezecká stěna"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -5298,6 +5829,11 @@
       "sport-ostatni"
     ],
     "popis": "Tréninky orientačního běhu pro žáky a dorost. Od jara do podzimu mapové tréninky v lesích kolem Hořic, v zimě pohyb, hry a mapová teorie v tělocvičně. O víkendech závody v oblastních i celostátních soutěžích.",
+    "klicova_slova": [
+      "orientační běh",
+      "běh",
+      "mapa"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -5350,6 +5886,11 @@
       "priroda"
     ],
     "popis": "Výlety do okolí, hry, úkoly a hledání pokladů se skřítkem Turisťáčkem. Děti se učí orientaci v přírodě a práci s mapou. Občas sobotní pochody a víkendové výpravy, v kroužku je nejvýš 15 dětí.",
+    "klicova_slova": [
+      "turistika",
+      "výlety",
+      "příroda"
+    ],
     "vek_od": 6,
     "vek_do": 15,
     "misto": {
@@ -5404,6 +5945,11 @@
       "sport-ostatni"
     ],
     "popis": "Páteční tréninky curlingu pro děti na zimním stadionu v Jičíně, klub připravuje žáky a juniory na mistrovství ČR. Vyzkoušení je zdarma. S sebou teplé oblečení a čistou hladkou obuv, nejlépe sálovou.",
+    "klicova_slova": [
+      "curling",
+      "led",
+      "zimní sport"
+    ],
     "vek_od": null,
     "vek_do": null,
     "misto": {
@@ -5453,6 +5999,11 @@
       "sport-ostatni"
     ],
     "popis": "První krůčky na ledě hravou formou: rovnováha, základní bruslařské dovednosti a jistota na ledě. Vhodné i pro úplné začátečníky. Počítá se s aktivním zapojením rodičů přímo na ledě (na bruslích).",
+    "klicova_slova": [
+      "brusle",
+      "bruslení",
+      "kluziště"
+    ],
     "vek_od": 4,
     "vek_do": 7,
     "misto": {
@@ -5511,6 +6062,11 @@
       "sport-ostatni"
     ],
     "popis": "Zdokonalování techniky a bruslařských dovedností a příprava na samostatné bruslení. Pro začátečníky i pokročilé, děti jsou ve skupinách podle dovedností. Vede tým trenérů.",
+    "klicova_slova": [
+      "brusle",
+      "bruslení",
+      "kluziště"
+    ],
     "vek_od": 8,
     "vek_do": 12,
     "misto": {
@@ -5569,6 +6125,11 @@
       "sport-ostatni"
     ],
     "popis": "První kroky k lednímu hokeji pro děti, které už samostatně bruslí: práce s hokejkou a pukem, přihrávky, střelba a jednoduché herní situace. Navazuje na bruslařskou školu.",
+    "klicova_slova": [
+      "hokej",
+      "brusle",
+      "bruslení"
+    ],
     "vek_od": 6,
     "vek_do": 12,
     "misto": {
@@ -5618,6 +6179,11 @@
       "sport-ostatni"
     ],
     "popis": "Nedělní bloky na zimním stadionu ve Dvoře Králové pro děti z Hořic před zahájením hořické přípravky: hokejová přípravka (25 dětí) nebo veřejné bruslení s trenéry (30 dětí). Doprava je individuální.",
+    "klicova_slova": [
+      "hokej",
+      "brusle",
+      "bruslení"
+    ],
     "vek_od": 6,
     "vek_do": 12,
     "misto": {

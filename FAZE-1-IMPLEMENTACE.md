@@ -172,6 +172,7 @@ Pole objektů:
 | `nazev` | string | ano | |
 | `kategorie` | enum[] | ano | min. 1 hodnota, viz 4.3 |
 | `popis` | string\|null | ne | Max. 300 znaků, vlastními slovy |
+| `klicova_slova` | string[] | ne | Skrytá slova pro vyhledávání, malými písmeny s diakritikou, může být i víceslovné (`"zobcová flétna"`). Typicky 2–3 slova, která v názvu ani popisu nejsou (`brusle`, `bruslení`). U ZUŠ nástroje výslovně uvedené ve zdroji. Na kartě se nezobrazují. *(doplněno 2026-10-20)* |
 | `pohlavi` | enum\|null | ne | `divky`, `chlapci`. `null` nebo chybí = pro všechny / neuvedeno. Vyplňovat jen, když to zdroj výslovně uvádí. *(doplněno 2026-10-12)* |
 | `vek_od` | integer\|null | ne | 0–26. `null` = neuvedeno |
 | `vek_do` | integer\|null | ne | 0–26, ≥ `vek_od` |

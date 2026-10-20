@@ -40,7 +40,8 @@ Stránku nelze otevřít dvojklikem přes `file://`, protože prohlížeč tam n
 3. `id` musí být unikátní, jen malá písmena bez diakritiky, číslice a pomlčky (např. `zus-horice-klavir`).
 4. `organizace_id` musí odpovídat `id` organizace v `organizace.json`.
 5. Vyplňte `zdroj_url` (odkud údaj je) a `overeno` (dnešní datum ve tvaru `RRRR-MM-DD`).
-6. Spusťte `npm run validate`.
+6. Do `klicova_slova` napište 2–3 slova, podle kterých by kroužek někdo hledal a která nejsou v názvu ani popisu, např. `["brusle", "bruslení"]`. Malými písmeny, s diakritikou. Na webu se nezobrazují, slouží jen pro vyhledávání. Slovo jde kdykoli připsat i k existujícímu kroužku.
+7. Spusťte `npm run validate`.
 
 Podrobný návod pro úpravy přes webové rozhraní GitHubu bude doplněn po nasazení.
 

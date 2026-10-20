@@ -107,3 +107,11 @@ test('období termínů: text, nebo seznam pololetí', () => {
   assert.equal(sObdobim([{ nazev: '1. pololetí' }]), false);
   assert.equal(sObdobim([]), false);
 });
+
+test('klíčová slova: malá písmena s diakritikou, víceslovná, bez duplicit', () => {
+  assert.equal(aktivity([{ ...ukazkaAktivity, klicova_slova: ['klavír', 'pěvecký sbor', 'bicí'] }]), true, JSON.stringify(aktivity.errors));
+  assert.equal(aktivity([{ ...ukazkaAktivity, klicova_slova: [] }]), true);
+  for (const spatne of [['Klavír'], ['Čtení'], [''], [' klavír'], ['klavír,flétna'], ['klavír', 'klavír']]) {
+    assert.equal(aktivity([{ ...ukazkaAktivity, klicova_slova: spatne }]), false, JSON.stringify(spatne));
+  }
+});
