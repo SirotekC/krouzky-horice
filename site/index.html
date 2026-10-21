@@ -53,42 +53,48 @@
           <label for="f-q">Hledat</label>
           <input type="search" id="f-q" name="q" placeholder="např. klavír, florbal" autocomplete="off" maxlength="100">
         </div>
-        <details class="filtry__dalsi" id="filtry-panel">
-          <summary class="filtry__souhrn">Další filtry<span class="filtry__pocet" id="filtry-pocet"></span></summary>
-          <div class="filtry__formular">
-            <div class="pole">
-              <label for="f-vek">Věk dítěte</label>
-              <input type="number" id="f-vek" name="vek" min="0" max="26" step="1" inputmode="numeric" placeholder="např. 8">
+        <div class="filtry__radek">
+          <label class="filtry__rozbalit">
+            <input type="checkbox" name="rozbalit" id="f-rozbalit" autocomplete="off">
+            Rozbalit vše
+          </label>
+          <details class="filtry__dalsi" id="filtry-panel">
+            <summary class="filtry__souhrn">Další filtry<span class="filtry__pocet" id="filtry-pocet"></span></summary>
+            <div class="filtry__formular">
+              <div class="pole">
+                <label for="f-vek">Věk dítěte</label>
+                <input type="number" id="f-vek" name="vek" min="0" max="26" step="1" inputmode="numeric" placeholder="např. 8">
+              </div>
+              <fieldset class="pole">
+                <legend>Den v týdnu</legend>
+                <div class="chipy" id="f-dny"></div>
+              </fieldset>
+              <div class="pole">
+                <label for="f-pohlavi">Pohlaví dítěte</label>
+                <select id="f-pohlavi" name="pohlavi">
+                  <option value="">Nezáleží</option>
+                </select>
+              </div>
+              <fieldset class="pole">
+                <legend>Zaměření</legend>
+                <div class="chipy" id="f-skup"></div>
+                <div class="podkategorie" id="f-kat" hidden></div>
+              </fieldset>
+              <div class="pole">
+                <label for="f-org">Organizace</label>
+                <select id="f-org" name="org">
+                  <option value="">Všechny</option>
+                </select>
+              </div>
+              <div class="pole">
+                <label for="f-stav">Stav přihlášek</label>
+                <select id="f-stav" name="stav">
+                  <option value="">Vše</option>
+                </select>
+              </div>
             </div>
-            <fieldset class="pole">
-              <legend>Den v týdnu</legend>
-              <div class="chipy" id="f-dny"></div>
-            </fieldset>
-            <div class="pole">
-              <label for="f-pohlavi">Pohlaví dítěte</label>
-              <select id="f-pohlavi" name="pohlavi">
-                <option value="">Nezáleží</option>
-              </select>
-            </div>
-            <fieldset class="pole">
-              <legend>Zaměření</legend>
-              <div class="chipy" id="f-skup"></div>
-              <div class="podkategorie" id="f-kat" hidden></div>
-            </fieldset>
-            <div class="pole">
-              <label for="f-org">Organizace</label>
-              <select id="f-org" name="org">
-                <option value="">Všechny</option>
-              </select>
-            </div>
-            <div class="pole">
-              <label for="f-stav">Stav přihlášek</label>
-              <select id="f-stav" name="stav">
-                <option value="">Vše</option>
-              </select>
-            </div>
-          </div>
-        </details>
+          </details>
+        </div>
         <button type="reset" class="tlacitko tlacitko--vedlejsi">Zrušit filtry</button>
       </form>
     </aside>

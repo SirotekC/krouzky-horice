@@ -1,5 +1,6 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
+import { DESKTOP } from './config.js';
 import { KATEGORIE, SKUPINY_KATEGORII, nactiData, statistiky } from './data.js';
 import { DNY_FILTRU, POHLAVI_FILTRU, STAVY_FILTRU, filtruj, jsouPrazdne, prazdneFiltry, seradi } from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
@@ -17,7 +18,6 @@ import {
 import { cestaZHashe, filtryDoUrl, filtryZUrl } from './url-state.js';
 
 const DEBOUNCE_MS = 150;
-const DESKTOP = '(min-width: 900px)';
 
 const $ = (selektor) => document.querySelector(selektor);
 const TITULEK = document.title;
@@ -32,6 +32,24 @@ function sbalitelneFiltry() {
   dotaz.addEventListener('change', nastav);
   // Na desktopu jsou filtry vždy rozbalené.
   panel.addEventListener('toggle', nastav);
+}
+
+/** Mají být podrobnosti karet rozbalené: na desktopu vždy, na mobilu podle volby „Rozbalit vše“. */
+function rozbaleneKarty() {
+  return window.matchMedia(DESKTOP).matches || $('#f-rozbalit').checked;
+}
+
+/**
+ * Při přechodu mezi mobilem a desktopem a při změně „Rozbalit vše“ rozbalí, nebo sbalí
+ * podrobnosti všech karet v seznamu. Volba „Rozbalit vše“ se při změně filtrů nemění.
+ */
+function sbalitelneKarty() {
+  const nastav = () => {
+    const rozbalene = rozbaleneKarty();
+    for (const vice of document.querySelectorAll('.karta__vice')) vice.open = rozbalene;
+  };
+  window.matchMedia(DESKTOP).addEventListener('change', nastav);
+  $('#f-rozbalit').addEventListener('change', nastav);
 }
 
 function chip(typ, jmeno, hodnota, popisek) {
@@ -159,6 +177,7 @@ function debounce(fn, ms) {
 async function spust() {
   nastavOdkazy();
   sbalitelneFiltry();
+  sbalitelneKarty();
   vykresliChipy();
 
   const seznam = $('#seznam');
@@ -229,7 +248,7 @@ async function spust() {
     const vysledky = seradi(filtruj(data.aktivity, filtry, kontext), dnes);
     if (vysledky.length) {
       pocet.textContent = `Nalezeno ${pocetKrouzku(vysledky.length)}`;
-      seznam.replaceChildren(seznamKaret(vysledky, dnes));
+      seznam.replaceChildren(seznamKaret(vysledky, dnes, rozbaleneKarty()));
     } else {
       pocet.textContent = 'Nalezeno 0 kroužků';
       seznam.replaceChildren(prazdnyStav(zrusFiltry));
@@ -252,6 +271,8 @@ async function spust() {
 
   const aktualizujSOdkladem = debounce(aktualizuj, DEBOUNCE_MS);
   form.addEventListener('input', (e) => {
+    // „Rozbalit vše“ není filtr, obsluhuje ho sbalitelneKarty().
+    if (e.target.name === 'rozbalit') return;
     if (e.target.name === 'q') return aktualizujSOdkladem();
     if (e.target.name === 'vse') {
       // „Vše“ zruší výběr skupin; odškrtnout samo o sobě nejde.

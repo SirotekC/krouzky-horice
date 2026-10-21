@@ -128,6 +128,34 @@ function obsahTerminu(terminy) {
   return el('div', { trida: 'rozvrh' }, ...casti);
 }
 
+/** Nejvýš tolik dnů se ve zkráceném „Kdy“ vypíše i s časy, jinak jen dny. */
+const SOUHRN_MAX_DNU = 3;
+
+/**
+ * Jednořádkové „Kdy“ pro sbalenou kartu, např. „Po, St 15:30–16:45“, „Po 15:00–16:00, Čt 16:00–17:00“,
+ * „Po, Út, Čt · 3 skupiny“. Celý rozvrh je v podrobnostech. Bez termínů vrací `null`.
+ */
+export function souhrnTerminu(terminy) {
+  if (!terminy) return null;
+  const rozvrh = terminy.rozvrh ?? [];
+  if (!rozvrh.length) {
+    if (terminy.text) return terminy.text;
+    return terminy.dny?.length ? terminy.dny.map((d) => DNY[d] ?? d).join(', ') : null;
+  }
+  const poradi = Object.keys(DNY);
+  const dny = [...new Set(rozvrh.map((r) => r.den))].sort((x, y) => poradi.indexOf(x) - poradi.indexOf(y));
+  const textDnu = dny.map((d) => DNY[d] ?? d).join(', ');
+  const skupiny = new Set(rozvrh.map((r) => r.skupina ?? null));
+  if (skupiny.size > 1 || !skupiny.has(null)) {
+    return skupiny.size > 1 ? `${textDnu} · ${skupiny.size} ${sklonuj(skupiny.size, ['skupina', 'skupiny', 'skupin'])}` : textDnu;
+  }
+  if (rozvrh.some((r) => !r.casy?.length) || rozvrh.length !== dny.length) return textDnu;
+  const casy = new Set(rozvrh.map((r) => r.casy.join(' / ')));
+  if (casy.size === 1) return `${textDnu} ${[...casy][0]}`;
+  if (rozvrh.length <= SOUHRN_MAX_DNU) return rozvrh.map((r) => `${DNY[r.den] ?? r.den} ${r.casy.join(' / ')}`).join(', ');
+  return textDnu;
+}
+
 function textCeny(cena) {
   if (!cena) return null;
   if (cena.text) return cena.text;
@@ -172,14 +200,24 @@ export function radekStatistik({ krouzky, kategorie, organizace }) {
   return casti;
 }
 
-function udaj(nazev, hodnota) {
+function udaj(nazev, hodnota, trida = '') {
   if (!hodnota) return null;
   const dd = typeof hodnota === 'string' ? el('dd', { text: hodnota }) : el('dd', {}, hodnota);
-  return el('div', { trida: 'udaje__radek' }, el('dt', { text: nazev }), dd);
+  return el('div', { trida: `udaje__radek ${trida}`.trim() }, el('dt', { text: nazev }), dd);
 }
 
-/** Vykreslí kartu jedné aktivity. */
-export function kartaAktivity(a, dnes) {
+function seznamUdaju(radky) {
+  const vyplnene = radky.filter(Boolean);
+  return vyplnene.length ? el('dl', { trida: 'udaje' }, ...vyplnene) : null;
+}
+
+/**
+ * Vykreslí kartu jedné aktivity. Se `sbalena: true` (seznam) ukáže jen název, organizaci,
+ * stav přihlášek, věk a zkrácené „Kdy“; zbytek je v podrobnostech, které jsou rozbalené
+ * podle `rozbalena` (na desktopu vždy, na mobilu po volbě „Rozbalit vše“). Detail aktivity
+ * ukazuje vše bez sbalování.
+ */
+export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false } = {}) {
   const stav = stavPrihlasky(a.prihlaska, dnes);
   const p = a.prihlaska;
 
@@ -194,14 +232,11 @@ export function kartaAktivity(a, dnes) {
   const stitky = el('ul', { trida: 'stitky', atributy: { 'aria-label': 'Kategorie' } });
   for (const k of a.kategorie) stitky.append(el('li', { trida: 'stitek', text: KATEGORIE[k] ?? k }));
 
-  const radky = [
-    udaj('Věk', textVeku(a.vek_od, a.vek_do)),
-    udaj('Pro', POHLAVI[a.pohlavi] ?? null),
-    udaj('Místo', textMista(a.misto)),
-    udaj('Kdy', obsahTerminu(a.terminy)),
-    udaj('Cena', textCeny(a.cena)),
-  ].filter(Boolean);
-  const udaje = radky.length ? el('dl', { trida: 'udaje' }, ...radky) : null;
+  const vek = udaj('Věk', textVeku(a.vek_od, a.vek_do));
+  const pro = udaj('Pro', POHLAVI[a.pohlavi] ?? null);
+  const misto = udaj('Místo', textMista(a.misto));
+  const cena = udaj('Cena', textCeny(a.cena));
+  const terminy = obsahTerminu(a.terminy);
 
   const popis = a.popis ? el('p', { trida: 'karta__popis', text: a.popis }) : null;
 
@@ -213,7 +248,10 @@ export function kartaAktivity(a, dnes) {
     el('p', { text: p.zpusob }),
     obdobi ? el('p', {}, el('strong', { text: 'Přihlášky: ' }), obdobi) : null,
     p.poznamka ? el('p', { trida: 'prihlaska__poznamka', text: p.poznamka }) : null,
-    externiOdkaz(p.odkaz || a.zdroj_url, 'Přihláška / více informací', 'tlacitko'),
+    // Odkaz může vést do přihlašovacího systému, na formulář i na stránku klubu; bez něj na zdroj dat.
+    p.odkaz
+      ? externiOdkaz(p.odkaz, 'Přejít k přihlášce ↗', 'tlacitko')
+      : externiOdkaz(a.zdroj_url, 'Stránka organizace ↗', 'tlacitko'),
   );
 
   const stari = cisloDne(dnes) - cisloDne(a.overeno);
@@ -226,16 +264,40 @@ export function kartaAktivity(a, dnes) {
     tlacitkoSdilet(a),
   );
 
-  return el(
-    'article',
-    { trida: `karta karta--${stav.stav}`, atributy: { id: `aktivita-${a.id}` } },
-    hlavicka,
-    stitky,
-    popis,
-    udaje,
-    prihlaska,
-    paticka,
+  const karta = el('article', { trida: `karta karta--${stav.stav}`, atributy: { id: `aktivita-${a.id}` } }, hlavicka);
+  if (!sbalena) {
+    karta.append(...[stitky, popis, seznamUdaju([vek, pro, misto, udaj('Kdy', terminy), cena]), prihlaska, paticka].filter(Boolean));
+    return karta;
+  }
+
+  // „Kdy“ je jen jednou: sbalená karta ukáže zkrácenou podobu, rozbalená na stejném místě celý rozvrh.
+  const souhrnKdy = souhrnTerminu(a.terminy);
+  const kdy =
+    souhrnKdy || terminy
+      ? el(
+          'div',
+          {},
+          souhrnKdy ? el('span', { trida: 'kdy__souhrn', text: souhrnKdy }) : null,
+          terminy ? el('div', { trida: 'kdy__cely' }, terminy) : null,
+        )
+      : null;
+  const vice = el(
+    'details',
+    { trida: 'karta__vice' },
+    el(
+      'summary',
+      { trida: 'karta__vice-souhrn tlacitko tlacitko--vedlejsi' },
+      el('span', { trida: 'karta__vice-zavrene', text: 'Více informací' }),
+      el('span', { trida: 'karta__vice-otevrene', text: 'Méně informací' }),
+    ),
+    el('div', { trida: 'karta__vice-obsah' }, stitky, popis, seznamUdaju([pro, misto, cena]), prihlaska, paticka),
   );
+  // Třída řídí, která podoba „Kdy“ je vidět; `toggle` přichází i při změně `open` ze skriptu.
+  vice.addEventListener('toggle', () => karta.classList.toggle('karta--rozbalena', vice.open));
+  vice.open = rozbalena;
+  karta.classList.toggle('karta--rozbalena', rozbalena);
+  karta.append(...[seznamUdaju([vek, udaj('Kdy', kdy)]), vice].filter(Boolean));
+  return karta;
 }
 
 /** Úplná adresa detailu aktivity bez filtrů, např. `https://…/krouzky-horice/#/aktivita/{id}`. */
@@ -301,10 +363,10 @@ export function nenalezenaAktivita(odkazZpet) {
   );
 }
 
-/** Seznam karet. */
-export function seznamKaret(aktivity, dnes) {
+/** Seznam karet; `rozbalene` určuje, jestli jsou podrobnosti karet rozbalené. */
+export function seznamKaret(aktivity, dnes, rozbalene) {
   const seznam = el('ul', { trida: 'karty' });
-  for (const a of aktivity) seznam.append(el('li', {}, kartaAktivity(a, dnes)));
+  for (const a of aktivity) seznam.append(el('li', {}, kartaAktivity(a, dnes, { sbalena: true, rozbalena: rozbalene })));
   return seznam;
 }
 

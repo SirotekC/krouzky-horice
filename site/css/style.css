@@ -267,6 +267,29 @@ a {
   list-style: none;
 }
 
+/* „Rozbalit vše“ (karty v seznamu) je na mobilu na stejném řádku jako „Další filtry“, vpravo. */
+.filtry__radek {
+  position: relative;
+}
+
+.filtry__rozbalit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.filtry__rozbalit input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+  accent-color: var(--akcent);
+}
+
 .filtry__souhrn::-webkit-details-marker {
   display: none;
 }
@@ -632,6 +655,59 @@ select {
   color: var(--text-tlumeny);
 }
 
+/* Sbalená karta v seznamu: na mobilu jen souhrn, podrobnosti po rozbalení. */
+.kdy__souhrn {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* Sbalená karta ukáže zkrácené „Kdy“, rozbalená na stejném místě celý rozvrh. */
+.karta--rozbalena .kdy__souhrn,
+.karta:not(.karta--rozbalena) .kdy__cely {
+  display: none;
+}
+
+.karta__vice {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Přepínač podrobností vypadá jako vedlejší tlačítko přes celou šířku karty. */
+.karta__vice-souhrn {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.karta__vice-souhrn::-webkit-details-marker {
+  display: none;
+}
+
+.karta__vice-souhrn::before {
+  content: "▾";
+  transition: transform 0.15s;
+}
+
+.karta__vice[open] > .karta__vice-souhrn::before {
+  transform: rotate(180deg);
+}
+
+.karta__vice[open] .karta__vice-zavrene,
+.karta__vice:not([open]) .karta__vice-otevrene {
+  display: none;
+}
+
+.karta__vice-obsah {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
 .zastarale {
   color: var(--varovani-text);
   font-weight: 600;
@@ -737,8 +813,9 @@ select {
     white-space: normal;
   }
 
-  /* Na desktopu jsou filtry vždy rozbalené, přepínač „Další filtry“ není potřeba. */
-  .filtry__souhrn {
+  /* Na desktopu jsou filtry i karty vždy rozbalené, přepínače „Další filtry“ a „Rozbalit vše“ nejsou potřeba. */
+  .filtry__souhrn,
+  .filtry__rozbalit {
     display: none;
   }
 
@@ -752,6 +829,15 @@ select {
 
   .karty {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  /* Na desktopu jsou podrobnosti karet vždy rozbalené. */
+  .karta__vice-souhrn {
+    display: none;
+  }
+
+  .karta__vice-obsah {
+    padding-top: 0;
   }
 }
 

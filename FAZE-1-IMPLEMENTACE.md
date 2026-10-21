@@ -252,7 +252,7 @@ Mezi skupinami filtrů platí logika **AND**.
   - **štítek stavu přihlášek** (barva a text, ne jen barva),
   - věk („7–18 let“, „od 5 let“, „do 12 let“, nebo nic),
   - místo, termíny a cenu (pouze pokud jsou vyplněné),
-  - blok **„Jak se přihlásit“**: `zpusob`, období („1. 5. – 15. 6. 2027“), `poznamka` a tlačítko „Přihláška / více informací“ na `prihlaska.odkaz`, nebo na `zdroj_url`, když odkaz chybí,
+  - blok **„Jak se přihlásit“**: `zpusob`, období („1. 5. – 15. 6. 2027“), `poznamka` a tlačítko „Přejít k přihlášce ↗“ na `prihlaska.odkaz`, nebo „Stránka organizace ↗“ na `zdroj_url`, když odkaz chybí,
   - patičku: „Zdroj: {doména}“ jako odkaz na `zdroj_url` a „Ověřeno {d. m. rrrr}“.
   - Pokud je `overeno` starší než 90 dní, zobrazí se jemné upozornění „Údaje mohou být zastaralé“.
 - Prázdný stav: „Žádný kroužek neodpovídá filtrům.“ a tlačítko „Zrušit filtry“.
