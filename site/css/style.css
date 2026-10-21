@@ -176,6 +176,12 @@ a {
   gap: 0.75rem;
 }
 
+.hlavicka__logo-odkaz {
+  display: block;
+  flex: none;
+  border-radius: 0.5rem;
+}
+
 .hlavicka__logo {
   display: block;
   flex: none;

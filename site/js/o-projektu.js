@@ -1,7 +1,7 @@
 // Stránka „O projektu“: seznam organizací (zdrojů dat) z organizace.json.
+// Datum ověření organizace (overeno) zůstává jen v datech, na stránce se nezobrazuje.
 
-import { TYPY_ORGANIZACI, nactiData } from './data.js';
-import { formatDatum } from './registration.js';
+import { nactiData } from './data.js';
 import { el, externiOdkaz, nastavOdkazy } from './render.js';
 
 async function spust() {
@@ -12,14 +12,7 @@ async function spust() {
     const porovnej = new Intl.Collator('cs').compare;
     const seznam = el('ul');
     for (const o of [...organizace].sort((a, b) => porovnej(a.nazev, b.nazev))) {
-      seznam.append(
-        el(
-          'li',
-          {},
-          externiOdkaz(o.web, o.nazev),
-          ` (${TYPY_ORGANIZACI[o.typ] ?? o.typ}), ověřeno ${formatDatum(o.overeno)}`,
-        ),
-      );
+      seznam.append(el('li', {}, externiOdkaz(o.web, o.nazev)));
     }
     kontejner.replaceChildren(organizace.length ? seznam : el('p', { text: 'Zatím zde nejsou žádné organizace.' }));
   } catch (chyba) {

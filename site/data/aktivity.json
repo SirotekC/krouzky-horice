@@ -945,8 +945,7 @@
     "popis": "Hravé tancování různých stylů, cvičení s náčiním a všestranná pohybová průprava pro holčičky.",
     "klicova_slova": [
       "tancování",
-      "předškoláci",
-      "holčičky"
+      "předškoláci"
     ],
     "pohlavi": "divky",
     "vek_od": 4,
@@ -5935,60 +5934,6 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://turistacek-horice.webnode.cz/zajmovy-krouzek/",
-    "overeno": "2026-10-19"
-  },
-  {
-    "id": "curling-jicin-curling-deti",
-    "organizace_id": "curling-jicin",
-    "nazev": "Curling – tréninky dětí (Jičín)",
-    "kategorie": [
-      "sport-ostatni"
-    ],
-    "popis": "Páteční tréninky curlingu pro děti na zimním stadionu v Jičíně, klub připravuje žáky a juniory na mistrovství ČR. Vyzkoušení je zdarma. S sebou teplé oblečení a čistou hladkou obuv, nejlépe sálovou.",
-    "klicova_slova": [
-      "curling",
-      "led",
-      "zimní sport"
-    ],
-    "vek_od": null,
-    "vek_do": null,
-    "misto": {
-      "nazev": "Zimní stadion Jičín",
-      "adresa": "Jičín",
-      "gps": null
-    },
-    "terminy": {
-      "rozvrh": [
-        {
-          "skupina": null,
-          "den": "pa",
-          "casy": [
-            "15:00–16:30"
-          ],
-          "misto": null
-        }
-      ],
-      "obdobi": null,
-      "poznamka": "Trénuje se v Jičíně, asi 20 km od Hořic. Začátek sezóny web neuvádí.",
-      "dny": [
-        "pa"
-      ]
-    },
-    "cena": {
-      "text": "Vyzkoušení zdarma, členský příspěvek web neuvádí.",
-      "castka_kc": null,
-      "obdobi": null
-    },
-    "prihlaska": {
-      "zpusob": "Stačí přijít na trénink. Po vyzkoušení se lze stát členem oddílu.",
-      "od": null,
-      "do": null,
-      "prubezne": true,
-      "odkaz": "https://www.curlingjicin.cz/",
-      "poznamka": null
-    },
-    "skolni_rok": null,
-    "zdroj_url": "https://www.curlingjicin.cz/",
     "overeno": "2026-10-19"
   },
   {
