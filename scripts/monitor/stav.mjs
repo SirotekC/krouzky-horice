@@ -41,6 +41,29 @@ function maZaklad(z) {
   return z.otiskPotvrzeny != null || z.odkazyPotvrzene != null;
 }
 
+/** Kategorie chyby: odmítnutí (403/429) se počítá zvlášť od nefunkčních odkazů. */
+function kategorieChyby(druh) {
+  return druh === 'odmitnuto' ? 'odmitnuto' : 'nefunkcni';
+}
+
+/**
+ * Má stav nějakou nevyřešenou změnu obsahu nebo nevyřešené nové/zrušené odkazy přehledu?
+ * Rozhoduje o posunu data v zápatí (pravidlo 10).
+ * @param {Record<string, object>} url záznamy stavu
+ * @param {Set<string>} ignorovane
+ * @param {Set<string>} znameZdroje
+ * @returns {boolean}
+ */
+function maNevyresene(url, ignorovane, znameZdroje) {
+  return Object.values(url).some((z) => {
+    if (z.druh === 'dostupnost') return false;
+    if (z.zmena != null) return true;
+    if (!Array.isArray(z.odkazyPotvrzene)) return false;
+    const { nove, zrusene } = rozdilOdkazu(z.odkazyPotvrzene, z.odkazyPosledni, ignorovane, znameZdroje);
+    return nove.length > 0 || zrusene.length > 0;
+  });
+}
+
 /** Sleduje se u záznamu množina odkazů (přehled se vzorem odkazů)? */
 function sledujeOdkazy(polozka) {
   return polozka.druh === 'prehled' && Boolean(polozka.vzorOdkazu);
@@ -84,9 +107,11 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
   const polozkaNalezu = { url: adresa, pouziti: polozka.pouziti };
 
   // Pravidlo 5: chyba. Obsah, validátory (etag, lastModified) ani posledniOk se nemění.
+  // Počítají se neúspěchy po sobě v rámci kategorie (nefunkční odkaz / odmítnuto),
+  // takže 5xx → timeout je druhý neúspěch. Uloží se poslední druh a status, `od` z prvního.
   if (v.chyba) {
     const { druh } = v.chyba;
-    const stejna = z.chyba?.druh === druh;
+    const stejna = z.chyba != null && kategorieChyby(z.chyba.druh) === kategorieChyby(druh);
     const pocet = (stejna ? z.chyba.pocet : 0) + 1;
     const status = v.chyba.status ?? null;
     z.chyba = { druh, status, od: stejna ? z.chyba.od : dnes, pocet };
@@ -94,6 +119,8 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
       const skupina = druh === 'odmitnuto' ? nalezy.odmitnuto : nalezy.chyby;
       (pocet === 2 ? skupina.nove : skupina.pretrvavajici).push({ ...polozkaNalezu, druh, status });
     }
+    // Nevyřešená změna obsahu se v souhrnu dál počítá jako přetrvávající.
+    if (z.druh !== 'dostupnost' && z.zmena) nalezy.zmeny.pretrvavajici.push(polozkaNalezu);
     return z;
   }
   z.chyba = null;
@@ -216,18 +243,10 @@ export function vyhodnotBeh({ predchozi, seznam, mereni, ignorovane = [], znameZ
   }
 
   // Pravidlo 10: datum v zápatí jen bez nevyřešených změn obsahu a odkazů.
-  const nevyreseno = Object.values(url).some((z) => {
-    if (z.druh === 'dostupnost') return false;
-    if (z.zmena !== null) return true;
-    if (!Array.isArray(z.odkazyPotvrzene)) return false;
-    const { nove, zrusene } = rozdilOdkazu(z.odkazyPotvrzene, z.odkazyPosledni, kontext.ignorovane, znameZdroje);
-    return nove.length > 0 || zrusene.length > 0;
-  });
-
   const stav = {
     verze: 1,
     posledniBeh: dnes,
-    zapatiDatum: nevyreseno ? predchozi.zapatiDatum : dnes,
+    zapatiDatum: maNevyresene(url, kontext.ignorovane, znameZdroje) ? predchozi.zapatiDatum : dnes,
     url,
   };
   return { stav, nalezy };
@@ -235,13 +254,16 @@ export function vyhodnotBeh({ predchozi, seznam, mereni, ignorovane = [], znameZ
 
 /**
  * Potvrdí poslední stav URL (agent vyřešil issue): poslední otisk a odkazy se stanou potvrzenými.
+ * `posledniOk` se posune jen u URL bez chyby, která má změřený stav (u obsahu/přehledu otisk).
+ * Když po potvrzení nezůstane nic nevyřešeného, posune se i `zapatiDatum`.
  * Vstup nemění. URL, které ve stavu nejsou, se ignorují.
  * @param {object} stav
  * @param {string[] | 'vse'} urls
  * @param {string} dnes YYYY-MM-DD
+ * @param {{ ignorovane?: string[], znameZdroje?: Set<string> }} [moznosti] pro vyhodnocení nevyřešených odkazů přehledů
  * @returns {object} nový stav
  */
-export function potvrd(stav, urls, dnes) {
+export function potvrd(stav, urls, dnes, { ignorovane = [], znameZdroje = new Set() } = {}) {
   const novy = structuredClone(stav);
   const cile = urls === 'vse' ? Object.keys(novy.url) : urls;
   for (const adresa of cile) {
@@ -250,7 +272,9 @@ export function potvrd(stav, urls, dnes) {
     z.otiskPotvrzeny = z.otiskPosledni;
     if ('odkazyPosledni' in z) z.odkazyPotvrzene = z.odkazyPosledni === null ? null : [...z.odkazyPosledni];
     z.zmena = null;
-    z.posledniOk = dnes;
+    const zmereno = z.druh === 'dostupnost' || z.otiskPosledni != null;
+    if (!z.chyba && zmereno) z.posledniOk = dnes;
   }
+  if (!maNevyresene(novy.url, new Set(ignorovane), znameZdroje)) novy.zapatiDatum = dnes;
   return novy;
 }

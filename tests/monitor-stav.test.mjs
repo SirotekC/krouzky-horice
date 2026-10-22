@@ -103,7 +103,7 @@ test('2: změna verze pravidel přepočítá a potvrdí bez hlášení', () => {
   assert.equal(r.nalezy.prepocitano, 0);
 });
 
-test('3:304 nemění poslední otisk ani stav změny', () => {
+test('3: při 304 se poslední otisk ani stav změny nemění', () => {
   const zmena = { od: '2026-10-19', otisk: 'ccc' };
   const predchozi = stav({ [U]: zaznam({ otiskPosledni: 'ccc', zmena }) });
   const vysledek = ok({ status: 304, beZmeny: true, etag: null });
@@ -167,9 +167,16 @@ test('5: chyba se hlásí až podruhé po sobě, odmítnutí zvlášť, úspěch
   assert.deepEqual(r3.nalezy.chyby.nove, []);
   assert.equal(r3.nalezy.chyby.pretrvavajici.length, 1);
 
-  // jiný druh chyby začíná počítat znovu
-  const r4 = beh({ predchozi: r3.stav, mer: { [U]: mereni({ vysledek: chyba('timeout'), otisk: null }) }, dnes: '2026-10-31' });
-  assert.deepEqual(r4.stav.url[U].chyba, { druh: 'timeout', status: null, od: '2026-10-31', pocet: 1 });
+  // 404 ×3 a pak 410: stejná kategorie, dál přetrvávající, `od` z prvního neúspěchu
+  const r4 = beh({ predchozi: r3.stav, mer: { [U]: mereni({ vysledek: chyba('410', 410), otisk: null }) }, dnes: '2026-10-31' });
+  assert.deepEqual(r4.stav.url[U].chyba, { druh: '410', status: 410, od: '2026-10-22', pocet: 4 });
+  assert.deepEqual(r4.nalezy.chyby.nove, []);
+  assert.deepEqual(r4.nalezy.chyby.pretrvavajici, [{ url: U, pouziti: POUZITI, druh: '410', status: 410 }]);
+
+  // přechod mezi kategoriemi (nefunkční → odmítnuto) začíná novou sérii
+  const r4b = beh({ predchozi: r3.stav, mer: { [U]: mereni({ vysledek: chyba('odmitnuto', 429), otisk: null }) }, dnes: '2026-10-31' });
+  assert.deepEqual(r4b.stav.url[U].chyba, { druh: 'odmitnuto', status: 429, od: '2026-10-31', pocet: 1 });
+  assert.deepEqual(r4b.nalezy.odmitnuto, { nove: [], pretrvavajici: [] });
 
   // úspěch chybu smaže
   const r5 = beh({ predchozi: r3.stav, mer: { [U]: mereni() }, dnes: '2026-10-31' });
@@ -181,6 +188,22 @@ test('5: chyba se hlásí až podruhé po sobě, odmítnutí zvlášť, úspěch
   const o2 = beh({ predchozi: o1.stav, mer: { [U]: mereni({ vysledek: chyba('odmitnuto', 403), otisk: null }) }, dnes: '2026-10-25' });
   assert.deepEqual(o2.nalezy.odmitnuto.nove, [{ url: U, pouziti: POUZITI, druh: 'odmitnuto', status: 403 }]);
   assert.deepEqual(o2.nalezy.chyby, { nove: [], pretrvavajici: [] });
+});
+
+test('5: 5xx a pak timeout je druhý neúspěch po sobě a hlásí se jako nový', () => {
+  const r1 = beh({ predchozi: stav({ [U]: zaznam() }), mer: { [U]: mereni({ vysledek: chyba('5xx', 503), otisk: null }) } });
+  assert.deepEqual(r1.nalezy.chyby.nove, []);
+  const r2 = beh({ predchozi: r1.stav, mer: { [U]: mereni({ vysledek: chyba('timeout'), otisk: null }) }, dnes: '2026-10-25' });
+  assert.deepEqual(r2.stav.url[U].chyba, { druh: 'timeout', status: null, od: '2026-10-22', pocet: 2 });
+  assert.deepEqual(r2.nalezy.chyby.nove, [{ url: U, pouziti: POUZITI, druh: 'timeout', status: null }]);
+});
+
+test('5: nevyřešená změna u URL s chybou se dál počítá jako přetrvávající', () => {
+  const pred = zaznam({ otiskPosledni: 'bbb', zmena: { od: '2026-10-19', otisk: 'bbb' } });
+  const { stav: s, nalezy } = beh({ predchozi: stav({ [U]: pred }), mer: { [U]: mereni({ vysledek: chyba('5xx', 500), otisk: null }) } });
+  assert.deepEqual(s.url[U].zmena, { od: '2026-10-19', otisk: 'bbb' });
+  assert.deepEqual(nalezy.zmeny.pretrvavajici, [{ url: U, pouziti: POUZITI }]);
+  assert.deepEqual(nalezy.zmeny.nove, []);
 });
 
 test('6: přehled hlásí nové a zrušené odkazy, opakované jen jako počet', () => {
@@ -310,6 +333,42 @@ test('potvrd přenese poslední otisk a odkazy a vynuluje změnu', () => {
   const vse = potvrd(s, 'vse', '2026-10-23');
   assert.deepEqual(vse.url[P].odkazyPotvrzene, ['https://x.cz/krouzky/1', 'https://x.cz/krouzky/3']);
   assert.equal(vse.url[P].posledniOk, '2026-10-23');
+});
+
+test('potvrd neposune posledniOk u URL s chybou nebo bez otisku', () => {
+  const C = 'https://x.cz/chyba';
+  const N = 'https://x.cz/nova';
+  const s = stav({
+    [C]: zaznam({ otiskPosledni: 'bbb', zmena: { od: '2026-10-19', otisk: 'bbb' }, chyba: { druh: '404', status: 404, od: '2026-10-19', pocet: 2 } }),
+    [N]: zaznam({ otiskPotvrzeny: null, otiskPosledni: null, posledniOk: null, chyba: { druh: 'dns', status: null, od: '2026-10-19', pocet: 1 } }),
+    [U]: zaznam({ otiskPosledni: 'ccc', zmena: { od: '2026-10-19', otisk: 'ccc' }, posledniOk: '2026-10-10' }),
+  });
+  const p = potvrd(s, 'vse', '2026-10-23');
+  assert.equal(p.url[C].otiskPotvrzeny, 'bbb');
+  assert.equal(p.url[C].zmena, null);
+  assert.equal(p.url[C].posledniOk, '2026-10-19', 'URL s chybou');
+  assert.equal(p.url[N].posledniOk, null, 'URL bez otisku');
+  assert.equal(p.url[U].posledniOk, '2026-10-23');
+});
+
+test('potvrd posune zapatiDatum, jen když nic nevyřešeného nezůstane', () => {
+  const zmena = (o) => zaznam({ otiskPosledni: o, zmena: { od: '2026-10-19', otisk: o } });
+  const s = stav({ [U]: zmena('bbb'), 'https://x.cz/dalsi': zmena('ccc') });
+
+  const castecne = potvrd(s, [U], '2026-10-23');
+  assert.equal(castecne.zapatiDatum, '2026-10-19');
+
+  const vse = potvrd(s, 'vse', '2026-10-23');
+  assert.equal(vse.zapatiDatum, '2026-10-23');
+
+  // nevyřešený nový odkaz přehledu blokuje, ignorovaný ne
+  const sPrehled = stav({
+    [U]: zmena('bbb'),
+    [P]: zaznamPrehledu({ odkazyPosledni: ['https://x.cz/krouzky/1', 'https://x.cz/krouzky/2', 'https://x.cz/krouzky/8'] }),
+  });
+  assert.equal(potvrd(sPrehled, [U], '2026-10-23').zapatiDatum, '2026-10-19');
+  const sIgnor = potvrd(sPrehled, [U], '2026-10-23', { ignorovane: ['https://x.cz/krouzky/8'] });
+  assert.equal(sIgnor.zapatiDatum, '2026-10-23');
 });
 
 test('vyhodnotBeh nemutuje predchozi', () => {
