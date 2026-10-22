@@ -1,0 +1,146 @@
+{
+  "pauzaMs": 5000,
+  "doplnkoveUrl": [
+    {
+      "url": "https://rckonvicka.cz/wp-content/uploads/2025/09/Pravidelne-aktivity-letak-14.png",
+      "organizace_id": "rc-konvicka",
+      "popis": "leták s rozvrhem pravidelných aktivit"
+    },
+    {
+      "url": "https://d3c39e64da.clvaw-cdnwnd.com/974d636996c9c57d64ba97df7ad4e785/200000560-763287632b/Sn%C3%ADmek%20obrazovky%202026-10-07%20011339.png",
+      "organizace_id": "kct-horice-turistacek",
+      "popis": "rozvrh schůzek 1. pololetí 2026/27 (obrázek)"
+    },
+    {
+      "url": "https://www.zusmelodie.cz/download/docs/Organiza%C4%8Dn%C3%AD_informace_26_27.pdf",
+      "organizace_id": "zus-melodie",
+      "popis": "organizace školního roku 2026/27 (PDF)"
+    },
+    {
+      "url": "https://www.zusmelodie.cz/download/docs/P%C5%99%C3%ADsp%C4%9Bvek_na_provoz_%C5%A1koly_26_27.pdf",
+      "organizace_id": "zus-melodie",
+      "popis": "ceník, příspěvek na provoz školy 2026/27 (PDF)"
+    },
+    {
+      "url": "https://www.kluho.cz/_files/ugd/67b34b_2a1d7f8c66754c239e6152788d13fd6e.pdf",
+      "organizace_id": "kluho",
+      "popis": "průvodce bruslařskou školou (PDF)"
+    },
+    {
+      "url": "https://www.kluho.cz/_files/ugd/67b34b_7531e983401c4611ae68aaf396dbef18.pdf",
+      "organizace_id": "kluho",
+      "popis": "průvodce hokejovou přípravkou (PDF)"
+    },
+    {
+      "url": "https://www.kluho.cz/_files/ugd/67b34b_32ede6d452094bf29c9bf76a8dc5ffe9.pdf",
+      "organizace_id": "kluho",
+      "popis": "souhrnné informace k výjezdům do Dvora Králové (PDF)"
+    }
+  ],
+  "prehledy": [
+    {
+      "url": "https://www.ddmhorice.cz/krouzky",
+      "organizace_id": "ddm-horice",
+      "vzorOdkazu": "^https://www\\.ddmhorice\\.cz/krouzky/\\d+-"
+    },
+    {
+      "url": "https://www.sporthorice.cz/plavecke-krouzky/",
+      "organizace_id": "plavani-sporthorice"
+    },
+    {
+      "url": "https://www.sporthorice.cz/plavecky-oddil-rejnok/",
+      "organizace_id": "plavani-sporthorice"
+    },
+    {
+      "url": "https://www.florbalhorice.cz/treninky",
+      "organizace_id": "florbal-horice"
+    },
+    {
+      "url": "https://zushorice.cz/o-skole/studium/",
+      "organizace_id": "zus-horice"
+    },
+    {
+      "url": "https://www.zusmelodie.cz/obory.php",
+      "organizace_id": "zus-melodie"
+    },
+    {
+      "url": "https://www.zusmelodie.cz/pobocky.php",
+      "organizace_id": "zus-melodie"
+    },
+    {
+      "url": "https://rckonvicka.cz/aktualni-pravidelny-program/",
+      "organizace_id": "rc-konvicka"
+    },
+    {
+      "url": "https://www.hohohorice.cz/detsky-krouzek-lezeni",
+      "organizace_id": "horolezci-horice"
+    },
+    {
+      "url": "https://www.hohohorice.cz/lezecka-stena-horice",
+      "organizace_id": "horolezci-horice"
+    },
+    {
+      "url": "https://turistacek-horice.webnode.cz/zajmovy-krouzek/",
+      "organizace_id": "kct-horice-turistacek"
+    },
+    {
+      "url": "https://www.curlingjicin.cz/",
+      "organizace_id": "curling-jicin"
+    },
+    {
+      "url": "https://www.kluho.cz/horicedobrusli",
+      "organizace_id": "kluho"
+    },
+    {
+      "url": "https://www.kluho.cz/hokejovapripravka",
+      "organizace_id": "kluho"
+    },
+    {
+      "url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+      "organizace_id": "tj-sokol-horice"
+    },
+    {
+      "url": "https://www.junakhorice.cz/hledam-oddil/",
+      "organizace_id": "junak-horice"
+    },
+    {
+      "url": "https://www.rebelsgym.cz/detske-treninky/",
+      "organizace_id": "rebels-gym"
+    },
+    {
+      "url": "https://www.horice.org/volejbal/ms-11400/p1=11400",
+      "organizace_id": "volejbal-horice"
+    },
+    {
+      "url": "https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788",
+      "organizace_id": "spv-horice"
+    }
+  ],
+  "domeny": {
+    "www.ddmhorice.cz": {
+      "obsah": "#krouzky_detail",
+      "odstranitRadky": [
+        "^Volná místa\\b"
+      ]
+    }
+  },
+  "ignorovaneOdkazy": [
+    "https://www.ddmhorice.cz/krouzky/1002-fit-dance-s-nikcou",
+    "https://www.ddmhorice.cz/krouzky/1003-h-i-i-t",
+    "https://www.ddmhorice.cz/krouzky/1004-maminky-v-kondici",
+    "https://www.ddmhorice.cz/krouzky/1008-francouzstina-pokrocili",
+    "https://www.ddmhorice.cz/krouzky/1024-cviceni-s-ditou-pilates-tabata-kondicka",
+    "https://www.ddmhorice.cz/krouzky/1052-italstina-mirne-pokrocili",
+    "https://www.ddmhorice.cz/krouzky/1057-cviceni-s-ivou-zdravy-pohyb",
+    "https://www.ddmhorice.cz/krouzky/1058-anglictina-na-cesty",
+    "https://www.ddmhorice.cz/krouzky/1060-h-i-i-t-1",
+    "https://www.ddmhorice.cz/krouzky/973-keramika-pondelni",
+    "https://www.ddmhorice.cz/krouzky/978-zdravotni-cviceni",
+    "https://www.ddmhorice.cz/krouzky/979-keramika-pro-dospele",
+    "https://www.ddmhorice.cz/krouzky/985-scrapbooking-pro-dospele",
+    "https://www.ddmhorice.cz/krouzky/989-latina-pro-zeny-pokrocili",
+    "https://www.ddmhorice.cz/krouzky/990-kurz-siti-na-stroji-pro-dospele",
+    "https://www.ddmhorice.cz/krouzky/994-pole-dance-zacatecnici",
+    "https://www.ddmhorice.cz/krouzky/997-pole-dance-pokrocili"
+  ]
+}
