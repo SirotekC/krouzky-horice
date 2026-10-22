@@ -8,7 +8,8 @@ import { normalizujUrl } from './seznam-url.mjs';
 /** Zvýšit při jakékoli změně algoritmu čištění (zneplatní uložené otisky). */
 export const VERZE_CISTENI = 1;
 
-const ODSTRANIT = 'script, style, noscript, nav, header, footer, form';
+const ODSTRANIT_BEZ_FORM = 'script, style, noscript, nav, header, footer';
+const ODSTRANIT = `${ODSTRANIT_BEZ_FORM}, form`;
 const BLOKOVE = new Set([
   'p', 'div', 'tr', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br', 'table', 'section', 'article',
 ]);
@@ -51,7 +52,7 @@ export function dekoduj(telo, contentType) {
  * @returns {string}
  */
 function textUzlu(uzel) {
-  if (uzel.nodeType === 3) return uzel.rawText;
+  if (uzel.nodeType === 3) return uzel.text; // dekódované entity (&nbsp;, &amp;, &aacute;)
   if (uzel.nodeType !== 1) return '';
   const znacka = (uzel.tagName ?? '').toLowerCase();
   const vnitrek = uzel.childNodes.map(textUzlu).join('');
@@ -67,16 +68,28 @@ function textUzlu(uzel) {
  * @returns {string}
  */
 export function htmlNaText(html, pravidla = {}) {
-  const koren = parse(html);
-  for (const el of koren.querySelectorAll(ODSTRANIT)) el.remove();
-  const zaklad = (pravidla.obsah && koren.querySelector(pravidla.obsah)) || koren.querySelector('body') || koren;
-
   const vyrazy = (pravidla.odstranitRadky ?? []).map((v) => new RegExp(v, 'u'));
+  // Stránky, které celé tělo obalí do <form>, by po jeho odstranění zůstaly prázdné.
+  let radky = radkyTextu(html, pravidla, ODSTRANIT);
+  if (!radky.length) radky = radkyTextu(html, pravidla, ODSTRANIT_BEZ_FORM);
+  return radky.filter((r) => !vyrazy.some((v) => v.test(r))).join('\n');
+}
+
+/**
+ * Vyčistí HTML a vrátí neprázdné řádky se zkomprimovanými bílými znaky (včetně NBSP).
+ * @param {string} html
+ * @param {{ obsah?: string }} pravidla
+ * @param {string} selektorOdstranit
+ * @returns {string[]}
+ */
+function radkyTextu(html, pravidla, selektorOdstranit) {
+  const koren = parse(html);
+  for (const el of koren.querySelectorAll(selektorOdstranit)) el.remove();
+  const zaklad = (pravidla.obsah && koren.querySelector(pravidla.obsah)) || koren.querySelector('body') || koren;
   return textUzlu(zaklad)
     .split('\n')
-    .map((r) => r.replace(/\s+/g, ' ').trim())
-    .filter((r) => r && !vyrazy.some((v) => v.test(r)))
-    .join('\n');
+    .map((r) => r.replace(/[\s ]+/g, ' ').trim())
+    .filter(Boolean);
 }
 
 /**

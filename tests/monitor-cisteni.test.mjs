@@ -71,3 +71,18 @@ test('jeHtml', () => {
   assert.equal(jeHtml('image/jpeg'), false);
   assert.equal(jeHtml(null), false);
 });
+
+test('HTML entity se dekódují a NBSP je mezera', () => {
+  const pravidla = { odstranitRadky: ['^Volná místa\\b'] };
+  const entity = '<body><div>Volná&nbsp;m&iacute;sta Obsazeno</div><div>Term&iacute;n A &amp; B</div></body>';
+  const znaky = '<body><div>Volná místa Obsazeno</div><div>Termín A & B</div></body>';
+  const text = htmlNaText(entity, pravidla);
+  assert.equal(text, 'Termín A & B');
+  assert.equal(otisk(text), otisk(htmlNaText(znaky, pravidla)));
+  assert.equal(htmlNaText('<p>V&aacute;clav</p>'), 'Václav');
+});
+
+test('stránka celá v <form> se nevyprázdní', () => {
+  const text = htmlNaText('<body><form><div>Rozvrh</div><div>ÚT 16:00</div></form></body>');
+  assert.equal(text, 'Rozvrh\nÚT 16:00');
+});
