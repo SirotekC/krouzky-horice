@@ -80,14 +80,15 @@ export function parsujRobots(text, userAgent) {
 
 /**
  * Vyhodnotí odpověď na požadavek `/robots.txt`.
- * 2xx = parsovat, 4xx (i 404) = vše povoleno, 5xx nebo síťová chyba (`null`) = `nedostupny`.
+ * 2xx = parsovat, 4xx (i 404) = vše povoleno, 429, 5xx nebo síťová chyba (`null`) = `nedostupny`
+ * (RFC 9309: nedostupný robots.txt = vše zakázáno; 429 je omezení rychlosti, ne „soubor neexistuje“).
  * @param {number|null} status
  * @param {string|null} text
  * @param {string} userAgent
  * @returns {{ stav: 'ok'|'nedostupny', pravidla: ReturnType<typeof parsujRobots>|null }}
  */
 export function robotsZOdpovedi(status, text, userAgent) {
-  if (status === null || status === undefined || status >= 500) return { stav: 'nedostupny', pravidla: null };
+  if (status === null || status === undefined || status === 429 || status >= 500) return { stav: 'nedostupny', pravidla: null };
   if (status >= 200 && status < 300) return { stav: 'ok', pravidla: parsujRobots(text ?? '', userAgent) };
   if (status >= 400) return { stav: 'ok', pravidla: parsujRobots('', userAgent) };
   return { stav: 'nedostupny', pravidla: null };

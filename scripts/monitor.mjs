@@ -59,7 +59,11 @@ async function nactiVstupy(koren) {
 async function nactiRobots(origin, { fetchFn }) {
   const v = await stahni(`${origin}/robots.txt`, {}, { fetchFn, ua: UA });
   const text = v.telo ? v.telo.toString('utf8') : null;
-  return robotsZOdpovedi(v.status, text, UA);
+  const r = robotsZOdpovedi(v.status, text, UA);
+  // Při nedostupnosti nese i chybu (stejná klasifikace jako u ostatních URL), z ní se pak
+  // odvodí měření URL dané domény.
+  if (r.stav === 'nedostupny') return { ...r, chyba: v.chyba ?? { druh: 'sit', status: v.status } };
+  return r;
 }
 
 /**
@@ -86,6 +90,20 @@ async function zmer(url, polozka, predchozi, { fetchFn, nastaveni }) {
   }
   vysledek.telo = null; // tělo se dál nepotřebuje a nikam se neukládá
   return { vysledek, otisk: otiskObsahu, odkazy, verzePravidel: verzePravidel(pravidla), preskoceno: null };
+}
+
+/**
+ * Měření URL domény s nedostupným robots.txt. URL se nestahuje (RFC 9309: nedostupný = zakázáno),
+ * ale chyba robots.txt se zapíše jako chyba URL, aby prošla pravidlem dvou neúspěchů po sobě
+ * a mrtvá doména se ohlásila jako nefunkční odkaz (nebo odmítnuto).
+ */
+function mereniZRobots(url, polozka, chyba, nastaveni) {
+  const pravidla = nastaveni.domeny?.[new URL(url).hostname];
+  const vysledek = {
+    status: chyba.status ?? null, beZmeny: false, telo: null, contentType: null, etag: null, lastModified: null,
+    konecnaUrl: url, trvalePresmerovano: false, chyba: { druh: chyba.druh, status: chyba.status ?? null },
+  };
+  return { vysledek, otisk: null, odkazy: null, verzePravidel: verzePravidel(pravidla), preskoceno: null };
 }
 
 /**
@@ -121,7 +139,7 @@ export async function behKontroly({ koren = KOREN, stavAdresar, vystupAdresar, f
   for (const [url, polozka] of seznam) {
     const u = new URL(url);
     const r = robots.get(u.hostname);
-    if (r.stav === 'nedostupny') mereni.set(url, { vysledek: null, otisk: null, odkazy: null, verzePravidel: null, preskoceno: 'robots-nedostupny' });
+    if (r.stav === 'nedostupny') mereni.set(url, mereniZRobots(url, polozka, r.chyba, nastaveni));
     else if (!r.pravidla.povoleno(`${u.pathname}${u.search}`)) mereni.set(url, { vysledek: null, otisk: null, odkazy: null, verzePravidel: null, preskoceno: 'robots' });
     else keStazeni.push({ url, polozka });
   }

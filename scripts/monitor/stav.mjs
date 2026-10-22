@@ -218,7 +218,7 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
 /**
  * Vyhodnotí běh monitoringu. Čistá funkce: `predchozi` nemění, výstup s ním nesdílí objekty.
  * @param {{ predchozi: object, seznam: Map<string, { druh: string, pouziti: {id: string, pole: string}[], vzorOdkazu?: string }>,
- *   mereni: Map<string, { vysledek: object|null, otisk: string|null, odkazy: string[]|null, verzePravidel: string, preskoceno: null|'robots'|'robots-nedostupny' }>,
+ *   mereni: Map<string, { vysledek: object|null, otisk: string|null, odkazy: string[]|null, verzePravidel: string, preskoceno: null|'robots' }>,
  *   ignorovane: string[], znameZdroje: Set<string>, dnes: string }} vstup
  * @returns {{ stav: object, nalezy: object }}
  */

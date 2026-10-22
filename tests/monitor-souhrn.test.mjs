@@ -41,7 +41,7 @@ test('bez nových problémů: název „… bez nových problémů“, zavrit tr
     },
     odmitnuto: { nove: [], pretrvavajici: [{ url: 'https://d.cz/', pouziti: pouziti('d', 'web'), druh: 'odmitnuto', status: 403 }] },
     prehledy: { nove: [], zrusene: [], pretrvavajici: 2 },
-    preskoceno: [{ url: 'https://e.cz/z', duvod: 'robots-nedostupny' }],
+    preskoceno: [{ url: 'https://e.cz/z', duvod: 'robots' }],
   });
   const { nazev, telo, zavrit } = sestavIssue(n, DNES);
   assert.equal(nazev, 'Kontrola zdrojů 2026-10-25: bez nových problémů');

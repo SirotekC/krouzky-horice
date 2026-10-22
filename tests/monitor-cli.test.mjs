@@ -78,7 +78,6 @@ test('první běh: zapíše stav, kontrola.json a issue „bez nových problém�
     assert.equal(stav.url['https://a.cz/k1'].etag, '"a1"');
     assert.match(stav.url['https://a.cz/k1'].otiskPotvrzeny, /^[0-9a-f]{64}$/);
     assert.deepEqual(stav.url['https://a.cz/krouzky'].odkazyPotvrzene, ['https://a.cz/krouzky/1-x', 'https://a.cz/krouzky/2-y']);
-    assert.ok(!('https://c.cz/k' in stav.url), 'přeskočená URL bez předchozího stavu se neukládá');
     assert.ok(!(await existuje(path.join(stavAdresar, 'stav.json.tmp'))));
 
     const kontrola = JSON.parse(await readFile(path.join(koren, 'site', 'data', 'kontrola.json'), 'utf8'));
@@ -87,9 +86,11 @@ test('první běh: zapíše stav, kontrola.json a issue „bez nových problém�
     assert.equal(await readFile(path.join(vystupAdresar, 'issue-nazev.txt'), 'utf8'), `Kontrola zdrojů ${DNES}: bez nových problémů`);
     assert.equal(await readFile(path.join(vystupAdresar, 'zavrit'), 'utf8'), 'true');
     const issue = await readFile(path.join(vystupAdresar, 'issue.md'), 'utf8');
-    assert.match(issue, /Zkontrolováno 4 URL/);
+    assert.match(issue, /Zkontrolováno 5 URL/);
     assert.match(issue, /Nově sledováno: 4/);
-    assert.match(issue, /https:\/\/c\.cz\/k – robots-nedostupny/);
+    assert.ok(!issue.includes('https://c.cz/k'), 'nedostupný robots.txt se po 1. běhu nehlásí');
+    assert.equal(stav.url['https://c.cz/k'].chyba.druh, '5xx');
+    assert.equal(stav.url['https://c.cz/k'].chyba.pocet, 1);
     assert.ok(!issue.includes('kroužek'), 'text stránek se do issue nedostane');
 
     // Druhý běh: změna textu u b.cz → nová změna, a.cz/k1 vrátí 304 na If-None-Match.
@@ -104,11 +105,12 @@ test('první běh: zapíše stav, kontrola.json a issue „bez nových problém�
       'https://c.cz/robots.txt': { status: 503 },
     }, volani);
     await behKontroly({ koren, stavAdresar, vystupAdresar, fetchFn: fetchFn2, cekej, dnes: '2026-10-28' });
-    assert.equal(await readFile(path.join(vystupAdresar, 'issue-nazev.txt'), 'utf8'), 'Kontrola zdrojů 2026-10-28: 1 nová změna');
+    assert.equal(await readFile(path.join(vystupAdresar, 'issue-nazev.txt'), 'utf8'), 'Kontrola zdrojů 2026-10-28: 1 nová změna, 1 nový nefunkční odkaz');
     assert.equal(await readFile(path.join(vystupAdresar, 'zavrit'), 'utf8'), 'false');
     const issue2 = await readFile(path.join(vystupAdresar, 'issue.md'), 'utf8');
     assert.match(issue2, /z toho 1 beze změny přes 304/);
     assert.match(issue2, /- https:\/\/b\.cz\/k – b-1 \(zdroj_url\)/);
+    assert.match(issue2, /https:\/\/c\.cz\/k/, 'URL domény s nedostupným robots.txt je podruhé hlášená jako nefunkční');
     const kontrola2 = JSON.parse(await readFile(path.join(koren, 'site', 'data', 'kontrola.json'), 'utf8'));
     assert.deepEqual(kontrola2, { zdrojeZkontrolovany: DNES, url: { 'https://a.cz/k1': '2026-10-28', 'https://b.cz/k': DNES } });
   } finally {
@@ -446,4 +448,57 @@ test('potvrzení: URL, která není ve stavu, je chyba (nic se necommituje)', as
   } finally {
     await rm(koren, { recursive: true, force: true });
   }
+});
+
+/** Dva běhy nad jednou doménou `x.cz` s danou odpovědí na robots.txt; vrátí volání, stav a issue obou běhů. */
+async function dvaBehy(robotsOdpoved) {
+  const koren = await pripravKoren({ aktivity: [{ id: 'x-1', zdroj_url: 'https://x.cz/k' }] });
+  const stavAdresar = path.join(koren, 's');
+  const vystupAdresar = path.join(koren, 'v');
+  const volani = [];
+  const fetchFn = falesnyFetch({ 'https://x.cz/robots.txt': robotsOdpoved, 'https://x.cz/k': { telo: HTML('x') } }, volani);
+  try {
+    await behKontroly({ koren, stavAdresar, vystupAdresar, fetchFn, cekej, dnes: DNES });
+    const issue1 = await readFile(path.join(vystupAdresar, 'issue.md'), 'utf8');
+    const stav1 = JSON.parse(await readFile(path.join(stavAdresar, 'stav.json'), 'utf8'));
+    await behKontroly({ koren, stavAdresar, vystupAdresar, fetchFn, cekej, dnes: '2026-10-28' });
+    const issue2 = await readFile(path.join(vystupAdresar, 'issue.md'), 'utf8');
+    const nazev2 = await readFile(path.join(vystupAdresar, 'issue-nazev.txt'), 'utf8');
+    return { volani, issue1, stav1, issue2, nazev2 };
+  } finally {
+    await rm(koren, { recursive: true, force: true });
+  }
+}
+
+test('nedostupná doména (DNS): URL se nestahují, 1. běh nehlásí, 2. běh ohlásí nový nefunkční odkaz', async () => {
+  const r = await dvaBehy((url) => { throw Object.assign(new TypeError('fetch failed'), { cause: { code: 'ENOTFOUND' } }); });
+  assert.ok(!r.volani.some((v) => v.url === 'https://x.cz/k'), 'URL se při nedostupném robots.txt nestahuje');
+  assert.ok(!r.issue1.includes('https://x.cz/k'));
+  assert.equal(r.stav1.url['https://x.cz/k'].chyba.druh, 'dns');
+  assert.match(r.issue2, /https:\/\/x\.cz\/k/);
+  assert.match(r.issue2, /dns/);
+  assert.match(r.nazev2, /1 nov/);
+});
+
+test('robots.txt 429: stejně jako nedostupný, ale kategorie „odmítnuto“', async () => {
+  const r = await dvaBehy({ status: 429 });
+  assert.ok(!r.volani.some((v) => v.url === 'https://x.cz/k'));
+  assert.equal(r.stav1.url['https://x.cz/k'].chyba.druh, 'odmitnuto');
+  assert.ok(!r.issue1.includes('https://x.cz/k'));
+  assert.match(r.issue2, /https:\/\/x\.cz\/k/);
+  assert.match(r.issue2, /## Server odmítl kontrolu\n- https:\/\/x\.cz\/k – 429/);
+});
+
+test('robots.txt 503: po druhém běhu nový nefunkční odkaz (druh 5xx)', async () => {
+  const r = await dvaBehy({ status: 503 });
+  assert.equal(r.stav1.url['https://x.cz/k'].chyba.druh, '5xx');
+  assert.match(r.issue2, /## Nové nefunkční odkazy\n- https:\/\/x\.cz\/k – 503/);
+});
+
+test('explicitní Disallow: URL se dál jen přeskočí, bez chyby', async () => {
+  const r = await dvaBehy({ status: 200, telo: 'User-agent: *\nDisallow: /k\n' });
+  assert.ok(!r.volani.some((v) => v.url === 'https://x.cz/k'));
+  assert.equal(r.stav1.url['https://x.cz/k'], undefined);
+  assert.match(r.issue2, /https:\/\/x\.cz\/k – robots\n/);
+  assert.ok(!/5xx|dns|odmitnuto/.test(r.issue2));
 });

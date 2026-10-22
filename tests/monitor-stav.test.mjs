@@ -310,10 +310,10 @@ test('11: přeskočená URL změní jen posledniKontrola a jde do nalezy.preskoc
   const pred = zaznam({ otiskPosledni: 'bbb', zmena: { od: '2026-10-19', otisk: 'bbb' } });
   const { stav: s, nalezy } = beh({
     predchozi: stav({ [U]: pred }),
-    mer: { [U]: mereni({ vysledek: null, otisk: null, preskoceno: 'robots-nedostupny' }) },
+    mer: { [U]: mereni({ vysledek: null, otisk: null, preskoceno: 'robots' }) },
   });
   assert.deepEqual(s.url[U], { ...pred, posledniKontrola: '2026-10-22' });
-  assert.deepEqual(nalezy.preskoceno, [{ url: U, duvod: 'robots-nedostupny' }]);
+  assert.deepEqual(nalezy.preskoceno, [{ url: U, duvod: 'robots' }]);
   assert.equal(nalezy.zkontrolovano, 0);
   assert.deepEqual(nalezy.zmeny, { nove: [], pretrvavajici: [] });
 });

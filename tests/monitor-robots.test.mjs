@@ -38,6 +38,12 @@ test('prázdný Disallow nic nezakazuje', () => {
   assert.equal(r.povoleno('/cokoli'), true);
 });
 
+test('429 = nedostupný (jako 5xx), ne „vše povoleno“', () => {
+  const r = robotsZOdpovedi(429, null, UA);
+  assert.equal(r.stav, 'nedostupny');
+  assert.equal(r.pravidla, null);
+});
+
 test('404 = vše povoleno, 503 a síťová chyba = nedostupný', () => {
   const ok = robotsZOdpovedi(404, null, UA);
   assert.equal(ok.stav, 'ok');
