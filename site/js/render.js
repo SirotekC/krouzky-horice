@@ -2,7 +2,7 @@
 // `textContent`, nikdy přes `innerHTML`. DOM se používá až uvnitř funkcí.
 
 import { CHYBA_URL } from './config.js';
-import { KATEGORIE, POHLAVI } from './data.js';
+import { KATEGORIE, POHLAVI, datumNacteni } from './data.js';
 import { cisloDne, formatDatum, formatObdobi, stavPrihlasky } from './registration.js';
 import { odkazNaAktivitu } from './url-state.js';
 
@@ -217,7 +217,7 @@ function seznamUdaju(radky) {
  * podle `rozbalena` (na desktopu vždy, na mobilu po volbě „Rozbalit vše“). Detail aktivity
  * ukazuje vše bez sbalování.
  */
-export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false } = {}) {
+export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false, kontrola = null } = {}) {
   const stav = stavPrihlasky(a.prihlaska, dnes);
   const p = a.prihlaska;
 
@@ -254,12 +254,13 @@ export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false } = 
       : externiOdkaz(a.zdroj_url, 'Stránka organizace ↗', 'tlacitko'),
   );
 
-  const stari = cisloDne(dnes) - cisloDne(a.overeno);
+  const nacteno = datumNacteni(a, kontrola);
+  const stari = cisloDne(dnes) - cisloDne(nacteno);
   const paticka = el(
     'footer',
     { trida: 'karta__paticka' },
     el('span', {}, 'Zdroj: ', externiOdkaz(a.zdroj_url, domena(a.zdroj_url))),
-    el('span', { text: `Ověřeno ${formatDatum(a.overeno)}` }),
+    el('span', { text: `Data načtena ${formatDatum(nacteno)}` }),
     stari > ZASTARALE_DNI ? el('span', { trida: 'zastarale', text: 'Údaje mohou být zastaralé' }) : null,
     tlacitkoSdilet(a),
   );
@@ -345,8 +346,8 @@ function tlacitkoSdilet(a) {
 }
 
 /** Detail jedné aktivity s odkazem zpět na seznam. */
-export function detailAktivity(a, dnes, odkazZpet) {
-  return el('div', { trida: 'detail' }, odkazZpet, kartaAktivity(a, dnes));
+export function detailAktivity(a, dnes, odkazZpet, kontrola = null) {
+  return el('div', { trida: 'detail' }, odkazZpet, kartaAktivity(a, dnes, { kontrola }));
 }
 
 /** Stav pro odkaz na aktivitu, která neexistuje (např. byla smazána). */
@@ -364,9 +365,9 @@ export function nenalezenaAktivita(odkazZpet) {
 }
 
 /** Seznam karet; `rozbalene` určuje, jestli jsou podrobnosti karet rozbalené. */
-export function seznamKaret(aktivity, dnes, rozbalene) {
+export function seznamKaret(aktivity, dnes, rozbalene, kontrola = null) {
   const seznam = el('ul', { trida: 'karty' });
-  for (const a of aktivity) seznam.append(el('li', {}, kartaAktivity(a, dnes, { sbalena: true, rozbalena: rozbalene })));
+  for (const a of aktivity) seznam.append(el('li', {}, kartaAktivity(a, dnes, { sbalena: true, rozbalena: rozbalene, kontrola })));
   return seznam;
 }
 

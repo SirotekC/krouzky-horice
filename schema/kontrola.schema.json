@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://krouzky.example/schema/kontrola.schema.json",
+  "title": "Kontrola zdrojů",
+  "description": "Výstup automatického monitoringu zdrojů: kdy byla naposledy úspěšně zkontrolována každá URL. Klíče jsou normalizované URL (bez #fragmentu, hostname malými písmeny, bez koncového lomítka u kořene).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["zdrojeZkontrolovany", "url"],
+  "properties": {
+    "zdrojeZkontrolovany": {
+      "description": "Datum posledního běhu, který zkontroloval všechny zdroje; null, pokud takový běh ještě nebyl.",
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "url": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "format": "date" }
+    }
+  }
+}

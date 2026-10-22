@@ -79,12 +79,63 @@ export function statistiky(aktivity) {
   };
 }
 
-/** Načte všechny tři datové soubory paralelně. */
+/**
+ * Sjednotí URL pro porovnávání: odstraní #fragment, hostname převede na malá písmena
+ * a odstraní koncové lomítko jen u kořenové cesty (`https://a.cz/` → `https://a.cz`).
+ * Stejnou normalizaci používá monitoring zdrojů pro klíče v `kontrola.json`.
+ * @param {string} url
+ * @returns {string}
+ */
+export function normalizujUrl(url) {
+  const u = new URL(url);
+  u.hash = '';
+  const text = u.href; // hostname je v href už malými písmeny
+  return u.pathname === '/' && !u.search ? text.replace(/\/$/, '') : text;
+}
+
+/** Pozdější z dvou dat `YYYY-MM-DD` (chybějící se ignoruje). */
+function pozdejsi(a, b) {
+  if (!a) return b ?? null;
+  if (!b) return a;
+  return a >= b ? a : b;
+}
+
+/**
+ * Datum, ke kterému jsou údaje aktivity načtené: pozdější z ručního `overeno`
+ * a z poslední úspěšné kontroly zdroje (`kontrola.json`, klíč je normalizovaná URL).
+ * @param {{ overeno: string, zdroj_url?: string }} aktivita
+ * @param {{ url?: Record<string, string> } | null} kontrola
+ * @returns {string}
+ */
+export function datumNacteni(aktivita, kontrola) {
+  let kontrolovano = null;
+  if (aktivita.zdroj_url) {
+    try {
+      kontrolovano = kontrola?.url?.[normalizujUrl(aktivita.zdroj_url)] ?? null;
+    } catch {
+      // neplatná URL: použije se jen ruční datum
+    }
+  }
+  return pozdejsi(aktivita.overeno, kontrolovano);
+}
+
+/**
+ * Datum načtení dat pro zápatí: pozdější z `meta.aktualizovano` a data posledního běhu kontroly zdrojů.
+ * @param {{ aktualizovano: string }} meta
+ * @param {{ zdrojeZkontrolovany?: string | null } | null} kontrola
+ * @returns {string}
+ */
+export function datumNacteniWebu(meta, kontrola) {
+  return pozdejsi(meta.aktualizovano, kontrola?.zdrojeZkontrolovany ?? null);
+}
+
+/** Načte datové soubory paralelně. `kontrola.json` je nepovinný: při chybě je `kontrola` `null`. */
 export async function nactiData(zaklad = 'data/') {
-  const [organizace, aktivity, meta] = await Promise.all([
+  const [organizace, aktivity, meta, kontrola] = await Promise.all([
     nactiJson(`${zaklad}organizace.json`),
     nactiJson(`${zaklad}aktivity.json`),
     nactiJson(`${zaklad}meta.json`),
+    nactiJson(`${zaklad}kontrola.json`).catch(() => null),
   ]);
-  return { ...pripravData(organizace, aktivity), meta };
+  return { ...pripravData(organizace, aktivity), meta, kontrola };
 }

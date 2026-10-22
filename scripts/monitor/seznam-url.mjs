@@ -3,6 +3,7 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { normalizujUrl } from '../../site/js/data.js';
 
 const KOREN = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const VYCHOZI_NASTAVENI = path.join(KOREN, 'data-src', 'monitor.json');
@@ -10,18 +11,8 @@ const VYCHOZI_NASTAVENI = path.join(KOREN, 'data-src', 'monitor.json');
 // Čím vyšší číslo, tím vyšší priorita druhu při slučování stejné URL.
 const PRIORITA = { dostupnost: 0, obsah: 1, prehled: 2 };
 
-/**
- * Sjednotí URL pro porovnávání: odstraní #fragment, hostname převede na malá písmena
- * a odstraní koncové lomítko jen u kořenové cesty (`https://a.cz/` → `https://a.cz`).
- * @param {string} url
- * @returns {string}
- */
-export function normalizujUrl(url) {
-  const u = new URL(url);
-  u.hash = '';
-  const text = u.href; // hostname je v href už malými písmeny
-  return u.pathname === '/' && !u.search ? text.replace(/\/$/, '') : text;
-}
+// Jedna implementace sdílená s webem (prohlížeč ji potřebuje pro vyhledání dat v kontrola.json).
+export { normalizujUrl };
 
 /**
  * Načte nastavení monitoringu.

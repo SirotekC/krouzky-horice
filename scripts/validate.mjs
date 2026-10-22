@@ -7,6 +7,7 @@ import path from 'node:path';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { cisloDne, dnesPraha } from '../site/js/registration.js';
+import { normalizujUrl } from '../site/js/data.js';
 
 const KOREN = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const STARI_VAROVANI_DNI = 90;
@@ -35,14 +36,16 @@ async function nactiJson(relativniCesta) {
 export async function vytvorValidatory() {
   const ajv = new Ajv2020({ allErrors: true, strict: true, allowUnionTypes: true });
   addFormats(ajv);
-  const [schemaOrganizace, schemaAktivity] = await Promise.all([
+  const [schemaOrganizace, schemaAktivity, schemaKontrola] = await Promise.all([
     nactiJson('schema/organizace.schema.json'),
     nactiJson('schema/aktivity.schema.json'),
+    nactiJson('schema/kontrola.schema.json'),
   ]);
   return {
     organizace: ajv.compile(schemaOrganizace),
     aktivity: ajv.compile(schemaAktivity),
     meta: ajv.compile(META_SCHEMA),
+    kontrola: ajv.compile(schemaKontrola),
     schemaAktivity,
   };
 }
@@ -73,7 +76,7 @@ function popisChybyAjv(soubor, chyba) {
  * Logické kontroly nad daty, která už prošla schématem.
  * @returns {{ chyby: string[], varovani: string[] }}
  */
-export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategorieUi, skupinyUi = null, dnes }) {
+export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategorieUi, skupinyUi = null, kontrola = null, dnes }) {
   const chyby = [];
   const varovani = [];
 
@@ -137,16 +140,38 @@ export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategori
     for (const k of vUi) if (!vSkupinach.has(k)) chyby.push(`skupiny kategorií: „${k}“ nepatří do žádné skupiny`);
   }
 
+  if (kontrola) {
+    // Sledované jsou všechny URL z dat (stejně jako v scripts/monitor/seznam-url.mjs).
+    const zdrojeAktivit = new Set(
+      [
+        ...aktivity.flatMap((a) => [a.zdroj_url, a.prihlaska?.odkaz]),
+        ...organizace.flatMap((o) => [o.zdroj_url, o.web]),
+      ]
+        .filter(Boolean)
+        .map(normalizujUrl),
+    );
+    const zkontrolujDatum = (cesta, datum) => {
+      if (cisloDne(datum) > cisloDne(dnes)) chyby.push(`${cesta}: datum ${datum} je v budoucnosti`);
+    };
+    if (kontrola.zdrojeZkontrolovany) zkontrolujDatum('kontrola.zdrojeZkontrolovany', kontrola.zdrojeZkontrolovany);
+    for (const [url, datum] of Object.entries(kontrola.url)) {
+      zkontrolujDatum(`kontrola.url["${url}"]`, datum);
+      if (!zdrojeAktivit.has(url)) varovani.push(`kontrola.url["${url}"]: URL není zdroj_url žádné aktivity ani organizace (zastaralý záznam?)`);
+    }
+  }
+
   return { chyby, varovani };
 }
 
 /** Spustí celou validaci nad soubory v repozitáři. */
 export async function validuj({ dnes = dnesPraha() } = {}) {
   const validatory = await vytvorValidatory();
-  const [organizace, aktivity, meta] = await Promise.all([
+  const [organizace, aktivity, meta, kontrola] = await Promise.all([
     nactiJson('site/data/organizace.json'),
     nactiJson('site/data/aktivity.json'),
     nactiJson('site/data/meta.json'),
+    // kontrola.json je nepovinný (vzniká až při běhu monitoringu)
+    nactiJson('site/data/kontrola.json').catch((e) => (e.code === 'ENOENT' ? null : Promise.reject(e))),
   ]);
 
   const chyby = [];
@@ -154,6 +179,7 @@ export async function validuj({ dnes = dnesPraha() } = {}) {
     ['organizace', validatory.organizace, organizace],
     ['aktivity', validatory.aktivity, aktivity],
     ['meta', validatory.meta, meta],
+    ...(kontrola ? [['kontrola', validatory.kontrola, kontrola]] : []),
   ]) {
     if (!validator(data)) chyby.push(...validator.errors.map((e) => popisChybyAjv(soubor, e)));
   }
@@ -167,6 +193,7 @@ export async function validuj({ dnes = dnesPraha() } = {}) {
     kategorieSchema: validatory.schemaAktivity.$defs.kategorie.enum,
     kategorieUi: Object.keys(KATEGORIE),
     skupinyUi: SKUPINY_KATEGORII,
+    kontrola,
     dnes,
   });
 }

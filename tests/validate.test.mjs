@@ -80,3 +80,26 @@ test('dny termínů musí odpovídat rozvrhu', () => {
   assert.equal(chyby.length, 1);
   assert.match(chyby[0], /^aktivity\[1\]\.terminy\.dny: dny \[po\] neodpovídají rozvrhu \[po,st\]/);
 });
+
+test('kontrola.json: datum v budoucnosti je chyba, neznámá URL varování', () => {
+  const kontrola = {
+    zdrojeZkontrolovany: '2026-10-20',
+    url: { 'https://a.cz/x': '2026-10-12', 'https://a.cz/budoucnost': '2026-10-13', 'https://nezname.cz': '2026-10-12' },
+  };
+  const aktivity = [
+    akt('a', 'o', { zdroj_url: 'https://A.cz/x#cast' }),
+    akt('b', 'o', { zdroj_url: 'https://a.cz/budoucnost' }),
+  ];
+  const { chyby, varovani } = zaklad([org('o')], aktivity, { kontrola });
+  assert.equal(chyby.length, 2);
+  assert.match(chyby[0], /^kontrola\.zdrojeZkontrolovany: datum 2026-10-20 je v budoucnosti/);
+  assert.match(chyby[1], /^kontrola\.url\["https:\/\/a\.cz\/budoucnost"\]: datum 2026-10-13 je v budoucnosti/);
+  assert.equal(varovani.length, 1);
+  assert.match(varovani[0], /nezname\.cz.*není zdroj_url žádné aktivity/);
+});
+
+test('kontrola.json: platná data a null zdrojeZkontrolovany bez chyb', () => {
+  const aktivity = [akt('a', 'o', { zdroj_url: 'https://a.cz/x' })];
+  assert.deepEqual(zaklad([org('o')], aktivity, { kontrola: { zdrojeZkontrolovany: null, url: { 'https://a.cz/x': DNES } } }), { chyby: [], varovani: [] });
+  assert.deepEqual(zaklad([org('o')], aktivity, { kontrola: null }), { chyby: [], varovani: [] });
+});

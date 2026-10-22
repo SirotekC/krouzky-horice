@@ -1,7 +1,7 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
 import { DESKTOP } from './config.js';
-import { KATEGORIE, SKUPINY_KATEGORII, nactiData, statistiky } from './data.js';
+import { KATEGORIE, SKUPINY_KATEGORII, datumNacteniWebu, nactiData, statistiky } from './data.js';
 import { DNY_FILTRU, POHLAVI_FILTRU, STAVY_FILTRU, filtruj, jsouPrazdne, prazdneFiltry, seradi } from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
 import {
@@ -196,7 +196,7 @@ async function spust() {
 
   const dnes = dnesPraha();
   const kontext = { dnes, kategorie: KATEGORIE };
-  $('#aktualizovano').textContent = `Data aktualizována ${formatDatum(data.meta.aktualizovano)}.`;
+  $('#aktualizovano').textContent = `Data načtena ${formatDatum(datumNacteniWebu(data.meta, data.kontrola))}.`;
   $('#statistiky').replaceChildren(...radekStatistik(statistiky(data.aktivity)));
 
   naplnFormular(data);
@@ -233,7 +233,7 @@ async function spust() {
     pocet.textContent = '';
     if (aktivita) {
       document.title = `${aktivita.nazev} – Kroužky Hořice`;
-      seznam.replaceChildren(detailAktivity(aktivita, dnes, odkazZpet(aktivita.id)));
+      seznam.replaceChildren(detailAktivity(aktivita, dnes, odkazZpet(aktivita.id), data.kontrola));
     } else {
       document.title = `Kroužek nenalezen – Kroužky Hořice`;
       seznam.replaceChildren(nenalezenaAktivita(odkazZpet(null)));
@@ -248,7 +248,7 @@ async function spust() {
     const vysledky = seradi(filtruj(data.aktivity, filtry, kontext), dnes);
     if (vysledky.length) {
       pocet.textContent = `Nalezeno ${pocetKrouzku(vysledky.length)}`;
-      seznam.replaceChildren(seznamKaret(vysledky, dnes, rozbaleneKarty()));
+      seznam.replaceChildren(seznamKaret(vysledky, dnes, rozbaleneKarty(), data.kontrola));
     } else {
       pocet.textContent = 'Nalezeno 0 kroužků';
       seznam.replaceChildren(prazdnyStav(zrusFiltry));

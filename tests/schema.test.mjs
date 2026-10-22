@@ -115,3 +115,13 @@ test('klíčová slova: malá písmena s diakritikou, víceslovná, bez duplicit
     assert.equal(aktivity([{ ...ukazkaAktivity, klicova_slova: spatne }]), false, JSON.stringify(spatne));
   }
 });
+
+test('schéma kontrola: platný soubor projde, neznámé pole a špatné datum neprojdou', async () => {
+  const { kontrola } = await vytvorValidatory();
+  assert.equal(kontrola({ zdrojeZkontrolovany: '2026-10-25', url: { 'https://a.cz/x': '2026-10-25' } }), true, JSON.stringify(kontrola.errors));
+  assert.equal(kontrola({ zdrojeZkontrolovany: null, url: {} }), true);
+  assert.equal(kontrola({ zdrojeZkontrolovany: null, url: {}, navic: 1 }), false);
+  assert.equal(kontrola({ zdrojeZkontrolovany: '25. 10. 2026', url: {} }), false);
+  assert.equal(kontrola({ zdrojeZkontrolovany: null, url: { 'https://a.cz': 'včera' } }), false);
+  assert.equal(kontrola({ url: {} }), false);
+});
