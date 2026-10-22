@@ -122,6 +122,9 @@
       "odstranitRadky": [
         "^Volná místa\\b"
       ]
+    },
+    "www.sporthorice.cz": {
+      "obsah": "#homepage, #main_frame > .content"
     }
   },
   "ignorovaneOdkazy": [
