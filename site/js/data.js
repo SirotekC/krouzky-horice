@@ -11,7 +11,7 @@ export const KATEGORIE = Object.freeze({
   'sport-ostatni': 'Ostatní sporty',
   bojove: 'Bojová umění',
   plavani: 'Plavání a vodní sporty',
-  priroda: 'Příroda a skauting',
+  priroda: 'Příroda a turistika',
   technika: 'Technika, programování, robotika',
   veda: 'Věda a vzdělávání',
   jazyky: 'Jazyky',
@@ -26,7 +26,7 @@ export const SKUPINY_KATEGORII = Object.freeze({
   sport: { popisek: 'Sport', kategorie: ['sport-mickove', 'sport-ostatni', 'bojove', 'plavani'] },
   umeni: { popisek: 'Umění', kategorie: ['hudba', 'vytvarne', 'tanec', 'divadlo'] },
   veda: { popisek: 'Věda a technika', kategorie: ['technika', 'veda', 'jazyky'] },
-  priroda: { popisek: 'Příroda a skauting', kategorie: ['priroda'] },
+  priroda: { popisek: 'Příroda a turistika', kategorie: ['priroda'] },
   ostatni: { popisek: 'Ostatní', kategorie: ['ostatni'] },
 });
 

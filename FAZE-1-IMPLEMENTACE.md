@@ -207,7 +207,7 @@ Pole objektů:
 | `sport-ostatni` | Ostatní sporty |
 | `bojove` | Bojová umění |
 | `plavani` | Plavání a vodní sporty |
-| `priroda` | Příroda a skauting |
+| `priroda` | Příroda a turistika |
 | `technika` | Technika, programování, robotika |
 | `veda` | Věda a vzdělávání |
 | `jazyky` | Jazyky |
@@ -236,7 +236,7 @@ Pole objektů:
 | Vyhledávání | `<input type="search">` | Hledá v `nazev`, `popis`, názvu organizace a popiscích kategorií. Bez ohledu na diakritiku a velikost písmen. S debounce 150 ms. |
 | Věk dítěte | `<input type="number" min="0" max="26">` | Zobrazí aktivity, kde `vek_od ≤ věk ≤ vek_do`. Chybějící `vek_od` se bere jako 0 a chybějící `vek_do` jako 99. Prázdné pole znamená bez filtru. |
 | Pohlaví dítěte | `<select>` | „Nezáleží“ / „Dívka“ / „Chlapec“. Zobrazí aktivity pro zvolené pohlaví a aktivity bez určení pohlaví. *(doplněno 2026-10-12)* |
-| Zaměření | Dvě úrovně tlačítek (chips) | Nahoře hlavní skupiny (Sport, Umění, Věda a technika, Příroda a skauting, Ostatní), lze jich vybrat víc, logika **OR**; skupiny se definují v `SKUPINY_KATEGORII` v `site/js/data.js`. „Vše“ svítí, když není vybraná žádná skupina; kliknutí na něj výběr zruší. Pod každou vybranou skupinou se zobrazí řádek jejích kategorií (jen pokud jich je v datech víc než jedna), více najednou, logika **OR**. Skupina bez vybrané kategorie platí celá, výsledky skupin se sčítají (např. Sport → Míčové sporty + celé Ostatní). V URL `skup=sport,ostatni&kat=sport-mickove`. *(multiselect skupin doplněn 2026-10-19)* |
+| Zaměření | Dvě úrovně tlačítek (chips) | Nahoře hlavní skupiny (Sport, Umění, Věda a technika, Příroda a turistika, Ostatní), lze jich vybrat víc, logika **OR**; skupiny se definují v `SKUPINY_KATEGORII` v `site/js/data.js`. „Vše“ svítí, když není vybraná žádná skupina; kliknutí na něj výběr zruší. Pod každou vybranou skupinou se zobrazí řádek jejích kategorií (jen pokud jich je v datech víc než jedna), více najednou, logika **OR**. Skupina bez vybrané kategorie platí celá, výsledky skupin se sčítají (např. Sport → Míčové sporty + celé Ostatní). V URL `skup=sport,ostatni&kat=sport-mickove`. *(multiselect skupin doplněn 2026-10-19)* |
 | Organizace | `<select>` | Jedna nebo „Všechny“. |
 | Stav přihlášek | `<select>` | „Vše“ / „Přihlášky probíhají“ / „Brzy začnou (do 30 dní)“ / „Průběžný nábor“. |
 | Reset | tlačítko | Vymaže všechny filtry. |
