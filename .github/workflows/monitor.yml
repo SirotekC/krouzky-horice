@@ -1,0 +1,108 @@
+name: Monitoring zdrojů
+
+on:
+  schedule:
+    # 2:17 UTC každý 3. den v měsíci (mimo celou hodinu kvůli vytíženosti Actions)
+    - cron: '17 2 */3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write # větev monitor-stav a commit kontrola.json do main
+  issues: write
+  actions: write # ruční spuštění nasazení (push přes GITHUB_TOKEN ho nespouští)
+
+concurrency:
+  group: monitor
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+
+      - name: Příprava větve monitor-stav
+        run: |
+          set -euo pipefail
+          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote --exit-code --heads origin monitor-stav > /dev/null; then
+            git clone --branch monitor-stav --single-branch "$url" .monitor-stav
+          else
+            echo "Větev monitor-stav neexistuje, zakládám novou (orphan)."
+            mkdir .monitor-stav
+            git -C .monitor-stav init
+            git -C .monitor-stav checkout --orphan monitor-stav
+            git -C .monitor-stav remote add origin "$url"
+          fi
+          git -C .monitor-stav config user.name "github-actions[bot]"
+          git -C .monitor-stav config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Kontrola zdrojů
+        run: node scripts/monitor.mjs --stav .monitor-stav --vystup .monitor-vystup
+
+      - name: Uložení stavu do větve monitor-stav
+        run: |
+          set -euo pipefail
+          cd .monitor-stav
+          git add stav.json
+          if git diff --cached --quiet; then
+            echo "Stav se nezměnil."
+            exit 0
+          fi
+          git commit -m "Stav monitoringu $(TZ=Europe/Prague date +%F)"
+          for pokus in 1 2 3; do
+            if git push origin monitor-stav; then
+              exit 0
+            fi
+            echo "Push odmítnut (pokus $pokus), zkouším pull --rebase."
+            git pull --rebase origin monitor-stav
+          done
+          echo "Push do monitor-stav se nepodařil." >&2
+          exit 1
+
+      - name: Uložení kontrola.json do main a nasazení
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- site/data/kontrola.json; then
+            echo "kontrola.json se nezměnil."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/kontrola.json
+          git commit -m "Kontrola zdrojů $(TZ=Europe/Prague date +%F)"
+          for pokus in 1 2 3; do
+            if git push origin HEAD:main; then
+              # push přes GITHUB_TOKEN nespouští jiné workflowy, nasazení spouštíme výslovně
+              gh workflow run deploy.yml --ref main
+              exit 0
+            fi
+            echo "Push odmítnut (pokus $pokus), zkouším pull --rebase."
+            git pull --rebase origin main
+          done
+          echo "Push do main se nepodařil." >&2
+          exit 1
+
+      - name: Issue s výsledkem kontroly
+        run: |
+          set -euo pipefail
+          gh label create monitoring --force --description "Automatická kontrola zdrojů"
+          url=$(gh issue create \
+            --title "$(cat .monitor-vystup/issue-nazev.txt)" \
+            --body-file .monitor-vystup/issue.md \
+            --label monitoring)
+          echo "$url"
+          if [ "$(cat .monitor-vystup/zavrit)" = "true" ]; then
+            gh issue close "${url##*/}" --reason completed
+          fi

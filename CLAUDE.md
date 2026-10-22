@@ -82,3 +82,19 @@ Termíny, které zdroj vůbec neuvádí → `"terminy": null` (řádek „Kdy“
 - `npm run dev` spustí lokální server na http://localhost:8080 (stránku nejde otevřít přímo ze souboru kvůli `fetch`).
 - `npm test` (node:test), `npm run validate` (schéma + logické kontroly v `scripts/validate.mjs`).
 - Při změně struktury dat uprav současně: schéma, `render.js`, validaci, testy a tabulku polí v `FAZE-1-IMPLEMENTACE.md` (existuje i kopie o úroveň výš, `../FAZE-1-IMPLEMENTACE.md`).
+
+## Monitoring zdrojů a řešení issue
+
+Workflow `.github/workflows/monitor.yml` (cron každý 3. den, jde spustit i ručně) stahuje zdroje z `data-src/monitor.json` a z dat (`zdroj_url`, odkazy na přihlášky, přehledy DDM a florbalu) a hlídá otisky obsahu, dostupnost a nové/zrušené kroužky v přehledech. Výsledek je GitHub issue se štítkem `monitoring` (bez nových problémů se založí a hned zavře, jen kvůli e-mailu). Do issue ani repozitáře nejde text stránek, jen URL, id, stavové kódy a otisky.
+
+- **Stav** je ve větvi `monitor-stav` (`stav.json`), ne v `main`. Skript `scripts/monitor.mjs` si ji sám obstará.
+- **Do `main` monitoring zapisuje jen `site/data/kontrola.json`** a po commitu workflow ručně spustí nasazení (`deploy.yml`).
+- **`overeno`** u kroužku a `meta.aktualizovano` znamenají **ruční ověření** podle zdroje. Datum „Data načtena“ na webu (karta i zápatí) se počítá automaticky jako pozdější z ručního ověření a poslední úspěšné kontroly (`kontrola.json`).
+
+### Postup „vyřeš issue #N“
+
+1. Přečti issue (`gh issue view N`) a otevři dotčené URL. Co se změnilo, ověř na stránce.
+2. Oprav `aktivity.json` a `organizace.json` podle pravidel výše (včetně `overeno`). Nové kroužky z přehledů přidej celé; kroužek DDM, který se záměrně nepřidává (např. jen pro dospělé), zapiš jeho odkaz do `ignorovaneOdkazy` v `data-src/monitor.json`.
+3. Spusť `npm run validate` a `npm test`.
+4. Potvrď vyřešené URL: `npm run monitor -- --potvrdit <url…>` (nebo `--potvrdit-vse`). Nic se nestahuje, zapíše se stav z posledního běhu. Příkaz sám commitne a pushne větev `monitor-stav` (při konfliktu zkusí znovu) a aktualizuje `site/data/kontrola.json`. Výpis „Nic k potvrzení“ znamená, že už není co potvrzovat.
+5. Commitni změny dat a `kontrola.json` do `main` s textem `Closes #N` v popisu. Push issue zavře.

@@ -253,13 +253,13 @@ Mezi skupinami filtrů platí logika **AND**.
   - věk („7–18 let“, „od 5 let“, „do 12 let“, nebo nic),
   - místo, termíny a cenu (pouze pokud jsou vyplněné),
   - blok **„Jak se přihlásit“**: `zpusob`, období („1. 5. – 15. 6. 2027“), `poznamka` a tlačítko „Přejít k přihlášce ↗“ na `prihlaska.odkaz`, nebo „Stránka organizace ↗“ na `zdroj_url`, když odkaz chybí,
-  - patičku: „Zdroj: {doména}“ jako odkaz na `zdroj_url` a „Ověřeno {d. m. rrrr}“.
-  - Pokud je `overeno` starší než 90 dní, zobrazí se jemné upozornění „Údaje mohou být zastaralé“.
+  - patičku: „Zdroj: {doména}“ jako odkaz na `zdroj_url` a „Data načtena {d. m. rrrr}“ (pozdější z `overeno` a poslední úspěšné kontroly zdroje v `kontrola.json`).
+  - Pokud je „Data načtena“ starší než 90 dní, zobrazí se jemné upozornění „Údaje mohou být zastaralé“.
 - Prázdný stav: „Žádný kroužek neodpovídá filtrům.“ a tlačítko „Zrušit filtry“.
 - Chybový stav (data se nenačetla): srozumitelná hláška a odkaz na obnovení stránky.
 - Stav načítání: jednoduchý text nebo skeleton.
 
-**Patička:** „Informace ověřujte u pořadatele.“, datum poslední aktualizace z `meta.json`, odkaz na nahlášení chyby (`mailto:` nebo GitHub Issues) a odkaz na repozitář.
+**Patička:** „Informace ověřujte u pořadatele.“, datum „Data načtena“ (pozdější z `meta.json` → `aktualizovano` a poslední čisté kontroly zdrojů z `kontrola.json`), odkaz na nahlášení chyby (`mailto:` nebo GitHub Issues) a odkaz na repozitář.
 
 ### 5.2 Stav přihlášek (`registration.js`)
 
