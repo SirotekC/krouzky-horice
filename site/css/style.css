@@ -323,6 +323,32 @@ a {
   display: none;
 }
 
+/* Rychlé zrušení filtrů na mobilu hned za počtem aktivních filtrů; šířku souhrnu nastavuje app.js. */
+.filtry__zrusit {
+  position: absolute;
+  top: 0;
+  left: calc(var(--sirka-souhrnu, 7.5rem) + 0.25rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  color: var(--akcent);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filtry__zrusit:hover {
+  background: var(--akcent-jemny);
+}
+
+.filtry__zrusit[hidden] {
+  display: none;
+}
+
 .pole {
   display: grid;
   gap: 0.35rem;
@@ -340,6 +366,12 @@ a {
 
 .pole > legend {
   margin-bottom: 0.35rem;
+}
+
+.pole__poznamka {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text-tlumeny);
 }
 
 input[type="search"],
@@ -815,7 +847,8 @@ select {
 
   /* Na desktopu jsou filtry i karty vždy rozbalené, přepínače „Další filtry“ a „Rozbalit vše“ nejsou potřeba. */
   .filtry__souhrn,
-  .filtry__rozbalit {
+  .filtry__rozbalit,
+  .filtry__zrusit {
     display: none;
   }
 

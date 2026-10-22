@@ -35,7 +35,7 @@
         </a>
         <div>
           <h1 class="hlavicka__nazev"><a href="./">Kroužky Hořice</a></h1>
-          <p class="hlavicka__podtitul">Hořické kroužky pro děti na jednom místě</p>
+          <p class="hlavicka__podtitul">Dětské kroužky v Hořicích přehledně</p>
           <p class="hlavicka__statistiky" id="statistiky"></p>
         </div>
       </div>
@@ -58,6 +58,9 @@
             <input type="checkbox" name="rozbalit" id="f-rozbalit" autocomplete="off">
             Rozbalit vše
           </label>
+          <button type="reset" class="filtry__zrusit" id="filtry-zrusit" aria-label="Zrušit filtry" title="Zrušit filtry" hidden>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </button>
           <details class="filtry__dalsi" id="filtry-panel">
             <summary class="filtry__souhrn">Další filtry<span class="filtry__pocet" id="filtry-pocet"></span></summary>
             <div class="filtry__formular">
@@ -87,7 +90,7 @@
                 </select>
               </div>
               <div class="pole">
-                <label for="f-stav">Stav přihlášek</label>
+                <label for="f-stav">Stav přihlášek <span class="pole__poznamka">Údaj je orientační.</span></label>
                 <select id="f-stav" name="stav">
                   <option value="">Vše</option>
                 </select>
@@ -95,7 +98,7 @@
             </div>
           </details>
         </div>
-        <button type="reset" class="tlacitko tlacitko--vedlejsi">Zrušit filtry</button>
+        <button type="reset" class="tlacitko">Zrušit filtry</button>
       </form>
     </aside>
 

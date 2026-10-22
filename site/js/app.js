@@ -163,6 +163,7 @@ function oznacAktivniFiltry(form, filtry) {
   const pocet = [filtry.vek != null, filtry.dny.length, filtry.pohlavi, filtry.skup.length, filtry.org, filtry.stav].filter(Boolean).length;
   $('#filtry-pocet').textContent = pocet ? String(pocet) : '';
   $('#filtry-pocet').title = pocet ? `Aktivní filtry: ${pocet}` : '';
+  $('#filtry-zrusit').hidden = !pocet;
   form.classList.toggle('filtry__panel--prazdne', jsouPrazdne(filtry));
 }
 
@@ -289,6 +290,12 @@ async function spust() {
     e.preventDefault();
     zrusFiltry();
   });
+
+  // Ikona „Zrušit filtry“ na mobilu stojí hned za souhrnem „Další filtry (N)“, jehož šířka se mění s počtem.
+  const souhrn = $('.filtry__souhrn');
+  new ResizeObserver(() => {
+    if (souhrn.offsetWidth) souhrn.closest('.filtry__radek').style.setProperty('--sirka-souhrnu', `${souhrn.offsetWidth}px`);
+  }).observe(souhrn);
 
   window.addEventListener('hashchange', () => {
     const nova = cestaZHashe(window.location.hash);

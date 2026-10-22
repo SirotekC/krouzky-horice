@@ -12,7 +12,15 @@ export const STAVY_FILTRU = Object.freeze({
   probiha: 'Přihlášky probíhají',
   brzy: 'Brzy začnou (do 30 dní)',
   prubezne: 'Průběžný nábor',
+  // Všechny stavy, které nemají vlastní položku (plánováno, neznámý, ukončeno).
+  ostatni: 'Ostatní',
 });
+
+function odpovidaStavu(a, stav, dnes) {
+  const stavAktivity = stavPrihlasky(a.prihlaska, dnes).stav;
+  if (stav === 'ostatni') return !Object.hasOwn(STAVY_FILTRU, stavAktivity);
+  return stavAktivity === stav;
+}
 
 /** Hodnoty filtru „Pohlaví dítěte“ (prázdný řetězec = nezáleží). */
 export const POHLAVI_FILTRU = Object.freeze({
@@ -107,7 +115,7 @@ export function filtruj(aktivity, filtry, kontext) {
     if (filtry.org && a.organizace_id !== filtry.org) return false;
     // Aktivity bez určení pohlaví jsou pro všechny.
     if (filtry.pohlavi && a.pohlavi && a.pohlavi !== filtry.pohlavi) return false;
-    if (filtry.stav && stavPrihlasky(a.prihlaska, kontext.dnes).stav !== filtry.stav) return false;
+    if (filtry.stav && !odpovidaStavu(a, filtry.stav, kontext.dnes)) return false;
     return true;
   });
 }

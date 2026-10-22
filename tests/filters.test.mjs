@@ -110,6 +110,7 @@ test('filtr stavu přihlášek', () => {
   assert.deepEqual(ids(filtruj(aktivity, f({ stav: 'probiha' }), kontext)), ['tanec']);
   assert.deepEqual(ids(filtruj(aktivity, f({ stav: 'brzy' }), kontext)), ['cviceni']);
   assert.deepEqual(ids(filtruj(aktivity, f({ stav: 'prubezne' }), kontext)), ['florbal']);
+  assert.deepEqual(ids(filtruj(aktivity, f({ stav: 'ostatni' }), kontext)), ['klavir', 'zpev']);
 });
 
 test('filtr pohlaví: aktivity pro všechny zůstávají, opačné pohlaví se skryje', () => {
