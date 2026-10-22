@@ -87,7 +87,7 @@ Termíny, které zdroj vůbec neuvádí → `"terminy": null` (řádek „Kdy“
 
 Workflow `.github/workflows/monitor.yml` (cron každý 3. den, jde spustit i ručně) stahuje zdroje z `data-src/monitor.json` a z dat (`zdroj_url`, odkazy na přihlášky, přehledy DDM a florbalu) a hlídá otisky obsahu, dostupnost a nové/zrušené kroužky v přehledech. Výsledek je GitHub issue se štítkem `monitoring` (bez nových problémů se založí a hned zavře, jen kvůli e-mailu). Do issue ani repozitáře nejde text stránek, jen URL, id, stavové kódy a otisky.
 
-- **Stav** je ve větvi `monitor-stav` (`stav.json`), ne v `main`. Skript `scripts/monitor.mjs` si ji sám obstará.
+- **Stav** je ve větvi `monitor-stav` (`stav.json`), ne v `main`. Při `--potvrdit` si skript větev obstará sám (dočasný worktree, push); v plánovaném běhu ji vyzvedne a ukládá workflow.
 - **Do `main` monitoring zapisuje jen `site/data/kontrola.json`** a po commitu workflow ručně spustí nasazení (`deploy.yml`).
 - **`overeno`** u kroužku a `meta.aktualizovano` znamenají **ruční ověření** podle zdroje. Datum „Data načtena“ na webu (karta i zápatí) se počítá automaticky jako pozdější z ručního ověření a poslední úspěšné kontroly (`kontrola.json`).
 

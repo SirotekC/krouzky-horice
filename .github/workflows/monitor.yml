@@ -15,9 +15,6 @@ concurrency:
   group: monitor
   cancel-in-progress: false
 
-env:
-  GH_TOKEN: ${{ github.token }}
-
 jobs:
   monitor:
     runs-on: ubuntu-latest
@@ -33,17 +30,23 @@ jobs:
       - run: npm ci
 
       - name: Příprava větve monitor-stav
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          url="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          if git ls-remote --exit-code --heads origin monitor-stav > /dev/null; then
+          gh auth setup-git
+          url="https://github.com/${GITHUB_REPOSITORY}.git"
+          rc=0
+          git ls-remote --exit-code --heads origin monitor-stav > /dev/null || rc=$?
+          if [ "$rc" -eq 0 ]; then
             git clone --branch monitor-stav --single-branch "$url" .monitor-stav
-          else
+          elif [ "$rc" -eq 2 ]; then
             echo "Větev monitor-stav neexistuje, zakládám novou (orphan)."
-            mkdir .monitor-stav
-            git -C .monitor-stav init
-            git -C .monitor-stav checkout --orphan monitor-stav
+            git init -b monitor-stav .monitor-stav
             git -C .monitor-stav remote add origin "$url"
+          else
+            echo "Nepodařilo se zjistit, zda větev monitor-stav existuje (git ls-remote skončil s kódem $rc)." >&2
+            exit 1
           fi
           git -C .monitor-stav config user.name "github-actions[bot]"
           git -C .monitor-stav config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -51,9 +54,26 @@ jobs:
       - name: Kontrola zdrojů
         run: node scripts/monitor.mjs --stav .monitor-stav --vystup .monitor-vystup
 
-      - name: Uložení stavu do větve monitor-stav
+      # Issue se zakládá hned po kontrole, před ukládáním stavu: kdyby pozdější krok
+      # selhal, příští běh musí nálezy znovu hlásit jako nové.
+      - name: Issue s výsledkem kontroly
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          gh label create monitoring --force --description "Automatická kontrola zdrojů"
+          url=$(gh issue create             --title "$(cat .monitor-vystup/issue-nazev.txt)"             --body-file .monitor-vystup/issue.md             --label monitoring)
+          echo "$url"
+          if [ "$(cat .monitor-vystup/zavrit)" = "true" ]; then
+            gh issue close "${url##*/}" --reason completed
+          fi
+
+      - name: Uložení stavu do větve monitor-stav
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh auth setup-git
           cd .monitor-stav
           git add stav.json
           if git diff --cached --quiet; then
@@ -72,6 +92,8 @@ jobs:
           exit 1
 
       - name: Uložení kontrola.json do main a nasazení
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           if git diff --quiet -- site/data/kontrola.json; then
@@ -93,16 +115,3 @@ jobs:
           done
           echo "Push do main se nepodařil." >&2
           exit 1
-
-      - name: Issue s výsledkem kontroly
-        run: |
-          set -euo pipefail
-          gh label create monitoring --force --description "Automatická kontrola zdrojů"
-          url=$(gh issue create \
-            --title "$(cat .monitor-vystup/issue-nazev.txt)" \
-            --body-file .monitor-vystup/issue.md \
-            --label monitoring)
-          echo "$url"
-          if [ "$(cat .monitor-vystup/zavrit)" = "true" ]; then
-            gh issue close "${url##*/}" --reason completed
-          fi
