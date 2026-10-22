@@ -389,3 +389,51 @@ test('vyhodnotBeh nemutuje predchozi', () => {
   s.url[P].odkazyPotvrzene.push('x');
   assert.deepEqual(predchozi, kopie, 'výstup nesdílí pole se vstupem');
 });
+
+test('8: trvalé přesměrování nové URL (první běh) se uloží jako výchozí stav a nehlásí se', () => {
+  const cil = 'https://x.cz/prihlaseni';
+  const vysledek = ok({ konecnaUrl: cil, trvalePresmerovano: true });
+  const r1 = beh({ predchozi: prazdnyStav(), mer: { [U]: mereni({ vysledek }) } });
+  assert.equal(r1.stav.url[U].presmerovani, cil);
+  assert.deepEqual(r1.nalezy.presmerovani.nove, []);
+
+  // Dostupnost: stejné chování u nově sledovaného přihlašovacího odkazu.
+  const D = 'https://p.cz/detail/1';
+  const pouzitiD = [{ id: 'a', pole: 'prihlaska.odkaz' }];
+  const sez = seznam({ [D]: { druh: 'dostupnost', pouziti: pouzitiD } });
+  const merD = (konecnaUrl) => ({ [D]: mereni({ otisk: null, vysledek: ok({ konecnaUrl, trvalePresmerovano: true }) }) });
+  const r2 = beh({ predchozi: prazdnyStav(), sez, mer: merD(cil) });
+  assert.equal(r2.stav.url[D].presmerovani, cil);
+  assert.deepEqual(r2.nalezy.presmerovani.nove, []);
+
+  // Další běh se stejným cílem: nic; změna cíle: hlásí se.
+  const r3 = beh({ predchozi: r2.stav, sez, mer: merD(cil), dnes: '2026-10-25' });
+  assert.deepEqual(r3.nalezy.presmerovani.nove, []);
+  const jiny = 'https://p.cz/jinam';
+  const r4 = beh({ predchozi: r3.stav, sez, mer: merD(jiny), dnes: '2026-10-28' });
+  assert.deepEqual(r4.nalezy.presmerovani.nove, [{ url: D, pouziti: pouzitiD, cil: jiny }]);
+});
+
+test('6: přehled bez změřených odkazů (odkazy null, např. odpověď není HTML) = neměřeno, nic se nehlásí', () => {
+  const pred = zaznamPrehledu({ etag: '"p1"', posledniOk: '2026-10-19' });
+  const r = beh({
+    predchozi: stav({ [P]: pred }),
+    sez: seznam(PREHLED),
+    mer: { [P]: mereni({ otisk: 'jiny', odkazy: null, vysledek: ok({ konecnaUrl: P, contentType: 'application/pdf', etag: '"p2"' }) }) },
+  });
+  const z = r.stav.url[P];
+  assert.deepEqual(z.odkazyPotvrzene, pred.odkazyPotvrzene);
+  assert.deepEqual(z.odkazyPosledni, pred.odkazyPosledni);
+  assert.equal(z.posledniOk, '2026-10-19', 'posledniOk se neposouvá');
+  assert.equal(z.etag, '"p1"', 'validátory se nemění, příště se stáhne znovu celé');
+  assert.equal(z.posledniKontrola, '2026-10-22');
+  assert.deepEqual(r.nalezy.prehledy, { nove: [], zrusene: [], pretrvavajici: 0 });
+  assert.equal(r.nalezy.noveSledovano, 0);
+
+  // Nově sledovaný přehled bez odkazů: zůstane bez výchozího stavu.
+  const r2 = beh({ predchozi: prazdnyStav(), sez: seznam(PREHLED), mer: { [P]: mereni({ odkazy: null, vysledek: ok({ konecnaUrl: P }) }) } });
+  assert.equal(r2.stav.url[P].odkazyPotvrzene, null);
+  assert.equal(r2.stav.url[P].posledniOk, null);
+  assert.equal(r2.nalezy.noveSledovano, 0);
+  assert.deepEqual(r2.nalezy.prehledy, { nove: [], zrusene: [], pretrvavajici: 0 });
+});

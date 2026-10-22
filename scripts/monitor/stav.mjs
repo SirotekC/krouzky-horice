@@ -125,6 +125,11 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
   }
   z.chyba = null;
 
+  // Přehled se vzorem, u kterého se odkazy nepodařilo změřit (odpověď není HTML): bere se jako
+  // neměřený. Odkazy, validátory ani posledniOk se nemění a nic se nehlásí; jinak by se všechny
+  // známé kroužky ohlásily jako zrušené.
+  if (odkazy && !v.beZmeny && m.odkazy == null) return z;
+
   // Validátory pro podmíněný požadavek. 304 je nemusí poslat znovu, pak zůstanou uložené.
   if (v.beZmeny) {
     if (v.etag) z.etag = v.etag;
@@ -134,9 +139,9 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
     z.lastModified = v.lastModified ?? null;
   }
 
-  // Pravidlo 8: trvalé přesměrování.
+  // Pravidlo 8: trvalé přesměrování. U nově sledované URL se jen uloží jako výchozí stav.
   const presmerovani = v.trvalePresmerovano ? v.konecnaUrl : null;
-  if (presmerovani && presmerovani !== z.presmerovani) {
+  if (presmerovani && presmerovani !== z.presmerovani && !novy) {
     nalezy.presmerovani.nove.push({ ...polozkaNalezu, cil: presmerovani });
   }
   z.presmerovani = presmerovani;

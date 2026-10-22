@@ -2,11 +2,14 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, readFile, rm, access } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import path from 'node:path';
 import { behKontroly, behPotvrzeni } from '../scripts/monitor.mjs';
 import { sGitStavem } from '../scripts/monitor/git-stav.mjs';
 
 const DNES = '2026-10-25';
+const execFileP = promisify(execFile);
 const HTML = (text, odkazy = []) => `<html><body><p>${text}</p>${odkazy.map((u) => `<a href="${u}">x</a>`).join('')}</body></html>`;
 
 /** Dočasný kořen projektu s malými daty. */
@@ -113,6 +116,33 @@ test('první běh: zapíše stav, kontrola.json a issue „bez nových problém�
   }
 });
 
+test('přehled, který vrátí ne-HTML odpověď, se bere jako neměřený: žádné zrušené kroužky', async () => {
+  const koren = await pripravKoren({
+    aktivity: [],
+    nastaveni: { prehledy: [{ url: 'https://a.cz/krouzky', organizace_id: 'a', vzorOdkazu: '^https://a\\.cz/krouzky/\\d+' }] },
+  });
+  const stavAdresar = path.join(koren, 's');
+  const vystupAdresar = path.join(koren, 'v');
+  try {
+    await behKontroly({
+      koren, stavAdresar, vystupAdresar, cekej, dnes: DNES,
+      fetchFn: falesnyFetch({ 'https://a.cz/krouzky': { telo: HTML('p', ['/krouzky/1-x', '/krouzky/2-y']) } }),
+    });
+    for (const [druh, headers] of [['pdf', { 'content-type': 'application/pdf' }], ['bez content-type', {}]]) {
+      const fetchFn = async (url) => (url === 'https://a.cz/krouzky'
+        ? new Response(Buffer.from('%PDF-1.4'), { status: 200, headers })
+        : new Response('', { status: 404 }));
+      await behKontroly({ koren, stavAdresar, vystupAdresar, fetchFn, cekej, dnes: '2026-10-28' });
+      assert.equal(await readFile(path.join(vystupAdresar, 'issue-nazev.txt'), 'utf8'), 'Kontrola zdrojů 2026-10-28: bez nových problémů', druh);
+      const stav = JSON.parse(await readFile(path.join(stavAdresar, 'stav.json'), 'utf8'));
+      assert.deepEqual(stav.url['https://a.cz/krouzky'].odkazyPotvrzene, ['https://a.cz/krouzky/1-x', 'https://a.cz/krouzky/2-y'], druh);
+      assert.equal(stav.url['https://a.cz/krouzky'].posledniOk, DNES, druh);
+    }
+  } finally {
+    await rm(koren, { recursive: true, force: true });
+  }
+});
+
 test('pauza: robots.txt je první požadavek na doménu, před dalším se čeká max(pauzaMs, crawlDelay)', async () => {
   const koren = await pripravKoren({
     aktivity: [{ id: 'a-1', zdroj_url: 'https://a.cz/k1' }, { id: 'a-2', zdroj_url: 'https://a.cz/k2' }, { id: 'a-3', zdroj_url: 'https://a.cz/zakazano' }],
@@ -202,36 +232,53 @@ function falesnyGit({ odmitnoutPush = 0, priWorktreeAdd } = {}) {
   return { spust, volani };
 }
 
-test('git-stav: při odmítnutém pushi pull --rebase a opakování, po 3 neúspěších výjimka', async () => {
+const FETCH = 'fetch origin +monitor-stav:refs/remotes/origin/monitor-stav';
+
+test('git-stav: při odmítnutém pushi fetch, reset --hard, nové fn a opakování, po 3 neúspěších výjimka', async () => {
   // Dvakrát odmítnuto, potřetí projde.
   const g1 = falesnyGit({ odmitnoutPush: 2 });
   let adresarFn;
-  await sGitStavem(async (adresar) => { adresarFn = adresar; return 'Potvrzení: 1 URL'; }, { spust: g1.spust, koren: '/repo' });
+  let volaniFn = 0;
+  const vysledek = await sGitStavem(async (adresar) => { adresarFn = adresar; volaniFn++; return 'Potvrzení: 1 URL'; }, { spust: g1.spust, koren: '/repo' });
+  assert.equal(vysledek, true);
+  assert.equal(volaniFn, 3, 'fn se po každém odmítnutí spustí znovu nad čerstvým stavem');
   const prikazy = g1.volani.map((v) => v.args.join(' '));
-  assert.equal(prikazy[0], 'fetch origin monitor-stav');
-  assert.equal(prikazy[1], `worktree add --detach ${adresarFn} origin/monitor-stav`);
-  assert.ok(prikazy.includes('commit -m Potvrzení: 1 URL'));
-  assert.deepEqual(prikazy.filter((p) => p.startsWith('push') || p.startsWith('pull')), [
+  assert.equal(prikazy[0], FETCH);
+  assert.equal(prikazy[1], `worktree add --detach ${adresarFn} refs/remotes/origin/monitor-stav`);
+  assert.deepEqual(prikazy.filter((p) => /^(push|fetch|reset|commit|pull)/.test(p)).slice(1), [
+    'commit -m Potvrzení: 1 URL',
     'push origin HEAD:monitor-stav',
-    'pull --rebase origin monitor-stav',
+    FETCH,
+    'reset --hard refs/remotes/origin/monitor-stav',
+    'commit -m Potvrzení: 1 URL',
     'push origin HEAD:monitor-stav',
-    'pull --rebase origin monitor-stav',
+    FETCH,
+    'reset --hard refs/remotes/origin/monitor-stav',
+    'commit -m Potvrzení: 1 URL',
     'push origin HEAD:monitor-stav',
   ]);
   assert.equal(prikazy.at(-1), `worktree remove --force ${adresarFn}`);
-  assert.ok(g1.volani.filter((v) => ['commit', 'push', 'pull', 'add'].includes(v.args[0])).every((v) => v.cwd === adresarFn));
+  assert.ok(g1.volani.filter((v) => ['commit', 'push', 'reset', 'add'].includes(v.args[0])).every((v) => v.cwd === adresarFn));
   assert.ok(!(await existuje(adresarFn)), 'dočasný adresář je smazaný');
 
   // Třikrát odmítnuto → výjimka, worktree se přesto odstraní.
   const g2 = falesnyGit({ odmitnoutPush: 3 });
   await assert.rejects(
     sGitStavem(async () => 'Potvrzení: 1 URL', { spust: g2.spust, koren: '/repo' }),
-    /push/,
+    /monitor-stav se nepodařilo pushnout ani na 3\. pokus/,
   );
   const prikazy2 = g2.volani.map((v) => v.args.join(' '));
   assert.equal(prikazy2.filter((p) => p.startsWith('push')).length, 3);
-  assert.equal(prikazy2.filter((p) => p.startsWith('pull')).length, 2);
+  assert.equal(prikazy2.filter((p) => p.startsWith('reset')).length, 2);
+  assert.ok(!prikazy2.some((p) => p.startsWith('pull')));
   assert.match(prikazy2.at(-1), /^worktree remove --force /);
+});
+
+test('git-stav: beze změny se necommituje ani nepushuje a vrátí false', async () => {
+  const g = falesnyGit();
+  const spust = async (prikaz, args, moznosti) => (args[0] === 'status' ? { stdout: '' } : g.spust(prikaz, args, moznosti));
+  assert.equal(await sGitStavem(async () => 'Potvrzení: 1 URL', { spust, koren: '/repo' }), false);
+  assert.ok(!g.volani.some((v) => v.args[0] === 'commit' || v.args[0] === 'push'));
 });
 
 test('git-stav: výjimka ve fn = nic se necommituje ani nepushuje, worktree se odstraní', async () => {
@@ -265,8 +312,8 @@ test('potvrzení: potvrdí URL ve stavu z monitor-stav, zapíše kontrola.json a
     return puvodniSpust(prikaz, args, moznosti);
   };
   try {
-    const n = await behPotvrzeni({ koren, urls: ['https://a.cz/k#fragment'], dnes: '2026-10-26', spust });
-    assert.equal(n, 1);
+    const vysledek = await behPotvrzeni({ koren, urls: ['https://a.cz/k#fragment'], dnes: '2026-10-26', spust });
+    assert.deepEqual(vysledek, { pocet: 1, zmeneno: true });
     assert.ok(g.volani.some((v) => v.args.join(' ') === 'commit -m Potvrzení: 1 URL'));
     assert.equal(stavZapsany.url['https://a.cz/k'].otiskPotvrzeny, 'bbb');
     assert.equal(stavZapsany.url['https://a.cz/k'].zmena, null);
@@ -275,6 +322,116 @@ test('potvrzení: potvrdí URL ve stavu z monitor-stav, zapíše kontrola.json a
     assert.deepEqual(kontrola, { zdrojeZkontrolovany: '2026-10-26', url: { 'https://a.cz/k': '2026-10-26', 'https://b.cz/k': '2026-10-25' } });
   } finally {
     await rm(koren, { recursive: true, force: true });
+  }
+});
+
+test('potvrzení: kontrola.json se nezapíše, když push selže; beze změny = „nic k potvrzení“', async () => {
+  const koren = await pripravKoren({ aktivity: [{ id: 'a-1', zdroj_url: 'https://a.cz/k' }] });
+  const stav = {
+    verze: 1, posledniBeh: '2026-10-25', zapatiDatum: '2026-10-25',
+    url: { 'https://a.cz/k': { druh: 'obsah', otiskPotvrzeny: 'aaa', otiskPosledni: 'aaa', posledniOk: '2026-10-25', zmena: null, chyba: null } },
+  };
+  const priWorktreeAdd = async (adresar) => writeFile(path.join(adresar, 'stav.json'), JSON.stringify(stav));
+  try {
+    const g = falesnyGit({ odmitnoutPush: 3, priWorktreeAdd });
+    await assert.rejects(behPotvrzeni({ koren, urls: ['https://a.cz/k'], dnes: '2026-10-26', spust: g.spust }));
+    assert.ok(!(await existuje(path.join(koren, 'site', 'data', 'kontrola.json'))), 'bez úspěšného pushe se kontrola.json nezapíše');
+
+    const g2 = falesnyGit({ priWorktreeAdd });
+    const spust = async (prikaz, args, moznosti) => (args[0] === 'status' ? { stdout: '' } : g2.spust(prikaz, args, moznosti));
+    assert.deepEqual(await behPotvrzeni({ koren, urls: ['https://a.cz/k'], dnes: '2026-10-25', spust }), { pocet: 1, zmeneno: false });
+    assert.ok(!(await existuje(path.join(koren, 'site', 'data', 'kontrola.json'))));
+  } finally {
+    await rm(koren, { recursive: true, force: true });
+  }
+});
+
+test('potvrzení se skutečným gitem: souběžný push do monitor-stav → fetch, reset a nové potvrzení', async () => {
+  const tmp = await mkdtemp(path.join(tmpdir(), 'monitor-git-'));
+  // Izolovaný git: prázdná globální konfigurace, identita přes proměnné prostředí.
+  const konfigurace = path.join(tmp, 'gitconfig');
+  await writeFile(konfigurace, '');
+  const env = {
+    ...process.env, GIT_CONFIG_GLOBAL: konfigurace, GIT_CONFIG_NOSYSTEM: '1',
+    GIT_AUTHOR_NAME: 'Test', GIT_AUTHOR_EMAIL: 'test@example.com', GIT_COMMITTER_NAME: 'Test', GIT_COMMITTER_EMAIL: 'test@example.com',
+  };
+  const spust = (prikaz, args, moznosti = {}) => execFileP(prikaz, args, { ...moznosti, env });
+  const git = (args, cwd) => spust('git', args, { cwd });
+  const zapisStav = (adresar, s) => writeFile(path.join(adresar, 'stav.json'), `${JSON.stringify(s, null, 2)}\n`);
+
+  const zaznam = (prepis) => ({
+    druh: 'obsah', otiskPotvrzeny: 'aaa', otiskPosledni: 'aaa', verzePravidel: 'v', etag: null, lastModified: null,
+    posledniKontrola: '2026-10-25', posledniOk: '2026-10-25', zmena: null, chyba: null, presmerovani: null, ...prepis,
+  });
+  const stav = {
+    verze: 1, posledniBeh: '2026-10-25', zapatiDatum: '2026-10-19',
+    url: {
+      'https://a.cz/k': zaznam({ otiskPosledni: 'bbb', posledniOk: '2026-10-19', zmena: { od: '2026-10-25', otisk: 'bbb' } }),
+      'https://b.cz/k': zaznam({}),
+    },
+  };
+  try {
+    // „origin“ (bare) s větví monitor-stav.
+    const origin = path.join(tmp, 'origin.git');
+    await git(['init', '-q', '--bare', origin], tmp);
+    const seed = path.join(tmp, 'seed');
+    await git(['init', '-q', seed], tmp);
+    await zapisStav(seed, stav);
+    await git(['add', 'stav.json'], seed);
+    await git(['commit', '-q', '-m', 'Výchozí stav'], seed);
+    await git(['push', '-q', origin, 'HEAD:refs/heads/monitor-stav'], seed);
+
+    // Kořen projektu (klon s daty) a druhý klon pro souběžný běh workflow.
+    const koren = path.join(tmp, 'koren');
+    await git(['clone', '-q', '-b', 'monitor-stav', origin, koren], tmp);
+    await mkdir(path.join(koren, 'site', 'data'), { recursive: true });
+    await mkdir(path.join(koren, 'data-src'), { recursive: true });
+    await writeFile(path.join(koren, 'site', 'data', 'aktivity.json'), JSON.stringify([{ id: 'a-1', zdroj_url: 'https://a.cz/k' }, { id: 'b-1', zdroj_url: 'https://b.cz/k' }]));
+    await writeFile(path.join(koren, 'site', 'data', 'organizace.json'), '[]');
+    await writeFile(path.join(koren, 'data-src', 'monitor.json'), '{}');
+    const druhy = path.join(tmp, 'druhy');
+    await git(['clone', '-q', '-b', 'monitor-stav', origin, druhy], tmp);
+
+    // Těsně před prvním pushem potvrzení pushne „workflow“ změnu sousedních řádků.
+    let soubeh = false;
+    const spustSeSoubehem = async (prikaz, args, moznosti) => {
+      if (args[0] === 'push' && !soubeh) {
+        soubeh = true;
+        const s = structuredClone(stav);
+        s.posledniBeh = '2026-10-28';
+        s.url['https://a.cz/k'].posledniKontrola = '2026-10-28';
+        s.url['https://b.cz/k'].posledniKontrola = '2026-10-28';
+        s.url['https://b.cz/k'].posledniOk = '2026-10-28';
+        await zapisStav(druhy, s);
+        await git(['commit', '-q', '-am', 'Stav monitoringu 2026-10-28'], druhy);
+        await git(['push', '-q', 'origin', 'HEAD:monitor-stav'], druhy);
+      }
+      return spust(prikaz, args, moznosti);
+    };
+
+    const vysledek = await behPotvrzeni({ koren, urls: ['https://a.cz/k'], dnes: '2026-10-29', spust: spustSeSoubehem });
+    assert.ok(soubeh);
+    assert.deepEqual(vysledek, { pocet: 1, zmeneno: true });
+
+    const { stdout } = await git(['--git-dir', origin, 'show', 'monitor-stav:stav.json'], tmp);
+    const vysledny = JSON.parse(stdout);
+    assert.equal(vysledny.posledniBeh, '2026-10-28', 'souběžná změna zůstala');
+    assert.equal(vysledny.url['https://b.cz/k'].posledniOk, '2026-10-28', 'souběžná změna zůstala');
+    assert.equal(vysledny.url['https://a.cz/k'].posledniKontrola, '2026-10-28', 'souběžná změna zůstala');
+    assert.equal(vysledny.url['https://a.cz/k'].otiskPotvrzeny, 'bbb', 'potvrzení je zapsané');
+    assert.equal(vysledny.url['https://a.cz/k'].zmena, null);
+    assert.equal(vysledny.url['https://a.cz/k'].posledniOk, '2026-10-29');
+    assert.equal(vysledny.zapatiDatum, '2026-10-29');
+
+    const log = (await git(['--git-dir', origin, 'log', '--format=%s', 'monitor-stav'], tmp)).stdout.trim().split('\n');
+    assert.deepEqual(log, ['Potvrzení: 1 URL', 'Stav monitoringu 2026-10-28', 'Výchozí stav']);
+
+    const kontrola = JSON.parse(await readFile(path.join(koren, 'site', 'data', 'kontrola.json'), 'utf8'));
+    assert.deepEqual(kontrola, { zdrojeZkontrolovany: '2026-10-29', url: { 'https://a.cz/k': '2026-10-29', 'https://b.cz/k': '2026-10-28' } });
+    const worktrees = (await git(['worktree', 'list', '--porcelain'], koren)).stdout.match(/^worktree /gm);
+    assert.equal(worktrees.length, 1, 'dočasný worktree je odstraněný');
+  } finally {
+    await rm(tmp, { recursive: true, force: true });
   }
 });
 

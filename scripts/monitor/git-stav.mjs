@@ -10,35 +10,40 @@ const VYCHOZI_SPUST = promisify(execFile);
 
 /**
  * Vytvoří worktree větve `monitor-stav` (podle `origin`) v dočasném adresáři, zavolá `fn(adresar)`,
- * změny commitne se zprávou, kterou `fn` vrátí, a pushne. Odmítnutý push = `pull --rebase` a nový
- * pokus, celkem nejvýš `pokusy` pushů, pak výjimka. Worktree se vždy odstraní.
- * @param {(adresar: string) => Promise<string>} fn vrací zprávu commitu
+ * změny commitne se zprávou, kterou `fn` vrátí, a pushne.
+ * Odmítnutý push (souběžný zápis workflow) = `fetch` čerstvé větve, `reset --hard` na ni a `fn` znovu
+ * nad novým stavem (žádný rebase, ten by u sousedních řádků stav.json skončil konfliktem).
+ * Celkem nejvýš `pokusy` pushů, pak výjimka. Worktree se vždy odstraní.
+ * @param {(adresar: string) => Promise<string>} fn vrací zprávu commitu; musí jít spustit opakovaně
  * @param {{ spust?: (prikaz: string, args: string[], moznosti?: { cwd?: string }) => Promise<{ stdout: string }>,
  *   koren?: string, vetev?: string, vzdalene?: string, pokusy?: number }} [moznosti]
- * @returns {Promise<boolean>} `true`, když se commitovalo (`false` = beze změny)
+ * @returns {Promise<boolean>} `true` = commitnuto a pushnuto, `false` = beze změny (nic se nepushuje)
  */
 export async function sGitStavem(fn, { spust = VYCHOZI_SPUST, koren = process.cwd(), vetev = 'monitor-stav', vzdalene = 'origin', pokusy = 3 } = {}) {
   const git = (args, cwd) => spust('git', args, { cwd });
+  const ref = `refs/remotes/${vzdalene}/${vetev}`;
+  // Refspec explicitně aktualizuje vzdálenou větev (samotné `fetch origin vetev` ji nemusí posunout).
+  const stahni = (cwd) => git(['fetch', vzdalene, `+${vetev}:${ref}`], cwd);
 
-  await git(['fetch', vzdalene, vetev], koren);
+  await stahni(koren);
   const adresar = await mkdtemp(path.join(tmpdir(), 'monitor-stav-'));
   try {
-    await git(['worktree', 'add', '--detach', adresar, `${vzdalene}/${vetev}`], koren);
-    const zprava = await fn(adresar);
-    await git(['add', '-A'], adresar);
-    const { stdout } = await git(['status', '--porcelain'], adresar);
-    if (!String(stdout ?? '').trim()) return false;
-    await git(['commit', '-m', zprava], adresar);
-
+    await git(['worktree', 'add', '--detach', adresar, ref], koren);
     for (let pokus = 1; ; pokus++) {
+      const zprava = await fn(adresar);
+      await git(['add', '-A'], adresar);
+      const { stdout } = await git(['status', '--porcelain'], adresar);
+      if (!String(stdout ?? '').trim()) return false;
+      await git(['commit', '-m', zprava], adresar);
       try {
         await git(['push', vzdalene, `HEAD:${vetev}`], adresar);
         return true;
       } catch (e) {
         if (pokus >= pokusy) {
-          throw new Error(`push do ${vzdalene}/${vetev} selhal ${pokusy}× po sobě: ${String(e.stderr || e.message).trim()}`);
+          throw new Error(`Větev ${vetev} se nepodařilo pushnout ani na ${pokusy}. pokus (souběžné změny?): ${String(e.stderr || e.message).trim()}`);
         }
-        await git(['pull', '--rebase', vzdalene, vetev], adresar);
+        await stahni(adresar);
+        await git(['reset', '--hard', ref], adresar);
       }
     }
   } finally {

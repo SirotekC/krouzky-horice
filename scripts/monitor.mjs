@@ -79,8 +79,9 @@ async function zmer(url, polozka, predchozi, { fetchFn, nastaveni }) {
       otiskObsahu = otisk(htmlNaText(html, pravidla));
       if (polozka.vzorOdkazu) odkazy = odkazyPrehledu(html, vysledek.konecnaUrl, polozka.vzorOdkazu);
     } else {
+      // Ne-HTML (PDF, obrázek, chybějící Content-Type): otisk syrových dat. Odkazy přehledu
+      // zůstanou `null` = neměřeno (stav.mjs je nebere jako prázdný seznam).
       otiskObsahu = otisk(vysledek.telo);
-      if (polozka.vzorOdkazu) odkazy = [];
     }
   }
   vysledek.telo = null; // tělo se dál nepotřebuje a nikam se neukládá
@@ -156,13 +157,16 @@ export async function behKontroly({ koren = KOREN, stavAdresar, vystupAdresar, f
 /**
  * Potvrzení vyřešených URL ve větvi monitor-stav (bez stahování). Zapíše i `site/data/kontrola.json`
  * v pracovním stromu (commitne ho agent spolu s daty).
+ * Při souběžném zápisu do monitor-stav se potvrzení aplikuje znovu nad čerstvým stavem (viz git-stav.mjs).
+ * `kontrola.json` se zapíše až po úspěšném pushi, z výsledného (pushnutého) stavu.
  * @param {{ koren?: string, urls: string[] | 'vse', dnes?: string, spust?: Function }} moznosti
- * @returns {Promise<number>} počet potvrzených URL
+ * @returns {Promise<{ pocet: number, zmeneno: boolean }>} počet potvrzených URL; `zmeneno: false` = nic k potvrzení
  */
 export async function behPotvrzeni({ koren = KOREN, urls, dnes = dnesPraha(), spust }) {
   const { seznam, znameZdroje, ignorovane } = await nactiVstupy(koren);
   let pocet = 0;
-  await sGitStavem(async (adresar) => {
+  let vysledny = null;
+  const zmeneno = await sGitStavem(async (adresar) => {
     const souborStavu = path.join(adresar, 'stav.json');
     const stav = await nactiJson(souborStavu);
     let cile = 'vse';
@@ -172,12 +176,12 @@ export async function behPotvrzeni({ koren = KOREN, urls, dnes = dnesPraha(), sp
       if (nezname.length) throw new Error(`URL nejsou ve stavu monitoringu: ${nezname.join(', ')}`);
     }
     pocet = cile === 'vse' ? Object.keys(stav.url).length : cile.length;
-    const novy = potvrd(stav, cile, dnes, { ignorovane, znameZdroje });
-    await zapisJsonAtomicky(souborStavu, novy);
-    await zapisJsonAtomicky(path.join(koren, 'site', 'data', 'kontrola.json'), sestavKontrolu(novy, seznam));
+    vysledny = potvrd(stav, cile, dnes, { ignorovane, znameZdroje });
+    await zapisJsonAtomicky(souborStavu, vysledny);
     return `Potvrzení: ${pocet} URL`;
   }, { koren, ...(spust ? { spust } : {}) });
-  return pocet;
+  if (zmeneno) await zapisJsonAtomicky(path.join(koren, 'site', 'data', 'kontrola.json'), sestavKontrolu(vysledny, seznam));
+  return { pocet, zmeneno };
 }
 
 /** Zpracuje argumenty příkazové řádky. */
@@ -202,8 +206,9 @@ async function main() {
   try {
     const volby = parsujArgumenty(process.argv.slice(2));
     if (volby.potvrdit) {
-      const n = await behPotvrzeni({ urls: volby.potvrdit });
-      console.log(`✔ Potvrzeno ${n} URL ve větvi monitor-stav, zapsán site/data/kontrola.json.`);
+      const { pocet, zmeneno } = await behPotvrzeni({ urls: volby.potvrdit });
+      if (zmeneno) console.log(`✔ Potvrzeno ${pocet} URL ve větvi monitor-stav, zapsán site/data/kontrola.json.`);
+      else console.log('✔ Nic k potvrzení: stav ve větvi monitor-stav je už potvrzený.');
       return;
     }
     const { nazev, nalezy } = await behKontroly({
