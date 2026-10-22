@@ -45,7 +45,9 @@ export function sestavIssue(nalezy, dnes) {
   const nazev = `Kontrola zdrojů ${dnes}: ${casti.length ? casti.join(', ') : 'bez nových problémů'}`;
 
   const radky = [];
-  radky.push(`Zkontrolováno ${n.zkontrolovano} URL (z toho ${n.beZmeny304} beze změny přes 304).`);
+  radky.push(`Zkontrolováno ${n.zkontrolovano} URL.${n.beZmeny304
+    ? ` U ${n.beZmeny304} z nich server rovnou potvrdil, že se od minulé kontroly nezměnily, takže se nemusely znovu stahovat.`
+    : ''}`);
   const prepocet = [];
   if (n.noveSledovano) prepocet.push(`Nově sledováno: ${n.noveSledovano}`);
   if (n.prepocitano) prepocet.push(`přepočítáno po změně pravidel: ${n.prepocitano}`);
@@ -63,7 +65,8 @@ export function sestavIssue(nalezy, dnes) {
     `| Server odmítl kontrolu | ${n.odmitnuto.nove.length} | ${n.odmitnuto.pretrvavajici.length} |`,
     `| Nové / zrušené kroužky v přehledech | ${n.prehledy.nove.length} / ${n.prehledy.zrusene.length} | ${n.prehledy.pretrvavajici} |`,
     `| Přesměrované odkazy | ${n.presmerovani.nove.length} | – |`,
-    `| Přeskočeno (robots.txt) | – | ${n.preskoceno.length} |`,
+    `| Přeskočeno (robots.txt) | – | ${n.preskoceno.filter((p) => p.duvod === 'robots').length} |`,
+    `| Nelze kontrolovat (viz monitor.json) | – | ${n.preskoceno.filter((p) => p.duvod === 'nekontrolovat').length} |`,
   );
 
   function sekce(nadpis, polozky) {
@@ -90,7 +93,7 @@ export function sestavIssue(nalezy, dnes) {
   }
   if (n.preskoceno.length) {
     radky.push('', `<details><summary>Přeskočeno (${n.preskoceno.length})</summary>`, '',
-      ...n.preskoceno.map((p) => `- ${p.url} – ${p.duvod}`), '', '</details>');
+      ...n.preskoceno.map((p) => `- ${p.url} – ${p.duvod === 'nekontrolovat' ? 'nelze kontrolovat' : p.duvod}`), '', '</details>');
   }
 
   radky.push('', 'Vyřešit: napiš agentovi „vyřeš issue #…“.');

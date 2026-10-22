@@ -46,7 +46,7 @@ test('bez nových problémů: název „… bez nových problémů“, zavrit tr
   const { nazev, telo, zavrit } = sestavIssue(n, DNES);
   assert.equal(nazev, 'Kontrola zdrojů 2026-10-25: bez nových problémů');
   assert.equal(zavrit, true);
-  assert.match(telo, /^Zkontrolováno 177 URL \(z toho 160 beze změny přes 304\)\./);
+  assert.match(telo, /^Zkontrolováno 177 URL\. U 160 z nich server rovnou potvrdil, že se od minulé kontroly nezměnily, takže se nemusely znovu stahovat\./);
   assert.deepEqual(radekTabulky(telo, 'Změněné zdroje'), ['Změněné zdroje', '0', '1']);
   assert.deepEqual(radekTabulky(telo, 'Nefunkční odkazy'), ['Nefunkční odkazy', '0', '2']);
   assert.deepEqual(radekTabulky(telo, 'Server odmítl kontrolu'), ['Server odmítl kontrolu', '0', '1']);
@@ -136,7 +136,8 @@ test('tělo neobsahuje nic kromě URL, id, polí, kódů a čísel', () => {
     'https://p.cz/k/1', 'https://p.cz/k', 'https://r.cz/a', 'https://r.cz/b', 'https://e.cz/z',
     'prihlaska.odkaz', 'zdroj_url', 'web', 'a-1', 'a-2', 'b-x', 'b-y', 'r-1', 'd-1'];
   for (const p of povolene.sort((x, y) => y.length - x.length)) zbytek = zbytek.split(p).join(' ');
-  const SABLONA = new Set(`Zkontrolováno URL z toho beze změny přes nové přetrvávající Změněné zdroje Nefunkční odkazy
+  const SABLONA = new Set(`Zkontrolováno URL U z nich server rovnou potvrdil že se od minulé kontroly nezměnily takže nemusely znovu stahovat
+    Nelze kontrolovat viz monitor.json nové přetrvávající Změněné zdroje Nefunkční odkazy
     Server odmítl kontrolu Nové zrušené kroužky v přehledech Přesměrované Přeskočeno robots.txt robots nedostupný
     Nově sledováno přepočítáno po změně pravidel Nové změny zdrojů a nefunkční nový zrušený přehled
     Přetrvávající problémy details summary změna nefunkční odmítnuto nevyřešené kroužky

@@ -124,9 +124,14 @@ export async function behKontroly({ koren = KOREN, stavAdresar, vystupAdresar, f
     predchozi = prazdnyStav();
   }
 
+  // 0. URL, které nejde kontrolovat (např. web blokuje servery GitHubu), se vůbec nestahují.
+  const nekontrolovat = (nastaveni.nekontrolovat ?? []).map((n) => n.predpona);
+  const jeNekontrolovat = (url) => nekontrolovat.some((p) => url.startsWith(p));
+
   // 1. robots.txt jednou na doménu (domény souběžně).
   const domeny = new Map(); // hostname → origin
   for (const url of seznam.keys()) {
+    if (jeNekontrolovat(url)) continue;
     const u = new URL(url);
     if (!domeny.has(u.hostname)) domeny.set(u.hostname, u.origin);
   }
@@ -137,6 +142,10 @@ export async function behKontroly({ koren = KOREN, stavAdresar, vystupAdresar, f
   const mereni = new Map();
   const keStazeni = [];
   for (const [url, polozka] of seznam) {
+    if (jeNekontrolovat(url)) {
+      mereni.set(url, { vysledek: null, otisk: null, odkazy: null, verzePravidel: null, preskoceno: 'nekontrolovat' });
+      continue;
+    }
     const u = new URL(url);
     const r = robots.get(u.hostname);
     if (r.stav === 'nedostupny') mereni.set(url, mereniZRobots(url, polozka, r.chyba, nastaveni));

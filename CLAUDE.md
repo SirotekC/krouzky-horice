@@ -94,7 +94,7 @@ Workflow `.github/workflows/monitor.yml` (cron každý 3. den, jde spustit i ru�
 ### Postup „vyřeš issue #N“
 
 1. Přečti issue (`gh issue view N`) a otevři dotčené URL. Co se změnilo, ověř na stránce.
-2. Oprav `aktivity.json` a `organizace.json` podle pravidel výše (včetně `overeno`). Nové kroužky z přehledů přidej celé; kroužek DDM, který se záměrně nepřidává (např. jen pro dospělé), zapiš jeho odkaz do `ignorovaneOdkazy` v `data-src/monitor.json`.
+2. Oprav `aktivity.json` a `organizace.json` podle pravidel výše (včetně `overeno`). Nové kroužky z přehledů přidej celé; kroužek DDM, který se záměrně nepřidává (např. jen pro dospělé), zapiš jeho odkaz do `ignorovaneOdkazy` v `data-src/monitor.json`. Falešně nefunkční odkaz, který z běžného připojení funguje (web blokuje servery GitHubu), přidej do `nekontrolovat` (předpona URL + důvod); takové URL se pak nestahují a v e-mailu jsou jen v počtu „Nelze kontrolovat“.
 3. Spusť `npm run validate` a `npm test`.
 4. Potvrď vyřešené URL: `npm run monitor -- --potvrdit <url…>` (nebo `--potvrdit-vse`). Nic se nestahuje, zapíše se stav z posledního běhu. Příkaz sám commitne a pushne větev `monitor-stav` (při konfliktu zkusí znovu) a aktualizuje `site/data/kontrola.json`. Výpis „Nic k potvrzení“ znamená, že už není co potvrzovat. Před potvrzením a commitem udělej `git pull` (bot commituje `kontrola.json` do `main` při každém běhu). Nepotvrzuj v okně plánovaného běhu (kolem 02:17 UTC ve dnech běhu): push stavu z workflow by pak mohl kolidovat a selhal by (selže hlasitě, další běh nálezy zopakuje).
 5. Commitni změny dat a `kontrola.json` do `main` s textem `Closes #N` v popisu. Push issue zavře.

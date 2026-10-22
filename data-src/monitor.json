@@ -64,10 +64,6 @@
       "organizace_id": "zus-melodie"
     },
     {
-      "url": "https://www.zusmelodie.cz/pobocky.php",
-      "organizace_id": "zus-melodie"
-    },
-    {
       "url": "https://rckonvicka.cz/aktualni-pravidelny-program/",
       "organizace_id": "rc-konvicka"
     },
@@ -115,6 +111,10 @@
       "url": "https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788",
       "organizace_id": "spv-horice"
     }
+  ],
+  "nekontrolovat": [
+    { "predpona": "https://www.horice.org/", "duvod": "web města blokuje požadavky ze serverů GitHubu (z běžného připojení funguje)" },
+    { "predpona": "https://www.zusmelodie.cz/obory.php", "duvod": "stránka blokuje požadavky ze serverů GitHubu (z běžného připojení funguje)" }
   ],
   "domeny": {
     "www.ddmhorice.cz": {

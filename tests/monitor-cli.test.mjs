@@ -108,7 +108,7 @@ test('první běh: zapíše stav, kontrola.json a issue „bez nových problém�
     assert.equal(await readFile(path.join(vystupAdresar, 'issue-nazev.txt'), 'utf8'), 'Kontrola zdrojů 2026-10-28: 1 nová změna, 1 nový nefunkční odkaz');
     assert.equal(await readFile(path.join(vystupAdresar, 'zavrit'), 'utf8'), 'false');
     const issue2 = await readFile(path.join(vystupAdresar, 'issue.md'), 'utf8');
-    assert.match(issue2, /z toho 1 beze změny přes 304/);
+    assert.match(issue2, /U 1 z nich server rovnou potvrdil, že se od minulé kontroly nezměnily/);
     assert.match(issue2, /- https:\/\/b\.cz\/k – b-1 \(zdroj_url\)/);
     assert.match(issue2, /https:\/\/c\.cz\/k/, 'URL domény s nedostupným robots.txt je podruhé hlášená jako nefunkční');
     const kontrola2 = JSON.parse(await readFile(path.join(koren, 'site', 'data', 'kontrola.json'), 'utf8'));
@@ -501,4 +501,37 @@ test('explicitní Disallow: URL se dál jen přeskočí, bez chyby', async () =>
   assert.equal(r.stav1.url['https://x.cz/k'], undefined);
   assert.match(r.issue2, /https:\/\/x\.cz\/k – robots\n/);
   assert.ok(!/5xx|dns|odmitnuto/.test(r.issue2));
+});
+
+test('nekontrolovat: URL s předponou se nestahuje, nehlásí se jako chyba a stará chyba zmizí', async () => {
+  const koren = await pripravKoren({
+    aktivity: [{ id: 'a-1', zdroj_url: 'https://a.cz/k1' }, { id: 'a-2', zdroj_url: 'https://a.cz/blok/k2' }, { id: 'n-1', zdroj_url: 'https://n.cz/k' }],
+    nastaveni: { nekontrolovat: [
+      { predpona: 'https://a.cz/blok/', duvod: 'blokuje servery GitHubu' },
+      { predpona: 'https://n.cz/', duvod: 'blokuje servery GitHubu' },
+    ] },
+  });
+  const volani = [];
+  const fetchFn = falesnyFetch({ 'https://a.cz/k1': { telo: HTML('A') } }, volani);
+  const stavAdresar = path.join(koren, '.monitor-stav');
+  const vystupAdresar = path.join(koren, '.monitor-vystup');
+  try {
+    await mkdir(stavAdresar, { recursive: true });
+    // Předchozí stav s chybou u blokované URL (z doby před nastavením).
+    await writeFile(path.join(stavAdresar, 'stav.json'), JSON.stringify({ verze: 1, posledniBeh: '2026-10-22', zapatiDatum: null, url: {
+      'https://n.cz/k': { druh: 'obsah', otiskPotvrzeny: null, otiskPosledni: null, verzePravidel: null, etag: null, lastModified: null,
+        posledniKontrola: '2026-10-22', posledniOk: null, zmena: null, chyba: { druh: 'sit', status: null, od: '2026-10-22', pocet: 1 }, presmerovani: null },
+    } }));
+    const { nalezy, telo } = await behKontroly({ koren, stavAdresar, vystupAdresar, fetchFn, cekej, dnes: DNES });
+
+    assert.ok(!volani.some((v) => v.url.startsWith('https://n.cz/')), 'na blokovanou doménu nejde ani robots.txt');
+    assert.ok(!volani.some((v) => v.url === 'https://a.cz/blok/k2'));
+    assert.equal(nalezy.chyby.nove.length + nalezy.chyby.pretrvavajici.length, 0);
+    assert.deepEqual(nalezy.preskoceno.map((p) => p.duvod).sort(), ['nekontrolovat', 'nekontrolovat']);
+    assert.match(telo, /\| Nelze kontrolovat \(viz monitor\.json\) \| – \| 2 \|/);
+    const stav = JSON.parse(await readFile(path.join(stavAdresar, 'stav.json'), 'utf8'));
+    assert.equal(stav.url['https://n.cz/k'].chyba, null);
+  } finally {
+    await rm(koren, { recursive: true, force: true });
+  }
 });

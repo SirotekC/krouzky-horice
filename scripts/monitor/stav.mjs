@@ -218,7 +218,7 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
 /**
  * Vyhodnotí běh monitoringu. Čistá funkce: `predchozi` nemění, výstup s ním nesdílí objekty.
  * @param {{ predchozi: object, seznam: Map<string, { druh: string, pouziti: {id: string, pole: string}[], vzorOdkazu?: string }>,
- *   mereni: Map<string, { vysledek: object|null, otisk: string|null, odkazy: string[]|null, verzePravidel: string, preskoceno: null|'robots' }>,
+ *   mereni: Map<string, { vysledek: object|null, otisk: string|null, odkazy: string[]|null, verzePravidel: string, preskoceno: null|'robots'|'nekontrolovat' }>,
  *   ignorovane: string[], znameZdroje: Set<string>, dnes: string }} vstup
  * @returns {{ stav: object, nalezy: object }}
  */
@@ -237,6 +237,8 @@ export function vyhodnotBeh({ predchozi, seznam, mereni, ignorovane = [], znameZ
       // Pravidlo 11.
       nalezy.preskoceno.push({ url: adresa, duvod: m.preskoceno });
       if (pred) url[adresa] = { ...structuredClone(pred), posledniKontrola: dnes };
+      // URL vyřazená z kontroly nemá nést starou chybu (jinak by se po vrácení hlásila jako přetrvávající).
+      if (pred && m.preskoceno === 'nekontrolovat') url[adresa].chyba = null;
       continue;
     }
     if (!m?.vysledek) {
