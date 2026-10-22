@@ -932,7 +932,7 @@
       "otiskPosledni": "16eed1adb81d842ee902c9c17854bfb870a42d68b467536d7aa5af31719ede79",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
-      "lastModified": "Thu, 22 Oct 2026 10:30:35 GMT",
+      "lastModified": "Thu, 22 Oct 2026 11:04:12 GMT",
       "posledniKontrola": "2026-10-22",
       "posledniOk": "2026-10-22",
       "zmena": null,
@@ -2066,7 +2066,7 @@
         "druh": "sit",
         "status": null,
         "od": "2026-10-22",
-        "pocet": 1
+        "pocet": 2
       },
       "presmerovani": null
     },
@@ -2084,7 +2084,7 @@
         "druh": "sit",
         "status": null,
         "od": "2026-10-22",
-        "pocet": 1
+        "pocet": 2
       },
       "presmerovani": null
     },
@@ -2096,68 +2096,48 @@
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-10-22",
-      "posledniOk": null,
+      "posledniOk": "2026-10-22",
       "zmena": null,
-      "chyba": {
-        "druh": "sit",
-        "status": null,
-        "od": "2026-10-22",
-        "pocet": 1
-      },
+      "chyba": null,
       "presmerovani": null
     },
     "https://www.horickyfotbal.cz/cs/s/13-soupiska/29-u17-mladsi-dorost": {
       "druh": "obsah",
-      "otiskPotvrzeny": null,
-      "otiskPosledni": null,
+      "otiskPotvrzeny": "062f7edd89c38397e0d46211055d005e6c0b30a843a1605cce464d6f1520ea4c",
+      "otiskPosledni": "062f7edd89c38397e0d46211055d005e6c0b30a843a1605cce464d6f1520ea4c",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-10-22",
-      "posledniOk": null,
+      "posledniOk": "2026-10-22",
       "zmena": null,
-      "chyba": {
-        "druh": "sit",
-        "status": null,
-        "od": "2026-10-22",
-        "pocet": 1
-      },
+      "chyba": null,
       "presmerovani": null
     },
     "https://www.horickyfotbal.cz/cs/s/13-soupiska/63-u13-mladsi-zaci": {
       "druh": "obsah",
-      "otiskPotvrzeny": null,
-      "otiskPosledni": null,
+      "otiskPotvrzeny": "d515b558f8d2061c2154508ddefec60b03d3ba98db58e377791b42a08293b1a5",
+      "otiskPosledni": "d515b558f8d2061c2154508ddefec60b03d3ba98db58e377791b42a08293b1a5",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-10-22",
-      "posledniOk": null,
+      "posledniOk": "2026-10-22",
       "zmena": null,
-      "chyba": {
-        "druh": "sit",
-        "status": null,
-        "od": "2026-10-22",
-        "pocet": 1
-      },
+      "chyba": null,
       "presmerovani": null
     },
     "https://www.horickyfotbal.cz/cs/s/13-soupiska/79-u7-predpripravka": {
       "druh": "obsah",
-      "otiskPotvrzeny": null,
-      "otiskPosledni": null,
+      "otiskPotvrzeny": "26e4c342f1a8552c1cf17e502eeec25304498299a209d35cbd22e648dcc15eb9",
+      "otiskPosledni": "26e4c342f1a8552c1cf17e502eeec25304498299a209d35cbd22e648dcc15eb9",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-10-22",
-      "posledniOk": null,
+      "posledniOk": "2026-10-22",
       "zmena": null,
-      "chyba": {
-        "druh": "timeout",
-        "status": null,
-        "od": "2026-10-22",
-        "pocet": 1
-      },
+      "chyba": null,
       "presmerovani": null
     },
     "https://www.horickyfotbal.cz/cs/s/14-kontakty": {
@@ -2339,7 +2319,12 @@
       "posledniKontrola": "2026-10-22",
       "posledniOk": "2026-10-22",
       "zmena": null,
-      "chyba": null,
+      "chyba": {
+        "druh": "sit",
+        "status": null,
+        "od": "2026-10-22",
+        "pocet": 1
+      },
       "presmerovani": null
     },
     "https://www.obhorice.cz/kontakt/": {
@@ -2551,7 +2536,7 @@
         "druh": "sit",
         "status": null,
         "od": "2026-10-22",
-        "pocet": 1
+        "pocet": 2
       },
       "presmerovani": null
     },
@@ -2569,7 +2554,7 @@
         "druh": "sit",
         "status": null,
         "od": "2026-10-22",
-        "pocet": 1
+        "pocet": 2
       },
       "presmerovani": null
     },
@@ -2579,7 +2564,7 @@
       "otiskPosledni": null,
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
-      "lastModified": "Thu, 22 Oct 2026 10:14:28 GMT",
+      "lastModified": "Thu, 22 Oct 2026 10:45:28 GMT",
       "posledniKontrola": "2026-10-22",
       "posledniOk": "2026-10-22",
       "zmena": null,
