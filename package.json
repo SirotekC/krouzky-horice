@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "npx --yes http-server site -p 8080 -c-1",
     "validate": "node scripts/validate.mjs",
+    "monitor": "node scripts/monitor.mjs",
     "test": "node --test"
   },
   "devDependencies": {

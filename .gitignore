@@ -4,3 +4,7 @@ Thumbs.db
 
 # Soukromé poznámky (nejsou veřejné)
 POZNAMKY.md
+
+# Lokální běhy monitoringu (stav a výstupy pro issue)
+.monitor-stav/
+.monitor-vystup/
