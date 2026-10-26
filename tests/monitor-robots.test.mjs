@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { parsujRobots, robotsZOdpovedi } from '../scripts/monitor/robots.mjs';
 
-const UA = 'KrouzkyHorice-monitor/1.0 (+https://sirotekc.github.io/krouzky-horice/o-projektu.html)';
+const UA = 'KrouzkyHorice-monitor/1.0 (+https://krouzky.cendas.cz/o-projektu.html)';
 
 test('DDM robots: náš UA nezakázán, crawlDelay 1', () => {
   const r = parsujRobots('Crawl-delay: 1\n\nUser-agent: MJ12Bot\nDisallow: /\n', UA);

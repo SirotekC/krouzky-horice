@@ -18,7 +18,7 @@ import { sestavKontrolu } from './monitor/kontrola-webu.mjs';
 import { sGitStavem } from './monitor/git-stav.mjs';
 
 const KOREN = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const UA = 'KrouzkyHorice-monitor/1.0 (+https://sirotekc.github.io/krouzky-horice/o-projektu.html)';
+const UA = 'KrouzkyHorice-monitor/1.0 (+https://krouzky.cendas.cz/o-projektu.html)';
 const VYCHOZI_PAUZA_MS = 5000;
 
 async function nactiJson(soubor) {

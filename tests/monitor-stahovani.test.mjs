@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { stahni, zpracujPoDomenach } from '../scripts/monitor/stahovani.mjs';
 
-const UA = 'KrouzkyHorice-monitor/1.0 (+https://sirotekc.github.io/krouzky-horice/o-projektu.html)';
+const UA = 'KrouzkyHorice-monitor/1.0 (+https://krouzky.cendas.cz/o-projektu.html)';
 
 /** Falešný fetch: odpovědi bere postupně z pole, zaznamenává požadavky. */
 function falesnyFetch(odpovedi) {
