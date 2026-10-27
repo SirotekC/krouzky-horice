@@ -33,6 +33,7 @@ Statický web (GitHub Pages) s přehledem kroužků pro děti v Hořicích. Žá
 - `pohlavi`: vyplň jen, když zdroj výslovně říká „jen dívky / chlapci“.
 - `kategorie`: klíče z číselníku (`schema/aktivity.schema.json` → `$defs.kategorie`). Aktivita může mít víc kategorií. Nová kategorie = přidat ji do schématu, do `KATEGORIE` **a** do jedné skupiny v `SKUPINY_KATEGORII` (validace hlídá všechna tři místa).
 - `prihlaska.zpusob` je povinný; když není známý: `"Informace na webu organizace."`. `prubezne: true` = lze se přihlásit kdykoli.
+- U DDM je `prihlaska.odkaz` vždy stránka kroužku (= `zdroj_url`, `www.ddmhorice.cz/krouzky/…`), ne přímo formulář v iDDM (`ddmhorice.iddm.cz/detail/…`). Na stránce kroužku jsou všechny údaje i odkaz do iDDM (přání uživatele).
 
 ## Termíny (`terminy`) – jak strukturovat
 
@@ -87,6 +88,8 @@ Termíny, které zdroj vůbec neuvádí → `"terminy": null` (řádek „Kdy“
 
 Workflow `.github/workflows/monitor.yml` (cron každý 3. den, jde spustit i ručně) stahuje zdroje z `data-src/monitor.json` a z dat (`zdroj_url`, odkazy na přihlášky, přehledy DDM a florbalu) a hlídá otisky obsahu, dostupnost a nové/zrušené kroužky v přehledech. Výsledek je GitHub issue se štítkem `monitoring` (bez nových problémů se založí a hned zavře, jen kvůli e-mailu). Do issue ani repozitáře nejde text stránek, jen URL, id, stavové kódy a otisky.
 
+- **Obsazenost (volná místa):** u domén s pravidlem `kapacita` v `monitor.json` (DDM) se hodnota „Volná místa“ z detailu kroužku porovná s `prihlaska.kapacita` a rozdíl se v issue vypíše po kroužcích („web: volno, data: obsazeno“). Do otisku stránky se nepočítá, takže sama o sobě nevyvolá „změnu zdroje“. Neznámá hodnota z webu se hlásí jako „neznámá hodnota „…““; pak doplň převod v `scripts/monitor/kapacita.mjs` (`parsujKapacitu`).
+
 - **Stav** je ve větvi `monitor-stav` (`stav.json`), ne v `main`. Při `--potvrdit` si skript větev obstará sám (dočasný worktree, push); v plánovaném běhu ji vyzvedne a ukládá workflow.
 - **Do `main` monitoring zapisuje jen `site/data/kontrola.json`** a po commitu workflow ručně spustí nasazení (`deploy.yml`).
 - **`overeno`** u kroužku a `meta.aktualizovano` znamenají **ruční ověření** podle zdroje. Datum „Data načtena“ na webu (karta i zápatí) se počítá automaticky jako pozdější z ručního ověření a poslední úspěšné kontroly (`kontrola.json`).
@@ -94,7 +97,7 @@ Workflow `.github/workflows/monitor.yml` (cron každý 3. den, jde spustit i ru�
 ### Postup „vyřeš issue #N“
 
 1. Přečti issue (`gh issue view N`) a otevři dotčené URL. Co se změnilo, ověř na stránce.
-2. Oprav `aktivity.json` a `organizace.json` podle pravidel výše (včetně `overeno`). Nové kroužky z přehledů přidej celé; kroužek DDM, který se záměrně nepřidává (např. jen pro dospělé), zapiš jeho odkaz do `ignorovaneOdkazy` v `data-src/monitor.json`. Falešně nefunkční odkaz, který z běžného připojení funguje (web blokuje servery GitHubu), přidej do `nekontrolovat` (předpona URL + důvod); takové URL se pak nestahují a v e-mailu jsou jen v počtu „Nelze kontrolovat“.
+2. Oprav `aktivity.json` a `organizace.json` podle pravidel výše (včetně `overeno`). Nové kroužky z přehledů přidej celé; kroužek DDM, který se záměrně nepřidává (např. jen pro dospělé), zapiš jeho odkaz do `ignorovaneOdkazy` v `data-src/monitor.json`. Falešně nefunkční odkaz, který z běžného připojení funguje (web blokuje servery GitHubu), přidej do `nekontrolovat` (předpona URL + důvod); takové URL se pak nestahují a v e-mailu jsou jen v počtu „Nelze kontrolovat“. U rozdílu v obsazenosti stačí přepsat `prihlaska.kapacita` podle webu, v `prihlaska.poznamka` posunout datum („Obsazenost podle webu DDM k …“) a nastavit `overeno`; potvrzovat URL není nutné, rozdíl zmizí při dalším běhu sám (potvrzení ho ale smaže hned a posune datum „Data načtena“).
 3. Spusť `npm run validate` a `npm test`.
 4. Potvrď vyřešené URL: `npm run monitor -- --potvrdit <url…>` (nebo `--potvrdit-vse`). Nic se nestahuje, zapíše se stav z posledního běhu. Příkaz sám commitne a pushne větev `monitor-stav` (při konfliktu zkusí znovu) a aktualizuje `site/data/kontrola.json`. Výpis „Nic k potvrzení“ znamená, že už není co potvrzovat. Před potvrzením a commitem udělej `git pull` (bot commituje `kontrola.json` do `main` při každém běhu). Nepotvrzuj v okně plánovaného běhu (kolem 02:17 UTC ve dnech běhu): push stavu z workflow by pak mohl kolidovat a selhal by (selže hlasitě, další běh nálezy zopakuje).
 5. Commitni změny dat a `kontrola.json` do `main` s textem `Closes #N` v popisu. Push issue zavře.

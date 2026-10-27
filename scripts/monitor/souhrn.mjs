@@ -1,5 +1,8 @@
 // Souhrn běhu monitoringu do issue: název, tělo v Markdownu a rozhodnutí, zda issue hned zavřít.
 // Do issue jde jen URL, id, názvy polí, stavové kódy, počty a data – nikdy text stránek.
+// Výjimkou je obsazenost: hodnota z pevného číselníku (neznámá hodnota zkrácená, viz kapacita.mjs).
+
+import { popisKapacity } from './kapacita.mjs';
 
 /**
  * Český tvar podle počtu (1 / 2–4 / 0 a 5+), jako ve validate.mjs.
@@ -20,12 +23,19 @@ function castiNazvu(n) {
     [n.prehledy.nove.length, ['nový kroužek v přehledech', 'nové kroužky v přehledech', 'nových kroužků v přehledech']],
     [n.prehledy.zrusene.length, ['zrušený kroužek v přehledech', 'zrušené kroužky v přehledech', 'zrušených kroužků v přehledech']],
     [n.presmerovani.nove.length, ['nové přesměrování', 'nová přesměrování', 'nových přesměrování']],
+    [n.kapacita.nove.length, ['nový rozdíl v obsazenosti', 'nové rozdíly v obsazenosti', 'nových rozdílů v obsazenosti']],
   ].filter(([pocet]) => pocet > 0).map(([pocet, tvary]) => tvar(pocet, tvary));
 }
 
 /** `id (pole), id (pole)` z použití URL. */
 function popisPouziti(pouziti) {
   return (pouziti ?? []).map((p) => `${p.id} (${p.pole})`).join(', ');
+}
+
+/** `id – web: …, data: …` pro každý kroužek s rozdílnou obsazeností. */
+function radkyKapacity(polozky) {
+  return polozky.flatMap((p) => p.rozdily.map((r) =>
+    `- ${r.id} – web: ${popisKapacity(p.web)}, data: ${popisKapacity(r.data)} – ${p.url}`));
 }
 
 /** Stavový kód, nebo druh chyby, když kód není (dns, timeout…). */
@@ -65,6 +75,7 @@ export function sestavIssue(nalezy, dnes) {
     `| Server odmítl kontrolu | ${n.odmitnuto.nove.length} | ${n.odmitnuto.pretrvavajici.length} |`,
     `| Nové / zrušené kroužky v přehledech | ${n.prehledy.nove.length} / ${n.prehledy.zrusene.length} | ${n.prehledy.pretrvavajici} |`,
     `| Přesměrované odkazy | ${n.presmerovani.nove.length} | – |`,
+    `| Rozdíly v obsazenosti (volná místa) | ${n.kapacita.nove.length} | ${n.kapacita.pretrvavajici.length} |`,
     `| Přeskočeno (robots.txt) | – | ${n.preskoceno.filter((p) => p.duvod === 'robots').length} |`,
     `| Nelze kontrolovat (viz monitor.json) | – | ${n.preskoceno.filter((p) => p.duvod === 'nekontrolovat').length} |`,
   );
@@ -80,11 +91,13 @@ export function sestavIssue(nalezy, dnes) {
   sekce('Nové nefunkční odkazy', n.chyby.nove.map((p) => `- ${p.url} – ${kodChyby(p)} – ${popisPouziti(p.pouziti)}`));
   sekce('Server odmítl kontrolu', n.odmitnuto.nove.map((p) => `- ${p.url} – ${kodChyby(p)} – ${popisPouziti(p.pouziti)}`));
   sekce('Přesměrované odkazy', n.presmerovani.nove.map((p) => `- ${p.url} → ${p.cil} – ${popisPouziti(p.pouziti)}`));
+  sekce('Nové rozdíly v obsazenosti', radkyKapacity(n.kapacita.nove));
 
   const pretrvavajici = [
     ...n.zmeny.pretrvavajici.map((p) => `- ${p.url} – změna – ${popisPouziti(p.pouziti)}`),
     ...n.chyby.pretrvavajici.map((p) => `- ${p.url} – ${kodChyby(p)} – ${popisPouziti(p.pouziti)}`),
     ...n.odmitnuto.pretrvavajici.map((p) => `- ${p.url} – odmítnuto ${kodChyby(p)} – ${popisPouziti(p.pouziti)}`),
+    ...radkyKapacity(n.kapacita.pretrvavajici).map((r) => r.replace(' – web: ', ' – obsazenost – web: ')),
   ];
   if (n.prehledy.pretrvavajici) pretrvavajici.push(`- nevyřešené kroužky v přehledech: ${n.prehledy.pretrvavajici}`);
   const pocetPretrvavajicich = pretrvavajici.length - (n.prehledy.pretrvavajici ? 1 : 0) + n.prehledy.pretrvavajici;

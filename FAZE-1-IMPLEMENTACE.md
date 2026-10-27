@@ -191,6 +191,7 @@ Pole objektů:
 | `prihlaska.prubezne` | boolean | ano | `true` = lze se přihlásit kdykoli během roku |
 | `prihlaska.odkaz` | URL\|null | ne | Přímý odkaz na přihlášku nebo informace |
 | `prihlaska.poznamka` | string\|null | ne | |
+| `prihlaska.kapacita` | object\|null | ne | Obsazenost podle zdroje: `stav` (`volno`, `posledni`, `nahradnici`, `obsazeno`) a u `posledni` volitelně `volna_mista` (celé číslo ≥ 1). Datum, ke kterému údaj platí, patří do `poznamka`. Promítá se do stavu přihlášek (5.2). *(doplněno 2026-10-27)* |
 | `skolni_rok` | string\|null | ne | `^\d{4}/\d{4}$` |
 | `zdroj_url` | URL | ano | |
 | `overeno` | date | ano | `YYYY-MM-DD` |
@@ -238,7 +239,7 @@ Pole objektů:
 | Pohlaví dítěte | `<select>` | „Nezáleží“ / „Dívka“ / „Chlapec“. Zobrazí aktivity pro zvolené pohlaví a aktivity bez určení pohlaví. *(doplněno 2026-10-12)* |
 | Zaměření | Dvě úrovně tlačítek (chips) | Nahoře hlavní skupiny (Sport, Umění, Věda a technika, Příroda a turistika, Ostatní), lze jich vybrat víc, logika **OR**; skupiny se definují v `SKUPINY_KATEGORII` v `site/js/data.js`. „Vše“ svítí, když není vybraná žádná skupina; kliknutí na něj výběr zruší. Pod každou vybranou skupinou se zobrazí řádek jejích kategorií (jen pokud jich je v datech víc než jedna), více najednou, logika **OR**. Skupina bez vybrané kategorie platí celá, výsledky skupin se sčítají (např. Sport → Míčové sporty + celé Ostatní). V URL `skup=sport,ostatni&kat=sport-mickove`. *(multiselect skupin doplněn 2026-10-19)* |
 | Organizace | `<select>` | Jedna nebo „Všechny“. |
-| Stav přihlášek | `<select>` | „Vše“ / „Přihlášky probíhají“ / „Brzy začnou (do 30 dní)“ / „Průběžný nábor“. |
+| Stav přihlášek | `<select>` | „Vše“ / „Přihlášky probíhají“ / „Brzy začnou (do 30 dní)“ / „Průběžný nábor“ / „Plno – berou náhradníky“ / „Ostatní“. |
 | Reset | tlačítko | Vymaže všechny filtry. |
 
 Mezi skupinami filtrů platí logika **AND**.
@@ -246,7 +247,7 @@ Mezi skupinami filtrů platí logika **AND**.
 **Výsledky:**
 
 - Počet výsledků („Nalezeno 12 kroužků“), oznámený přes `aria-live="polite"`.
-- Řazení: nejdřív aktivity se stavem „probíhá“, pak „brzy“, „průběžně“, „neznámý“ a „ukončeno“. V rámci stavu abecedně podle `nazev` (`localeCompare` s `'cs'`).
+- Řazení: nejdřív aktivity se stavem „probíhá“, pak „brzy“, „průběžně“, „náhradníci“, „plánováno“, „neznámý“, „obsazeno“ a „ukončeno“. V rámci stavu abecedně podle `nazev` (`localeCompare` s `'cs'`).
 - Karta aktivity obsahuje:
   - název, organizaci a štítky kategorií,
   - **štítek stavu přihlášek** (barva a text, ne jen barva),
@@ -276,12 +277,23 @@ Mezi skupinami filtrů platí logika **AND**.
 | `do` vyplněné a `dnes > do` | `ukonceno` | „Přihlášky ukončeny“ |
 | jinak | `neznamy` | „Termín přihlášek neuveden“ |
 
+**Obsazenost** *(doplněno 2026-10-27)*: pokud stav podle tabulky vyjde `probiha` nebo `prubezne` a je vyplněná `prihlaska.kapacita`, upraví se takto:
+
+| `kapacita.stav` | `stav` | `text` v UI |
+|---|---|---|
+| `obsazeno` | `obsazeno` | „Obsazeno“ |
+| `nahradnici` | `nahradnici` | „Plno – berou náhradníky“ |
+| `posledni` | beze změny | „Poslední místo“ / „Poslední 3 místa“ / „Posledních 5 míst“ (bez počtu „Poslední místa“) |
+| `volno` | beze změny | beze změny |
+
+Před začátkem a po konci přihlášek (`brzy`, `planovano`, `ukonceno`, `neznamy`) se obsazenost nepromítá.
+
 Pozor na tyto případy:
 
 - `prubezne` se kontroluje **před** `ukonceno`: když termín hlavního náboru skončil, ale klub bere děti průběžně, zobrazí se „Průběžný nábor“. Pokryj to testem.
 - Data porovnávej jako kalendářní dny v časovém pásmu Europe/Prague, bez času. Datum `YYYY-MM-DD` parsuj ručně, ne přes `new Date('YYYY-MM-DD')`, které ho bere jako UTC.
 
-Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy začnou“ = `brzy`, „průběžný nábor“ = `prubezne`.
+Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy začnou“ = `brzy`, „průběžný nábor“ = `prubezne`, „plno – berou náhradníky“ = `nahradnici`, „ostatní“ = vše ostatní (včetně `obsazeno`).
 
 ### 5.3 Stav v URL (`url-state.js`)
 
@@ -305,7 +317,8 @@ Pro filtr „Stav přihlášek“ platí: „probíhají“ = `probiha`, „brzy
   - `probiha` zelená,
   - `brzy` oranžová,
   - `prubezne` modrá,
-  - `planovano` a `neznamy` šedá,
+  - `nahradnici` oranžová,
+  - `planovano`, `neznamy` a `obsazeno` šedá,
   - `ukonceno` šedá s přeškrtnutým nebo tlumeným zobrazením.
 - Mobil: filtry nad výsledky, sbalitelné (`<details>`). Desktop (≥ 900 px): filtry v levém sloupci, karty v mřížce `repeat(auto-fill, minmax(300px, 1fr))`.
 - Žádné vodorovné posouvání při šířce 360 px.

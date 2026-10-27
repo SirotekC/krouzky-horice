@@ -38,8 +38,8 @@ function stav(url = {}, prepis = {}) {
 function seznam(polozky = { [U]: { druh: 'obsah', pouziti: POUZITI } }) {
   return new Map(Object.entries(polozky));
 }
-function beh({ predchozi = stav(), sez = seznam(), mer = {}, ignorovane = [], znameZdroje = new Set(), dnes = '2026-10-22' } = {}) {
-  return vyhodnotBeh({ predchozi, seznam: sez, mereni: new Map(Object.entries(mer)), ignorovane, znameZdroje, dnes });
+function beh({ predchozi = stav(), sez = seznam(), mer = {}, ignorovane = [], znameZdroje = new Set(), dnes = '2026-10-22', kapacitaDat } = {}) {
+  return vyhodnotBeh({ predchozi, seznam: sez, mereni: new Map(Object.entries(mer)), ignorovane, znameZdroje, dnes, kapacitaDat });
 }
 
 const PREHLED = { [P]: { druh: 'prehled', pouziti: [{ id: 'org', pole: 'prehled' }], vzorOdkazu: '^https://x\\.cz/krouzky/\\d+' } };
@@ -436,4 +436,52 @@ test('6: přehled bez změřených odkazů (odkazy null, např. odpověď není 
   assert.equal(r2.stav.url[P].posledniOk, null);
   assert.equal(r2.nalezy.noveSledovano, 0);
   assert.deepEqual(r2.nalezy.prehledy, { nove: [], zrusene: [], pretrvavajici: 0 });
+});
+
+test('obsazenost: rozdíl web × data se hlásí jako nový, pak přetrvávající, a blokuje posledniOk', () => {
+  const data = new Map([['a', { stav: 'obsazeno' }]]);
+  const merK = (kapacita, vysledek = ok()) => ({ [U]: mereni({ kapacitaSledovana: true, kapacita, vysledek }) });
+
+  const r1 = beh({ predchozi: stav({ [U]: zaznam() }), mer: merK({ stav: 'volno' }), kapacitaDat: data });
+  assert.deepEqual(r1.nalezy.kapacita.nove, [{ url: U, web: { stav: 'volno' }, rozdily: [{ id: 'a', data: { stav: 'obsazeno' } }] }]);
+  assert.equal(r1.stav.url[U].posledniOk, '2026-10-19', 'posledniOk se neposouvá');
+  assert.equal(r1.stav.zapatiDatum, '2026-10-19', 'zápatí se neposouvá');
+
+  // Další běh se stejným rozdílem (i přes 304, kdy se hodnota nečte znovu): přetrvávající.
+  const r2 = beh({ predchozi: r1.stav, mer: merK(null, ok({ beZmeny: true, status: 304 })), kapacitaDat: data, dnes: '2026-10-25' });
+  assert.deepEqual(r2.nalezy.kapacita.nove, []);
+  assert.equal(r2.nalezy.kapacita.pretrvavajici.length, 1);
+
+  // Web se znovu změnil: nový rozdíl.
+  const r3 = beh({ predchozi: r2.stav, mer: merK({ stav: 'posledni', volna_mista: 2 }), kapacitaDat: data, dnes: '2026-10-28' });
+  assert.equal(r3.nalezy.kapacita.nove.length, 1);
+
+  // Data opravena: rozdíl zmizí, posledniOk i zápatí se posunou.
+  const r4 = beh({ predchozi: r3.stav, mer: merK({ stav: 'posledni', volna_mista: 2 }),
+    kapacitaDat: new Map([['a', { stav: 'posledni', volna_mista: 2 }]]), dnes: '2026-10-31' });
+  assert.deepEqual(r4.nalezy.kapacita, { nove: [], pretrvavajici: [] });
+  assert.equal(r4.stav.url[U].posledniOk, '2026-10-31');
+  assert.equal(r4.stav.zapatiDatum, '2026-10-31');
+});
+
+test('obsazenost: při chybě přetrvává, potvrzení ji smaže, bez pravidla domény se nesleduje', () => {
+  const data = new Map([['a', { stav: 'obsazeno' }]]);
+  const r1 = beh({ predchozi: stav({ [U]: zaznam() }), mer: { [U]: mereni({ kapacitaSledovana: true, kapacita: { stav: 'volno' } }) }, kapacitaDat: data });
+  const r2 = beh({ predchozi: r1.stav, mer: { [U]: mereni({ vysledek: chyba('5xx', 503) }) }, kapacitaDat: data, dnes: '2026-10-25' });
+  assert.equal(r2.nalezy.kapacita.pretrvavajici.length, 1);
+
+  const potvrzeny = potvrd(r1.stav, [U], '2026-10-23');
+  assert.equal(potvrzeny.url[U].kapacitaNeshoda, null);
+  assert.equal(potvrzeny.zapatiDatum, '2026-10-23');
+
+  const r3 = beh({ predchozi: r1.stav, mer: { [U]: mereni() }, kapacitaDat: data, dnes: '2026-10-25' });
+  assert.deepEqual(r3.nalezy.kapacita, { nove: [], pretrvavajici: [] });
+  assert.ok(!('kapacitaWeb' in r3.stav.url[U]) && !('kapacitaNeshoda' in r3.stav.url[U]));
+});
+
+test('obsazenost: řádek na stránce chybí (kapacita null) = nic se nehlásí', () => {
+  const r = beh({ predchozi: stav({ [U]: zaznam() }), mer: { [U]: mereni({ kapacitaSledovana: true, kapacita: null }) },
+    kapacitaDat: new Map([['a', { stav: 'obsazeno' }]]) });
+  assert.deepEqual(r.nalezy.kapacita, { nove: [], pretrvavajici: [] });
+  assert.equal(r.stav.url[U].posledniOk, '2026-10-22');
 });

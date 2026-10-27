@@ -47,6 +47,15 @@ test('vek_od > vek_do a od > do', () => {
   assert.match(chyby[1], /^aktivity\[1\]\.prihlaska\.do/);
 });
 
+test('volna_mista jen u kapacity „posledni“', () => {
+  const { chyby } = zaklad([org('o')], [
+    akt('a', 'o', { prihlaska: { od: null, do: null, kapacita: { stav: 'posledni', volna_mista: 2 } } }),
+    akt('b', 'o', { prihlaska: { od: null, do: null, kapacita: { stav: 'obsazeno', volna_mista: 2 } } }),
+  ]);
+  assert.equal(chyby.length, 1);
+  assert.match(chyby[0], /^aktivity\[1\]\.prihlaska\.kapacita\.volna_mista/);
+});
+
 test('overeno v budoucnosti je chyba, starší než 90 dní je varování', () => {
   const { chyby, varovani } = zaklad(
     [org('o', '2026-10-13')],

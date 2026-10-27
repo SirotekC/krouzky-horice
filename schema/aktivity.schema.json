@@ -116,7 +116,16 @@
           "do": { "type": ["string", "null"], "format": "date" },
           "prubezne": { "type": "boolean" },
           "odkaz": { "type": ["string", "null"], "format": "uri" },
-          "poznamka": { "type": ["string", "null"] }
+          "poznamka": { "type": ["string", "null"] },
+          "kapacita": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["stav"],
+            "properties": {
+              "stav": { "enum": ["volno", "posledni", "nahradnici", "obsazeno"] },
+              "volna_mista": { "type": ["integer", "null"], "minimum": 1 }
+            }
+          }
         }
       },
       "klicova_slova": {

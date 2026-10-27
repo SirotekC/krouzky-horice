@@ -12,7 +12,8 @@ export const STAVY_FILTRU = Object.freeze({
   probiha: 'Přihlášky probíhají',
   brzy: 'Brzy začnou (do 30 dní)',
   prubezne: 'Průběžný nábor',
-  // Všechny stavy, které nemají vlastní položku (plánováno, neznámý, ukončeno).
+  nahradnici: 'Plno – berou náhradníky',
+  // Všechny stavy, které nemají vlastní položku (plánováno, neznámý, obsazeno, ukončeno).
   ostatni: 'Ostatní',
 });
 
@@ -121,7 +122,7 @@ export function filtruj(aktivity, filtry, kontext) {
 }
 
 /**
- * Seřadí aktivity podle stavu přihlášek (probíhá, brzy, průběžně, plánováno, neznámý, ukončeno)
+ * Seřadí aktivity podle stavu přihlášek (probíhá, brzy, průběžně, náhradníci, plánováno, neznámý, obsazeno, ukončeno)
  * a v rámci stavu abecedně podle názvu. Vrací nové pole.
  */
 export function seradi(aktivity, dnes) {

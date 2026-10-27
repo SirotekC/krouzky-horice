@@ -125,6 +125,15 @@ test('řazení podle stavu a pak abecedně', () => {
   assert.deepEqual(seradi(aktivity, DNES).map((a) => a.id), ['tanec', 'cviceni', 'florbal', 'klavir', 'zpev']);
 });
 
+test('obsazenost: náhradníci mají vlastní filtr, obsazeno patří do „ostatní“ a řadí se před ukončené', () => {
+  const s = (id, stav) => ({ id, nazev: id, kategorie: ['ostatni'], prihlaska: { ...prihlaska('2026-08-26', null), kapacita: { stav } } });
+  const data = [...aktivity, s('plno', 'obsazeno'), s('nahr', 'nahradnici'), s('volno', 'volno')];
+  assert.deepEqual(ids(filtruj(data, f({ stav: 'probiha' }), kontext)), ['tanec', 'volno']);
+  assert.deepEqual(ids(filtruj(data, f({ stav: 'nahradnici' }), kontext)), ['nahr']);
+  assert.deepEqual(ids(filtruj(data, f({ stav: 'ostatni' }), kontext)), ['klavir', 'plno', 'zpev']);
+  assert.deepEqual(seradi(data, DNES).map((a) => a.id), ['tanec', 'volno', 'cviceni', 'florbal', 'nahr', 'klavir', 'plno', 'zpev']);
+});
+
 test('abecední řazení podle češtiny (ch po h)', () => {
   const p = prihlaska(null, null, true);
   const data = ['Chůze', 'Hokej', 'Cvičení', 'Čeština'].map((nazev, i) => ({ id: `a${i}`, nazev, kategorie: ['ostatni'], prihlaska: p }));

@@ -121,7 +121,10 @@
       "obsah": "#krouzky_detail",
       "odstranitRadky": [
         "^Volná místa\\b"
-      ]
+      ],
+      "kapacita": {
+        "radek": "^Volná místa\\b"
+      }
     },
     "www.sporthorice.cz": {
       "obsah": "#homepage, #main_frame > .content"

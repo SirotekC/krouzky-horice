@@ -14,6 +14,7 @@ import { robotsZOdpovedi } from './monitor/robots.mjs';
 import { stahni, zpracujPoDomenach } from './monitor/stahovani.mjs';
 import { prazdnyStav, vyhodnotBeh, potvrd } from './monitor/stav.mjs';
 import { sestavIssue } from './monitor/souhrn.mjs';
+import { kapacitaZHtml } from './monitor/kapacita.mjs';
 import { sestavKontrolu } from './monitor/kontrola-webu.mjs';
 import { sGitStavem } from './monitor/git-stav.mjs';
 
@@ -52,7 +53,8 @@ async function nactiVstupy(koren) {
   ]);
   const seznam = sestavSeznamUrl({ aktivity, organizace, nastaveni });
   const znameZdroje = new Set(aktivity.filter((a) => a.zdroj_url).map((a) => normalizujUrl(a.zdroj_url)));
-  return { nastaveni, seznam, znameZdroje, ignorovane: nastaveni.ignorovaneOdkazy ?? [] };
+  const kapacitaDat = new Map(aktivity.map((a) => [a.id, a.prihlaska?.kapacita ?? null]));
+  return { nastaveni, seznam, znameZdroje, kapacitaDat, ignorovane: nastaveni.ignorovaneOdkazy ?? [] };
 }
 
 /** Stáhne robots.txt domény (počítá se jako požadavek na doménu). */
@@ -68,7 +70,7 @@ async function nactiRobots(origin, { fetchFn }) {
 
 /**
  * Změří jednu URL: stáhne ji a spočítá otisk (HTML čištěné podle pravidel domény, jinak syrová data)
- * a u přehledu se vzorem i množinu odkazů. Výjimka (např. neplatné pravidlo) = pád celého běhu.
+ * a u přehledu se vzorem i množinu odkazů. U domén s pravidlem `kapacita` přečte i obsazenost. Výjimka (např. neplatné pravidlo) = pád celého běhu.
  */
 async function zmer(url, polozka, predchozi, { fetchFn, nastaveni }) {
   const pravidla = nastaveni.domeny?.[new URL(url).hostname];
@@ -77,11 +79,13 @@ async function zmer(url, polozka, predchozi, { fetchFn, nastaveni }) {
   }, { fetchFn, ua: UA });
   let otiskObsahu = null;
   let odkazy = null;
+  let kapacita = null;
   if (polozka.druh !== 'dostupnost' && !vysledek.chyba && !vysledek.beZmeny && vysledek.telo) {
     if (jeHtml(vysledek.contentType)) {
       const html = dekoduj(vysledek.telo, vysledek.contentType);
       otiskObsahu = otisk(htmlNaText(html, pravidla));
       if (polozka.vzorOdkazu) odkazy = odkazyPrehledu(html, vysledek.konecnaUrl, polozka.vzorOdkazu);
+      if (pravidla?.kapacita) kapacita = kapacitaZHtml(html, pravidla);
     } else {
       // Ne-HTML (PDF, obrázek, chybějící Content-Type): otisk syrových dat. Odkazy přehledu
       // zůstanou `null` = neměřeno (stav.mjs je nebere jako prázdný seznam).
@@ -89,7 +93,10 @@ async function zmer(url, polozka, predchozi, { fetchFn, nastaveni }) {
     }
   }
   vysledek.telo = null; // tělo se dál nepotřebuje a nikam se neukládá
-  return { vysledek, otisk: otiskObsahu, odkazy, verzePravidel: verzePravidel(pravidla), preskoceno: null };
+  return {
+    vysledek, otisk: otiskObsahu, odkazy, verzePravidel: verzePravidel(pravidla), preskoceno: null,
+    kapacitaSledovana: Boolean(pravidla?.kapacita), kapacita,
+  };
 }
 
 /**
@@ -114,7 +121,7 @@ function mereniZRobots(url, polozka, chyba, nastaveni) {
  * @returns {Promise<{ nazev: string, telo: string, zavrit: boolean, nalezy: object }>}
  */
 export async function behKontroly({ koren = KOREN, stavAdresar, vystupAdresar, fetchFn = fetch, cekej, dnes = dnesPraha(), log = () => {} }) {
-  const { nastaveni, seznam, znameZdroje, ignorovane } = await nactiVstupy(koren);
+  const { nastaveni, seznam, znameZdroje, kapacitaDat, ignorovane } = await nactiVstupy(koren);
   const souborStavu = path.join(stavAdresar, 'stav.json');
   let predchozi;
   try {
@@ -170,7 +177,7 @@ export async function behKontroly({ koren = KOREN, stavAdresar, vystupAdresar, f
   }, { pauzaProDomenu, cekej: cekat });
 
   // 4. Vyhodnocení a teprve potom zápis (stav jako poslední, atomicky).
-  const { stav, nalezy } = vyhodnotBeh({ predchozi, seznam, mereni, ignorovane, znameZdroje, dnes });
+  const { stav, nalezy } = vyhodnotBeh({ predchozi, seznam, mereni, ignorovane, znameZdroje, dnes, kapacitaDat });
   const issue = sestavIssue(nalezy, dnes);
   await mkdir(vystupAdresar, { recursive: true });
   await writeFile(path.join(vystupAdresar, 'issue-nazev.txt'), issue.nazev);

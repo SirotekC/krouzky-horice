@@ -46,8 +46,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1000",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1000-latino-kids",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 3
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1000-latino-kids",
@@ -100,8 +104,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1001",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1001-mladi-umelci",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1001-mladi-umelci",
@@ -163,8 +171,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1005",
-      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1005-juniorky-phoenix-mazoretky-roztleskavacky",
+      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1005-juniorky-phoenix-mazoretky-roztleskavacky",
@@ -227,8 +238,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1006",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1006-motoristicky-krouzek-praxe-teorie-a-simulator",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1006-motoristicky-krouzek-praxe-teorie-a-simulator",
@@ -280,8 +294,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1007",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1007-formace-phoenix-seniorky",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1007-formace-phoenix-seniorky",
@@ -334,8 +351,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1009",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1009-loutkove-divadlo-zvonecek-pokrocili",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 3
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1009-loutkove-divadlo-zvonecek-pokrocili",
@@ -388,8 +409,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1010",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1010-pohybova-skolicka-pro-deti-od-4-7-let",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1010-pohybova-skolicka-pro-deti-od-4-7-let",
@@ -442,8 +467,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1011",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1011-sijeme-hackujeme-vysivame",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1011-sijeme-hackujeme-vysivame",
@@ -496,8 +525,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1012",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1012-mlada-modni-navrhar-ka",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1012-mlada-modni-navrhar-ka",
@@ -550,8 +582,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1013",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1013-kreativky",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1013-kreativky",
@@ -604,8 +639,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1014",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 4 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 4
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek",
@@ -658,8 +697,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1015",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1015-lego-stavitel",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1015-lego-stavitel",
@@ -712,8 +754,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1016",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1016-lego-animace",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1016-lego-animace",
@@ -766,8 +811,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1017-art-zona-vytvarne-tvoreni-bez-zabran",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "obsazeno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1017-art-zona-vytvarne-tvoreni-bez-zabran",
@@ -820,8 +868,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1018",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek",
@@ -874,12 +926,16 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1019",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1019-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 2
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1019-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-27"
   },
   {
     "id": "ddm-horice-hratky-s-batolatky",
@@ -928,8 +984,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1020",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1020-hratky-s-batolatky",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 2
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1020-hratky-s-batolatky",
@@ -981,8 +1041,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1023",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1023-tanecky-pro-berusky",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1023-tanecky-pro-berusky",
@@ -1035,8 +1098,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1026-gymnastika-pro-roztleskavacky-kadetky",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1026-gymnastika-pro-roztleskavacky-kadetky",
@@ -1089,12 +1155,16 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 2
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-27"
   },
   {
     "id": "ddm-horice-motoristicky-krouzek-teorie-simulator",
@@ -1143,8 +1213,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1030",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1030-motoristicky-krouzek-teorie-simulator",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1030-motoristicky-krouzek-teorie-simulator",
@@ -1196,8 +1270,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1031-formace-kadetek",
+      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1031-formace-kadetek",
@@ -1250,8 +1327,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1032",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1032-myslivecky-krouzek",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1032-myslivecky-krouzek",
@@ -1304,8 +1384,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1033",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1033-rybarsky-krouzek-8-15-let",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1033-rybarsky-krouzek-8-15-let",
@@ -1358,12 +1441,16 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-27"
   },
   {
     "id": "ddm-horice-parkour",
@@ -1412,8 +1499,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1035",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1035-parkour",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 3
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour",
@@ -1466,8 +1557,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1036",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1036-parkour-pokrocili",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1036-parkour-pokrocili",
@@ -1519,8 +1613,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Volná místa podle webu DDM k 19. 10. 2026: poslední 4 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1037-formace-little-kadetky",
+      "poznamka": "Jen pro vybrané děti po dohodě s vedoucími. Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 4
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1037-formace-little-kadetky",
@@ -1573,8 +1671,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1048",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1048-sachy-pokrocili",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1048-sachy-pokrocili",
@@ -1627,12 +1728,16 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1049",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-27"
   },
   {
     "id": "ddm-horice-anglictina-pro-5-8-tridu",
@@ -1681,8 +1786,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1050",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1050-anglictina-pro-5-8-tridu",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1050-anglictina-pro-5-8-tridu",
@@ -1735,8 +1843,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1053",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1053-keramika-kreativne-14",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 2
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1053-keramika-kreativne-14",
@@ -1789,8 +1901,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1055",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1055-anglicky-klubik",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1055-anglicky-klubik",
@@ -1842,8 +1957,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1059",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1059-anglictina-2-4-trida",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1059-anglictina-2-4-trida",
@@ -1896,8 +2014,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1062-pece-cely-domecek-ii",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "obsazeno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1062-pece-cely-domecek-ii",
@@ -1950,8 +2071,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1063",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1063-anglicky-klubik-ii",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 3
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1063-anglicky-klubik-ii",
@@ -2004,8 +2129,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1065",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1065-ukulele-pro-radost",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 2
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1065-ukulele-pro-radost",
@@ -2058,8 +2187,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1070",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 3 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1070-domecku-var",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 3
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1070-domecku-var",
@@ -2112,8 +2245,12 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1080",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1080-kreativky-dobra-voda",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "posledni",
+        "volna_mista": 1
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1080-kreativky-dobra-voda",
@@ -2166,8 +2303,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1081",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1081-sachy-dobra-voda",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1081-sachy-dobra-voda",
@@ -2220,8 +2360,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1082",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1082-sportik-mzany",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1082-sportik-mzany",
@@ -2274,12 +2417,15 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/1083",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední 2 místa."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1083-pohybova-skolicka-mzany",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "obsazeno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1083-pohybova-skolicka-mzany",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-27"
   },
   {
     "id": "ddm-horice-zaklady-elektroniky-mladsi",
@@ -2328,8 +2474,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/971",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/971-zaklady-elektroniky-mladsi",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/971-zaklady-elektroniky-mladsi",
@@ -2382,12 +2531,15 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/972",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: poslední místo."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/972-zaklady-elektroniky-starsi",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/972-zaklady-elektroniky-starsi",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-27"
   },
   {
     "id": "ddm-horice-atleticko-gymnasticky-krouzek",
@@ -2436,8 +2588,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/974",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/974-atleticko-gymnasticky-krouzek",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/974-atleticko-gymnasticky-krouzek",
@@ -2490,8 +2645,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/975",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/975-hra-na-kytaru-zac",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/975-hra-na-kytaru-zac",
@@ -2544,8 +2702,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/976",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/976-hra-na-kytaru-mirne-pokrocili",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/976-hra-na-kytaru-mirne-pokrocili",
@@ -2598,8 +2759,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/977",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/977-letecky-modelar",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/977-letecky-modelar",
@@ -2661,8 +2825,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/980",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/980-kuzelky-od-10-let",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/980-kuzelky-od-10-let",
@@ -2715,8 +2882,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/981",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/981-judo-zacatecnici-od-7-let",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/981-judo-zacatecnici-od-7-let",
@@ -2769,8 +2939,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/982",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/982-zajmova-gymnastika",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/982-zajmova-gymnastika",
@@ -2832,8 +3005,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/983",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/983-judo-pokrocili",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/983-judo-pokrocili",
@@ -2886,8 +3062,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/984",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/984-sachy-zacatecnici",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/984-sachy-zacatecnici",
@@ -2949,8 +3128,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/986",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/986-mazoretky-phoenix-little-kadetky-2019-2022",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/986-mazoretky-phoenix-little-kadetky-2019-2022",
@@ -3003,8 +3185,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": null,
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: obsazeno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "obsazeno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
@@ -3076,8 +3261,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/988",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/988-roztleskavacky-phoenix-kadetky-2019-2015",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/988-roztleskavacky-phoenix-kadetky-2019-2015",
@@ -3130,8 +3318,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/991",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/991-loutkove-divadlo-zvonecek-zacatecnici",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/991-loutkove-divadlo-zvonecek-zacatecnici",
@@ -3184,8 +3375,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/992",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/992-zeleznicni-modelari-zacatecnici",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/992-zeleznicni-modelari-zacatecnici",
@@ -3238,8 +3432,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/993",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/993-zeleznicni-modelari-pokrocili",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/993-zeleznicni-modelari-pokrocili",
@@ -3292,8 +3489,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/995",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: plno, berou náhradníky."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/995-dancemix",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "nahradnici"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/995-dancemix",
@@ -3346,8 +3546,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/996",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/996-palickovani",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/996-palickovani",
@@ -3410,8 +3613,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/998",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/998-roztleskavacky-phoenix-little-kadetky-2019-2021",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/998-roztleskavacky-phoenix-little-kadetky-2019-2021",
@@ -3482,8 +3688,11 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://ddmhorice.iddm.cz/detail/999",
-      "poznamka": "Volná místa podle webu DDM k 19. 10. 2026: volno."
+      "odkaz": "https://www.ddmhorice.cz/krouzky/999-mazoretky-phoenix-kadetky-2019-2015",
+      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/999-mazoretky-phoenix-kadetky-2019-2015",

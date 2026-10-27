@@ -557,6 +557,7 @@ select {
 .stav--probiha { background: var(--probiha-pozadi); color: var(--probiha-text); }
 .stav--brzy { background: var(--brzy-pozadi); color: var(--brzy-text); }
 .stav--prubezne { background: var(--prubezne-pozadi); color: var(--prubezne-text); }
+.stav--nahradnici { background: var(--brzy-pozadi); color: var(--brzy-text); }
 .stav--ukonceno { text-decoration: line-through; }
 
 .karta--ukonceno .karta__nazev,

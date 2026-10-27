@@ -142,3 +142,43 @@ test('probiha: jen od v minulosti, bez do', () => {
 test('jen od v minulosti a průběžný nábor → prubezne', () => {
   assert.equal(stavPrihlasky(p('2026-09-02', null, true), '2026-10-12').stav, 'prubezne');
 });
+
+// Obsazenost (kapacita) se promítá jen do běžících přihlášek
+const pk = (od, doData, kapacita, prubezne = false) => ({ ...p(od, doData, prubezne), kapacita });
+
+test('kapacita obsazeno → obsazeno (probíhající i průběžné)', () => {
+  const ocekavane = { stav: 'obsazeno', text: 'Obsazeno' };
+  assert.deepEqual(stavPrihlasky(pk('2026-08-26', null, { stav: 'obsazeno' }), '2026-10-27'), ocekavane);
+  assert.deepEqual(stavPrihlasky(pk(null, null, { stav: 'obsazeno' }, true), '2026-10-27'), ocekavane);
+});
+
+test('kapacita nahradnici → nahradnici', () => {
+  assert.deepEqual(stavPrihlasky(pk('2026-08-26', '2026-12-31', { stav: 'nahradnici' }), '2026-10-27'), {
+    stav: 'nahradnici',
+    text: 'Plno – berou náhradníky',
+  });
+});
+
+test('kapacita posledni mění jen text', () => {
+  const s = (pocet) => stavPrihlasky(pk('2026-08-26', null, { stav: 'posledni', volna_mista: pocet }), '2026-10-27');
+  assert.deepEqual(s(1), { stav: 'probiha', text: 'Poslední místo' });
+  assert.equal(s(3).text, 'Poslední 3 místa');
+  assert.equal(s(5).text, 'Posledních 5 míst');
+  assert.equal(s(null).text, 'Poslední místa');
+  assert.equal(stavPrihlasky(pk(null, null, { stav: 'posledni', volna_mista: 2 }, true), '2026-10-27').stav, 'prubezne');
+});
+
+test('kapacita volno nic nemění', () => {
+  assert.deepEqual(stavPrihlasky(pk('2026-08-26', null, { stav: 'volno' }), '2026-10-27'), {
+    stav: 'probiha',
+    text: 'Přihlášky probíhají',
+  });
+});
+
+test('kapacita se nepromítá před začátkem a po konci přihlášek', () => {
+  const plno = { stav: 'obsazeno' };
+  assert.equal(stavPrihlasky(pk('2027-05-01', '2027-06-15', plno), '2027-04-20').stav, 'brzy');
+  assert.equal(stavPrihlasky(pk('2027-05-01', '2027-06-15', plno), '2027-01-10').stav, 'planovano');
+  assert.equal(stavPrihlasky(pk('2027-05-01', '2027-06-15', plno), '2027-06-16').stav, 'ukonceno');
+  assert.equal(stavPrihlasky(pk(null, null, plno), '2027-01-10').stav, 'neznamy');
+});

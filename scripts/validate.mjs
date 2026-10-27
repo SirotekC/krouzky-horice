@@ -121,6 +121,10 @@ export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategori
     if (od && doData && cisloDne(od) > cisloDne(doData)) {
       chyby.push(`${cesta}.prihlaska.do: konec přihlášek (${doData}) je před začátkem (${od}) (${a.id})`);
     }
+    const kapacita = a.prihlaska.kapacita;
+    if (kapacita?.volna_mista != null && kapacita.stav !== 'posledni') {
+      chyby.push(`${cesta}.prihlaska.kapacita.volna_mista: počet míst patří jen ke stavu „posledni“ (${a.id})`);
+    }
   });
 
   const vSchematu = new Set(kategorieSchema);

@@ -51,7 +51,7 @@
 - **Vynecháno 17 kroužků jen pro dospělé:** Fit dance, H.I.I.T. (2×), Maminky v kondici, Francouzština, Cvičení s Ditou, Italština, Cvičení s Ivou, Angličtina na cesty, Keramika pondělní (senioři), Zdravotní cvičení, Keramika pro dospělé, Scrapbooking, Latina pro ženy, Kurz šití pro dospělé, Pole dance (2×).
 - Horní hranice věku nad 26 let (kytara, ukulele, paličkování, keramika 14+) je uložená jako „bez horní hranice“, protože schéma povoluje nejvýš 26.
 - `pohlavi: divky` jen tam, kde popis výslovně říká dívky, holčičky nebo slečny (mažoretky a roztleskávačky PHOENIX, Tanečky pro Berušky, Formace kadetek).
-- Volná místa jsou v poznámce k přihlášce se stavem k 19. 10. 2026 – rychle stárnou.
+- Volná místa jsou v poli `prihlaska.kapacita` (stav k 27. 10. 2026 ze zkušebního běhu monitoringu, datum je v poznámce k přihlášce; změněno 6 kroužků: Pohybová školička Mžany, Základy elektroniky starší, obě keramiky, Mateřské centrum, 3D tisk) – rychle stárnou. Monitoring je čte z detailů kroužků zvlášť (pravidlo `kapacita` v `monitor.json`) a rozdíl proti datům hlásí v issue jako „rozdíl v obsazenosti“; do otisku stránky se nepočítají. *(převedeno z textu poznámky a hlídáno od 2026-10-27)*
 - **Rozpory:**
   - Novinka na hlavní stránce: „pravidelná činnost začíná od 29. října 2026“, ale detaily kroužků uvádějí zahájení od 14. 9. do 13. 10. 2026. Použita data z detailů.
   - Judo pokročilí: popis „oba dny 16:00–17:30“, rozvrh ve čtvrtek 16:00–17:00. Použit rozvrh, rozpor je v poznámce aktivity.

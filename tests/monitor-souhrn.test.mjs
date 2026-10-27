@@ -16,6 +16,7 @@ function nalezy(prepis = {}) {
     odmitnuto: { nove: [], pretrvavajici: [] },
     prehledy: { nove: [], zrusene: [], pretrvavajici: 0 },
     presmerovani: { nove: [] },
+    kapacita: { nove: [], pretrvavajici: [] },
     ...prepis,
   };
 }
@@ -141,7 +142,7 @@ test('tělo neobsahuje nic kromě URL, id, polí, kódů a čísel', () => {
     Server odmítl kontrolu Nové zrušené kroužky v přehledech Přesměrované Přeskočeno robots.txt robots nedostupný
     Nově sledováno přepočítáno po změně pravidel Nové změny zdrojů a nefunkční nový zrušený přehled
     Přetrvávající problémy details summary změna nefunkční odmítnuto nevyřešené kroužky
-    Vyřešit napiš agentovi vyřeš issue timeout odmitnuto nedostupny`.split(/\s+/).filter(Boolean));
+    Vyřešit napiš agentovi vyřeš issue timeout odmitnuto nedostupny Rozdíly obsazenosti volná místa`.split(/\s+/).filter(Boolean));
   const slova = zbytek.match(/\p{L}[\p{L}.]*/gu) ?? [];
   const cizi = slova.filter((s) => !SABLONA.has(s.replace(/\.$/, '')));
   assert.deepEqual(cizi, [], `neočekávaná slova: ${cizi.join(', ')}`);
@@ -155,4 +156,19 @@ test('české tvary: 1 nová změna, 2 nové změny, 5 nových změn', () => {
   assert.equal(sestavIssue(nalezy({ zmeny: zmeny(5) }), DNES).nazev, 'Kontrola zdrojů 2026-10-25: 5 nových změn');
   assert.equal(sestavIssue(nalezy({ chyby: chyby(4) }), DNES).nazev, 'Kontrola zdrojů 2026-10-25: 4 nové nefunkční odkazy');
   assert.equal(sestavIssue(nalezy({ chyby: chyby(5) }), DNES).nazev, 'Kontrola zdrojů 2026-10-25: 5 nových nefunkčních odkazů');
+});
+
+test('rozdíly v obsazenosti: název, tabulka, sekce s id a hodnotami, přetrvávající v detailu', () => {
+  const n = nalezy({
+    kapacita: {
+      nove: [{ url: 'https://ddm.cz/k/1', web: { stav: 'volno' }, rozdily: [{ id: 'ddm-a', data: { stav: 'obsazeno' } }] }],
+      pretrvavajici: [{ url: 'https://ddm.cz/k/2', web: { stav: 'posledni', volna_mista: 2 }, rozdily: [{ id: 'ddm-b', data: null }] }],
+    },
+  });
+  const { nazev, telo, zavrit } = sestavIssue(n, DNES);
+  assert.equal(nazev, 'Kontrola zdrojů 2026-10-25: 1 nový rozdíl v obsazenosti');
+  assert.equal(zavrit, false);
+  assert.deepEqual(radekTabulky(telo, 'Rozdíly v obsazenosti (volná místa)'), ['Rozdíly v obsazenosti (volná místa)', '1', '1']);
+  assert.ok(telo.includes('## Nové rozdíly v obsazenosti\n- ddm-a – web: volno, data: obsazeno – https://ddm.cz/k/1\n'));
+  assert.ok(telo.includes('- ddm-b – obsazenost – web: poslední 2 místa, data: neuvedeno – https://ddm.cz/k/2'));
 });

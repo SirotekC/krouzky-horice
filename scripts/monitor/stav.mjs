@@ -1,6 +1,8 @@
 // Vyhodnocení běhu monitoringu: z předchozího stavu a nových měření spočítá nový stav
 // a nálezy pro issue (co je nové, co přetrvává). Čisté funkce, bez I/O.
 
+import { stejnaKapacita } from './kapacita.mjs';
+
 /**
  * Prázdný stav pro první běh.
  * @returns {{ verze: 1, posledniBeh: null, zapatiDatum: null, url: {} }}
@@ -21,6 +23,7 @@ function prazdneNalezy() {
     odmitnuto: { nove: [], pretrvavajici: [] },
     prehledy: { nove: [], zrusene: [], pretrvavajici: 0 },
     presmerovani: { nove: [] },
+    kapacita: { nove: [], pretrvavajici: [] },
   };
 }
 
@@ -56,6 +59,7 @@ function kategorieChyby(druh) {
  */
 function maNevyresene(url, ignorovane, znameZdroje) {
   return Object.values(url).some((z) => {
+    if (z.kapacitaNeshoda) return true;
     if (z.druh === 'dostupnost') return false;
     if (z.zmena != null) return true;
     if (!Array.isArray(z.odkazyPotvrzene)) return false;
@@ -83,9 +87,32 @@ function rozdilOdkazu(potvrzene, posledni, ignorovane, znameZdroje) {
 }
 
 /**
+ * Porovná obsazenost ze stránky (`z.kapacitaWeb`) s `prihlaska.kapacita` aktivit, které mají URL
+ * jako `zdroj_url`. Rozdíl se hlásí jako nový, dokud se nezmění (pak znovu jako nový), jinak přetrvávající.
+ * @returns {boolean} je nějaký rozdíl?
+ */
+function vyhodnotKapacitu(adresa, polozka, z, pred, { nalezy, kapacitaDat }) {
+  const web = z.kapacitaWeb;
+  const rozdily = web == null ? [] : polozka.pouziti
+    .filter((p) => p.pole === 'zdroj_url' && kapacitaDat.has(p.id))
+    .map((p) => ({ id: p.id, data: kapacitaDat.get(p.id) }))
+    .filter((r) => !stejnaKapacita(web, r.data));
+  if (!rozdily.length) {
+    z.kapacitaNeshoda = null;
+    return false;
+  }
+  const klic = JSON.stringify({ web, rozdily });
+  const nalez = { url: adresa, web, rozdily };
+  (pred?.kapacitaNeshoda === klic ? nalezy.kapacita.pretrvavajici : nalezy.kapacita.nove).push(nalez);
+  z.kapacitaNeshoda = klic;
+  return true;
+}
+
+/**
  * Vyhodnotí jednu změřenou (nepřeskočenou) URL. Vrací nový záznam, nálezy zapisuje do `nalezy`.
  */
-function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje, dnes }) {
+function vyhodnotUrl(adresa, polozka, pred, m, kontext) {
+  const { nalezy, ignorovane, znameZdroje, dnes } = kontext;
   const v = m.vysledek;
   nalezy.zkontrolovano++;
   if (v.beZmeny) nalezy.beZmeny304++;
@@ -119,8 +146,9 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
       const skupina = druh === 'odmitnuto' ? nalezy.odmitnuto : nalezy.chyby;
       (pocet === 2 ? skupina.nove : skupina.pretrvavajici).push({ ...polozkaNalezu, druh, status });
     }
-    // Nevyřešená změna obsahu se v souhrnu dál počítá jako přetrvávající.
+    // Nevyřešená změna obsahu a rozdíl v obsazenosti se v souhrnu dál počítají jako přetrvávající.
     if (z.druh !== 'dostupnost' && z.zmena) nalezy.zmeny.pretrvavajici.push(polozkaNalezu);
+    if (z.kapacitaNeshoda) nalezy.kapacita.pretrvavajici.push({ url: adresa, ...JSON.parse(z.kapacitaNeshoda) });
     return z;
   }
   z.chyba = null;
@@ -210,6 +238,15 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
     }
   }
 
+  // Obsazenost (jen domény s pravidlem `kapacita` v monitor.json). Při 304 zůstane hodnota z minula.
+  if (polozka.druh === 'obsah' && m.kapacitaSledovana) {
+    if (!v.beZmeny) z.kapacitaWeb = m.kapacita ?? null;
+    if (z.kapacitaWeb !== undefined && vyhodnotKapacitu(adresa, polozka, z, pred, kontext)) nevyreseno = true;
+  } else {
+    delete z.kapacitaWeb;
+    delete z.kapacitaNeshoda;
+  }
+
   // Pravidlo 7.
   if (z.zmena === null && !nevyreseno) z.posledniOk = dnes;
   return z;
@@ -219,12 +256,13 @@ function vyhodnotUrl(adresa, polozka, pred, m, { nalezy, ignorovane, znameZdroje
  * Vyhodnotí běh monitoringu. Čistá funkce: `predchozi` nemění, výstup s ním nesdílí objekty.
  * @param {{ predchozi: object, seznam: Map<string, { druh: string, pouziti: {id: string, pole: string}[], vzorOdkazu?: string }>,
  *   mereni: Map<string, { vysledek: object|null, otisk: string|null, odkazy: string[]|null, verzePravidel: string, preskoceno: null|'robots'|'nekontrolovat' }>,
- *   ignorovane: string[], znameZdroje: Set<string>, dnes: string }} vstup
+ *   ignorovane: string[], znameZdroje: Set<string>, dnes: string, kapacitaDat?: Map<string, object|null> }} vstup
+ *   `kapacitaDat`: id aktivity → `prihlaska.kapacita`; měření může nést `kapacitaSledovana` a `kapacita` (kapacita.mjs)
  * @returns {{ stav: object, nalezy: object }}
  */
-export function vyhodnotBeh({ predchozi, seznam, mereni, ignorovane = [], znameZdroje = new Set(), dnes }) {
+export function vyhodnotBeh({ predchozi, seznam, mereni, ignorovane = [], znameZdroje = new Set(), dnes, kapacitaDat = new Map() }) {
   const nalezy = prazdneNalezy();
-  const kontext = { nalezy, ignorovane: new Set(ignorovane), znameZdroje, dnes };
+  const kontext = { nalezy, ignorovane: new Set(ignorovane), znameZdroje, dnes, kapacitaDat };
   const url = {};
 
   // Pravidlo 9: projdou se jen URL ze seznamu, ostatní ze stavu vypadnou. Klíče seřazené.
@@ -279,6 +317,7 @@ export function potvrd(stav, urls, dnes, { ignorovane = [], znameZdroje = new Se
     z.otiskPotvrzeny = z.otiskPosledni;
     if ('odkazyPosledni' in z) z.odkazyPotvrzene = z.odkazyPosledni === null ? null : [...z.odkazyPosledni];
     z.zmena = null;
+    if (z.kapacitaNeshoda) z.kapacitaNeshoda = null;
     const zmereno = z.druh === 'dostupnost' || z.otiskPosledni != null;
     if (!z.chyba && zmereno) z.posledniOk = dnes;
   }

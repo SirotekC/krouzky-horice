@@ -23,7 +23,7 @@ Postup správce:
 
 **Ne-cíle**
 - Automatická oprava dat ani AI extrakce (to je fáze 4, na tomto řešení nezávisí).
-- Hlídání počtu volných míst (správce ho výslovně nechce řešit).
+- ~~Hlídání počtu volných míst (správce ho výslovně nechce řešit).~~ *Změněno 2026-10-27:* obsazenost se promítá do stavu přihlášek na webu, proto se hlídá (viz 4).
 - Okamžité upozornění (stačí jednou za 3 dny).
 
 **Anti-cíle (selhání, i kdyby to technicky fungovalo)**
@@ -47,7 +47,7 @@ Postup správce:
 - **Rytmus:** každé 3 dny, v noci.
 - **Jedno issue = jedna kontrola = jeden e-mail**, a to i bez nálezů.
 - **V každém e-mailu jsou počty** změněných zdrojů a nefunkčních odkazů. Opakující se problémy se neposílají znovu podrobně.
-- **Volná místa** se ignorují.
+- **Volná místa** se nepočítají do otisku stránky. *Od 2026-10-27* se ale čtou zvlášť (pravidlo `kapacita` v `monitor.json`, `scripts/monitor/kapacita.mjs`) a porovnávají s `prihlaska.kapacita`; rozdíl je samostatný nález „rozdíl v obsazenosti“ (nový / přetrvávající, blokuje posun `posledniOk`). Do issue jde jen hodnota z číselníku (volno, poslední N míst, náhradníci, obsazeno).
 - **Bez AI:** deterministický skript.
 - **Soukromí:** ukládají se jen otisky. Issue neobsahuje výřez rozdílu, jen URL a dotčené kroužky.
 - **Jedno datum „Data načtena“** v zápatí i u kroužku. Posouvá ho kontrola beze změn i ruční aktualizace (5.9).

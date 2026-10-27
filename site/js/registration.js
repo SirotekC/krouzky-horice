@@ -9,7 +9,7 @@ export const KONCI_BRZY_DNI = 7;
 export const BRZY_DNI = 30;
 
 /** Stavy přihlášek v pořadí, ve kterém se řadí výsledky. */
-export const PORADI_STAVU = ['probiha', 'brzy', 'prubezne', 'planovano', 'neznamy', 'ukonceno'];
+export const PORADI_STAVU = ['probiha', 'brzy', 'prubezne', 'nahradnici', 'planovano', 'neznamy', 'obsazeno', 'ukonceno'];
 
 /**
  * Ručně parsuje datum `YYYY-MM-DD` (ne přes `new Date(text)`, které ho bere jako UTC čas).
@@ -94,13 +94,38 @@ function textProbiha(doData, dnes) {
   return `Přihlášky do ${formatDatum(doData, { rok: false })}`;
 }
 
+/** „Poslední místo“, „Poslední 3 místa“, „Posledních 5 míst“; bez počtu „Poslední místa“. */
+export function textPoslednichMist(pocet) {
+  if (pocet === 1) return 'Poslední místo';
+  if (pocet >= 2 && pocet <= 4) return `Poslední ${pocet} místa`;
+  if (pocet >= 5) return `Posledních ${pocet} míst`;
+  return 'Poslední místa';
+}
+
 /**
  * Stav přihlášek k danému dni (pravidla v FAZE-1-IMPLEMENTACE.md, sekce 5.2).
- * @param {{ od?: string|null, do?: string|null, prubezne?: boolean }} prihlaska
+ * Obsazenost (`kapacita`) se promítne jen do běžících přihlášek (`probiha`, `prubezne`);
+ * před začátkem a po konci přihlášek platí stav podle data.
+ * @param {{ od?: string|null, do?: string|null, prubezne?: boolean, kapacita?: { stav: string, volna_mista?: number|null }|null }} prihlaska
  * @param {string} dnes datum `YYYY-MM-DD`
  * @returns {{ stav: string, text: string }}
  */
 export function stavPrihlasky(prihlaska, dnes) {
+  const podleData = stavPodleData(prihlaska, dnes);
+  if (podleData.stav !== 'probiha' && podleData.stav !== 'prubezne') return podleData;
+  switch (prihlaska?.kapacita?.stav) {
+    case 'obsazeno':
+      return { stav: 'obsazeno', text: 'Obsazeno' };
+    case 'nahradnici':
+      return { stav: 'nahradnici', text: 'Plno – berou náhradníky' };
+    case 'posledni':
+      return { stav: podleData.stav, text: textPoslednichMist(prihlaska.kapacita.volna_mista) };
+    default:
+      return podleData;
+  }
+}
+
+function stavPodleData(prihlaska, dnes) {
   const od = parseDatum(prihlaska?.od) ? prihlaska.od : null;
   const doData = parseDatum(prihlaska?.do) ? prihlaska.do : null;
   const d = cisloDne(dnes);
