@@ -11,6 +11,7 @@ Statický web (GitHub Pages) s přehledem kroužků pro děti v Hořicích. Žá
 | `site/data/meta.json` | `aktualizovano` = datum posledního sběru dat |
 | `schema/*.schema.json` | JSON Schema, závazná struktura dat |
 | `data-src/zdroje.md` | Seznam zdrojů (URL stránek klubů) a poznámky ze sběru |
+| `data-src/vyrazeno.json` | Kroužky a organizace vyřazené z webu (zrušené, mimo Hořice). Při vyřazení přesunout záznam sem, doplnit pole `vyrazeni` (`existuje`, `datum`, `duvod`), a smazat ho z `aktivity.json` i z `kontrola.json`. |
 | `POZNAMKY.md` | **Soukromé** poznámky uživatele (úkoly, tipy, jména lidí). Je v `.gitignore` – repozitář je veřejný, proto osobní poznámky a jména konkrétních lidí patří sem, nikdy do souborů v gitu. |
 | `site/js/data.js` | Číselník kategorií (`KATEGORIE`) a jejich skupiny pro filtr (`SKUPINY_KATEGORII`) |
 

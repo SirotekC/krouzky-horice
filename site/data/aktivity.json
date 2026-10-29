@@ -5886,51 +5886,6 @@
     "overeno": "2026-10-19"
   },
   {
-    "id": "rc-konvicka-barevne-rucicky",
-    "organizace_id": "rc-konvicka",
-    "nazev": "Barevné ručičky",
-    "kategorie": [
-      "vytvarne"
-    ],
-    "popis": "Výtvarný kroužek pro batolata a malé děti s rodiči: každé setkání má téma (barvy, tvary, zvířátka…), cvičení jemné i hrubé motoriky a na závěr malé výtvarné dílo.",
-    "klicova_slova": [
-      "malování",
-      "batolata",
-      "rodiče s dětmi"
-    ],
-    "vek_od": null,
-    "vek_do": null,
-    "misto": {
-      "nazev": "RC Konvička, Sportovní hala (1. patro)",
-      "adresa": "Šalounova 2164, Hořice",
-      "gps": null
-    },
-    "terminy": {
-      "text": "Pátek od 9:00",
-      "obdobi": null,
-      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo. Každý druhý pátek je místo Barevných ručiček SENZAční hraní.",
-      "dny": [
-        "pa"
-      ]
-    },
-    "cena": {
-      "text": "60 Kč za lekci",
-      "castka_kc": 60,
-      "obdobi": "lekce"
-    },
-    "prihlaska": {
-      "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
-      "od": null,
-      "do": null,
-      "prubezne": true,
-      "odkaz": "https://rckonvicka.cz/tvorilek/",
-      "poznamka": null
-    },
-    "skolni_rok": "2025/2026",
-    "zdroj_url": "https://rckonvicka.cz/tvorilek/",
-    "overeno": "2026-10-19"
-  },
-  {
     "id": "rc-konvicka-senzacni-hrani",
     "organizace_id": "rc-konvicka",
     "nazev": "SENZAční hraní",

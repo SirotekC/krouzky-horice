@@ -71,6 +71,7 @@
 
 - Zdroj od uživatele: článek https://rckonvicka.cz/2025/01/11/do-noveho-roku-konvicka-vkrocila-s-novym-programem/ je z ledna 2025 a uvádí začátek kroužků v 9:30. Novější leták „Pravidelné aktivity od září 2025“ uvádí 9:00, platí leták.
 - Zapsáno 5 dětských aktivit (Hernička pro miminka, Hýbánky, Notičky z Konvičky, Barevné ručičky, SENZAční hraní) se `skolni_rok` 2025/2026 a poznámkou, že program na 2026/27 zatím není zveřejněn. **Po zveřejnění nového letáku aktualizovat.**
+- 2026-10-29: Barevné ručičky (`rckonvicka.cz/tvorilek/`) zrušeny, aktivita odstraněna z webu.
 - Vynecháno: Maminky v kondici a Časoprostor ženy (pro dospělé), jednorázové přednášky a akce.
 - Leták uvádí jen začátek lekce („od 9:00“), proto termíny jako `text` místo `rozvrh`.
 - Hernička: věk 0–1 odvozen z popisu „první rok s děťátkem“. SENZAční hraní: „od cca 1,5 roku“ je jen v popisu, `vek_od` nevyplněn (celá čísla).

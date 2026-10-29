@@ -1,8 +1,13 @@
 {
-  "_poznamka": "Dočasně vyřazeno z webu (organizace mimo Hořice). Pro návrat přesunout zpět do site/data/.",
+  "_poznamka": "Kroužky a organizace vyřazené z webu. Pole vyrazeni: existuje (true = kroužek/organizace dál existuje, jen není na webu; false = zanikl), datum a duvod vyřazení. Pro návrat přesunout zpět do site/data/ a pole vyrazeni smazat.",
   "organizace": [
     {
       "id": "curling-jicin",
+      "vyrazeni": {
+        "existuje": true,
+        "datum": "2026-10-21",
+        "duvod": "Organizace mimo Hořice (Jičín)."
+      },
       "nazev": "Curlingový club Loupežníci Jičín z. s.",
       "typ": "sportovni-klub",
       "web": "https://www.curlingjicin.cz",
@@ -17,6 +22,11 @@
   "aktivity": [
     {
       "id": "curling-jicin-curling-deti",
+      "vyrazeni": {
+        "existuje": true,
+        "datum": "2026-10-21",
+        "duvod": "Organizace mimo Hořice (Jičín)."
+      },
       "organizace_id": "curling-jicin",
       "nazev": "Curling – tréninky dětí (Jičín)",
       "kategorie": [
@@ -67,6 +77,56 @@
       },
       "skolni_rok": null,
       "zdroj_url": "https://www.curlingjicin.cz/",
+      "overeno": "2026-10-19"
+    },
+    {
+      "id": "rc-konvicka-barevne-rucicky",
+      "vyrazeni": {
+        "existuje": false,
+        "datum": "2026-10-29",
+        "duvod": "Kroužek byl zrušen."
+      },
+      "organizace_id": "rc-konvicka",
+      "nazev": "Barevné ručičky",
+      "kategorie": [
+        "vytvarne"
+      ],
+      "popis": "Výtvarný kroužek pro batolata a malé děti s rodiči: každé setkání má téma (barvy, tvary, zvířátka…), cvičení jemné i hrubé motoriky a na závěr malé výtvarné dílo.",
+      "klicova_slova": [
+        "malování",
+        "batolata",
+        "rodiče s dětmi"
+      ],
+      "vek_od": null,
+      "vek_do": null,
+      "misto": {
+        "nazev": "RC Konvička, Sportovní hala (1. patro)",
+        "adresa": "Šalounova 2164, Hořice",
+        "gps": null
+      },
+      "terminy": {
+        "text": "Pátek od 9:00",
+        "obdobi": null,
+        "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo. Každý druhý pátek je místo Barevných ručiček SENZAční hraní.",
+        "dny": [
+          "pa"
+        ]
+      },
+      "cena": {
+        "text": "60 Kč za lekci",
+        "castka_kc": 60,
+        "obdobi": "lekce"
+      },
+      "prihlaska": {
+        "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
+        "od": null,
+        "do": null,
+        "prubezne": true,
+        "odkaz": "https://rckonvicka.cz/tvorilek/",
+        "poznamka": null
+      },
+      "skolni_rok": "2025/2026",
+      "zdroj_url": "https://rckonvicka.cz/tvorilek/",
       "overeno": "2026-10-19"
     }
   ]
