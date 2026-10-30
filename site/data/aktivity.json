@@ -2139,7 +2139,8 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1065-ukulele-pro-radost",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-19",
+    "i_pro_dospele": true
   },
   {
     "id": "ddm-horice-domecku-var",
@@ -2654,7 +2655,8 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/975-hra-na-kytaru-zac",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-19",
+    "i_pro_dospele": true
   },
   {
     "id": "ddm-horice-hra-na-kytaru-mirne-pokrocili",
@@ -2711,7 +2713,8 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/976-hra-na-kytaru-mirne-pokrocili",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-19",
+    "i_pro_dospele": true
   },
   {
     "id": "ddm-horice-letecky-modelar",
@@ -3555,7 +3558,8 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/996-palickovani",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-19",
+    "i_pro_dospele": true
   },
   {
     "id": "ddm-horice-roztleskavacky-phoenix-little-kadetky-2019-2021",

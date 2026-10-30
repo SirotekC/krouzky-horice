@@ -101,6 +101,22 @@
 - Přehledné shrnutí všech tří programů je i na https://www.sporthorice.cz/bruslarska-skola-skolicka/ (tip uživatele). Údaje se shodují, časy skupin bruslařské školy tam ale nejsou. Rozpor: přihlášky na Rozjezd ve Dvoře Králové podle KLUHO „od 1. září průběžně“, podle Sportovního zařízení „od 1. do 14. 9.“. Ponecháno jako průběžné s poznámkou na kartě.
 - Adresu kluziště web neuvádí. Telefon spolku je zároveň telefon předsedy, nepřebírá se. Obecný e-mail info@kluho.cz.
 
+## Zdroje – dospělí
+
+| id | název | stránka s aktivitami | poznámka |
+|---|---|---|---|
+| ddm-horice | Dům dětí a mládeže Hořice | https://www.ddmhorice.cz/krouzky | Kurzy pro dospělé jsou v přehledu kroužků spolu s dětskými, detail `/krouzky/{číslo}-{slug}` má stejná pole (věková skupina, dny a časy, cena za pololetí, volná místa). |
+
+## Poznámky ze sběru (2026-10-30) – DDM, aktivity pro dospělé
+
+- Do `site/data/dospeli/aktivity.json` přidáno **17 kurzů pro dospělé**, které byly 2026-10-19 vynechány (seznam výše). Id `ddm-horice-{slug z webu}`, popisy vlastními slovy, bez jmen lektorů. `prihlaska.typ: prihlaska` (přihláška na pololetí přes iDDM).
+- Dva kurzy H.I.I.T. mají na webu názvy „H.I.I.T.“ a „H.I.I.T.-1“; v datech jsou pojmenované podle času: „H.I.I.T. (pondělí 17:00)“ a „(pondělí 16:00)“.
+- `vek_od` podle dolní hranice „Věkové skupiny“. Maminky v kondici (0–45 let, dítě zdarma) bez `vek_od`.
+- `urceno_pro`: senioři u Keramiky pondělní, ženy u Latiny pro ženy a Kurzu šití („pro ženy“). Zdravotní cvičení je „především ženám“, proto bez omezení.
+- Ceny: vedlejší položky 0 Kč (dítě zdarma, zaměstnanec, „jednotlivý vstup 0 Kč“ u Cvičení s Ditou) nepřebírány. U Kurzu šití je jednorázový vstup 150 Kč v textu ceny.
+- `i_pro_dospele` u dětských kroužků Kytara (začátečníci i mírně pokročilí, 7–65 let), Ukulele pro radost (7–60 let, „malí i velcí“), Paličkování (8–80 let, „malým i velkým ženám“) a Keramika kreativně 14+ („starší děti, středoškoláky a dospěláky“).
+- Odkazy na tyto kurzy byly v `data-src/monitor.json` v `ignorovaneOdkazy`; teď jsou v datech, takže seznam je prázdný.
+
 ## Zjištění pro fázi 3–4
 
 _(doplní se v úkolu 8)_

@@ -131,23 +131,5 @@
       "obsah": "#homepage, #main_frame > .content"
     }
   },
-  "ignorovaneOdkazy": [
-    "https://www.ddmhorice.cz/krouzky/1002-fit-dance-s-nikcou",
-    "https://www.ddmhorice.cz/krouzky/1003-h-i-i-t",
-    "https://www.ddmhorice.cz/krouzky/1004-maminky-v-kondici",
-    "https://www.ddmhorice.cz/krouzky/1008-francouzstina-pokrocili",
-    "https://www.ddmhorice.cz/krouzky/1024-cviceni-s-ditou-pilates-tabata-kondicka",
-    "https://www.ddmhorice.cz/krouzky/1052-italstina-mirne-pokrocili",
-    "https://www.ddmhorice.cz/krouzky/1057-cviceni-s-ivou-zdravy-pohyb",
-    "https://www.ddmhorice.cz/krouzky/1058-anglictina-na-cesty",
-    "https://www.ddmhorice.cz/krouzky/1060-h-i-i-t-1",
-    "https://www.ddmhorice.cz/krouzky/973-keramika-pondelni",
-    "https://www.ddmhorice.cz/krouzky/978-zdravotni-cviceni",
-    "https://www.ddmhorice.cz/krouzky/979-keramika-pro-dospele",
-    "https://www.ddmhorice.cz/krouzky/985-scrapbooking-pro-dospele",
-    "https://www.ddmhorice.cz/krouzky/989-latina-pro-zeny-pokrocili",
-    "https://www.ddmhorice.cz/krouzky/990-kurz-siti-na-stroji-pro-dospele",
-    "https://www.ddmhorice.cz/krouzky/994-pole-dance-zacatecnici",
-    "https://www.ddmhorice.cz/krouzky/997-pole-dance-pokrocili"
-  ]
+  "ignorovaneOdkazy": []
 }

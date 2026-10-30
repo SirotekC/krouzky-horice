@@ -1,19 +1,21 @@
 # Kroužky Hořice – pokyny pro Clauda
 
-Statický web (GitHub Pages) s přehledem kroužků pro děti v Hořicích. Žádný backend, data jsou ručně (s pomocí agenta) udržované JSON soubory. Celkový plán je v `PLAN.md`, podrobné zadání a popis všech polí v `FAZE-1-IMPLEMENTACE.md` (kap. 4).
+Statický web (GitHub Pages) s přehledem kroužků pro děti v Hořicích a sekcí aktivit pro dospělé (`dospeli.html`). Žádný backend, data jsou ručně (s pomocí agenta) udržované JSON soubory. Celkový plán je v `PLAN.md`, podrobné zadání a popis všech polí v `FAZE-1-IMPLEMENTACE.md` (kap. 4).
 
 ## Kde jsou data
 
 | Soubor | Obsah |
 |---|---|
-| `site/data/aktivity.json` | Kroužky – vše, co se zobrazuje na kartě |
+| `site/data/aktivity.json` | Kroužky pro děti – vše, co se zobrazuje na kartě |
+| `site/data/dospeli/aktivity.json` | Aktivity pro dospělé (sekce `dospeli.html`), viz „Aktivity pro dospělé“ níže |
 | `site/data/organizace.json` | Organizace, aktivita se na ně odkazuje přes `organizace_id` |
 | `site/data/meta.json` | `aktualizovano` = datum posledního sběru dat |
 | `schema/*.schema.json` | JSON Schema, závazná struktura dat |
 | `data-src/zdroje.md` | Seznam zdrojů (URL stránek klubů) a poznámky ze sběru |
 | `data-src/vyrazeno.json` | Kroužky a organizace vyřazené z webu (zrušené, mimo Hořice). Při vyřazení přesunout záznam sem, doplnit pole `vyrazeni` (`existuje`, `datum`, `duvod`), a smazat ho z `aktivity.json` i z `kontrola.json`. |
 | `POZNAMKY.md` | **Soukromé** poznámky uživatele (úkoly, tipy, jména lidí). Je v `.gitignore` – repozitář je veřejný, proto osobní poznámky a jména konkrétních lidí patří sem, nikdy do souborů v gitu. |
-| `site/js/data.js` | Číselník kategorií (`KATEGORIE`) a jejich skupiny pro filtr (`SKUPINY_KATEGORII`) |
+| `site/js/data.js` | Číselník kategorií (`KATEGORIE`) a jejich skupiny pro filtr (`SKUPINY_KATEGORII`), totéž pro dospělé (`KATEGORIE_DOSPELI`, `SKUPINY_KATEGORII_DOSPELI`) |
+| `site/js/sekce.js` | Konfigurace sekcí Děti a Dospělí (soubor s daty, číselník, texty) |
 
 ## Postup při sběru / přegenerování dat
 
@@ -36,6 +38,19 @@ Statický web (GitHub Pages) s přehledem kroužků pro děti v Hořicích. Žá
 - `kategorie`: klíče z číselníku (`schema/aktivity.schema.json` → `$defs.kategorie`). Aktivita může mít víc kategorií. Nová kategorie = přidat ji do schématu, do `KATEGORIE` **a** do jedné skupiny v `SKUPINY_KATEGORII` (validace hlídá všechna tři místa).
 - `prihlaska.zpusob` je povinný; když není známý: `"Informace na webu organizace."`. `prubezne: true` = lze se přihlásit kdykoli.
 - U DDM je `prihlaska.odkaz` vždy stránka kroužku (= `zdroj_url`, `www.ddmhorice.cz/krouzky/…`), ne přímo formulář v iDDM (`ddmhorice.iddm.cz/detail/…`). Na stránce kroužku jsou všechny údaje i odkaz do iDDM (přání uživatele).
+
+## Aktivity pro dospělé
+
+Stejná pravidla polí jako u dětí, společné části schématu jsou v `schema/spolecne.schema.json`, zbytek v `schema/aktivity-dospeli.schema.json`. Rozdíly:
+
+- Není `vek_do`, `pohlavi` ani `skolni_rok`. `vek_od` jen tehdy, když zdroj uvádí minimální věk (např. „15–60 let“ → 15).
+- `uroven`: `zacatecnici` | `pokrocili` | `vsichni` | `null`. Vyplň jen podle zdroje (název, popis).
+- `urceno_pro`: pole z `zeny`, `muzi`, `seniori`, `tehotne`. Jen když zdroj aktivitu výslovně určuje („pro ženy“, „pro seniory“), ne při „především ženám“.
+- `prihlaska.typ` je **povinný**: `bez-prihlasky` (stačí přijít), `rezervace` (rezervace na lekci), `prihlaska` (přihláška na kurz / pololetí).
+- `kategorie` z číselníku dospělých. Klíče společné s dětmi (`tanec`, `hudba`, `vytvarne`, `jazyky`…) znamenají totéž.
+- **Id jsou unikátní napříč oběma soubory** (detail `#/aktivita/{id}`); validace to hlídá.
+- **Hraniční aktivity:** záznam žije jen v jedné sekci. Dětský kroužek, který zdroj výslovně otevírá i dospělým (např. věk „7–65 let“, „pro malé i velké“), dostane `i_pro_dospele: true` a zobrazí se i u dospělých se štítkem „Z nabídky pro děti“. Obráceně `i_pro_deti`. Samotné „od 14 let“ bez horní hranice nestačí. Aktivity „rodiče s dětmi“ patří k dětem. Kategorie takové aktivity musí existovat v číselníku druhé sekce (validace).
+- **Soukromí lektoři (OSVČ) se zatím nepřidávají**, jen organizace a subjekty s vlastním webem. Kontakt = odkaz na web, žádné osobní telefony ani e-maily.
 
 ## Termíny (`terminy`) – jak strukturovat
 
