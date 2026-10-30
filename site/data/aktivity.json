@@ -6126,7 +6126,7 @@
           "skupina": "Vločky A",
           "den": "st",
           "casy": [
-            "15:15–16:15"
+            "16:30–17:30"
           ],
           "misto": null
         },
@@ -6139,8 +6139,8 @@
           "misto": null
         }
       ],
-      "obdobi": "8 lekcí, prosinec 2026 – únor 2027 (první lekce 2. 12. 2026)",
-      "poznamka": "Dítě chodí do jedné skupiny (A nebo B), kapacita skupiny je 25 dětí. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
+      "obdobi": "8 lekcí, prosinec 2026 – únor 2027 (první lekce st 2. 12., so 5. 12. 2026)",
+      "poznamka": "Dítě chodí do jedné skupiny (A nebo B), kapacita skupiny je 30 dětí. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
       "dny": [
         "st",
         "so"
@@ -6161,7 +6161,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-30"
   },
   {
     "id": "kluho-bruslarska-skola-rampouchy",
@@ -6189,7 +6189,7 @@
           "skupina": "Rampouchy A",
           "den": "st",
           "casy": [
-            "16:30–17:30"
+            "15:15–16:15"
           ],
           "misto": null
         },
@@ -6202,8 +6202,8 @@
           "misto": null
         }
       ],
-      "obdobi": "8 lekcí, prosinec 2026 – únor 2027 (první lekce 2. 12. 2026)",
-      "poznamka": "Dítě chodí do jedné skupiny (A nebo B), kapacita skupiny je 30 dětí. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
+      "obdobi": "8 lekcí, prosinec 2026 – únor 2027 (první lekce st 2. 12., ne 6. 12. 2026)",
+      "poznamka": "Dítě chodí do jedné skupiny (A nebo B), kapacita skupiny je 25 dětí. Povinná helma a prstové rukavice, brusle lze v omezeném počtu půjčit.",
       "dny": [
         "st",
         "ne"
@@ -6224,7 +6224,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-10-19"
+    "overeno": "2026-10-30"
   },
   {
     "id": "kluho-hokejova-pripravka",

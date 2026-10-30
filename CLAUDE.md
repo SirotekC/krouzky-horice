@@ -23,6 +23,7 @@ Statický web (GitHub Pages) s přehledem kroužků pro děti v Hořicích. Žá
 4. Spusť `npm run validate` a `npm test`. Obojí musí projít.
 5. Uživateli shrň, co se změnilo, a vypiš **rozpory mezi zdroji** (např. dvě stránky klubu uvádějí jiné časy) – rozhodnutí zapiš do „Poznámky ze sběru“ v `zdroje.md`.
 6. Nic si nevymýšlej. Co zdroj neuvádí, je `null` / chybí. Validace kontroluje jen formát, ne pravdivost.
+7. **Tabulky v PDF** (rozvrhy, kapacity) čti po řádcích: `pdftotext -raw soubor.pdf -`. Výstup `-layout` i výchozí extrakce tabulky často rozhází (sloupce se posunou proti řádkům). Přiřazení časů ke skupinám nikdy neodvozuj (např. „mladší asi chodí dřív“). Když ani `-raw` nedá jednoznačné řádky, vykresli stránku jako obrázek a přečti ji, jinak údaj nech `null` a rozpor zapiš do poznámek ze sběru. Totéž platí při ověřování existujících dat: tabulku přečti znovu, nepřebírej dřívější odhad.
 
 ## Obecná pravidla polí
 
