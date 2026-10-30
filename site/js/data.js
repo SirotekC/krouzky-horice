@@ -183,13 +183,28 @@ export function datumNacteniWebu(meta, kontrola) {
   return pozdejsi(meta.aktualizovano, kontrola?.zdrojeZkontrolovany ?? null);
 }
 
-/** Načte datové soubory paralelně. `kontrola.json` je nepovinný: při chybě je `kontrola` `null`. */
-export async function nactiData(zaklad = 'data/') {
-  const [organizace, aktivity, meta, kontrola] = await Promise.all([
+/**
+ * Načte datové soubory paralelně. `kontrola.json` je nepovinný: při chybě je `kontrola` `null`.
+ * Se zadanou sekcí (`SEKCE` ze `sekce.js`) načte její aktivity a z druhé sekce přidá ty, které mají
+ * příznak `sekce.priznakZDruhe`; soubor druhé sekce je nepovinný. Každá aktivita pak nese `sekce`.
+ * Bez sekce načte jen `aktivity.json`.
+ * @param {string} [zaklad]
+ * @param {{ klic: string, soubor: string, priznakZDruhe: string } | null} [sekce]
+ * @param {{ klic: string, soubor: string } | null} [druha]
+ */
+export async function nactiData(zaklad = 'data/', sekce = null, druha = null) {
+  const [organizace, vlastni, zDruhe, meta, kontrola] = await Promise.all([
     nactiJson(`${zaklad}organizace.json`),
-    nactiJson(`${zaklad}aktivity.json`),
+    nactiJson(`${zaklad}${sekce?.soubor ?? 'aktivity.json'}`),
+    druha ? nactiJson(`${zaklad}${druha.soubor}`).catch(() => []) : [],
     nactiJson(`${zaklad}meta.json`),
     nactiJson(`${zaklad}kontrola.json`).catch(() => null),
   ]);
+  const aktivity = sekce
+    ? [
+        ...vlastni.map((a) => ({ ...a, sekce: sekce.klic })),
+        ...zDruhe.filter((a) => a[sekce.priznakZDruhe] === true).map((a) => ({ ...a, sekce: druha.klic })),
+      ]
+    : vlastni;
   return { ...pripravData(organizace, aktivity), meta, kontrola };
 }
