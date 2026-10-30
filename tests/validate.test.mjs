@@ -137,7 +137,7 @@ test('organizace_id dospělé aktivity musí existovat', () => {
 });
 
 test('i_pro_dospele s kategorií, kterou dospělí nemají', () => {
-  const { chyby } = dospeli([org('o')], [akt('a', 'o', { kategorie: ['b'], i_pro_dospele: true }), akt('c', 'o', { kategorie: ['b'] })], []);
+  const { chyby } = dospeli([org('o')], [akt('a', 'o', { kategorie: ['b'], i_pro_dospele: true, prihlaska: { od: null, do: null, typ: 'prihlaska' } }), akt('c', 'o', { kategorie: ['b'] })], []);
   assert.equal(chyby.length, 1);
   assert.match(chyby[0], /^aktivity\[0\]\.kategorie: „b“ není v číselníku dospělých \(i_pro_dospele\)/);
 });
@@ -166,4 +166,13 @@ test('kontrola: URL zdroje dospělé aktivity není zastaralý záznam', () => {
   const kontrola = { zdrojeZkontrolovany: null, url: { 'https://d.cz/x': DNES } };
   const { varovani } = dospeli([org('o')], [], [akt('d', 'o', { zdroj_url: 'https://d.cz/x' })], { kontrola });
   assert.deepEqual(varovani, []);
+});
+
+test('i_pro_dospele vyžaduje prihlaska.typ (filtr a karta „Vstup“ u dospělých)', () => {
+  const { chyby } = dospeli([org('o')], [
+    akt('a', 'o', { kategorie: ['a'], i_pro_dospele: true }),
+    akt('b', 'o', { kategorie: ['a'], i_pro_dospele: true, prihlaska: { od: null, do: null, typ: 'prihlaska' } }),
+  ], []);
+  assert.equal(chyby.length, 1);
+  assert.match(chyby[0], /^aktivity\[0\]\.prihlaska\.typ: u aktivity s i_pro_dospele je povinný/);
 });

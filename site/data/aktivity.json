@@ -1839,6 +1839,7 @@
       "obdobi": "pololeti"
     },
     "prihlaska": {
+      "typ": "prihlaska",
       "zpusob": "Online přihláška přes systém iDDM.",
       "od": "2026-08-26",
       "do": null,
@@ -2126,6 +2127,7 @@
       "obdobi": "pololeti"
     },
     "prihlaska": {
+      "typ": "prihlaska",
       "zpusob": "Online přihláška přes systém iDDM.",
       "od": "2026-08-26",
       "do": null,
@@ -2643,6 +2645,7 @@
       "obdobi": "pololeti"
     },
     "prihlaska": {
+      "typ": "prihlaska",
       "zpusob": "Online přihláška přes systém iDDM.",
       "od": "2026-08-26",
       "do": null,
@@ -2701,6 +2704,7 @@
       "obdobi": "pololeti"
     },
     "prihlaska": {
+      "typ": "prihlaska",
       "zpusob": "Online přihláška přes systém iDDM.",
       "od": "2026-08-26",
       "do": null,
@@ -3546,6 +3550,7 @@
       "obdobi": "pololeti"
     },
     "prihlaska": {
+      "typ": "prihlaska",
       "zpusob": "Online přihláška přes systém iDDM.",
       "od": "2026-08-26",
       "do": null,

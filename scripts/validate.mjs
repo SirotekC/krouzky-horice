@@ -193,6 +193,12 @@ export function zkontrolujData({
       });
     };
     zkontrolujDruhouSekci('aktivity', aktivity, 'i_pro_dospele', kategorieUiDospeli, 'dospělých');
+    // U dospělých se podle typu přihlášky filtruje a zobrazuje „Vstup“.
+    aktivity.forEach((a, i) => {
+      if (a.i_pro_dospele && !a.prihlaska?.typ) {
+        chyby.push(`aktivity[${i}].prihlaska.typ: u aktivity s i_pro_dospele je povinný (${a.id})`);
+      }
+    });
     zkontrolujDruhouSekci('dospeli', aktivityDospeli, 'i_pro_deti', kategorieUi, 'dětí');
   }
 
