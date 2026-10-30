@@ -29,118 +29,21 @@
       },
       "vek_od": { "type": ["integer", "null"], "minimum": 0, "maximum": 26 },
       "vek_do": { "type": ["integer", "null"], "minimum": 0, "maximum": 26 },
-      "misto": {
-        "type": ["object", "null"],
-        "additionalProperties": false,
-        "properties": {
-          "nazev": { "type": ["string", "null"] },
-          "adresa": { "type": ["string", "null"] },
-          "gps": {
-            "type": ["array", "null"],
-            "prefixItems": [
-              { "type": "number", "minimum": -90, "maximum": 90 },
-              { "type": "number", "minimum": -180, "maximum": 180 }
-            ],
-            "minItems": 2,
-            "maxItems": 2
-          }
-        }
-      },
-      "terminy": {
-        "type": ["object", "null"],
-        "additionalProperties": false,
-        "properties": {
-          "text": { "type": ["string", "null"] },
-          "dny": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": { "$ref": "#/$defs/den" }
-          },
-          "rozvrh": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": ["den"],
-              "properties": {
-                "skupina": { "type": ["string", "null"] },
-                "den": { "$ref": "#/$defs/den" },
-                "casy": {
-                  "type": "array",
-                  "items": { "type": "string", "pattern": "^\\d{1,2}:\\d{2}–\\d{1,2}:\\d{2}$" }
-                },
-                "misto": { "type": ["string", "null"] }
-              }
-            }
-          },
-          "obdobi": {
-            "oneOf": [
-              { "type": ["string", "null"] },
-              {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": ["nazev", "termin"],
-                  "properties": {
-                    "nazev": { "type": "string", "minLength": 1 },
-                    "termin": { "type": "string", "minLength": 1 }
-                  }
-                }
-              }
-            ]
-          },
-          "poznamka": { "type": ["string", "null"] }
-        }
-      },
-      "cena": {
-        "type": ["object", "null"],
-        "additionalProperties": false,
-        "properties": {
-          "text": { "type": ["string", "null"] },
-          "castka_kc": { "type": ["number", "null"], "minimum": 0 },
-          "obdobi": {
-            "enum": ["lekce", "mesic", "pololeti", "rok", "jednorazove", "zdarma", null]
-          }
-        }
-      },
-      "prihlaska": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["zpusob", "prubezne"],
-        "properties": {
-          "zpusob": { "type": "string", "minLength": 1 },
-          "od": { "type": ["string", "null"], "format": "date" },
-          "do": { "type": ["string", "null"], "format": "date" },
-          "prubezne": { "type": "boolean" },
-          "odkaz": { "type": ["string", "null"], "format": "uri" },
-          "poznamka": { "type": ["string", "null"] },
-          "kapacita": {
-            "type": ["object", "null"],
-            "additionalProperties": false,
-            "required": ["stav"],
-            "properties": {
-              "stav": { "enum": ["volno", "posledni", "nahradnici", "obsazeno"] },
-              "volna_mista": { "type": ["integer", "null"], "minimum": 1 }
-            }
-          }
-        }
-      },
-      "klicova_slova": {
-        "type": "array",
-        "uniqueItems": true,
-        "items": { "type": "string", "pattern": "^[a-z0-9áčďéěíňóřšťúůýž]+( [a-z0-9áčďéěíňóřšťúůýž]+)*$", "maxLength": 40 },
-        "description": "Skrytá slova pro vyhledávání (malými písmeny), např. nástroje nebo činnost: [\"brusle\", \"bruslení\"]."
-      },
+      "misto": { "$ref": "spolecne.schema.json#/$defs/misto" },
+      "terminy": { "$ref": "spolecne.schema.json#/$defs/terminy" },
+      "cena": { "$ref": "spolecne.schema.json#/$defs/cena" },
+      "prihlaska": { "$ref": "spolecne.schema.json#/$defs/prihlaska" },
+      "klicova_slova": { "$ref": "spolecne.schema.json#/$defs/klicova_slova" },
       "skolni_rok": { "type": ["string", "null"], "pattern": "^\\d{4}/\\d{4}$" },
+      "i_pro_dospele": {
+        "type": "boolean",
+        "description": "Zobrazit aktivitu i v sekci pro dospělé (se štítkem „Z nabídky pro děti“)."
+      },
       "zdroj_url": { "type": "string", "format": "uri" },
       "overeno": { "type": "string", "format": "date" }
     }
   },
   "$defs": {
-    "den": { "enum": ["po", "ut", "st", "ct", "pa", "so", "ne"] },
     "kategorie": {
       "enum": [
         "hudba",

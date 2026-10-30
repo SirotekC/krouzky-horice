@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://krouzky.example/schema/spolecne.schema.json",
+  "title": "Společné definice aktivit",
+  "description": "Části aktivit sdílené kroužky pro děti a aktivitami pro dospělé.",
+  "$defs": {
+    "den": { "enum": ["po", "ut", "st", "ct", "pa", "so", "ne"] },
+    "misto": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "nazev": { "type": ["string", "null"] },
+        "adresa": { "type": ["string", "null"] },
+        "gps": {
+          "type": ["array", "null"],
+          "prefixItems": [
+            { "type": "number", "minimum": -90, "maximum": 90 },
+            { "type": "number", "minimum": -180, "maximum": 180 }
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "terminy": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": ["string", "null"] },
+        "dny": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/den" }
+        },
+        "rozvrh": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["den"],
+            "properties": {
+              "skupina": { "type": ["string", "null"] },
+              "den": { "$ref": "#/$defs/den" },
+              "casy": {
+                "type": "array",
+                "items": { "type": "string", "pattern": "^\\d{1,2}:\\d{2}–\\d{1,2}:\\d{2}$" }
+              },
+              "misto": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "obdobi": {
+          "oneOf": [
+            { "type": ["string", "null"] },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["nazev", "termin"],
+                "properties": {
+                  "nazev": { "type": "string", "minLength": 1 },
+                  "termin": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
+          ]
+        },
+        "poznamka": { "type": ["string", "null"] }
+      }
+    },
+    "cena": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "text": { "type": ["string", "null"] },
+        "castka_kc": { "type": ["number", "null"], "minimum": 0 },
+        "obdobi": {
+          "enum": ["lekce", "mesic", "pololeti", "rok", "permanentka", "kurz", "jednorazove", "zdarma", null]
+        }
+      }
+    },
+    "prihlaska": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zpusob", "prubezne"],
+      "properties": {
+        "typ": {
+          "enum": ["bez-prihlasky", "rezervace", "prihlaska"],
+          "description": "Jak se na aktivitu dostat. Povinné jen u aktivit pro dospělé."
+        },
+        "zpusob": { "type": "string", "minLength": 1 },
+        "od": { "type": ["string", "null"], "format": "date" },
+        "do": { "type": ["string", "null"], "format": "date" },
+        "prubezne": { "type": "boolean" },
+        "odkaz": { "type": ["string", "null"], "format": "uri" },
+        "poznamka": { "type": ["string", "null"] },
+        "kapacita": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["stav"],
+          "properties": {
+            "stav": { "enum": ["volno", "posledni", "nahradnici", "obsazeno"] },
+            "volna_mista": { "type": ["integer", "null"], "minimum": 1 }
+          }
+        }
+      }
+    },
+    "klicova_slova": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9áčďéěíňóřšťúůýž]+( [a-z0-9áčďéěíňóřšťúůýž]+)*$", "maxLength": 40 },
+      "description": "Skrytá slova pro vyhledávání (malými písmeny), např. nástroje nebo činnost: [\"brusle\", \"bruslení\"]."
+    }
+  }
+}

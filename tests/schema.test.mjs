@@ -125,3 +125,13 @@ test('schéma kontrola: platný soubor projde, neznámé pole a špatné datum n
   assert.equal(kontrola({ zdrojeZkontrolovany: null, url: { 'https://a.cz': 'včera' } }), false);
   assert.equal(kontrola({ url: {} }), false);
 });
+test("cena.obdobi 'permanentka' a 'kurz' jsou platné", () => {
+  for (const obdobi of ['permanentka', 'kurz']) {
+    assert.equal(aktivity([{ ...ukazkaAktivity, cena: { text: null, castka_kc: 1200, obdobi } }]), true, JSON.stringify(aktivity.errors));
+  }
+});
+
+test('i_pro_dospele je volitelný boolean', () => {
+  assert.equal(aktivity([{ ...ukazkaAktivity, i_pro_dospele: true }]), true, JSON.stringify(aktivity.errors));
+  assert.equal(aktivity([{ ...ukazkaAktivity, i_pro_dospele: 'ano' }]), false);
+});

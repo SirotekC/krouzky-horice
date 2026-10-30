@@ -36,11 +36,14 @@ async function nactiJson(relativniCesta) {
 export async function vytvorValidatory() {
   const ajv = new Ajv2020({ allErrors: true, strict: true, allowUnionTypes: true });
   addFormats(ajv);
-  const [schemaOrganizace, schemaAktivity, schemaKontrola] = await Promise.all([
+  const [schemaSpolecne, schemaOrganizace, schemaAktivity, schemaKontrola] = await Promise.all([
+    nactiJson('schema/spolecne.schema.json'),
     nactiJson('schema/organizace.schema.json'),
     nactiJson('schema/aktivity.schema.json'),
     nactiJson('schema/kontrola.schema.json'),
   ]);
+  // Na společné definice (místo, termíny, cena, přihláška) odkazují schémata aktivit přes `$ref`.
+  ajv.addSchema(schemaSpolecne);
   return {
     organizace: ajv.compile(schemaOrganizace),
     aktivity: ajv.compile(schemaAktivity),
