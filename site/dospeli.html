@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pro dospělé – Kroužky Hořice</title>
+  <meta name="description" content="Cvičení, tanec, jazyky a další pravidelné aktivity pro dospělé v Hořicích: kdy, kde, kolik stojí a jak se přihlásit.">
+  <meta name="theme-color" content="#2f4a3f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pro dospělé – Kroužky Hořice">
+  <meta property="og:description" content="Pravidelné aktivity pro dospělé v Hořicích na jednom místě. Kdy, kde, kolik stojí a jak se přihlásit.">
+  <meta property="og:locale" content="cs_CZ">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/nunito-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+  <!-- Anonymní měření návštěvnosti (GoatCounter, bez cookies). Na localhostu se nepočítá.
+       Účet cendas je společný pro více projektů, proto se k cestě přidává doména. -->
+  <script>window.goatcounter = { path: (p) => location.host + p };</script>
+  <script data-goatcounter="https://cendas.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body data-sekce="dospeli">
+  <a class="preskocit" href="#vysledky">Přeskočit na výsledky</a>
+
+  <header class="hlavicka">
+    <div class="obal hlavicka__obsah">
+      <div class="hlavicka__znacka">
+        <a class="hlavicka__logo-odkaz" href="o-projektu.html" title="O projektu">
+          <picture>
+            <source srcset="img/logo-negativni.svg" media="(prefers-color-scheme: dark)">
+            <img class="hlavicka__logo" src="img/logo.svg" alt="O projektu" width="40" height="40">
+          </picture>
+        </a>
+        <div>
+          <h1 class="hlavicka__nazev"><a href="./">Kroužky Hořice</a></h1>
+          <p class="hlavicka__podtitul">Aktivity pro dospělé v Hořicích přehledně</p>
+          <p class="hlavicka__statistiky" id="statistiky"></p>
+        </div>
+      </div>
+      <nav class="sekce" aria-label="Sekce">
+        <a class="sekce__odkaz" href="./">Děti</a>
+        <a class="sekce__odkaz" href="dospeli.html" aria-current="page">Dospělí</a>
+      </nav>
+      <nav aria-label="Hlavní">
+        <a href="o-projektu.html">O projektu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="obal rozvrzeni">
+    <aside class="filtry" aria-labelledby="filtry-nadpis">
+      <form id="filtry" class="filtry__panel" role="search" aria-label="Filtrovat aktivity">
+        <h2 id="filtry-nadpis" class="filtry__nadpis">Filtry</h2>
+        <div class="pole">
+          <label for="f-q">Hledat</label>
+          <input type="search" id="f-q" name="q" placeholder="např. jóga, zumba" autocomplete="off" maxlength="100">
+        </div>
+        <div class="filtry__radek">
+          <label class="filtry__rozbalit">
+            <input type="checkbox" name="rozbalit" id="f-rozbalit" autocomplete="off">
+            Rozbalit vše
+          </label>
+          <button type="reset" class="filtry__zrusit" id="filtry-zrusit" aria-label="Zrušit filtry" title="Zrušit filtry" hidden>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </button>
+          <details class="filtry__dalsi" id="filtry-panel">
+            <summary class="filtry__souhrn">Další filtry<span class="filtry__pocet" id="filtry-pocet"></span></summary>
+            <div class="filtry__formular">
+              <fieldset class="pole">
+                <legend>Den v týdnu</legend>
+                <div class="chipy" id="f-dny"></div>
+              </fieldset>
+              <fieldset class="pole">
+                <legend>Denní doba</legend>
+                <div class="chipy" id="f-doba"></div>
+              </fieldset>
+              <fieldset class="pole">
+                <legend>Zaměření</legend>
+                <div class="chipy" id="f-skup"></div>
+                <div class="podkategorie" id="f-kat" hidden></div>
+              </fieldset>
+              <div class="pole">
+                <label for="f-uroven">Úroveň</label>
+                <select id="f-uroven" name="uroven">
+                  <option value="">Nezáleží</option>
+                </select>
+              </div>
+              <div class="pole">
+                <label for="f-vstup">Vstup</label>
+                <select id="f-vstup" name="vstup">
+                  <option value="">Nezáleží</option>
+                </select>
+              </div>
+              <div class="pole">
+                <label for="f-org">Organizace</label>
+                <select id="f-org" name="org">
+                  <option value="">Všechny</option>
+                </select>
+              </div>
+              <div class="pole">
+                <label for="f-stav">Stav přihlášek <span class="pole__poznamka">Údaj je orientační.</span></label>
+                <select id="f-stav" name="stav">
+                  <option value="">Vše</option>
+                </select>
+              </div>
+            </div>
+          </details>
+        </div>
+        <button type="reset" class="tlacitko">Zrušit filtry</button>
+      </form>
+    </aside>
+
+    <section class="vysledky" id="vysledky" aria-labelledby="vysledky-nadpis" tabindex="-1">
+      <h2 id="vysledky-nadpis" class="jen-ctecka">Výsledky</h2>
+      <p class="vysledky__pocet" id="pocet" aria-live="polite"></p>
+      <div id="seznam">
+        <p class="stav-stranky">Načítám aktivity…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="paticka">
+    <div class="obal">
+      <p><strong>Informace ověřujte u <a href="o-projektu.html#organizace">pořadatele</a>.</strong> Údaje přebíráme z webů organizací a mohou se změnit.</p>
+      <p id="aktualizovano"></p>
+      <p class="paticka__odkazy">
+        <a href="o-projektu.html">O projektu</a>
+        <a data-odkaz="chyba" hidden>Nahlásit chybu</a>
+      </p>
+      <p class="paticka__znacka"><img src="img/logo-negativni.svg" alt="" width="24" height="24"> <span>Projekt <strong>Čenda S.</strong></span></p>
+    </div>
+  </footer>
+</body>
+</html>

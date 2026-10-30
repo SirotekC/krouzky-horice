@@ -90,6 +90,20 @@
   }
 }
 
+/* Sekce pro dospělé má teplý akcent ze značky, aby bylo na první pohled vidět, kde uživatel je. */
+body[data-sekce="dospeli"] {
+  --akcent: #7a4f33;
+  --akcent-jemny: #f4e3d3;
+}
+
+@media (prefers-color-scheme: dark) {
+  body[data-sekce="dospeli"] {
+    --akcent: #d2a888;
+    --akcent-text: #1f2e28;
+    --akcent-jemny: #4a3020;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -219,6 +233,52 @@ a {
 
 .hlavicka nav a {
   font-weight: 600;
+}
+
+/* Přepínač sekcí Děti | Dospělí: vlastní řádek pod značkou, záložky jako segmentový přepínač. */
+.sekce {
+  order: 3;
+  flex-basis: 100%;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: var(--pozadi);
+  border: 1px solid var(--okraj);
+  border-radius: 999px;
+}
+
+@media (min-width: 900px) {
+  .sekce {
+    flex-basis: auto;
+    order: 0;
+    margin-left: auto;
+  }
+}
+
+.hlavicka .sekce__odkaz {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding-inline: 1.25rem;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.hlavicka .sekce__odkaz[aria-current="page"] {
+  background: var(--akcent);
+  color: var(--akcent-text);
+}
+
+.hlavicka .sekce__odkaz:not([aria-current="page"]):hover {
+  background: var(--akcent-jemny);
+}
+
+.sekce__odkaz:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 
 /* Rozvržení */
@@ -537,6 +597,14 @@ select {
 .karta__organizace {
   color: var(--text-tlumeny);
   font-size: 0.95rem;
+}
+
+/* Aktivita z druhé sekce (příznak i_pro_dospele / i_pro_deti). */
+.karta__z-druhe {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-tlumeny);
 }
 
 .karta__popis {

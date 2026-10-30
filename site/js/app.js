@@ -1,8 +1,19 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
 import { DESKTOP } from './config.js';
-import { KATEGORIE, SKUPINY_KATEGORII, datumNacteniWebu, nactiData, statistiky } from './data.js';
-import { DNY_FILTRU, POHLAVI_FILTRU, STAVY_FILTRU, filtruj, jsouPrazdne, prazdneFiltry, seradi } from './filters.js';
+import { datumNacteniWebu, nactiData, statistiky } from './data.js';
+import {
+  DNY_FILTRU,
+  DOBY_FILTRU,
+  POHLAVI_FILTRU,
+  STAVY_FILTRU,
+  UROVNE_FILTRU,
+  VSTUPY_FILTRU,
+  filtruj,
+  jsouPrazdne,
+  prazdneFiltry,
+  seradi,
+} from './filters.js';
 import { dnesPraha, formatDatum } from './registration.js';
 import {
   chybovyStav,
@@ -10,17 +21,21 @@ import {
   el,
   nastavOdkazy,
   nenalezenaAktivita,
-  pocetKrouzku,
+  pocetAktivit,
   prazdnyStav,
   radekStatistik,
   seznamKaret,
 } from './render.js';
+import { SEKCE, aktualniSekce } from './sekce.js';
 import { cestaZHashe, filtryDoUrl, filtryZUrl } from './url-state.js';
 
 const DEBOUNCE_MS = 150;
 
 const $ = (selektor) => document.querySelector(selektor);
 const TITULEK = document.title;
+/** Sekce stránky (`<body data-sekce>`): kroužky pro děti, nebo aktivity pro dospělé. */
+const SEKCE_STRANKY = aktualniSekce(document.body.dataset);
+const { kategorie: KATEGORIE, skupiny: SKUPINY_KATEGORII } = SEKCE_STRANKY;
 
 function sbalitelneFiltry() {
   const panel = $('#filtry-panel');
@@ -63,6 +78,7 @@ function chip(typ, jmeno, hodnota, popisek) {
  */
 function vykresliChipy() {
   $('#f-dny').append(...Object.entries(DNY_FILTRU).map(([klic, popisek]) => chip('checkbox', 'den', klic, popisek)));
+  $('#f-doba')?.append(...Object.entries(DOBY_FILTRU).map(([klic, popisek]) => chip('checkbox', 'doba', klic, popisek)));
   const skupiny = $('#f-skup');
   skupiny.append(chip('checkbox', 'vse', '', 'Vše'));
   for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
@@ -99,28 +115,43 @@ function naplnFormular(data) {
     select.append(el('option', { text: o.nazev, atributy: { value: o.id } }));
   }
 
-  const pohlavi = $('#f-pohlavi');
-  for (const [klic, popisek] of Object.entries(POHLAVI_FILTRU)) {
-    pohlavi.append(el('option', { text: popisek, atributy: { value: klic } }));
+  // Každá stránka má jen svoje pole (děti věk a pohlaví, dospělí dobu, úroveň a vstup).
+  for (const [selektor, hodnoty] of [
+    ['#f-pohlavi', POHLAVI_FILTRU],
+    ['#f-uroven', UROVNE_FILTRU],
+    ['#f-vstup', VSTUPY_FILTRU],
+    ['#f-stav', STAVY_FILTRU],
+  ]) {
+    const select = $(selektor);
+    if (!select) continue;
+    for (const [klic, popisek] of Object.entries(hodnoty)) select.append(el('option', { text: popisek, atributy: { value: klic } }));
   }
+}
 
-  const stav = $('#f-stav');
-  for (const [klic, popisek] of Object.entries(STAVY_FILTRU)) {
-    stav.append(el('option', { text: popisek, atributy: { value: klic } }));
-  }
+/** Nastaví hodnotu pole formuláře, pokud ho stránka má. */
+function nastavPole(form, jmeno, hodnota) {
+  if (form.elements[jmeno]) form.elements[jmeno].value = hodnota;
+}
+
+/** Hodnota pole formuláře, nebo prázdný řetězec, pokud ho stránka nemá. */
+function hodnotaPole(form, jmeno) {
+  return form.elements[jmeno]?.value ?? '';
 }
 
 function zapisDoFormulare(form, filtry) {
   form.q.value = filtry.q;
-  form.vek.value = filtry.vek ?? '';
+  nastavPole(form, 'vek', filtry.vek ?? '');
   for (const vstup of form.querySelectorAll('input[name="den"]')) vstup.checked = filtry.dny.includes(vstup.value);
+  for (const vstup of form.querySelectorAll('input[name="doba"]')) vstup.checked = filtry.doba.includes(vstup.value);
   // Skupina, která v datech není, se ignoruje.
   for (const vstup of form.querySelectorAll('input[name="skup"]')) vstup.checked = filtry.skup.includes(vstup.value);
   for (const vstup of form.querySelectorAll('input[name="kat"]')) vstup.checked = filtry.kat.includes(vstup.value);
   zobrazPodkategorie(form);
   form.org.value = filtry.org;
   form.stav.value = filtry.stav;
-  form.pohlavi.value = filtry.pohlavi;
+  nastavPole(form, 'pohlavi', filtry.pohlavi);
+  nastavPole(form, 'uroven', filtry.uroven);
+  nastavPole(form, 'vstup', filtry.vstup);
 }
 
 function vybraneSkupiny(form) {
@@ -144,7 +175,7 @@ function zobrazPodkategorie(form) {
 }
 
 function prectiFormular(form) {
-  const vek = form.vek.value.trim();
+  const vek = hodnotaPole(form, 'vek').trim();
   const vekCislo = Number(vek);
   return {
     q: form.q.value.trim(),
@@ -154,13 +185,26 @@ function prectiFormular(form) {
     kat: [...form.querySelectorAll('input[name="kat"]:checked')].map((v) => v.value),
     org: form.org.value,
     stav: form.stav.value,
-    pohlavi: form.pohlavi.value,
+    pohlavi: hodnotaPole(form, 'pohlavi'),
+    doba: [...form.querySelectorAll('input[name="doba"]:checked')].map((v) => v.value),
+    uroven: hodnotaPole(form, 'uroven'),
+    vstup: hodnotaPole(form, 'vstup'),
   };
 }
 
 /** Počet aktivních filtrů ve sbalené části (bez hledání, které je vidět vždy). */
 function oznacAktivniFiltry(form, filtry) {
-  const pocet = [filtry.vek != null, filtry.dny.length, filtry.pohlavi, filtry.skup.length, filtry.org, filtry.stav].filter(Boolean).length;
+  const pocet = [
+    filtry.vek != null,
+    filtry.dny.length,
+    filtry.doba.length,
+    filtry.pohlavi,
+    filtry.uroven,
+    filtry.vstup,
+    filtry.skup.length,
+    filtry.org,
+    filtry.stav,
+  ].filter(Boolean).length;
   $('#filtry-pocet').textContent = pocet ? String(pocet) : '';
   $('#filtry-pocet').title = pocet ? `Aktivní filtry: ${pocet}` : '';
   $('#filtry-zrusit').hidden = !pocet;
@@ -187,21 +231,21 @@ async function spust() {
 
   let data;
   try {
-    data = await nactiData();
+    data = await nactiData('data/', SEKCE_STRANKY, SEKCE[SEKCE_STRANKY.druhaSekce]);
   } catch (chyba) {
     console.error(chyba);
     pocet.textContent = '';
-    seznam.replaceChildren(chybovyStav());
+    seznam.replaceChildren(chybovyStav(SEKCE_STRANKY.tvary));
     return;
   }
 
   const dnes = dnesPraha();
-  const kontext = { dnes, kategorie: KATEGORIE };
+  const kontext = { dnes, kategorie: KATEGORIE, skupiny: SKUPINY_KATEGORII };
   $('#aktualizovano').textContent = `Data načtena ${formatDatum(datumNacteniWebu(data.meta, data.kontrola))}.`;
-  $('#statistiky').replaceChildren(...radekStatistik(statistiky(data.aktivity)));
+  $('#statistiky').replaceChildren(...radekStatistik(statistiky(data.aktivity), SEKCE_STRANKY.tvary));
 
   naplnFormular(data);
-  zapisDoFormulare(form, filtryZUrl(window.location.search, data.organizace.map((o) => o.id)));
+  zapisDoFormulare(form, filtryZUrl(window.location.search, data.organizace.map((o) => o.id), SKUPINY_KATEGORII));
   // Filtry bereme z formuláře, aby odpovídaly tomu, co je vidět (např. skupina, která v datech není).
   let filtry = prectiFormular(form);
 
@@ -212,7 +256,7 @@ async function spust() {
   const odkazZpet = (id) => {
     const odkaz = el('a', {
       trida: 'detail__zpet',
-      text: '← Všechny kroužky',
+      text: SEKCE_STRANKY.odkazZpet,
       atributy: { href: `${window.location.pathname}${window.location.search}` },
     });
     odkaz.addEventListener('click', (e) => {
@@ -234,10 +278,10 @@ async function spust() {
     pocet.textContent = '';
     if (aktivita) {
       document.title = `${aktivita.nazev} – Kroužky Hořice`;
-      seznam.replaceChildren(detailAktivity(aktivita, dnes, odkazZpet(aktivita.id), data.kontrola));
+      seznam.replaceChildren(detailAktivity(aktivita, dnes, odkazZpet(aktivita.id), data.kontrola, SEKCE_STRANKY));
     } else {
-      document.title = `Kroužek nenalezen – Kroužky Hořice`;
-      seznam.replaceChildren(nenalezenaAktivita(odkazZpet(null)));
+      document.title = `${SEKCE_STRANKY.klic === 'deti' ? 'Kroužek nenalezen' : 'Aktivita nenalezena'} – Kroužky Hořice`;
+      seznam.replaceChildren(nenalezenaAktivita(odkazZpet(null), SEKCE_STRANKY));
     }
   };
 
@@ -248,11 +292,11 @@ async function spust() {
     document.title = TITULEK;
     const vysledky = seradi(filtruj(data.aktivity, filtry, kontext), dnes);
     if (vysledky.length) {
-      pocet.textContent = `Nalezeno ${pocetKrouzku(vysledky.length)}`;
-      seznam.replaceChildren(seznamKaret(vysledky, dnes, rozbaleneKarty(), data.kontrola));
+      pocet.textContent = `Nalezeno ${pocetAktivit(vysledky.length, SEKCE_STRANKY.tvary)}`;
+      seznam.replaceChildren(seznamKaret(vysledky, dnes, rozbaleneKarty(), data.kontrola, SEKCE_STRANKY));
     } else {
-      pocet.textContent = 'Nalezeno 0 kroužků';
-      seznam.replaceChildren(prazdnyStav(zrusFiltry));
+      pocet.textContent = `Nalezeno ${pocetAktivit(0, SEKCE_STRANKY.tvary)}`;
+      seznam.replaceChildren(prazdnyStav(zrusFiltry, SEKCE_STRANKY));
     }
   };
 
