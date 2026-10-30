@@ -6324,5 +6324,53 @@
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/hokejovapripravka",
     "overeno": "2026-10-19"
+  },
+  {
+    "id": "sdh-horice-mladi-hasici",
+    "organizace_id": "sdh-horice",
+    "nazev": "Mladí hasiči",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Zábavné tréninky, soutěže a hry, základy první pomoci a práce s hasičskou technikou. Nové členy přijímají, první trénink je nezávazný.",
+    "klicova_slova": [
+      "požární sport",
+      "hasiči",
+      "plamínek"
+    ],
+    "pohlavi": null,
+    "vek_od": 6,
+    "vek_do": 15,
+    "misto": {
+      "nazev": null,
+      "adresa": "Otakarova 1500, Hořice (hasičárna)"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Začátek v 16:00",
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Přijďte na první trénink, je nezávazný. Kontakt je na plakátu ve facebookové skupině.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.facebook.com/groups/114975652496133/user/100057277127174",
+      "poznamka": null
+    },
+    "skolni_rok": null,
+    "zdroj_url": "https://www.facebook.com/groups/114975652496133/user/100057277127174",
+    "overeno": "2026-10-30"
   }
 ]

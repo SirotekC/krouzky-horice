@@ -22,6 +22,7 @@
 | fotbal-jiskra-horice | TJ Jiskra Hořice – fotbal | sportovni-klub | https://www.horickyfotbal.cz | soupisky kategorií U7–U19 | – | Bez tréninků, náboru a cen. |
 | rebels-gym | Rebels Gym Hořice | sportovni-klub | https://www.rebelsgym.cz | https://www.rebelsgym.cz/detske-treninky/ | – | Gymčata 3–5 let, Rebeláci 6–12 let. Podstránky zatím neověřeny. |
 | volejbal-horice | Volejbal Hořice | sportovni-klub | https://www.horice.org/volejbal/ms-11400/p1=11400 | tamtéž | – | Jen stránka města: minivolejbal 6–14 let, Út a Čt. |
+| sdh-horice | SDH Hořice – Mladí hasiči | spolek | https://www.facebook.com/groups/114975652496133/user/100057277127174 | plakát v příspěvku (jen obrázek, FB vyžaduje přihlášení) | – (stačí přijít, první trénink nezávazně) | Čtvrtek od 16:00, Otakarova 1500, děti od 1. třídy (horní hranici 15 let doplnil uživatel). Bez konce tréninku, ceny a školního roku. Plakát dodal uživatel 2026-10-30. Telefon z plakátu nezařazen (pravděpodobně osobní). |
 | spv-horice | Sport pro všechny Hořice | sportovni-klub | https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788 | tamtéž | – | Jen stránka města, děti od 4 let. Zbytek na Facebooku. |
 
 ## Zvažované, zatím nezařazené
@@ -32,7 +33,7 @@
 | lmk-horice | Leteckomodelářský klub Hořice | Kroužek běží v DDM (duplicita), zmínka z roku 2019. |
 | stolni-tenis-horice | Stolní tenis TJ Jiskra Hořice | Informace z roku 2022. |
 | tenis-horice | TC Hořice | Web neaktualizovaný od 2022, nábor z 2019. Znovu ověřeno 2026-10-19 (tip uživatele), stav stejný. Facebook klubu neprověřen. |
-| – | Šachy, basketbal, box, MMA, SDH (mladí hasiči) | Bez ověřitelné nabídky pro děti nebo jen Facebook. Šachy pokrývá DDM. |
+| – | Šachy, basketbal, box, MMA | Bez ověřitelné nabídky pro děti nebo jen Facebook. Šachy pokrývá DDM. |
 
 ## Poznámky ze sběru (2026-10-12)
 
