@@ -30,9 +30,63 @@ export const SKUPINY_KATEGORII = Object.freeze({
   ostatni: { popisek: 'Ostatní', kategorie: ['ostatni'] },
 });
 
-/** Vrátí klíč skupiny, do které kategorie patří, nebo `null`. */
-export function skupinaKategorie(kategorie) {
-  for (const [klic, skupina] of Object.entries(SKUPINY_KATEGORII)) {
+/**
+ * Číselník kategorií aktivit pro dospělé (`schema/aktivity-dospeli.schema.json`). Klíče společné
+ * s dětmi mají stejný význam, aby se dětská aktivita s `i_pro_dospele` zařadila i mezi dospělé.
+ */
+export const KATEGORIE_DOSPELI = Object.freeze({
+  cviceni: 'Cvičení a fitness',
+  joga: 'Jóga, pilates a relaxace',
+  tanec: 'Tanec',
+  'sport-mickove': 'Míčové sporty',
+  'sport-ostatni': 'Ostatní sporty',
+  hudba: 'Hudba a zpěv',
+  vytvarne: 'Výtvarné a rukodělné',
+  divadlo: 'Divadlo a literatura',
+  jazyky: 'Jazyky',
+  vzdelavani: 'Přednášky a kurzy',
+  priroda: 'Příroda a turistika',
+  ostatni: 'Ostatní',
+});
+
+/** Skupiny kategorií pro dospělé, stejná pravidla jako `SKUPINY_KATEGORII`. */
+export const SKUPINY_KATEGORII_DOSPELI = Object.freeze({
+  pohyb: { popisek: 'Pohyb', kategorie: ['cviceni', 'joga', 'tanec', 'sport-mickove', 'sport-ostatni'] },
+  kultura: { popisek: 'Kultura a tvoření', kategorie: ['hudba', 'vytvarne', 'divadlo'] },
+  vzdelavani: { popisek: 'Vzdělávání', kategorie: ['jazyky', 'vzdelavani'] },
+  priroda: { popisek: 'Příroda a turistika', kategorie: ['priroda'] },
+  ostatni: { popisek: 'Ostatní', kategorie: ['ostatni'] },
+});
+
+/** Úroveň aktivity pro dospělé: klíč → popisek. */
+export const UROVNE = Object.freeze({
+  zacatecnici: 'Začátečníci',
+  pokrocili: 'Pokročilí',
+  vsichni: 'Všechny úrovně',
+});
+
+/** Pro koho je aktivita pro dospělé určená: klíč → popisek. */
+export const URCENO_PRO = Object.freeze({
+  zeny: 'Ženy',
+  muzi: 'Muži',
+  seniori: 'Senioři',
+  tehotne: 'Těhotné',
+});
+
+/** Jak se na aktivitu dostat (`prihlaska.typ`): klíč → popisek. */
+export const TYPY_VSTUPU = Object.freeze({
+  'bez-prihlasky': 'Bez přihlášky',
+  rezervace: 'Rezervace předem',
+  prihlaska: 'Přihláška na kurz',
+});
+
+/**
+ * Vrátí klíč skupiny, do které kategorie patří, nebo `null`.
+ * @param {string} kategorie
+ * @param {Record<string, { kategorie: string[] }>} [skupiny] číselník skupin sekce
+ */
+export function skupinaKategorie(kategorie, skupiny = SKUPINY_KATEGORII) {
+  for (const [klic, skupina] of Object.entries(skupiny)) {
     if (skupina.kategorie.includes(kategorie)) return klic;
   }
   return null;

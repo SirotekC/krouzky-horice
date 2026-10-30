@@ -36,7 +36,7 @@ export function filtryZUrl(search, platneOrganizace = null) {
   const kat = parametry.get('kat');
   if (kat) {
     const platne = [...new Set(kat.split(','))].filter((k) => skupinaKategorie(k) !== null);
-    if (!filtry.skup.length) filtry.skup = poradiSkupin(platne.map(skupinaKategorie));
+    if (!filtry.skup.length) filtry.skup = poradiSkupin(platne.map((k) => skupinaKategorie(k)));
     filtry.kat = platne.filter((k) => filtry.skup.includes(skupinaKategorie(k)));
   }
 

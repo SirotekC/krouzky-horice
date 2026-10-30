@@ -36,10 +36,11 @@ async function nactiJson(relativniCesta) {
 export async function vytvorValidatory() {
   const ajv = new Ajv2020({ allErrors: true, strict: true, allowUnionTypes: true });
   addFormats(ajv);
-  const [schemaSpolecne, schemaOrganizace, schemaAktivity, schemaKontrola] = await Promise.all([
+  const [schemaSpolecne, schemaOrganizace, schemaAktivity, schemaAktivityDospeli, schemaKontrola] = await Promise.all([
     nactiJson('schema/spolecne.schema.json'),
     nactiJson('schema/organizace.schema.json'),
     nactiJson('schema/aktivity.schema.json'),
+    nactiJson('schema/aktivity-dospeli.schema.json'),
     nactiJson('schema/kontrola.schema.json'),
   ]);
   // Na společné definice (místo, termíny, cena, přihláška) odkazují schémata aktivit přes `$ref`.
@@ -47,9 +48,11 @@ export async function vytvorValidatory() {
   return {
     organizace: ajv.compile(schemaOrganizace),
     aktivity: ajv.compile(schemaAktivity),
+    aktivityDospeli: ajv.compile(schemaAktivityDospeli),
     meta: ajv.compile(META_SCHEMA),
     kontrola: ajv.compile(schemaKontrola),
     schemaAktivity,
+    schemaAktivityDospeli,
   };
 }
 
@@ -75,23 +78,60 @@ function popisChybyAjv(soubor, chyba) {
   return `${cesta}: ${zprava}`;
 }
 
+/** Kontrola, že číselník kategorií v UI odpovídá schématu a každá kategorie je právě v jedné skupině. */
+function zkontrolujCiselnik(chyby, { nazev, kategorieSchema, kategorieUi, skupinyUi }) {
+  const vSchematu = new Set(kategorieSchema);
+  const vUi = new Set(kategorieUi);
+  for (const k of vSchematu) if (!vUi.has(k)) chyby.push(`kategorie${nazev}: „${k}“ je ve schématu, ale chybí v site/js/data.js`);
+  for (const k of vUi) if (!vSchematu.has(k)) chyby.push(`kategorie${nazev}: „${k}“ je v site/js/data.js, ale chybí ve schématu`);
+
+  if (skupinyUi) {
+    const vSkupinach = new Map();
+    for (const [skupina, { kategorie }] of Object.entries(skupinyUi)) {
+      for (const k of kategorie) {
+        if (!vUi.has(k)) chyby.push(`skupiny kategorií${nazev}: „${k}“ ve skupině „${skupina}“ není v číselníku kategorií`);
+        else if (vSkupinach.has(k)) chyby.push(`skupiny kategorií${nazev}: „${k}“ je ve skupině „${vSkupinach.get(k)}“ i „${skupina}“`);
+        else vSkupinach.set(k, skupina);
+      }
+    }
+    for (const k of vUi) if (!vSkupinach.has(k)) chyby.push(`skupiny kategorií${nazev}: „${k}“ nepatří do žádné skupiny`);
+  }
+}
+
 /**
- * Logické kontroly nad daty, která už prošla schématem.
+ * Logické kontroly nad daty, která už prošla schématem. Aktivity pro dospělé (`aktivityDospeli`)
+ * se kontrolují stejně jako dětské; číselník dospělých jen tehdy, když je zadaný `kategorieUiDospeli`.
  * @returns {{ chyby: string[], varovani: string[] }}
  */
-export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategorieUi, skupinyUi = null, kontrola = null, dnes }) {
+export function zkontrolujData({
+  organizace,
+  aktivity,
+  kategorieSchema,
+  kategorieUi,
+  skupinyUi = null,
+  aktivityDospeli = [],
+  kategorieSchemaDospeli = null,
+  kategorieUiDospeli = null,
+  skupinyUiDospeli = null,
+  kontrola = null,
+  dnes,
+}) {
   const chyby = [];
   const varovani = [];
 
-  const zkontrolujUnikatnost = (soubor, polozky) => {
+  /** Id musí být unikátní v rámci všech zadaných seznamů (aktivity obou sekcí sdílejí odkazy na detail). */
+  const zkontrolujUnikatnost = (...seznamy) => {
     const videne = new Map();
-    polozky.forEach((p, i) => {
-      if (videne.has(p.id)) chyby.push(`${soubor}[${i}].id: duplicitní id „${p.id}“ (už je u ${soubor}[${videne.get(p.id)}])`);
-      else videne.set(p.id, i);
-    });
+    for (const [soubor, polozky] of seznamy) {
+      polozky.forEach((p, i) => {
+        const cesta = `${soubor}[${i}]`;
+        if (videne.has(p.id)) chyby.push(`${cesta}.id: duplicitní id „${p.id}“ (už je u ${videne.get(p.id)})`);
+        else videne.set(p.id, cesta);
+      });
+    }
   };
-  zkontrolujUnikatnost('organizace', organizace);
-  zkontrolujUnikatnost('aktivity', aktivity);
+  zkontrolujUnikatnost(['organizace', organizace]);
+  zkontrolujUnikatnost(['aktivity', aktivity], ['dospeli', aktivityDospeli]);
 
   const zkontrolujOvereno = (soubor, polozky) => {
     polozky.forEach((p, i) => {
@@ -102,10 +142,11 @@ export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategori
   };
   zkontrolujOvereno('organizace', organizace);
   zkontrolujOvereno('aktivity', aktivity);
+  zkontrolujOvereno('dospeli', aktivityDospeli);
 
   const idOrganizaci = new Set(organizace.map((o) => o.id));
-  aktivity.forEach((a, i) => {
-    const cesta = `aktivity[${i}]`;
+  const zkontrolujAktivitu = (soubor) => (a, i) => {
+    const cesta = `${soubor}[${i}]`;
     if (!idOrganizaci.has(a.organizace_id)) {
       chyby.push(`${cesta}.organizace_id: organizace „${a.organizace_id}“ neexistuje v organizace.json (${a.id})`);
     }
@@ -128,30 +169,38 @@ export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategori
     if (kapacita?.volna_mista != null && kapacita.stav !== 'posledni') {
       chyby.push(`${cesta}.prihlaska.kapacita.volna_mista: počet míst patří jen ke stavu „posledni“ (${a.id})`);
     }
-  });
+  };
+  aktivity.forEach(zkontrolujAktivitu('aktivity'));
+  aktivityDospeli.forEach(zkontrolujAktivitu('dospeli'));
 
-  const vSchematu = new Set(kategorieSchema);
-  const vUi = new Set(kategorieUi);
-  for (const k of vSchematu) if (!vUi.has(k)) chyby.push(`kategorie: „${k}“ je ve schématu, ale chybí v site/js/data.js`);
-  for (const k of vUi) if (!vSchematu.has(k)) chyby.push(`kategorie: „${k}“ je v site/js/data.js, ale chybí ve schématu`);
+  zkontrolujCiselnik(chyby, { nazev: '', kategorieSchema, kategorieUi, skupinyUi });
+  if (kategorieUiDospeli) {
+    zkontrolujCiselnik(chyby, {
+      nazev: ' dospělých',
+      kategorieSchema: kategorieSchemaDospeli,
+      kategorieUi: kategorieUiDospeli,
+      skupinyUi: skupinyUiDospeli,
+    });
 
-  if (skupinyUi) {
-    const vSkupinach = new Map();
-    for (const [skupina, { kategorie }] of Object.entries(skupinyUi)) {
-      for (const k of kategorie) {
-        if (!vUi.has(k)) chyby.push(`skupiny kategorií: „${k}“ ve skupině „${skupina}“ není v číselníku kategorií`);
-        else if (vSkupinach.has(k)) chyby.push(`skupiny kategorií: „${k}“ je ve skupině „${vSkupinach.get(k)}“ i „${skupina}“`);
-        else vSkupinach.set(k, skupina);
-      }
-    }
-    for (const k of vUi) if (!vSkupinach.has(k)) chyby.push(`skupiny kategorií: „${k}“ nepatří do žádné skupiny`);
+    // Aktivita zobrazená i v druhé sekci se tam musí dát najít filtrem zaměření.
+    const zkontrolujDruhouSekci = (soubor, seznam, priznak, ciselnik, nazevCiselniku) => {
+      const platne = new Set(ciselnik);
+      seznam.forEach((a, i) => {
+        if (!a[priznak]) return;
+        for (const k of a.kategorie ?? []) {
+          if (!platne.has(k)) chyby.push(`${soubor}[${i}].kategorie: „${k}“ není v číselníku ${nazevCiselniku} (${priznak}) (${a.id})`);
+        }
+      });
+    };
+    zkontrolujDruhouSekci('aktivity', aktivity, 'i_pro_dospele', kategorieUiDospeli, 'dospělých');
+    zkontrolujDruhouSekci('dospeli', aktivityDospeli, 'i_pro_deti', kategorieUi, 'dětí');
   }
 
   if (kontrola) {
     // Sledované jsou všechny URL z dat (stejně jako v scripts/monitor/seznam-url.mjs).
     const zdrojeAktivit = new Set(
       [
-        ...aktivity.flatMap((a) => [a.zdroj_url, a.prihlaska?.odkaz]),
+        ...[...aktivity, ...aktivityDospeli].flatMap((a) => [a.zdroj_url, a.prihlaska?.odkaz]),
         ...organizace.flatMap((o) => [o.zdroj_url, o.web]),
       ]
         .filter(Boolean)
@@ -173,9 +222,10 @@ export function zkontrolujData({ organizace, aktivity, kategorieSchema, kategori
 /** Spustí celou validaci nad soubory v repozitáři. */
 export async function validuj({ dnes = dnesPraha() } = {}) {
   const validatory = await vytvorValidatory();
-  const [organizace, aktivity, meta, kontrola] = await Promise.all([
+  const [organizace, aktivity, aktivityDospeli, meta, kontrola] = await Promise.all([
     nactiJson('site/data/organizace.json'),
     nactiJson('site/data/aktivity.json'),
+    nactiJson('site/data/dospeli/aktivity.json'),
     nactiJson('site/data/meta.json'),
     // kontrola.json je nepovinný (vzniká až při běhu monitoringu)
     nactiJson('site/data/kontrola.json').catch((e) => (e.code === 'ENOENT' ? null : Promise.reject(e))),
@@ -185,6 +235,7 @@ export async function validuj({ dnes = dnesPraha() } = {}) {
   for (const [soubor, validator, data] of [
     ['organizace', validatory.organizace, organizace],
     ['aktivity', validatory.aktivity, aktivity],
+    ['dospeli', validatory.aktivityDospeli, aktivityDospeli],
     ['meta', validatory.meta, meta],
     ...(kontrola ? [['kontrola', validatory.kontrola, kontrola]] : []),
   ]) {
@@ -193,13 +244,19 @@ export async function validuj({ dnes = dnesPraha() } = {}) {
   // Logické kontroly mají smysl jen nad daty se správnou strukturou.
   if (chyby.length) return { chyby, varovani: [] };
 
-  const { KATEGORIE, SKUPINY_KATEGORII } = await import(pathToFileURL(path.join(KOREN, 'site/js/data.js')).href);
+  const { KATEGORIE, SKUPINY_KATEGORII, KATEGORIE_DOSPELI, SKUPINY_KATEGORII_DOSPELI } = await import(
+    pathToFileURL(path.join(KOREN, 'site/js/data.js')).href
+  );
   return zkontrolujData({
     organizace,
     aktivity,
     kategorieSchema: validatory.schemaAktivity.$defs.kategorie.enum,
     kategorieUi: Object.keys(KATEGORIE),
     skupinyUi: SKUPINY_KATEGORII,
+    aktivityDospeli,
+    kategorieSchemaDospeli: validatory.schemaAktivityDospeli.$defs.kategorie.enum,
+    kategorieUiDospeli: Object.keys(KATEGORIE_DOSPELI),
+    skupinyUiDospeli: SKUPINY_KATEGORII_DOSPELI,
     kontrola,
     dnes,
   });

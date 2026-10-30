@@ -112,3 +112,58 @@ test('kontrola.json: platná data a null zdrojeZkontrolovany bez chyb', () => {
   assert.deepEqual(zaklad([org('o')], aktivity, { kontrola: { zdrojeZkontrolovany: null, url: { 'https://a.cz/x': DNES } } }), { chyby: [], varovani: [] });
   assert.deepEqual(zaklad([org('o')], aktivity, { kontrola: null }), { chyby: [], varovani: [] });
 });
+const dospeli = (organizace, aktivity, aktivityDospeli, zmeny = {}) =>
+  zaklad(organizace, aktivity, {
+    aktivityDospeli,
+    kategorieSchemaDospeli: ['a', 'joga'],
+    kategorieUiDospeli: ['a', 'joga'],
+    ...zmeny,
+  });
+
+test('dospělí: platná data nemají chyby', () => {
+  assert.deepEqual(dospeli([org('o')], [akt('a', 'o')], [akt('d', 'o', { kategorie: ['joga'] })]), { chyby: [], varovani: [] });
+});
+
+test('duplicitní id napříč sekcemi', () => {
+  const { chyby } = dospeli([org('o')], [akt('x', 'o')], [akt('x', 'o')]);
+  assert.equal(chyby.length, 1);
+  assert.match(chyby[0], /^dospeli\[0\]\.id: duplicitní id „x“/);
+});
+
+test('organizace_id dospělé aktivity musí existovat', () => {
+  const { chyby } = dospeli([org('o')], [], [akt('d', 'neni')]);
+  assert.equal(chyby.length, 1);
+  assert.match(chyby[0], /^dospeli\[0\]\.organizace_id: organizace „neni“ neexistuje/);
+});
+
+test('i_pro_dospele s kategorií, kterou dospělí nemají', () => {
+  const { chyby } = dospeli([org('o')], [akt('a', 'o', { kategorie: ['b'], i_pro_dospele: true }), akt('c', 'o', { kategorie: ['b'] })], []);
+  assert.equal(chyby.length, 1);
+  assert.match(chyby[0], /^aktivity\[0\]\.kategorie: „b“ není v číselníku dospělých \(i_pro_dospele\)/);
+});
+
+test('i_pro_deti s kategorií joga', () => {
+  const { chyby } = dospeli([org('o')], [], [akt('d', 'o', { kategorie: ['joga'], i_pro_deti: true })]);
+  assert.equal(chyby.length, 1);
+  assert.match(chyby[0], /^dospeli\[0\]\.kategorie: „joga“ není v číselníku dětí \(i_pro_deti\)/);
+});
+
+test('kategorie dospělých: schéma vs. UI', () => {
+  const { chyby } = dospeli([org('o')], [], [], { kategorieSchemaDospeli: ['a', 'joga'], kategorieUiDospeli: ['a', 'tanec'] });
+  assert.equal(chyby.length, 2);
+  assert.match(chyby[0], /^kategorie dospělých: „joga“ je ve schématu/);
+  assert.match(chyby[1], /^kategorie dospělých: „tanec“ je v site\/js\/data\.js/);
+});
+
+test('dospělí: overeno v budoucnosti a kontroly přihlášky', () => {
+  const { chyby } = dospeli([org('o')], [], [akt('d', 'o', { overeno: '2026-12-01', prihlaska: { od: '2027-06-01', do: '2027-05-01' } })]);
+  assert.equal(chyby.length, 2);
+  assert.match(chyby[0], /^dospeli\[0\]\.overeno/);
+  assert.match(chyby[1], /^dospeli\[0\]\.prihlaska\.do/);
+});
+
+test('kontrola: URL zdroje dospělé aktivity není zastaralý záznam', () => {
+  const kontrola = { zdrojeZkontrolovany: null, url: { 'https://d.cz/x': DNES } };
+  const { varovani } = dospeli([org('o')], [], [akt('d', 'o', { zdroj_url: 'https://d.cz/x' })], { kontrola });
+  assert.deepEqual(varovani, []);
+});

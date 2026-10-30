@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://krouzky.example/schema/aktivity-dospeli.schema.json",
+  "title": "Aktivity pro dospělé",
+  "description": "Seznam pravidelných aktivit (cvičení, tance, kurzy) pro dospělé.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "organizace_id", "nazev", "kategorie", "prihlaska", "zdroj_url", "overeno"],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "description": "Unikátní identifikátor (i vůči kroužkům pro děti), doporučený tvar {organizace_id}-{slug}."
+      },
+      "organizace_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "nazev": { "type": "string", "minLength": 1 },
+      "kategorie": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": { "$ref": "#/$defs/kategorie" }
+      },
+      "popis": { "type": ["string", "null"], "maxLength": 300 },
+      "vek_od": {
+        "type": ["integer", "null"],
+        "minimum": 0,
+        "maximum": 99,
+        "description": "Minimální věk, jen když ho zdroj uvádí."
+      },
+      "uroven": { "enum": ["zacatecnici", "pokrocili", "vsichni", null] },
+      "urceno_pro": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": { "enum": ["zeny", "muzi", "seniori", "tehotne"] },
+        "description": "Pro koho je aktivita určená. Prázdné nebo chybí = pro všechny."
+      },
+      "misto": { "$ref": "spolecne.schema.json#/$defs/misto" },
+      "terminy": { "$ref": "spolecne.schema.json#/$defs/terminy" },
+      "cena": { "$ref": "spolecne.schema.json#/$defs/cena" },
+      "prihlaska": {
+        "type": "object",
+        "allOf": [{ "$ref": "spolecne.schema.json#/$defs/prihlaska" }],
+        "required": ["typ"]
+      },
+      "klicova_slova": { "$ref": "spolecne.schema.json#/$defs/klicova_slova" },
+      "i_pro_deti": {
+        "type": "boolean",
+        "description": "Zobrazit aktivitu i v sekci pro děti (se štítkem „Z nabídky pro dospělé“)."
+      },
+      "zdroj_url": { "type": "string", "format": "uri" },
+      "overeno": { "type": "string", "format": "date" }
+    }
+  },
+  "$defs": {
+    "kategorie": {
+      "enum": [
+        "cviceni",
+        "joga",
+        "tanec",
+        "sport-mickove",
+        "sport-ostatni",
+        "hudba",
+        "vytvarne",
+        "divadlo",
+        "jazyky",
+        "vzdelavani",
+        "priroda",
+        "ostatni"
+      ]
+    }
+  }
+}

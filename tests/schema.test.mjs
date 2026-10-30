@@ -135,3 +135,38 @@ test('i_pro_dospele je volitelný boolean', () => {
   assert.equal(aktivity([{ ...ukazkaAktivity, i_pro_dospele: true }]), true, JSON.stringify(aktivity.errors));
   assert.equal(aktivity([{ ...ukazkaAktivity, i_pro_dospele: 'ano' }]), false);
 });
+
+const ukazkaDospeli = {
+  id: 'ddm-mesto-latina-pro-zeny',
+  organizace_id: 'ddm-mesto',
+  nazev: 'Latina pro ženy',
+  kategorie: ['tanec'],
+  popis: 'Latinskoamerické tance pro ženy bez partnera.',
+  vek_od: 15,
+  uroven: 'zacatecnici',
+  urceno_pro: ['zeny'],
+  misto: { nazev: 'DDM', adresa: null, gps: null },
+  terminy: { rozvrh: [{ den: 'st', casy: ['19:00–20:00'] }], dny: ['st'] },
+  cena: { text: '1 200 Kč za pololetí', castka_kc: 1200, obdobi: 'pololeti' },
+  prihlaska: { typ: 'prihlaska', zpusob: 'Online přihláška.', prubezne: false, od: null, do: null, odkaz: null },
+  i_pro_deti: false,
+  zdroj_url: 'https://www.ddm-mesto.cz/latina',
+  overeno: '2026-10-09',
+};
+
+test('dospělí: ukázková aktivita projde schématem', async () => {
+  const { aktivityDospeli } = await vytvorValidatory();
+  assert.equal(aktivityDospeli([ukazkaDospeli]), true, JSON.stringify(aktivityDospeli.errors));
+});
+
+test('dospělí: chybějící prihlaska.typ, vek_do a neznámé urceno_pro neprojdou', async () => {
+  const { aktivityDospeli } = await vytvorValidatory();
+  const { typ, ...bezTypu } = ukazkaDospeli.prihlaska;
+  assert.equal(aktivityDospeli([{ ...ukazkaDospeli, prihlaska: bezTypu }]), false);
+  assert.ok(aktivityDospeli.errors.some((e) => e.keyword === 'required' && e.params.missingProperty === 'typ'));
+  assert.equal(aktivityDospeli([{ ...ukazkaDospeli, vek_do: 99 }]), false);
+  assert.ok(aktivityDospeli.errors.some((e) => e.keyword === 'additionalProperties'));
+  assert.equal(aktivityDospeli([{ ...ukazkaDospeli, urceno_pro: ['deti'] }]), false);
+  assert.ok(aktivityDospeli.errors.some((e) => e.keyword === 'enum'));
+  assert.equal(aktivityDospeli([{ ...ukazkaDospeli, kategorie: ['joga'], uroven: null, urceno_pro: [] }]), true);
+});
