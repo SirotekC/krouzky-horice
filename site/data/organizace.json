@@ -202,5 +202,65 @@
     "popis": "Hasičský kroužek pro děti od 1. třídy: tréninky, soutěže, první pomoc a práce s hasičskou technikou.",
     "zdroj_url": "https://www.facebook.com/groups/114975652496133/user/100057277127174",
     "overeno": "2026-10-30"
+  },
+  {
+    "id": "checkers-happiness",
+    "nazev": "082 Checkers Happiness – chovatelská stanice a králičí hop",
+    "typ": "jine",
+    "web": "https://checkershappiness.cz",
+    "email": "info@checkershappiness.cz",
+    "telefon": null,
+    "adresa": null,
+    "popis": "Hořická chovatelská stanice králíků (od roku 2012) zaměřená na králičí hop. Pořádá společné tréninky králičího hopu, ukázky na akcích a sdílí rady o chovu a péči o králíky.",
+    "zdroj_url": "https://checkershappiness.cz/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "box-club-horice",
+    "nazev": "Box club Hořice",
+    "typ": "sportovni-klub",
+    "web": "https://www.horice.org/box-club/ms-11402/p1=11402",
+    "email": null,
+    "telefon": null,
+    "adresa": null,
+    "popis": "Boxerský klub, který funguje asi 20 let. Trénuje v hořické sokolovně, zaměřuje se na fyzickou přípravu, koordinaci a techniku úderu.",
+    "zdroj_url": "https://www.horice.org/box-club/ms-11402/p1=11402",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "knihovna-horice",
+    "nazev": "Městská knihovna Hořice",
+    "typ": "jine",
+    "web": "https://knihovna.horice.org",
+    "email": "info@knihovna.horice.org",
+    "telefon": "+420 737 616 972",
+    "adresa": "náměstí Jiřího z Poděbrad 239, 508 01 Hořice v Podkrkonoší",
+    "popis": "Městská knihovna zřizovaná městem Hořice: půjčování knih, e-knih a deskových her, přednášky a konzultační středisko Virtuální univerzity třetího věku.",
+    "zdroj_url": "https://knihovna.horice.org/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "magic-english",
+    "nazev": "Jazyková škola MAGIC ENGLISH s.r.o.",
+    "typ": "jine",
+    "web": "https://magicenglish.cz",
+    "email": "info@magicenglish.cz",
+    "telefon": null,
+    "adresa": "Aloise Hlavatého 2205, 508 01 Hořice (pobočka)",
+    "popis": "Jazyková škola s pobočkami ve východních Čechách, v Hořicích má učebnu. Skupinové a individuální kurzy pro děti, studenty i dospělé, firemní výuka a online kurzy.",
+    "zdroj_url": "https://magicenglish.cz/pobocky/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "seniorklub-horice",
+    "nazev": "Seniorklub Hořice",
+    "typ": "jine",
+    "web": "https://www.horice.org/seniorklub/ms-2738/p1=5055",
+    "email": null,
+    "telefon": null,
+    "adresa": "Husova 321, 508 01 Hořice (přízemí Polikliniky II)",
+    "popis": "Klub pro hořické seniory zřízený a provozovaný městem Hořice.",
+    "zdroj_url": "https://www.horice.org/seniorklub/ms-2738/p1=5055",
+    "overeno": "2026-10-30"
   }
 ]

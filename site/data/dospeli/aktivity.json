@@ -971,5 +971,688 @@
     },
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/997-pole-dance-pokrocili",
     "overeno": "2026-10-30"
+  },
+  {
+    "id": "rebels-gym-silovy-a-kondicni-trenink",
+    "organizace_id": "rebels-gym",
+    "nazev": "Silový a kondiční trénink",
+    "kategorie": [
+      "cviceni"
+    ],
+    "popis": "Skupinový silově-kondiční trénink v malých skupinách s dohledem na techniku. Lekce na sebe navazují, cviky se přizpůsobují úrovni každého účastníka. Vhodné pro začínající i zkušenější bez ohledu na věk.",
+    "klicova_slova": [
+      "posilování",
+      "fitness",
+      "kruhový trénink"
+    ],
+    "vek_od": null,
+    "uroven": "vsichni",
+    "misto": {
+      "nazev": "Rebels Gym",
+      "adresa": "Žižkova 1021, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "17:30–18:45"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "17:30–18:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "po",
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "Jednorázový vstup 200 Kč, permanentka 5 vstupů 1 000 Kč, 10 vstupů 2 000 Kč. Permanentky platí na všechny skupinové lekce Rebels Gym.",
+      "castka_kc": 200,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "typ": "rezervace",
+      "zpusob": "Rezervace lekce v aplikaci Gymify (registrace, výběr tělocvičny, nákup vstupu nebo permanentky online).",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.rebelsgym.cz/silovy-a-kondicni-trenink/",
+      "poznamka": "Zájemci mladší 18 let se musí předem domluvit s trenérem."
+    },
+    "zdroj_url": "https://www.rebelsgym.cz/silovy-a-kondicni-trenink/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "rebels-gym-pilates",
+    "organizace_id": "rebels-gym",
+    "nazev": "Pilates pro začátečníky",
+    "kategorie": [
+      "joga"
+    ],
+    "popis": "Klidné cvičení zaměřené na správné dýchání, držení těla a posílení hlubokého stabilizačního systému. Pomalý, vědomý pohyb bez napětí, vhodný i bez předchozí zkušenosti a pro všechny věkové kategorie. Vede nutriční terapeutka.",
+    "klicova_slova": [
+      "core",
+      "zdravá záda",
+      "protažení"
+    ],
+    "vek_od": null,
+    "uroven": "zacatecnici",
+    "misto": {
+      "nazev": "Rebels Gym",
+      "adresa": "Žižkova 1021, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "19:00–20:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "Podle ceníku skupinových lekcí Rebels Gym: jednorázový vstup 200 Kč, permanentka 5 vstupů 1 000 Kč, 10 vstupů 2 000 Kč.",
+      "castka_kc": 200,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "typ": "rezervace",
+      "zpusob": "Rezervace lekce v aplikaci Gymify (registrace, výběr tělocvičny, nákup vstupu nebo permanentky online).",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.rebelsgym.cz/pilates/",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.rebelsgym.cz/pilates/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "rebels-gym-skupinovka-pro-zeny",
+    "organizace_id": "rebels-gym",
+    "nazev": "Skupinovka pro ženy",
+    "kategorie": [
+      "cviceni"
+    ],
+    "popis": "Funkční full body trénink pro ženy: zpevnění celého těla, posílení středu těla a podpora pánevního dna. Vhodný i po porodu, s šetrnou prací s diastázou. Malá skupina, nejvýš 8 cvičenek na lekci.",
+    "klicova_slova": [
+      "posilování",
+      "kondice",
+      "funkční trénink"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "urceno_pro": [
+      "zeny"
+    ],
+    "misto": {
+      "nazev": "Rebels Gym",
+      "adresa": "Žižkova 1021, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Začátek v 17:00, konec lekce není uveden.",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "200 Kč za lekci. Lze využít i permanentky na skupinové lekce Rebels Gym (5 vstupů 1 000 Kč, 10 vstupů 2 000 Kč).",
+      "castka_kc": 200,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "typ": "rezervace",
+      "zpusob": "Rezervace lekce v aplikaci Gymify (registrace, výběr tělocvičny, nákup vstupu nebo permanentky online).",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.rebelsgym.cz/skupinovka-pro-zeny/",
+      "poznamka": "Kapacita lekce je 8 míst."
+    },
+    "zdroj_url": "https://www.rebelsgym.cz/skupinovka-pro-zeny/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "checkers-happiness-trenink-kraliciho-hopu",
+    "organizace_id": "checkers-happiness",
+    "nazev": "Společný trénink králičího hopu",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Společné nedělní tréninky králičího hopu v Malé sokolovně, účastníci trénují se svými králíky. Připravené jsou dvě rovinné dráhy s překážkami. Pořádá hořická chovatelská stanice se závodní zkušeností z mistrovství ČR i Evropy.",
+    "klicova_slova": [
+      "kaninhop",
+      "zvířata",
+      "parkur"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Malá sokolovna",
+      "adresa": "Erbenova 1081, Hořice"
+    },
+    "terminy": {
+      "text": "Vybrané neděle: 15. 11. 2026 10:00–15:00; 29. 11., 6. 12., 20. 12. a 27. 12. 2026 vždy 10:00–14:00.",
+      "obdobi": null,
+      "poznamka": "Termíny vypisuje pořadatel průběžně v rezervačním systému na webu.",
+      "dny": [
+        "ne"
+      ]
+    },
+    "cena": {
+      "text": "Za osobu a trénink: 200 Kč (15. 11., 29. 11., 6. 12.), 150 Kč (20. 12., 27. 12.).",
+      "castka_kc": null,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "typ": "rezervace",
+      "zpusob": "Online rezervace konkrétního termínu na webu (ověření e-mailu kódem), platba převodem do 48 hodin.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://checkershappiness.cz/treninky/",
+      "poznamka": "Rezervace do uzávěrky 3 dny před tréninkem. Na trénink 7 míst a nejvýš 10 králíků. Obsazenost podle webu k 30. 10. 2026.",
+      "kapacita": {
+        "stav": "volno"
+      }
+    },
+    "zdroj_url": "https://checkershappiness.cz/treninky/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "plavani-sporthorice-aquaaerobik",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Aquaaerobik",
+    "kategorie": [
+      "cviceni"
+    ],
+    "popis": "Cvičení ve vodě při hudbě. Šetří klouby a zatěžuje srdce méně než aerobik na suchu, přitom procvičí vytrvalost i sílu. Podle pořadatele je vhodné pro všechny věkové skupiny.",
+    "klicova_slova": [
+      "aqua aerobic",
+      "bazén",
+      "cvičení ve vodě"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Bazén, Sportovní zařízení města Hořice",
+      "adresa": "Janderova 2156, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "19:00–20:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Od 15. 9. 2026",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "130 Kč za lekci",
+      "castka_kc": 130,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "typ": "bez-prihlasky",
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.sporthorice.cz/aquaaerobic-cviceni-pro-tehotne/",
+      "poznamka": "Web neuvádí, zda je potřeba se předem přihlásit nebo rezervovat. Dotazy na info@sporthorice.cz."
+    },
+    "zdroj_url": "https://www.sporthorice.cz/aquaaerobic-cviceni-pro-tehotne/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "tj-sokol-horice-seniorky",
+    "organizace_id": "tj-sokol-horice",
+    "nazev": "Cvičení pro seniorky",
+    "kategorie": [
+      "cviceni"
+    ],
+    "popis": "Pravidelné cvičení v sokolovně připravené pro ženy od 60 let. Zaměřuje se na zdravý pohyb, protažení a radost z pohybu.",
+    "klicova_slova": [
+      "zdravotní cvičení",
+      "protahování",
+      "sokolovna"
+    ],
+    "vek_od": 60,
+    "uroven": null,
+    "urceno_pro": [
+      "zeny",
+      "seniori"
+    ],
+    "misto": {
+      "nazev": "Sokolovna Hořice",
+      "adresa": "Erbenova 1081, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "15:00–16:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "bez-prihlasky",
+      "zpusob": "Stačí přijít vyzkoušet první lekci přímo do sokolovny.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": null,
+      "poznamka": "Cenu ani členský příspěvek web neuvádí. Dotazy na horice@sokol.eu."
+    },
+    "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "volejbal-horice-dospeli",
+    "organizace_id": "volejbal-horice",
+    "nazev": "Volejbal – trénink dospělých",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Pravidelný čtvrteční trénink dospělých volejbalového oddílu. Oddíl má mužský tým v krajské a okresní soutěži.",
+    "klicova_slova": [
+      "volejbal",
+      "míč",
+      "míčové hry"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": null,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Začátek v 18:00, konec tréninku není uveden. Oddíl hraje v hale TJ Jiskra, v hale gymnázia a na venkovních kurtech u Orlovny, místo tréninku dospělých není upřesněno.",
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Web neuvádí, zda oddíl přijímá nové hráče a hráčky."
+    },
+    "zdroj_url": "https://www.horice.org/volejbal/ms-11400/p1=11400",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "box-club-horice-trenink",
+    "organizace_id": "box-club-horice",
+    "nazev": "Box – tréninky",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Boxerské tréninky zaměřené na fyzickou přípravu, koordinaci a techniku úderu. Klub funguje asi 20 let, mládež trénuje zhruba od 15 let.",
+    "klicova_slova": [
+      "box",
+      "bojové sporty",
+      "kondice"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Sokolovna Hořice",
+      "adresa": "Erbenova 1081, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Pondělí od 19:00, středa od 18:00, konec tréninku není uveden.",
+      "dny": [
+        "po",
+        "st"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": null,
+      "poznamka": "Web neuvádí, zda klub přijímá nové členy."
+    },
+    "zdroj_url": "https://www.horice.org/box-club/ms-11402/p1=11402",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "horolezci-horice-klubovy-trenink",
+    "organizace_id": "horolezci-horice",
+    "nazev": "Klubový trénink na lezecké stěně",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Středeční trénink členů horolezeckého klubu na umělé stěně ve Sportovní hale. Klub vítá začátečníky i rekreační lezce, členové mají zápůjčku vybavení a poloviční vstupné na stěnu.",
+    "klicova_slova": [
+      "lezení",
+      "horolezectví",
+      "sportovní lezení"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Lezecká stěna, Sportovní hala Hořice",
+      "adresa": "Šalounova 2164, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "18:00–20:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "Pro členy zdarma. Členský příspěvek od 15 let 600 Kč za rok.",
+      "castka_kc": 600,
+      "obdobi": "rok"
+    },
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Vyplnit přihlášku na webu klubu a zaplatit členský příspěvek.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.hohohorice.cz/p%C5%99idejte-se-k-n%C3%A1m",
+      "poznamka": "Pro veřejnost je stěna otevřená ve čtvrtek 18:00–20:00 a v neděli 17:00–20:00 (dospělý 100 Kč)."
+    },
+    "zdroj_url": "https://www.hohohorice.cz/lezecka-stena-horice",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "knihovna-horice-vu3v",
+    "organizace_id": "knihovna-horice",
+    "nazev": "Virtuální univerzita třetího věku (VU3V)",
+    "kategorie": [
+      "vzdelavani"
+    ],
+    "popis": "Semestrální kurzy pro seniory a invalidní důchodce: společné sledování videopřednášek vysokoškolských lektorů (PEF ČZU v Praze), diskuse a testy. Semestr má 6 přednášek jednou za 14 dní, po 6 semestrech osvědčení o absolvování.",
+    "klicova_slova": [
+      "u3v",
+      "studium seniorů",
+      "celoživotní vzdělávání"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "urceno_pro": [
+      "seniori"
+    ],
+    "misto": {
+      "nazev": "Městská knihovna Hořice",
+      "adresa": "náměstí Jiřího z Poděbrad 239, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": "Zimní semestr 2026/2027: 6. 10., 20. 10., 3. 11., 18. 11. (středa), 1. 12. a 15. 12. 2026",
+      "poznamka": "1. přednáška od 8:30 (Osobnosti české moderní architektury 20. století) a od 10:30 (Život s energií). U 2.–6. přednášky web uvádí od 9:00 kurz Jižní Asie – nejpestřejší exotika naší planety a od 10:30 kurz Šlechta habsburské monarchie. Konec přednášek není uveden.",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "400 Kč za kurz",
+      "castka_kc": 400,
+      "obdobi": "kurz"
+    },
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Nutné se předem přihlásit v knihovně: písemná přihláška potvrzená konzultačním střediskem a zaplacený studijní poplatek.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://knihovna.horice.org/podminky%2Dstudia/d-1123",
+      "poznamka": "Určeno občanům ČR v důchodovém věku a invalidním důchodcům."
+    },
+    "zdroj_url": "https://knihovna.horice.org/aktualni%2Dkurz/d-1155",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "magic-english-kurzy-pro-dospele",
+    "organizace_id": "magic-english",
+    "nazev": "Jazykové kurzy pro dospělé",
+    "kategorie": [
+      "jazyky"
+    ],
+    "popis": "Skupinové kurzy (2–3 nebo 4–6 osob) i individuální lekce v hořické učebně jazykové školy, s českým lektorem nebo rodilým mluvčím. Pro dospělé hlavně konverzace pro osobní i pracovní život. Lekce trvá 60 minut, školní rok má 38 lekcí.",
+    "klicova_slova": [
+      "angličtina",
+      "němčina",
+      "španělština"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Jazyková škola Magic English – učebna Hořice",
+      "adresa": "Aloise Hlavatého 2205, Hořice (1. patro)"
+    },
+    "terminy": null,
+    "cena": {
+      "text": "Skupina 4–6 osob: 3 400 Kč (český lektor) nebo 4 300 Kč (rodilý mluvčí) za pololetí. Skupina 2–3 osoby: 5 500 Kč nebo 6 200 Kč za pololetí. Ceník 2026/2027.",
+      "castka_kc": 3400,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Online formulář na webu školy (pobočka Hořice) nebo e-mailem na info@magicenglish.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://magicenglish.cz/rychla-objednavka/",
+      "poznamka": "Zápisy na školní rok 2026/2027 podle webu probíhají. Dny a časy skupin web neuvádí."
+    },
+    "zdroj_url": "https://magicenglish.cz/hledate-anglictinu-v-horicich/",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "horolezci-horice-lezecka-stena",
+    "organizace_id": "horolezci-horice",
+    "nazev": "Lezecká stěna – lezení pro veřejnost",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Lezení na umělé stěně ve Sportovní hale s cestami od úplných začátečníků po těžké převisy, cesty až 30 m. Čtvrtek a neděle pro veřejnost, ve středu klubový trénink pro členy oddílu. Vybavení lze zapůjčit na místě.",
+    "klicova_slova": [
+      "horolezectví",
+      "šplhání",
+      "jištění"
+    ],
+    "vek_od": null,
+    "uroven": "vsichni",
+    "misto": {
+      "nazev": "Sportovní hala Hořice",
+      "adresa": "Šalounova 2164, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "18:00–20:00"
+          ],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ne",
+          "casy": [
+            "17:00–20:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "Halová sezóna 2026/2027, začátek 15. 10. 2026",
+      "poznamka": "Výjimky z otevírací doby oddíl zveřejňuje na webu.",
+      "dny": [
+        "ct",
+        "ne"
+      ]
+    },
+    "cena": {
+      "text": "Dospělý 100 Kč, dítě a student 60 Kč. Zápůjčka vybavení 30 Kč za položku.",
+      "castka_kc": 100,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "typ": "bez-prihlasky",
+      "zpusob": "Na lezení pro veřejnost stačí přijít.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.hohohorice.cz/p%C5%99idejte-se-k-n%C3%A1m",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.hohohorice.cz/lezecka-stena-horice",
+    "overeno": "2026-10-30"
+  },
+  {
+    "id": "seniorklub-horice-setkavani",
+    "organizace_id": "seniorklub-horice",
+    "nazev": "Seniorklub – pravidelná setkání",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Klub hořických seniorů zřízený městem. Pravidelná odpolední setkání, besedy, divadelní a hudební představení, výlety a rekondiční pobyty ve spolupráci s městskými organizacemi. Senioři si pořádají i vlastní akce, např. sváteční posezení a zájezdy.",
+    "klicova_slova": [
+      "důchodci",
+      "senioři",
+      "volný čas"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "urceno_pro": [
+      "seniori"
+    ],
+    "misto": {
+      "nazev": "Poliklinika II (přízemí)",
+      "adresa": "Husova 321, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Setkání od 13:00, konec není uveden.",
+      "dny": [
+        "ut",
+        "ct"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "bez-prihlasky",
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.horice.org/seniorklub/ms-2738/p1=5055",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.horice.org/seniorklub/ms-2738/p1=5055",
+    "overeno": "2026-10-30"
   }
 ]

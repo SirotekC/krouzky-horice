@@ -29,7 +29,7 @@
 
 | id | název | důvod |
 |---|---|---|
-| knihovna-horice | Městská knihovna Hořice | Nemá pravidelné kroužky, jen jednorázové akce. |
+| knihovna-horice | Městská knihovna Hořice | Pro děti nemá pravidelné kroužky, jen jednorázové akce. Pro dospělé zařazena VU3V (viz „Zdroje – dospělí“). |
 | lmk-horice | Leteckomodelářský klub Hořice | Kroužek běží v DDM (duplicita), zmínka z roku 2019. |
 | stolni-tenis-horice | Stolní tenis TJ Jiskra Hořice | Informace z roku 2022. |
 | tenis-horice | TC Hořice | Web neaktualizovaný od 2022, nábor z 2019. Znovu ověřeno 2026-10-19 (tip uživatele), stav stejný. Facebook klubu neprověřen. |
@@ -106,6 +106,16 @@
 | id | název | stránka s aktivitami | poznámka |
 |---|---|---|---|
 | ddm-horice | Dům dětí a mládeže Hořice | https://www.ddmhorice.cz/krouzky | Kurzy pro dospělé jsou v přehledu kroužků spolu s dětskými, detail `/krouzky/{číslo}-{slug}` má stejná pole (věková skupina, dny a časy, cena za pololetí, volná místa). |
+| rebels-gym | Rebels Gym Hořice | https://www.rebelsgym.cz | Skupinové lekce (silový trénink, pilates, skupinovka pro ženy) mají vlastní stránky; rezervace v aplikaci Gymify. |
+| checkers-happiness | Checkers Happiness | https://checkershappiness.cz/treninky/ | Tréninky králičího hopu. Stránka se skládá JavaScriptem, termíny jsou ve veřejném API, které stránka používá. |
+| plavani-sporthorice | Sportovní zařízení města Hořice | https://www.sporthorice.cz | Aquaaerobik. Web blokuje curl („Access Denied“), číst přes prohlížeč / WebFetch. |
+| tj-sokol-horice | T. J. Sokol Hořice | https://www.sokol.eu/sokolovna/tj-sokol-horice | Cvičení pro seniorky. |
+| volejbal-horice | Volejbalový oddíl Hořice | https://www.horice.org/volejbal/ms-11400/p1=11400 | Trénink dospělých (čt od 18:00). |
+| box-club-horice | Box club Hořice | https://www.horice.org/box-club/ms-11402/p1=11402 | Jen stránka na webu města. |
+| horolezci-horice | HO-HO Horolezecký klub Hořice | https://www.hohohorice.cz/lezecka-stena-horice | Lezecká stěna pro veřejnost a klubový trénink. |
+| knihovna-horice | Městská knihovna Hořice | https://knihovna.horice.org/aktualni%2Dkurz/d-1155 | Virtuální univerzita třetího věku, semestrální rozpis přednášek. |
+| magic-english | Jazyková škola MAGIC ENGLISH | https://magicenglish.cz/hledate-anglictinu-v-horicich/ | Dny a časy skupin web neuvádí. |
+| seniorklub-horice | Seniorklub Hořice | https://www.horice.org/seniorklub/ms-2738/p1=5055 | Stránka města, nedatovaná. |
 
 ## Poznámky ze sběru (2026-10-30) – DDM, aktivity pro dospělé
 
@@ -116,6 +126,15 @@
 - Ceny: vedlejší položky 0 Kč (dítě zdarma, zaměstnanec, „jednotlivý vstup 0 Kč“ u Cvičení s Ditou) nepřebírány. U Kurzu šití je jednorázový vstup 150 Kč v textu ceny.
 - `i_pro_dospele` u dětských kroužků Kytara (začátečníci i mírně pokročilí, 7–65 let), Ukulele pro radost (7–60 let, „malí i velcí“), Paličkování (8–80 let, „malým i velkým ženám“) a Keramika kreativně 14+ („starší děti, středoškoláky a dospěláky“).
 - Odkazy na tyto kurzy byly v `data-src/monitor.json` v `ignorovaneOdkazy`; teď jsou v datech, takže seznam je prázdný.
+
+## Poznámky ze sběru (2026-10-30) – další zdroje pro dospělé
+
+- Přidáno 13 aktivit (Rebels Gym 3, Checkers Happiness 1, bazén 1, Sokol 1, volejbal 1, box 1, horolezci 2, knihovna 1, Magic English 1, Seniorklub 1) a 5 organizací.
+- **Odhadnuto / nejisté:** `prihlaska.typ` u Aquaaerobiku a Seniorklubu je `bez-prihlasky`, zdroj o přihlašování nic neříká. Volejbal a box: web neuvádí, zda berou nové členy; konce tréninků neuvedeny. Skupinovka pro ženy: jen začátek 17:00. Cena pilates převzata z ceníku skupinových lekcí Rebels Gym. Úroveň pilates „začátečníci“ podle názvu (text říká „pro všechny“).
+- **Sokol, pondělí:** sokol.eu „Cvičení pro seniorky od 60 let, 15:00–16:00“, web města „zdravotní cvičení žen“ od 15:00. Použit sokol.eu.
+- **Rebels Gym:** Reservio uvádí jinou otevírací dobu (středa zavřeno), rozvrh lekcí brán z rebelsgym.cz.
+- **Králičí hop:** série nedělních tréninků s termíny vypisovanými průběžně, ne pevný týdenní rozvrh.
+- **Nezařazeno:** GymLand (posilovna bez vedených lekcí), Groove Dance (jen stránka města z jara 2026: st od 18:45, pá od 16:00, ZŠ Na Habru; aktuálnost neověřena), lekce na sporthorice.cz/cviceni (jóga ne 17:00–18:30, aerobic po 19:15–20:30; soukromé lektorky jen s osobními telefony), Studio pohybu Linda (cviceni-linda.cz, rozvrh dospělých jen po přihlášení do rezervačního systému), kondiční plavání (termín „připravuje se“), Aikido (časy z roku 2015), sbory DK Koruna (bez časů zkoušek), šachy dospělí („pátek večer“ bez času), City Fitness a další (jen Facebook nebo bez webu), KČT (jen roční pochody), taneční kurz DK Koruna (letní, proběhl).
 
 ## Zjištění pro fázi 3–4
 
