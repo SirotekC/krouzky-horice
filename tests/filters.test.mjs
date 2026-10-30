@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { KATEGORIE, pripravData } from '../site/js/data.js';
-import { filtruj, jsouPrazdne, normalizuj, prazdneFiltry, seradi } from '../site/js/filters.js';
+import { KATEGORIE, KATEGORIE_DOSPELI, SKUPINY_KATEGORII_DOSPELI, pripravData } from '../site/js/data.js';
+import { dobaZCasu, filtruj, jsouPrazdne, normalizuj, prazdneFiltry, seradi } from '../site/js/filters.js';
 
 const DNES = '2026-10-12';
 const kontext = { dnes: DNES, kategorie: KATEGORIE };
@@ -151,4 +151,54 @@ test('filtr dnů: OR mezi dny, aktivity bez pevného dne patří ke každému dn
   assert.deepEqual(ids(filtruj(aktivity, f({ dny: ['ut', 'so'] }), kontext)), ['cviceni', 'florbal', 'klavir', 'zpev']);
   assert.deepEqual(ids(filtruj(aktivity, f({ dny: ['ne'] }), kontext)), ['klavir', 'zpev']);
   assert.equal(jsouPrazdne(f({ dny: ['po'] })), false);
+});
+
+test('dobaZCasu: rozhoduje začátek, hranice 9, 12 a 17 hodin', () => {
+  assert.equal(dobaZCasu('8:59–10:00'), 'rano');
+  assert.equal(dobaZCasu('9:00–10:00'), 'dopoledne');
+  assert.equal(dobaZCasu('11:30–13:00'), 'dopoledne');
+  assert.equal(dobaZCasu('12:00–13:00'), 'odpoledne');
+  assert.equal(dobaZCasu('16:59–18:00'), 'odpoledne');
+  assert.equal(dobaZCasu('17:00–18:00'), 'vecer');
+  assert.equal(dobaZCasu('x'), null);
+});
+
+const dospeli = pripravData(organizace, [
+  { id: 'joga-rano', organizace_id: 'sokol', nazev: 'Jóga', kategorie: ['joga'], uroven: 'zacatecnici',
+    prihlaska: { ...prihlaska(null, null, true), typ: 'bez-prihlasky' }, terminy: { rozvrh: [{ den: 'po', casy: ['7:00–8:00'] }], dny: ['po'] } },
+  { id: 'zumba', organizace_id: 'sokol', nazev: 'Zumba', kategorie: ['cviceni', 'tanec'], uroven: 'vsichni',
+    prihlaska: { ...prihlaska(null, null, true), typ: 'rezervace' },
+    terminy: { rozvrh: [{ den: 'st', casy: ['10:00–11:00'] }, { den: 'ct', casy: ['18:00–19:00'] }], dny: ['st', 'ct'] } },
+  { id: 'anglictina', organizace_id: 'zus', nazev: 'Angličtina', kategorie: ['jazyky'], uroven: 'pokrocili',
+    prihlaska: { ...prihlaska('2026-09-01', '2026-10-31'), typ: 'prihlaska' }, terminy: { text: 'Podle domluvy' } },
+  { id: 'keramika', organizace_id: 'zus', nazev: 'Keramika', kategorie: ['vytvarne'],
+    prihlaska: { ...prihlaska(null, null, true), typ: 'prihlaska' }, terminy: { rozvrh: [{ den: 'po', casy: [] }], dny: ['po'] } },
+]).aktivity;
+const kontextDospeli = { dnes: DNES, kategorie: KATEGORIE_DOSPELI, skupiny: SKUPINY_KATEGORII_DOSPELI };
+
+test('filtr doby: OR mezi dobami, aktivita bez rozvrhu s časy projde', () => {
+  assert.deepEqual(ids(filtruj(dospeli, f({ doba: ['rano'] }), kontextDospeli)), ['anglictina', 'joga-rano', 'keramika']);
+  assert.deepEqual(ids(filtruj(dospeli, f({ doba: ['vecer'] }), kontextDospeli)), ['anglictina', 'keramika', 'zumba']);
+  assert.deepEqual(ids(filtruj(dospeli, f({ doba: ['rano', 'dopoledne'] }), kontextDospeli)), ['anglictina', 'joga-rano', 'keramika', 'zumba']);
+});
+
+test('filtr úrovně: vsichni a bez úrovně projdou', () => {
+  assert.deepEqual(ids(filtruj(dospeli, f({ uroven: 'zacatecnici' }), kontextDospeli)), ['joga-rano', 'keramika', 'zumba']);
+  assert.deepEqual(ids(filtruj(dospeli, f({ uroven: 'pokrocili' }), kontextDospeli)), ['anglictina', 'keramika', 'zumba']);
+});
+
+test('filtr vstupu podle prihlaska.typ', () => {
+  assert.deepEqual(ids(filtruj(dospeli, f({ vstup: 'rezervace' }), kontextDospeli)), ['zumba']);
+  assert.deepEqual(ids(filtruj(dospeli, f({ vstup: 'prihlaska' }), kontextDospeli)), ['anglictina', 'keramika']);
+});
+
+test('skupiny z kontextu: pohyb najde tanec, cvičení i jógu', () => {
+  assert.deepEqual(ids(filtruj(dospeli, f({ skup: ['pohyb'] }), kontextDospeli)), ['joga-rano', 'zumba']);
+  assert.deepEqual(ids(filtruj(dospeli, f({ q: 'kultura' }), kontextDospeli)), ['keramika']);
+});
+
+test('jsouPrazdne bere v úvahu dobu, úroveň a vstup', () => {
+  assert.equal(jsouPrazdne(f({ doba: ['rano'] })), false);
+  assert.equal(jsouPrazdne(f({ uroven: 'pokrocili' })), false);
+  assert.equal(jsouPrazdne(f({ vstup: 'rezervace' })), false);
 });

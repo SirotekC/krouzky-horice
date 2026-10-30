@@ -1,10 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { prazdneFiltry } from '../site/js/filters.js';
+import { SKUPINY_KATEGORII_DOSPELI } from '../site/js/data.js';
 import { cestaZHashe, filtryDoUrl, filtryZUrl, odkazNaAktivitu } from '../site/js/url-state.js';
 
 test('převod URL tam a zpět', () => {
-  const filtry = { q: 'klavír', vek: 8, dny: ['po', 'st'], skup: ['sport', 'umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
+  const filtry = { ...prazdneFiltry(), q: 'klavír', vek: 8, dny: ['po', 'st'], skup: ['sport', 'umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: 'divky' };
   const url = filtryDoUrl(filtry);
   assert.equal(url, '?q=klav%C3%ADr&vek=8&dny=po,st&skup=sport,umeni&kat=hudba,tanec&org=zus-mesto&stav=probiha&pohlavi=divky');
   assert.deepEqual(filtryZUrl(url), filtry);
@@ -12,7 +13,7 @@ test('převod URL tam a zpět', () => {
 
 test('příklad URL ze zadání', () => {
   assert.deepEqual(filtryZUrl('?q=klavir&vek=8&kat=hudba,tanec&org=zus-mesto&stav=probiha'), {
-    q: 'klavir', vek: 8, dny: [], skup: ['umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: '',
+    ...prazdneFiltry(), q: 'klavir', vek: 8, dny: [], skup: ['umeni'], kat: ['hudba', 'tanec'], org: 'zus-mesto', stav: 'probiha', pohlavi: '',
   });
 });
 
@@ -84,4 +85,21 @@ test('neplatná cesta nebo id vede na „nenalezeno“', () => {
 test('dny z URL: neplatné se ignorují, pořadí po → ne', () => {
   assert.deepEqual(filtryZUrl('?dny=st,xx,po,st').dny, ['po', 'st']);
   assert.deepEqual(filtryZUrl('?dny=').dny, []);
+});
+
+test('doba, úroveň a vstup: převod tam a zpět se skupinami dospělých', () => {
+  const filtry = { ...prazdneFiltry(), skup: ['pohyb'], kat: ['joga'], doba: ['rano', 'vecer'], uroven: 'zacatecnici', vstup: 'bez-prihlasky' };
+  const url = filtryDoUrl(filtry);
+  assert.equal(url, '?skup=pohyb&kat=joga&doba=rano,vecer&uroven=zacatecnici&vstup=bez-prihlasky');
+  assert.deepEqual(filtryZUrl(url, null, SKUPINY_KATEGORII_DOSPELI), filtry);
+});
+
+test('doba v pořadí dne, neplatné hodnoty doby, úrovně a vstupu se ignorují', () => {
+  assert.deepEqual(filtryZUrl('?doba=vecer,noc,rano').doba, ['rano', 'vecer']);
+  assert.equal(filtryZUrl('?uroven=mistr').uroven, '');
+  assert.equal(filtryZUrl('?vstup=vip').vstup, '');
+});
+
+test('skupiny dospělých: dětská skupina se ignoruje', () => {
+  assert.deepEqual(filtryZUrl('?skup=sport,pohyb', null, SKUPINY_KATEGORII_DOSPELI).skup, ['pohyb']);
 });

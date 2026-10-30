@@ -1,23 +1,25 @@
 // Synchronizace filtrů s query stringem URL. Čisté funkce bez přístupu k DOM.
 
 import { SKUPINY_KATEGORII, skupinaKategorie } from './data.js';
-import { DNY_FILTRU, POHLAVI_FILTRU, STAVY_FILTRU, prazdneFiltry } from './filters.js';
+import { DNY_FILTRU, DOBY_FILTRU, POHLAVI_FILTRU, STAVY_FILTRU, UROVNE_FILTRU, VSTUPY_FILTRU, prazdneFiltry } from './filters.js';
 
 const VZOR_ID = /^[a-z0-9-]+$/;
 
-/** Skupiny bez duplicit v pořadí podle `SKUPINY_KATEGORII`, aby URL byla stabilní. */
-function poradiSkupin(skupiny) {
-  return Object.keys(SKUPINY_KATEGORII).filter((k) => skupiny.includes(k));
+/** Skupiny bez duplicit v pořadí podle číselníku skupin, aby URL byla stabilní. */
+function poradiSkupin(vybrane, skupiny) {
+  return Object.keys(skupiny).filter((k) => vybrane.includes(k));
 }
 
 /**
- * Načte filtry z query stringu (např. `?q=klavir&vek=8&dny=po,st&skup=umeni,sport&kat=hudba,tanec&org=zus&stav=probiha&pohlavi=divky`).
+ * Načte filtry z query stringu (např. `?q=klavir&vek=8&dny=po,st&skup=umeni,sport&kat=hudba,tanec&org=zus&stav=probiha&pohlavi=divky`,
+ * u dospělých navíc `doba=rano,vecer&uroven=zacatecnici&vstup=bez-prihlasky`).
  * Neplatné hodnoty tiše ignoruje. Podkategorie (`kat`) musí patřit do některé z vybraných skupin (`skup`);
  * chybí-li skupiny, odvodí se z platných kategorií (kvůli starším odkazům).
  * @param {string} search obsah `location.search`
  * @param {string[] | null} platneOrganizace pokud je zadáno, `org` mimo seznam se ignoruje
+ * @param {Record<string, { kategorie: string[] }>} [skupiny] číselník skupin sekce
  */
-export function filtryZUrl(search, platneOrganizace = null) {
+export function filtryZUrl(search, platneOrganizace = null, skupiny = SKUPINY_KATEGORII) {
   const parametry = new URLSearchParams(search);
   const filtry = prazdneFiltry();
 
@@ -31,13 +33,13 @@ export function filtryZUrl(search, platneOrganizace = null) {
   if (dny) filtry.dny = Object.keys(DNY_FILTRU).filter((d) => dny.split(',').includes(d));
 
   const skup = parametry.get('skup');
-  if (skup) filtry.skup = poradiSkupin(skup.split(',').filter((k) => Object.hasOwn(SKUPINY_KATEGORII, k)));
+  if (skup) filtry.skup = poradiSkupin(skup.split(',').filter((k) => Object.hasOwn(skupiny, k)), skupiny);
 
   const kat = parametry.get('kat');
   if (kat) {
-    const platne = [...new Set(kat.split(','))].filter((k) => skupinaKategorie(k) !== null);
-    if (!filtry.skup.length) filtry.skup = poradiSkupin(platne.map((k) => skupinaKategorie(k)));
-    filtry.kat = platne.filter((k) => filtry.skup.includes(skupinaKategorie(k)));
+    const platne = [...new Set(kat.split(','))].filter((k) => skupinaKategorie(k, skupiny) !== null);
+    if (!filtry.skup.length) filtry.skup = poradiSkupin(platne.map((k) => skupinaKategorie(k, skupiny)), skupiny);
+    filtry.kat = platne.filter((k) => filtry.skup.includes(skupinaKategorie(k, skupiny)));
   }
 
   const org = parametry.get('org');
@@ -48,6 +50,15 @@ export function filtryZUrl(search, platneOrganizace = null) {
 
   const pohlavi = parametry.get('pohlavi');
   if (pohlavi && Object.hasOwn(POHLAVI_FILTRU, pohlavi)) filtry.pohlavi = pohlavi;
+
+  const doba = parametry.get('doba');
+  if (doba) filtry.doba = Object.keys(DOBY_FILTRU).filter((d) => doba.split(',').includes(d));
+
+  const uroven = parametry.get('uroven');
+  if (uroven && Object.hasOwn(UROVNE_FILTRU, uroven)) filtry.uroven = uroven;
+
+  const vstup = parametry.get('vstup');
+  if (vstup && Object.hasOwn(VSTUPY_FILTRU, vstup)) filtry.vstup = vstup;
 
   return filtry;
 }
@@ -64,6 +75,9 @@ export function filtryDoUrl(filtry) {
   if (filtry.org) casti.push(`org=${encodeURIComponent(filtry.org)}`);
   if (filtry.stav) casti.push(`stav=${encodeURIComponent(filtry.stav)}`);
   if (filtry.pohlavi) casti.push(`pohlavi=${encodeURIComponent(filtry.pohlavi)}`);
+  if (filtry.doba?.length) casti.push(`doba=${filtry.doba.join(',')}`);
+  if (filtry.uroven) casti.push(`uroven=${encodeURIComponent(filtry.uroven)}`);
+  if (filtry.vstup) casti.push(`vstup=${encodeURIComponent(filtry.vstup)}`);
   return casti.length ? `?${casti.join('&')}` : '';
 }
 
