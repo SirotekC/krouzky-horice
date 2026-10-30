@@ -535,3 +535,19 @@ test('nekontrolovat: URL s předponou se nestahuje, nehlásí se jako chyba a st
     await rm(koren, { recursive: true, force: true });
   }
 });
+
+test('sledují se i URL aktivit pro dospělé (site/data/dospeli/aktivity.json)', async () => {
+  const koren = await pripravKoren({ aktivity: [{ id: 'a-1', zdroj_url: 'https://a.cz/k1' }] });
+  await mkdir(path.join(koren, 'site', 'data', 'dospeli'), { recursive: true });
+  await writeFile(path.join(koren, 'site', 'data', 'dospeli', 'aktivity.json'), JSON.stringify([{ id: 'd-1', zdroj_url: 'https://d.cz/joga' }]));
+  const volani = [];
+  const fetchFn = falesnyFetch({ 'https://a.cz/k1': { telo: HTML('A') }, 'https://d.cz/joga': { telo: HTML('D') } }, volani);
+  try {
+    await behKontroly({ koren, stavAdresar: path.join(koren, 's'), vystupAdresar: path.join(koren, 'v'), fetchFn, cekej, dnes: DNES });
+    assert.ok(volani.some((v) => v.url === 'https://d.cz/joga'));
+    const kontrola = JSON.parse(await readFile(path.join(koren, 'site', 'data', 'kontrola.json'), 'utf8'));
+    assert.deepEqual(kontrola.url, { 'https://a.cz/k1': DNES, 'https://d.cz/joga': DNES });
+  } finally {
+    await rm(koren, { recursive: true, force: true });
+  }
+});

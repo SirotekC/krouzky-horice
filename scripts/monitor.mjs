@@ -44,13 +44,18 @@ async function zapisJsonAtomicky(soubor, data) {
   }
 }
 
-/** Načte data projektu a nastavení monitoringu; vrátí i odvozený seznam URL. */
+/**
+ * Načte data projektu a nastavení monitoringu; vrátí i odvozený seznam URL. Aktivity pro dospělé
+ * se sledují stejně jako kroužky pro děti (chybějící soubor = žádné).
+ */
 async function nactiVstupy(koren) {
-  const [aktivity, organizace, nastaveni] = await Promise.all([
+  const [deti, dospeli, organizace, nastaveni] = await Promise.all([
     nactiJson(path.join(koren, 'site', 'data', 'aktivity.json')),
+    nactiJson(path.join(koren, 'site', 'data', 'dospeli', 'aktivity.json')).catch((e) => (e.code === 'ENOENT' ? [] : Promise.reject(e))),
     nactiJson(path.join(koren, 'site', 'data', 'organizace.json')),
     nactiNastaveni(path.join(koren, 'data-src', 'monitor.json')),
   ]);
+  const aktivity = [...deti, ...dospeli];
   const seznam = sestavSeznamUrl({ aktivity, organizace, nastaveni });
   const znameZdroje = new Set(aktivity.filter((a) => a.zdroj_url).map((a) => normalizujUrl(a.zdroj_url)));
   const kapacitaDat = new Map(aktivity.map((a) => [a.id, a.prihlaska?.kapacita ?? null]));
