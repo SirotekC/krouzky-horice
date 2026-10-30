@@ -2,8 +2,9 @@
 // `textContent`, nikdy přes `innerHTML`. DOM se používá až uvnitř funkcí.
 
 import { CHYBA_URL } from './config.js';
-import { KATEGORIE, POHLAVI, datumNacteni } from './data.js';
+import { POHLAVI, TYPY_VSTUPU, UROVNE, URCENO_PRO, datumNacteni } from './data.js';
 import { cisloDne, formatDatum, formatObdobi, stavPrihlasky } from './registration.js';
+import { SEKCE } from './sekce.js';
 import { odkazNaAktivitu } from './url-state.js';
 
 const ZASTARALE_DNI = 90;
@@ -180,15 +181,27 @@ export function sklonuj(n, [jeden, dva, pet]) {
   return pet;
 }
 
+/** „1 aktivita“, „3 aktivity“, „12 aktivit“ podle tvarů sekce. */
+export function pocetAktivit(n, tvary) {
+  return `${n} ${sklonuj(n, tvary)}`;
+}
+
 /** „1 kroužek“, „3 kroužky“, „12 kroužků“. */
 export function pocetKrouzku(n) {
-  return `${n} ${sklonuj(n, ['kroužek', 'kroužky', 'kroužků'])}`;
+  return pocetAktivit(n, SEKCE.deti.tvary);
+}
+
+/** „Ženy, senioři“ z `urceno_pro`, nebo `null`, když je aktivita pro všechny. */
+export function textUrcenoPro(urcenoPro) {
+  const popisky = (urcenoPro ?? []).map((k) => URCENO_PRO[k] ?? k);
+  if (!popisky.length) return null;
+  return popisky.map((p, i) => (i ? p.toLocaleLowerCase('cs') : p)).join(', ');
 }
 
 /** Řádek „93 kroužků · 12 zaměření · 10 organizací“ s čísly zvýrazněnými tučně. */
-export function radekStatistik({ krouzky, kategorie, organizace }) {
+export function radekStatistik({ krouzky, kategorie, organizace }, tvary = SEKCE.deti.tvary) {
   const polozky = [
-    [krouzky, ['kroužek', 'kroužky', 'kroužků']],
+    [krouzky, tvary],
     [kategorie, ['zaměření', 'zaměření', 'zaměření']],
     [organizace, ['organizace', 'organizace', 'organizací']],
   ];
@@ -217,7 +230,7 @@ function seznamUdaju(radky) {
  * podle `rozbalena` (na desktopu vždy, na mobilu po volbě „Rozbalit vše“). Detail aktivity
  * ukazuje vše bez sbalování.
  */
-export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false, kontrola = null } = {}) {
+export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false, kontrola = null, sekce = SEKCE.deti } = {}) {
   const stav = stavPrihlasky(a.prihlaska, dnes);
   const p = a.prihlaska;
 
@@ -226,14 +239,17 @@ export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false, kon
     { trida: 'karta__hlavicka' },
     el('h3', { trida: 'karta__nazev' }, el('a', { text: a.nazev, atributy: { href: odkazNaAktivitu(a.id) } })),
     el('p', { trida: 'karta__organizace', text: a.organizace?.nazev ?? a.organizace_id }),
+    a.sekce && a.sekce !== sekce.klic ? el('p', { trida: 'karta__z-druhe', text: sekce.stitekZDruhe }) : null,
     el('p', { trida: `stav stav--${stav.stav}` }, el('span', { trida: 'jen-ctecka', text: 'Stav přihlášek: ' }), stav.text),
   );
 
   const stitky = el('ul', { trida: 'stitky', atributy: { 'aria-label': 'Kategorie' } });
-  for (const k of a.kategorie) stitky.append(el('li', { trida: 'stitek', text: KATEGORIE[k] ?? k }));
+  for (const k of a.kategorie) stitky.append(el('li', { trida: 'stitek', text: sekce.kategorie[k] ?? k }));
 
   const vek = udaj('Věk', textVeku(a.vek_od, a.vek_do));
-  const pro = udaj('Pro', POHLAVI[a.pohlavi] ?? null);
+  const pro = udaj('Pro', POHLAVI[a.pohlavi] ?? textUrcenoPro(a.urceno_pro));
+  const uroven = udaj('Úroveň', UROVNE[a.uroven] ?? null);
+  const vstup = udaj('Vstup', TYPY_VSTUPU[p.typ] ?? null);
   const misto = udaj('Místo', textMista(a.misto));
   const cena = udaj('Cena', textCeny(a.cena));
   const terminy = obsahTerminu(a.terminy);
@@ -262,12 +278,12 @@ export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false, kon
     el('span', {}, 'Zdroj: ', externiOdkaz(a.zdroj_url, domena(a.zdroj_url))),
     el('span', { text: `Data načtena ${formatDatum(nacteno)}` }),
     stari > ZASTARALE_DNI ? el('span', { trida: 'zastarale', text: 'Údaje mohou být zastaralé' }) : null,
-    tlacitkoSdilet(a),
+    tlacitkoSdilet(a, sekce),
   );
 
   const karta = el('article', { trida: `karta karta--${stav.stav}`, atributy: { id: `aktivita-${a.id}` } }, hlavicka);
   if (!sbalena) {
-    karta.append(...[stitky, popis, seznamUdaju([vek, pro, misto, udaj('Kdy', terminy), cena]), prihlaska, paticka].filter(Boolean));
+    karta.append(...[stitky, popis, seznamUdaju([vek, pro, uroven, misto, udaj('Kdy', terminy), cena, vstup]), prihlaska, paticka].filter(Boolean));
     return karta;
   }
 
@@ -291,13 +307,14 @@ export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false, kon
       el('span', { trida: 'karta__vice-zavrene', text: 'Více informací' }),
       el('span', { trida: 'karta__vice-otevrene', text: 'Méně informací' }),
     ),
-    el('div', { trida: 'karta__vice-obsah' }, stitky, popis, seznamUdaju([pro, misto, cena]), prihlaska, paticka),
+    el('div', { trida: 'karta__vice-obsah' }, stitky, popis, seznamUdaju([pro, uroven, misto, cena]), prihlaska, paticka),
   );
   // Třída řídí, která podoba „Kdy“ je vidět; `toggle` přichází i při změně `open` ze skriptu.
   vice.addEventListener('toggle', () => karta.classList.toggle('karta--rozbalena', vice.open));
   vice.open = rozbalena;
   karta.classList.toggle('karta--rozbalena', rozbalena);
-  karta.append(...[seznamUdaju([vek, udaj('Kdy', kdy)]), vice].filter(Boolean));
+  // Ve sbalené kartě je vidět věk a u aktivit pro dospělé i způsob vstupu.
+  karta.append(...[seznamUdaju([vek, vstup, udaj('Kdy', kdy)]), vice].filter(Boolean));
   return karta;
 }
 
@@ -311,12 +328,12 @@ function adresaAktivity(id) {
  * jinde odkaz zkopíruje do schránky. Když nejde ani jedno, otevře detail, aby šel
  * odkaz zkopírovat z adresního řádku.
  */
-function tlacitkoSdilet(a) {
+function tlacitkoSdilet(a, sekce) {
   const popisek = 'Sdílet odkaz';
   const tlacitko = el('button', {
     trida: 'sdilet',
     text: popisek,
-    atributy: { type: 'button', 'aria-label': `Sdílet odkaz na kroužek ${a.nazev}` },
+    atributy: { type: 'button', 'aria-label': `Sdílet odkaz na ${sekce.akuzativ} ${a.nazev}` },
   });
   const potvrd = (text) => {
     tlacitko.textContent = text;
@@ -346,12 +363,12 @@ function tlacitkoSdilet(a) {
 }
 
 /** Detail jedné aktivity s odkazem zpět na seznam. */
-export function detailAktivity(a, dnes, odkazZpet, kontrola = null) {
-  return el('div', { trida: 'detail' }, odkazZpet, kartaAktivity(a, dnes, { kontrola }));
+export function detailAktivity(a, dnes, odkazZpet, kontrola = null, sekce = SEKCE.deti) {
+  return el('div', { trida: 'detail' }, odkazZpet, kartaAktivity(a, dnes, { kontrola, sekce }));
 }
 
 /** Stav pro odkaz na aktivitu, která neexistuje (např. byla smazána). */
-export function nenalezenaAktivita(odkazZpet) {
+export function nenalezenaAktivita(odkazZpet, sekce = SEKCE.deti) {
   return el(
     'div',
     { trida: 'detail' },
@@ -359,15 +376,15 @@ export function nenalezenaAktivita(odkazZpet) {
     el(
       'div',
       { trida: 'stav-stranky' },
-      el('p', { text: 'Tento kroužek jsme nenašli. Možná už se nekoná nebo se změnil odkaz.' }),
+      el('p', { text: `${sekce.nenalezeno} Možná už se nekoná nebo se změnil odkaz.` }),
     ),
   );
 }
 
 /** Seznam karet; `rozbalene` určuje, jestli jsou podrobnosti karet rozbalené. */
-export function seznamKaret(aktivity, dnes, rozbalene, kontrola = null) {
+export function seznamKaret(aktivity, dnes, rozbalene, kontrola = null, sekce = SEKCE.deti) {
   const seznam = el('ul', { trida: 'karty' });
-  for (const a of aktivity) seznam.append(el('li', {}, kartaAktivity(a, dnes, { sbalena: true, rozbalena: rozbalene, kontrola })));
+  for (const a of aktivity) seznam.append(el('li', {}, kartaAktivity(a, dnes, { sbalena: true, rozbalena: rozbalene, kontrola, sekce })));
   return seznam;
 }
 
@@ -388,18 +405,18 @@ export function nastavOdkazy() {
 }
 
 /** Prázdný stav s tlačítkem pro zrušení filtrů. */
-export function prazdnyStav(naZruseni) {
+export function prazdnyStav(naZruseni, sekce = SEKCE.deti) {
   const tlacitko = el('button', { trida: 'tlacitko', text: 'Zrušit filtry', atributy: { type: 'button' } });
   tlacitko.addEventListener('click', naZruseni);
-  return el('div', { trida: 'stav-stranky' }, el('p', { text: 'Žádný kroužek neodpovídá filtrům.' }), tlacitko);
+  return el('div', { trida: 'stav-stranky' }, el('p', { text: sekce.zadnaNeodpovida }), tlacitko);
 }
 
 /** Chybový stav při selhání načtení dat. */
-export function chybovyStav() {
+export function chybovyStav(tvary = SEKCE.deti.tvary) {
   return el(
     'div',
     { trida: 'stav-stranky stav-stranky--chyba', atributy: { role: 'alert' } },
-    el('p', { text: 'Nepodařilo se načíst seznam kroužků. Zkontrolujte připojení k internetu a zkuste to znovu.' }),
+    el('p', { text: `Nepodařilo se načíst seznam ${tvary[2]}. Zkontrolujte připojení k internetu a zkuste to znovu.` }),
     el('a', { trida: 'tlacitko', text: 'Načíst stránku znovu', atributy: { href: '' } }),
   );
 }

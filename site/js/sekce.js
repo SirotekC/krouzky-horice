@@ -14,6 +14,9 @@ import { KATEGORIE, KATEGORIE_DOSPELI, SKUPINY_KATEGORII, SKUPINY_KATEGORII_DOSP
  * @property {[string, string, string]} tvary tvary slova pro 1, 2–4 a 5+ aktivit
  * @property {string} odkazZpet
  * @property {string} stitekZDruhe štítek na kartě aktivity z druhé sekce
+ * @property {string} akuzativ „Sdílet odkaz na …“
+ * @property {string} nenalezeno text pro odkaz na neexistující aktivitu
+ * @property {string} zadnaNeodpovida text prázdného výsledku
  */
 
 /** @type {Readonly<Record<'deti' | 'dospeli', Sekce>>} */
@@ -28,6 +31,9 @@ export const SEKCE = Object.freeze({
     tvary: ['kroužek', 'kroužky', 'kroužků'],
     odkazZpet: '← Všechny kroužky',
     stitekZDruhe: 'Z nabídky pro dospělé',
+    akuzativ: 'kroužek',
+    nenalezeno: 'Tento kroužek jsme nenašli.',
+    zadnaNeodpovida: 'Žádný kroužek neodpovídá filtrům.',
   }),
   dospeli: Object.freeze({
     klic: 'dospeli',
@@ -39,6 +45,9 @@ export const SEKCE = Object.freeze({
     tvary: ['aktivita', 'aktivity', 'aktivit'],
     odkazZpet: '← Všechny aktivity',
     stitekZDruhe: 'Z nabídky pro děti',
+    akuzativ: 'aktivitu',
+    nenalezeno: 'Tuto aktivitu jsme nenašli.',
+    zadnaNeodpovida: 'Žádná aktivita neodpovídá filtrům.',
   }),
 });
 
