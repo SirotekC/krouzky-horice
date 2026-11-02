@@ -64,7 +64,7 @@ function textUzlu(uzel) {
 /**
  * Převede HTML na stabilní text pro otisk.
  * @param {string} html
- * @param {{ obsah?: string, odstranitRadky?: string[] }} [pravidla]
+ * @param {{ obsah?: string, odstranit?: string, odstranitRadky?: string[] }} [pravidla]
  * @returns {string}
  */
 export function htmlNaText(html, pravidla = {}) {
@@ -78,13 +78,14 @@ export function htmlNaText(html, pravidla = {}) {
 /**
  * Vyčistí HTML a vrátí neprázdné řádky se zkomprimovanými bílými znaky (včetně NBSP).
  * @param {string} html
- * @param {{ obsah?: string }} pravidla
+ * @param {{ obsah?: string, odstranit?: string }} pravidla
  * @param {string} selektorOdstranit
  * @returns {string[]}
  */
 function radkyTextu(html, pravidla, selektorOdstranit) {
   const koren = parse(html);
-  for (const el of koren.querySelectorAll(selektorOdstranit)) el.remove();
+  const odstranit = pravidla.odstranit ? `${selektorOdstranit}, ${pravidla.odstranit}` : selektorOdstranit;
+  for (const el of koren.querySelectorAll(odstranit)) el.remove();
   const zaklad = (pravidla.obsah && koren.querySelector(pravidla.obsah)) || koren.querySelector('body') || koren;
   return textUzlu(zaklad)
     .split('\n')

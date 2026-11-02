@@ -36,6 +36,17 @@ test('menu a patička se ignorují', () => {
   assert.equal(a, b);
 });
 
+test('pravidlo odstranit: vybrané prvky se do textu nepočítají', () => {
+  const stranka = (novinka) => `<body><div class="content"><h2>Rozvrh</h2><p>pondělí 16.30</p>
+<h1>Aktuálně:</h1><div id="dokument"><p>${novinka}</p></div></div></body>`;
+  const pravidla = { obsah: '.content', odstranit: '#dokument' };
+  const a = htmlNaText(stranka('Sezóna odstartována!'), pravidla);
+  const b = htmlNaText(stranka('Další závody'), pravidla);
+  assert.equal(a, b);
+  assert.ok(a.includes('pondělí 16.30'));
+  assert.notEqual(htmlNaText(stranka('Sezóna odstartována!')), htmlNaText(stranka('Další závody')));
+});
+
 test('windows-1250 podle hlavičky i podle meta', () => {
   const slovo = Buffer.from([0x9e, 0x6c, 0x75, 0x9d, 0x6f, 0x75, 0xe8, 0x6b, 0xfd]);
   assert.equal(dekoduj(slovo, 'text/html; charset=windows-1250'), 'žluťoučký');

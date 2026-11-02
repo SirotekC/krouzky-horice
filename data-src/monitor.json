@@ -128,10 +128,14 @@
       }
     },
     "www.sporthorice.cz": {
-      "obsah": "#homepage, #main_frame > .content"
+      "obsah": "#about, #main_frame > .content",
+      "odstranit": "#dokument"
     },
     "www.horickyfotbal.cz": {
       "obsah": ".main-col"
+    },
+    "www.obhorice.cz": {
+      "obsah": "article"
     }
   },
   "ignorovaneOdkazy": [
