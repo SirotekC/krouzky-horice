@@ -869,15 +869,14 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 2. 11. 2026.",
       "kapacita": {
-        "stav": "posledni",
-        "volna_mista": 1
+        "stav": "nahradnici"
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-02"
   },
   {
     "id": "ddm-horice-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
@@ -1688,15 +1687,15 @@
     "kategorie": [
       "technika"
     ],
-    "popis": "Základy 3D modelování, příprava návrhů a práce s 3D tiskárnou – od nápadu ke skutečnému výrobku. S sebou vlastní notebook a myš.",
+    "popis": "Základy 3D modelování, příprava návrhů a práce s 3D tiskárnou – od nápadu ke skutečnému výrobku. Vlastní notebook je výhodou.",
     "klicova_slova": [
       "3d tisk",
       "modelování",
       "tiskárna"
     ],
     "pohlavi": null,
-    "vek_od": 11,
-    "vek_do": 18,
+    "vek_od": 9,
+    "vek_do": 26,
     "misto": {
       "nazev": "DDM Hořice",
       "adresa": "Žižkova 611, Hořice"
@@ -1729,15 +1728,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 2. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-    "overeno": "2026-10-27"
+    "overeno": "2026-11-02"
   },
   {
     "id": "ddm-horice-anglictina-pro-5-8-tridu",
