@@ -129,6 +129,9 @@
     },
     "www.sporthorice.cz": {
       "obsah": "#homepage, #main_frame > .content"
+    },
+    "www.horickyfotbal.cz": {
+      "obsah": ".main-col"
     }
   },
   "ignorovaneOdkazy": [
