@@ -1,7 +1,7 @@
 {
   "verze": 1,
   "posledniBeh": "2026-11-01",
-  "zapatiDatum": "2026-10-22",
+  "zapatiDatum": "2026-11-02",
   "url": {
     "https://d3c39e64da.clvaw-cdnwnd.com/974d636996c9c57d64ba97df7ad4e785/200000560-763287632b/Sn%C3%ADmek%20obrazovky%202026-10-07%20011339.png": {
       "druh": "obsah",
@@ -57,33 +57,27 @@
     },
     "https://rckonvicka.cz/aktualni-pravidelny-program/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "5b4f824cd925f8fded08a96fc254e25b6e649aed8bf4dd6722dbe7fa15ed9064",
+      "otiskPotvrzeny": "c91725e85a7fab105cd1ca8d39cb44bddaf910d3bf47a2ec46ae9e76fbee229e",
       "otiskPosledni": "c91725e85a7fab105cd1ca8d39cb44bddaf910d3bf47a2ec46ae9e76fbee229e",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": "Wed, 28 Oct 2026 08:36:51 GMT",
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-22",
-      "zmena": {
-        "od": "2026-10-25",
-        "otisk": "c91725e85a7fab105cd1ca8d39cb44bddaf910d3bf47a2ec46ae9e76fbee229e"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
     "https://rckonvicka.cz/hernicka-pro-miminka/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "ab5e55086416efb58c8142df0735261ab378419f761883267ccbd405745f3268",
+      "otiskPotvrzeny": "02612aac6c3cee6227ab841428ccee98efde5656dd6288ed7067ec13ffa96913",
       "otiskPosledni": "02612aac6c3cee6227ab841428ccee98efde5656dd6288ed7067ec13ffa96913",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": "Wed, 28 Oct 2026 08:35:45 GMT",
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-22",
-      "zmena": {
-        "od": "2026-10-25",
-        "otisk": "02612aac6c3cee6227ab841428ccee98efde5656dd6288ed7067ec13ffa96913"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -102,33 +96,27 @@
     },
     "https://rckonvicka.cz/kontakt/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "51715c5b95869212248e0053fc3fccb2a3396f3dcd7d7fed61b72ca68c081041",
+      "otiskPotvrzeny": "07b79d0d7eb7dfe3ce9c0274df2beb604e8a581f5e2693f4286ce95a598936af",
       "otiskPosledni": "07b79d0d7eb7dfe3ce9c0274df2beb604e8a581f5e2693f4286ce95a598936af",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": "Wed, 28 Oct 2026 08:36:35 GMT",
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-22",
-      "zmena": {
-        "od": "2026-10-25",
-        "otisk": "07b79d0d7eb7dfe3ce9c0274df2beb604e8a581f5e2693f4286ce95a598936af"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
     "https://rckonvicka.cz/noticky-z-konvicky/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "f3c0418eeef3bff02bbfdb1166543cef9925eff2d5ebf3d2f7670fcde482067b",
+      "otiskPotvrzeny": "1811d91c5a5da78b67f6483752752839a4d260bb607e196ea6b64418cc68000e",
       "otiskPosledni": "1811d91c5a5da78b67f6483752752839a4d260bb607e196ea6b64418cc68000e",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": "Wed, 28 Oct 2026 08:36:06 GMT",
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-22",
-      "zmena": {
-        "od": "2026-10-25",
-        "otisk": "1811d91c5a5da78b67f6483752752839a4d260bb607e196ea6b64418cc68000e"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -674,23 +662,20 @@
     },
     "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek": {
       "druh": "obsah",
-      "otiskPotvrzeny": "bc50686d1955b163591f8970a154e2edbb805b465f407d3d83da34fab94665d8",
+      "otiskPotvrzeny": "61c081216275a70449c794aa00b54caf9e6e005bd2a8470f50bde221dc0efc9a",
       "otiskPosledni": "61c081216275a70449c794aa00b54caf9e6e005bd2a8470f50bde221dc0efc9a",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-28",
-      "zmena": {
-        "od": "2026-10-31",
-        "otisk": "61c081216275a70449c794aa00b54caf9e6e005bd2a8470f50bde221dc0efc9a"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "nahradnici"
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"nahradnici\"},\"rozdily\":[{\"id\":\"ddm-horice-pece-cely-domecek\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":1}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1019-materske-centrum-pohybove-aktivity-pro-deti-a-maminky": {
       "druh": "obsah",
@@ -939,24 +924,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1049-3d-tisk": {
       "druh": "obsah",
-      "otiskPotvrzeny": "40d39868226252d456919dbbf99dbf87328579ba0f7d7a6a46fc0a6ad44a5fac",
+      "otiskPotvrzeny": "e569e55970154c6cf2175e73978c9cc9f3e7cb10e3e41588b747d4753002fc5e",
       "otiskPosledni": "e569e55970154c6cf2175e73978c9cc9f3e7cb10e3e41588b747d4753002fc5e",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-28",
-      "zmena": {
-        "od": "2026-10-31",
-        "otisk": "e569e55970154c6cf2175e73978c9cc9f3e7cb10e3e41588b747d4753002fc5e"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 3
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":3},\"rozdily\":[{\"id\":\"ddm-horice-3d-tisk\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":1}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1050-anglictina-pro-5-8-tridu": {
       "druh": "obsah",
@@ -1695,17 +1677,14 @@
     },
     "https://www.horickyfotbal.cz/cs/s/14-kontakty": {
       "druh": "obsah",
-      "otiskPotvrzeny": "b539585716106183b58a5c53835326fb3d9daf98f49ee8e74a26f3d2a1ca87dd",
+      "otiskPotvrzeny": "686553411cbf3e7f8551c1cc39c7946fecf5f7ec0e166c86f1deac0f84c2165e",
       "otiskPosledni": "686553411cbf3e7f8551c1cc39c7946fecf5f7ec0e166c86f1deac0f84c2165e",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-25",
-      "zmena": {
-        "od": "2026-10-28",
-        "otisk": "686553411cbf3e7f8551c1cc39c7946fecf5f7ec0e166c86f1deac0f84c2165e"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -1867,33 +1846,27 @@
     },
     "https://www.obhorice.cz": {
       "druh": "obsah",
-      "otiskPotvrzeny": "4e455a394f277e03fa19c85d72575732f043950ab12de550bff00f2a6a0b4880",
+      "otiskPotvrzeny": "6b5913ffa942ba98c7c5c57e146b0054e4b019e11fcafe2083db814ecc6e841f",
       "otiskPosledni": "6b5913ffa942ba98c7c5c57e146b0054e4b019e11fcafe2083db814ecc6e841f",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-25",
-      "zmena": {
-        "od": "2026-10-28",
-        "otisk": "6b5913ffa942ba98c7c5c57e146b0054e4b019e11fcafe2083db814ecc6e841f"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
     "https://www.obhorice.cz/kontakt/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "909ef96fc5babffd139370e43397354158e7e6951d3686a8b7c0025ac347c921",
+      "otiskPotvrzeny": "d1cc7e036d0a276359379ecc22b1a6f6354bd56a341480f831b0db791f594c43",
       "otiskPosledni": "d1cc7e036d0a276359379ecc22b1a6f6354bd56a341480f831b0db791f594c43",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-31",
-      "zmena": {
-        "od": "2026-11-01",
-        "otisk": "d1cc7e036d0a276359379ecc22b1a6f6354bd56a341480f831b0db791f594c43"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -1977,17 +1950,14 @@
     },
     "https://www.sporthorice.cz": {
       "druh": "obsah",
-      "otiskPotvrzeny": "491742334fd8e0571f5fbf8fa687b7b14d164bdac3142f153ff69b69e4ffe295",
+      "otiskPotvrzeny": "b1969cf5037e0bbb536e59c8792197117fc7998dcf1e16b1e995d77d36939f15",
       "otiskPosledni": "b1969cf5037e0bbb536e59c8792197117fc7998dcf1e16b1e995d77d36939f15",
       "verzePravidel": "b6b19239be7d08513fe53e268309c4efc80acaed672c1d8fe1c48dad596bbee3",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-28",
-      "zmena": {
-        "od": "2026-10-31",
-        "otisk": "b1969cf5037e0bbb536e59c8792197117fc7998dcf1e16b1e995d77d36939f15"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -2019,17 +1989,14 @@
     },
     "https://www.sporthorice.cz/plavecky-oddil-rejnok/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "a330393d97c50a301ef9c2d6f1f2d9cad786dc9a940f0f281e885d36df1a25d0",
+      "otiskPotvrzeny": "5d78b176a4d12564f97056219a22dd8884516898c58cf09315e6f4b300bdea68",
       "otiskPosledni": "5d78b176a4d12564f97056219a22dd8884516898c58cf09315e6f4b300bdea68",
       "verzePravidel": "b6b19239be7d08513fe53e268309c4efc80acaed672c1d8fe1c48dad596bbee3",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-01",
-      "posledniOk": "2026-10-28",
-      "zmena": {
-        "od": "2026-10-31",
-        "otisk": "5d78b176a4d12564f97056219a22dd8884516898c58cf09315e6f4b300bdea68"
-      },
+      "posledniOk": "2026-11-02",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
