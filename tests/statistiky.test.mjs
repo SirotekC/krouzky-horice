@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { statistiky } from '../site/js/data.js';
+import { organizaceSAktivitou, statistiky } from '../site/js/data.js';
 import { pocetKrouzku, sklonuj } from '../site/js/render.js';
 
 test('statistiky počítají kroužky, různé kategorie a organizace s kroužkem', () => {
@@ -14,6 +14,13 @@ test('statistiky počítají kroužky, různé kategorie a organizace s kroužke
 
 test('statistiky prázdných dat jsou nulové', () => {
   assert.deepEqual(statistiky([]), { krouzky: 0, kategorie: 0, organizace: 0 });
+});
+
+test('organizaceSAktivitou vrátí jen organizace, které mají aspoň jednu aktivitu', () => {
+  const organizace = [{ id: 'zus' }, { id: 'sokol' }, { id: 'ddm' }];
+  const aktivity = [{ organizace_id: 'zus' }, { organizace_id: 'zus' }, { organizace_id: 'ddm' }];
+  assert.deepEqual(organizaceSAktivitou(organizace, aktivity), [{ id: 'zus' }, { id: 'ddm' }]);
+  assert.deepEqual(organizaceSAktivitou(organizace, []), []);
 });
 
 test('sklonuj vybere tvar podle počtu', () => {

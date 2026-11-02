@@ -1,7 +1,7 @@
 // Vstupní bod: načtení dat, napojení filtrů a překreslení výsledků.
 
 import { DESKTOP } from './config.js';
-import { datumNacteniWebu, nactiData, statistiky } from './data.js';
+import { datumNacteniWebu, nactiData, organizaceSAktivitou, statistiky } from './data.js';
 import {
   DNY_FILTRU,
   DOBY_FILTRU,
@@ -111,7 +111,8 @@ function naplnFormular(data) {
 
   const porovnej = new Intl.Collator('cs').compare;
   const select = $('#f-org');
-  for (const o of [...data.organizace].sort((a, b) => porovnej(a.nazev, b.nazev))) {
+  // Jen organizace, které mají v této sekci aspoň jednu aktivitu.
+  for (const o of organizaceSAktivitou(data.organizace, data.aktivity).sort((a, b) => porovnej(a.nazev, b.nazev))) {
     select.append(el('option', { text: o.nazev, atributy: { value: o.id } }));
   }
 
@@ -245,7 +246,7 @@ async function spust() {
   $('#statistiky').replaceChildren(...radekStatistik(statistiky(data.aktivity), SEKCE_STRANKY.tvary));
 
   naplnFormular(data);
-  zapisDoFormulare(form, filtryZUrl(window.location.search, data.organizace.map((o) => o.id), SKUPINY_KATEGORII));
+  zapisDoFormulare(form, filtryZUrl(window.location.search, organizaceSAktivitou(data.organizace, data.aktivity).map((o) => o.id), SKUPINY_KATEGORII));
   // Filtry bereme z formuláře, aby odpovídaly tomu, co je vidět (např. skupina, která v datech není).
   let filtry = prectiFormular(form);
 

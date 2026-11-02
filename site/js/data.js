@@ -124,6 +124,12 @@ export function pripravData(organizace, aktivity) {
   return { organizace, organizaceMapa, aktivity: spojene };
 }
 
+/** Organizace, které mají v `aktivity` aspoň jednu aktivitu (pořadí zůstává jako v `organizace`). */
+export function organizaceSAktivitou(organizace, aktivity) {
+  const sAktivitou = new Set(aktivity.map((a) => a.organizace_id));
+  return organizace.filter((o) => sAktivitou.has(o.id));
+}
+
 /** Počty pro hlavičku: kroužky, použité kategorie a organizace, které mají aspoň jeden kroužek. */
 export function statistiky(aktivity) {
   return {
