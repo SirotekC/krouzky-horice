@@ -168,7 +168,10 @@ function textCeny(cena) {
 /** Doména bez `www.` pro patičku karty. */
 export function domena(url) {
   try {
-    return new URL(url).hostname.replace(/^www\./, '');
+    const u = new URL(url);
+    // Pořadatel bez webu: zdrojem je jeho e-mail.
+    if (u.protocol === 'mailto:') return u.pathname;
+    return u.hostname.replace(/^www\./, '');
   } catch {
     return url;
   }
@@ -266,8 +269,8 @@ export function kartaAktivity(a, dnes, { sbalena = false, rozbalena = false, kon
     p.poznamka ? el('p', { trida: 'prihlaska__poznamka', text: p.poznamka }) : null,
     // Odkaz může vést do přihlašovacího systému, na formulář i na stránku klubu; bez něj na zdroj dat.
     p.odkaz
-      ? externiOdkaz(p.odkaz, 'Přejít k přihlášce ↗', 'tlacitko')
-      : externiOdkaz(a.zdroj_url, 'Stránka organizace ↗', 'tlacitko'),
+      ? externiOdkaz(p.odkaz, p.odkaz.startsWith('mailto:') ? 'Napsat e-mail ✉' : 'Přejít k přihlášce ↗', 'tlacitko')
+      : externiOdkaz(a.zdroj_url, a.zdroj_url.startsWith('mailto:') ? 'Napsat e-mail ✉' : 'Stránka organizace ↗', 'tlacitko'),
   );
 
   const nacteno = datumNacteni(a, kontrola);

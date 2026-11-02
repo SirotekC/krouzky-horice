@@ -169,4 +169,6 @@ test('dospělí: chybějící prihlaska.typ, vek_do a neznámé urceno_pro nepro
   assert.equal(aktivityDospeli([{ ...ukazkaDospeli, urceno_pro: ['deti'] }]), false);
   assert.ok(aktivityDospeli.errors.some((e) => e.keyword === 'enum'));
   assert.equal(aktivityDospeli([{ ...ukazkaDospeli, kategorie: ['joga'], uroven: null, urceno_pro: [] }]), true);
+  // null = zdroj neuvádí, jak se přihlásit (klíč je ale povinný)
+  assert.equal(aktivityDospeli([{ ...ukazkaDospeli, prihlaska: { ...ukazkaDospeli.prihlaska, typ: null } }]), true);
 });

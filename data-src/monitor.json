@@ -115,7 +115,8 @@
   "nekontrolovat": [
     { "predpona": "https://www.horice.org/", "duvod": "web města blokuje požadavky ze serverů GitHubu (z běžného připojení funguje)" },
     { "predpona": "https://www.zusmelodie.cz/obory.php", "duvod": "stránka blokuje požadavky ze serverů GitHubu (z běžného připojení funguje)" },
-    { "predpona": "https://www.facebook.com/", "duvod": "Facebook bez přihlášení vrací jen přihlašovací stránku, obsah nejde kontrolovat" }
+    { "predpona": "https://www.facebook.com/", "duvod": "Facebook bez přihlášení vrací jen přihlašovací stránku, obsah nejde kontrolovat" },
+    { "predpona": "mailto:", "duvod": "pořadatel bez webu, zdrojem je e-mail (údaje od pořadatele)" }
   ],
   "domeny": {
     "www.ddmhorice.cz": {

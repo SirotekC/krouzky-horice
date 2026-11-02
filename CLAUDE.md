@@ -46,11 +46,11 @@ Stejná pravidla polí jako u dětí, společné části schématu jsou v `schem
 - Není `vek_do`, `pohlavi` ani `skolni_rok`. `vek_od` jen tehdy, když zdroj uvádí minimální věk (např. „15–60 let“ → 15).
 - `uroven`: `zacatecnici` | `pokrocili` | `vsichni` | `null`. Vyplň jen podle zdroje (název, popis).
 - `urceno_pro`: pole z `zeny`, `muzi`, `seniori`, `tehotne`. Jen když zdroj aktivitu výslovně určuje („pro ženy“, „pro seniory“), ne při „především ženám“.
-- `prihlaska.typ` je **povinný**: `bez-prihlasky` (stačí přijít), `rezervace` (rezervace na lekci), `prihlaska` (přihláška na kurz / pololetí).
+- `prihlaska.typ` je **povinný**: `bez-prihlasky` (stačí přijít), `rezervace` (rezervace na lekci), `prihlaska` (přihláška na kurz / pololetí), nebo `null`, když zdroj neuvádí, jak se přihlásit. Typ neodhaduj, `null` doplň poznámkou „Web neuvádí, zda je potřeba se předem přihlásit.“
 - `kategorie` z číselníku dospělých. Klíče společné s dětmi (`tanec`, `hudba`, `vytvarne`, `jazyky`…) znamenají totéž.
 - **Id jsou unikátní napříč oběma soubory** (detail `#/aktivita/{id}`); validace to hlídá.
 - **Hraniční aktivity:** záznam žije jen v jedné sekci. Dětský kroužek, který zdroj výslovně otevírá i dospělým (např. věk „7–65 let“, „pro malé i velké“), dostane `i_pro_dospele: true` a zobrazí se i u dospělých se štítkem „Z nabídky pro děti“. Obráceně `i_pro_deti`. Samotné „od 14 let“ bez horní hranice nestačí. Aktivity „rodiče s dětmi“ patří k dětem. Kategorie takové aktivity musí existovat v číselníku druhé sekce (validace).
-- **Soukromí lektoři (OSVČ) se zatím nepřidávají**, jen organizace a subjekty s vlastním webem. Kontakt = odkaz na web, žádné osobní telefony ani e-maily.
+- **Soukromí lektoři (OSVČ) se zatím nepřidávají**, jen organizace a subjekty s vlastním webem. Kontakt = odkaz na web, žádné osobní telefony ani e-maily. Výjimka: lektor dal svolení ke zveřejnění kontaktů (zapsat do `data-src/zdroje.md`). Bez webu je `web` i `zdroj_url` odkaz `mailto:` (karta ukáže tlačítko „Napsat e-mail“, monitoring ho přeskakuje).
 
 ## Termíny (`terminy`) – jak strukturovat
 

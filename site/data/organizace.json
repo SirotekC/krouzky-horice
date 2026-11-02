@@ -31,7 +31,7 @@
     "email": "sekretar@florbalhorice.cz",
     "telefon": null,
     "adresa": null,
-    "popis": "Florbalový klub s mládežnickými týmy od přípravky po juniory.",
+    "popis": "Florbalový klub s týmy mužů a žen a mládežnickými týmy od přípravky po juniory.",
     "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
     "overeno": "2026-10-12"
   },
@@ -91,7 +91,7 @@
     "email": null,
     "telefon": null,
     "adresa": "Gothard 700, 508 01 Hořice v Podkrkonoší",
-    "popis": "Fotbalový oddíl TJ Jiskra Hořice s mládežnickými týmy od předpřípravky (U7) po starší dorost (U19). Trénuje se na hřišti Gothard.",
+    "popis": "Fotbalový oddíl TJ Jiskra Hořice s mužskými týmy (A tým v 5. lize, B tým v okresním přeboru) a mládežnickými týmy od předpřípravky (U7) po starší dorost (U19). Trénuje se na hřišti Gothard.",
     "zdroj_url": "https://www.horickyfotbal.cz/cs/s/14-kontakty",
     "overeno": "2026-10-12"
   },
@@ -262,5 +262,29 @@
     "popis": "Klub pro hořické seniory zřízený a provozovaný městem Hořice.",
     "zdroj_url": "https://www.horice.org/seniorklub/ms-2738/p1=5055",
     "overeno": "2026-10-30"
+  },
+  {
+    "id": "groove-dance-horice",
+    "nazev": "Groove Dance Hořice",
+    "typ": "jine",
+    "web": "https://www.facebook.com/profile.php?id=61574765675928&sk=directory_intro",
+    "email": null,
+    "telefon": null,
+    "adresa": null,
+    "popis": "Lekce groove dance s certifikovanou lektorkou. Tanec bez choreografií pro každého bez ohledu na věk, kondici a zkušenosti.",
+    "zdroj_url": "https://www.facebook.com/profile.php?id=61574765675928&sk=directory_intro",
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "pilates-kluzova",
+    "nazev": "Pilates – Vladimíra Klůzová",
+    "typ": "jine",
+    "web": "mailto:pilates.kluzova@seznam.cz",
+    "email": "pilates.kluzova@seznam.cz",
+    "telefon": "603 195 210",
+    "adresa": null,
+    "popis": "Lekce pilates s lektorkou Vladimírou Klůzovou. Kontaktní údaje jsou zveřejněné se svolením lektorky.",
+    "zdroj_url": "mailto:pilates.kluzova@seznam.cz",
+    "overeno": "2026-11-02"
   }
 ]

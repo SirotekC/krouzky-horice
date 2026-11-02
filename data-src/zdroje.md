@@ -130,12 +130,19 @@
 ## Poznámky ze sběru (2026-10-30) – další zdroje pro dospělé
 
 - Přidáno 13 aktivit (Rebels Gym 3, Checkers Happiness 1, bazén 1, Sokol 1, volejbal 1, box 1, horolezci 2, knihovna 1, Magic English 1, Seniorklub 1) a 5 organizací.
-- **Odhadnuto / nejisté:** `prihlaska.typ` u Aquaaerobiku a Seniorklubu je `bez-prihlasky`, zdroj o přihlašování nic neříká. Volejbal a box: web neuvádí, zda berou nové členy; konce tréninků neuvedeny. Skupinovka pro ženy: jen začátek 17:00. Cena pilates převzata z ceníku skupinových lekcí Rebels Gym. Úroveň pilates „začátečníci“ podle názvu (text říká „pro všechny“).
+- **Odhadnuto / nejisté:** `prihlaska.typ` u Aquaaerobiku a Seniorklubu je `null` (původně odhadnuto `bez-prihlasky`, opraveno 2026-11-02), zdroj o přihlašování nic neříká. Volejbal a box: web neuvádí, zda berou nové členy; konce tréninků neuvedeny. Skupinovka pro ženy: jen začátek 17:00. Cena pilates převzata z ceníku skupinových lekcí Rebels Gym. Úroveň pilates „začátečníci“ podle názvu (text říká „pro všechny“).
 - **Sokol, pondělí:** sokol.eu „Cvičení pro seniorky od 60 let, 15:00–16:00“, web města „zdravotní cvičení žen“ od 15:00. Použit sokol.eu.
 - **Rebels Gym:** Reservio uvádí jinou otevírací dobu (středa zavřeno), rozvrh lekcí brán z rebelsgym.cz.
 - **Králičí hop:** série nedělních tréninků s termíny vypisovanými průběžně, ne pevný týdenní rozvrh.
-- **Nezařazeno:** GymLand (posilovna bez vedených lekcí), Groove Dance (jen stránka města z jara 2026: st od 18:45, pá od 16:00, ZŠ Na Habru; aktuálnost neověřena), lekce na sporthorice.cz/cviceni (jóga ne 17:00–18:30, aerobic po 19:15–20:30; soukromé lektorky jen s osobními telefony), Studio pohybu Linda (cviceni-linda.cz, rozvrh dospělých jen po přihlášení do rezervačního systému), kondiční plavání (termín „připravuje se“), Aikido (časy z roku 2015), sbory DK Koruna (bez časů zkoušek), šachy dospělí („pátek večer“ bez času), City Fitness a další (jen Facebook nebo bez webu), KČT (jen roční pochody), taneční kurz DK Koruna (letní, proběhl).
+- **Nezařazeno:** GymLand (posilovna bez vedených lekcí), Studio pohybu Linda (cviceni-linda.cz, rozvrh dospělých jen po přihlášení do rezervačního systému), kondiční plavání (termín „připravuje se“), Aikido (časy z roku 2015), sbory DK Koruna (bez časů zkoušek), šachy dospělí („pátek večer“ bez času), City Fitness a další (jen Facebook nebo bez webu), KČT (jen roční pochody), taneční kurz DK Koruna (letní, proběhl).
 
 ## Zjištění pro fázi 3–4
 
 _(doplní se v úkolu 8)_
+
+## Poznámky ze sběru (2026-11-02) – doplnění dospělých
+
+- **Groove Dance – tanec pro radost:** podle letáku od uživatele (st 18:45–20:00 ZŠ Na Habru, ne 17:30–18:45 Čtvrtý Prostor, 200 Kč, přihlášení telefonem). Telefon na letáku je osobní, proto se nepřebírá, kontakt je facebooková stránka. Adresa Čtvrtého Prostoru (K lomu 50, 508 01 Hořice) podle SMSticket, potvrdil uživatel. Typ `rezervace` podle „Přihlášení: tel.“, leták neuvádí, zda je 200 Kč za lekci (`cena.obdobi: null`). Starší rozvrh na webu města (st 18:45, pá 16:00) už neplatí.
+- **Jóga, Aerobic s Janou, Slender Life:** nabídka na sporthorice.cz/cviceni, vedená pod Sportovním zařízením. Osobní telefony lektorek se nepřebírají, odkaz vede na stránku Sportovního zařízení.
+- **Fotbal muži, florbal muži a ženy:** fotbal bez časů tréninků (web oddílu je neuvádí), florbal muži podle /treninky, ženy podle /pridej-se-k-nam.
+- **Pilates – Vladimíra Klůzová:** údaje od uživatele (2026-11-02): pondělí 17:00–18:00, učebna v areálu bazénu, 80 Kč za lekci, lze chodit na jednotlivé lekce. Lektorka dala **svolení ke zveřejnění kontaktů** (603 195 210, pilates.kluzova@seznam.cz). Web pilateskluzova.cz nefunguje, proto `web`/`zdroj_url` = `mailto:`.

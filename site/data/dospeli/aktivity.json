@@ -973,6 +973,65 @@
     "overeno": "2026-10-30"
   },
   {
+    "id": "groove-dance-horice-tanec-pro-radost",
+    "organizace_id": "groove-dance-horice",
+    "nazev": "Groove Dance – tanec pro radost",
+    "kategorie": [
+      "tanec"
+    ],
+    "popis": "Groove dance je tanec pro všechny, na věku, kondici ani zkušenostech nezáleží. Tančí se volně na hudbu, bez naučených choreografií.",
+    "klicova_slova": [
+      "groove dance",
+      "tanec",
+      "pohyb na hudbu"
+    ],
+    "vek_od": null,
+    "uroven": "vsichni",
+    "misto": null,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "st",
+          "casy": [
+            "18:45–20:00"
+          ],
+          "misto": "ZŠ Na Habru, Jablonského 865"
+        },
+        {
+          "skupina": null,
+          "den": "ne",
+          "casy": [
+            "17:30–18:45"
+          ],
+          "misto": "Čtvrtý Prostor, K lomu 50"
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "st",
+        "ne"
+      ]
+    },
+    "cena": {
+      "text": "200 Kč",
+      "castka_kc": 200,
+      "obdobi": null
+    },
+    "prihlaska": {
+      "typ": "rezervace",
+      "zpusob": "Přihlášení předem telefonicky, kontakt je na letáku ve facebookové skupině.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.facebook.com/profile.php?id=61574765675928&sk=directory_intro",
+      "poznamka": "Leták neuvádí, zda je cena za jednu lekci."
+    },
+    "zdroj_url": "https://www.facebook.com/profile.php?id=61574765675928&sk=directory_intro",
+    "overeno": "2026-11-02"
+  },
+  {
     "id": "rebels-gym-silovy-a-kondicni-trenink",
     "organizace_id": "rebels-gym",
     "nazev": "Silový a kondiční trénink",
@@ -1230,7 +1289,7 @@
       "obdobi": "lekce"
     },
     "prihlaska": {
-      "typ": "bez-prihlasky",
+      "typ": null,
       "zpusob": "Informace na webu organizace.",
       "od": null,
       "do": null,
@@ -1240,6 +1299,213 @@
     },
     "zdroj_url": "https://www.sporthorice.cz/aquaaerobic-cviceni-pro-tehotne/",
     "overeno": "2026-10-30"
+  },
+  {
+    "id": "plavani-sporthorice-joga",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Jóga",
+    "kategorie": [
+      "joga"
+    ],
+    "popis": "Nedělní lekce jógy v učebně v areálu bazénu.",
+    "klicova_slova": [
+      "jóga",
+      "protažení",
+      "relaxace"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Učebna v areálu bazénu",
+      "adresa": "Janderova 2156, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ne",
+          "casy": [
+            "17:00–18:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "ne"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": null,
+      "zpusob": "Kontakt na lektorku je na webu Sportovního zařízení.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.sporthorice.cz/cviceni/",
+      "poznamka": "Web neuvádí cenu ani to, zda je potřeba se předem přihlásit."
+    },
+    "zdroj_url": "https://www.sporthorice.cz/cviceni/",
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "plavani-sporthorice-aerobic-s-janou",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Aerobic s Janou",
+    "kategorie": [
+      "cviceni"
+    ],
+    "popis": "Aerobik, step aerobik, posilování a formování těla.",
+    "klicova_slova": [
+      "aerobik",
+      "step aerobik",
+      "posilování"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Městská sportovní hala",
+      "adresa": "Erbenova 1081, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "19:15–20:30"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": null,
+      "zpusob": "Kontakt na cvičitelku je na webu Sportovního zařízení.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.sporthorice.cz/cviceni/",
+      "poznamka": "Web neuvádí cenu ani to, zda je potřeba se předem přihlásit."
+    },
+    "zdroj_url": "https://www.sporthorice.cz/cviceni/",
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "plavani-sporthorice-slender-life",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Slender Life – cvičení na strojích",
+    "kategorie": [
+      "cviceni"
+    ],
+    "popis": "Cvičení na šesti strojích Slender Life pro zpevnění a zeštíhlení postavy. Podle pořadatele vhodné i pro ženy s bolestmi zad, poruchou krevního oběhu, nadváhou a pro astmatiky.",
+    "klicova_slova": [
+      "slender life",
+      "stroje",
+      "zeštíhlení",
+      "bolesti zad"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Sokolovna, 1. patro nad velkou halou",
+      "adresa": "Erbenova 1081, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [],
+          "misto": null
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Časy podle objednávky.",
+      "dny": [
+        "po",
+        "ct"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "rezervace",
+      "zpusob": "Na objednávku, kontakt je na webu Sportovního zařízení.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.sporthorice.cz/cviceni/",
+      "poznamka": "Web neuvádí cenu."
+    },
+    "zdroj_url": "https://www.sporthorice.cz/cviceni/",
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "pilates-kluzova-pondeli",
+    "organizace_id": "pilates-kluzova",
+    "nazev": "Pilates",
+    "kategorie": [
+      "cviceni"
+    ],
+    "popis": "Pondělní lekce pilates v učebně v areálu bazénu. Na každou lekci lze přijít zvlášť.",
+    "klicova_slova": [
+      "pilates",
+      "protažení",
+      "zpevnění",
+      "záda"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "misto": {
+      "nazev": "Učebna v areálu bazénu",
+      "adresa": "Janderova 2156, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": null,
+      "dny": [
+        "po"
+      ]
+    },
+    "cena": {
+      "text": "80 Kč za lekci",
+      "castka_kc": 80,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "typ": "bez-prihlasky",
+      "zpusob": "Na každou lekci lze přijít zvlášť. Kontakt: 603 195 210, pilates.kluzova@seznam.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "mailto:pilates.kluzova@seznam.cz",
+      "poznamka": null
+    },
+    "zdroj_url": "mailto:pilates.kluzova@seznam.cz",
+    "overeno": "2026-11-02"
   },
   {
     "id": "tj-sokol-horice-seniorky",
@@ -1337,6 +1603,166 @@
     },
     "zdroj_url": "https://www.horice.org/volejbal/ms-11400/p1=11400",
     "overeno": "2026-10-30"
+  },
+  {
+    "id": "fotbal-jiskra-horice-muzi",
+    "organizace_id": "fotbal-jiskra-horice",
+    "nazev": "Fotbal – muži (A a B tým)",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Mužské týmy fotbalového oddílu TJ Jiskra Hořice. A tým hraje 5. ligu mužů, B tým okresní přebor mužů. Domácí zápasy na hřišti Gothard.",
+    "klicova_slova": [
+      "fotbal",
+      "kopaná",
+      "míč"
+    ],
+    "vek_od": null,
+    "uroven": null,
+    "urceno_pro": [
+      "muzi"
+    ],
+    "misto": {
+      "nazev": "Hřiště Gothard",
+      "adresa": "Na Gothardě, Hořice"
+    },
+    "terminy": {
+      "text": "Časy tréninků web oddílu neuvádí.",
+      "obdobi": "Podzim 2026",
+      "poznamka": "Informace o trénincích a náboru získáte přes kontakty na webu oddílu.",
+      "dny": []
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.horickyfotbal.cz/cs/s/14-kontakty",
+      "poznamka": "Web neuvádí, zda oddíl přijímá nové hráče."
+    },
+    "zdroj_url": "https://www.horickyfotbal.cz/cs/s/13-soupiska/1-tj-jiskra-horice",
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "florbal-horice-muzi",
+    "nazev": "Florbal – muži (A a B tým)",
+    "organizace_id": "florbal-horice",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Mužské týmy florbalového klubu FBK Hořice, pro ročníky 2007 a starší.",
+    "klicova_slova": [
+      "florbal",
+      "hokejka",
+      "míčové hry"
+    ],
+    "vek_od": 19,
+    "uroven": null,
+    "urceno_pro": [
+      "muzi"
+    ],
+    "misto": null,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": "Muži",
+          "den": "ut",
+          "casy": [
+            "19:15–20:45"
+          ],
+          "misto": "SH Gymnázia"
+        },
+        {
+          "skupina": "Muži B",
+          "den": "st",
+          "casy": [
+            "19:45–21:15"
+          ],
+          "misto": "Městská hala Erbenova"
+        },
+        {
+          "skupina": "Muži",
+          "den": "pa",
+          "casy": [
+            "19:15–20:45"
+          ],
+          "misto": "SH Gymnázia"
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Náborová stránka klubu uvádí pro nové hráče středeční trénink v městské hale Erbenova.",
+      "dny": [
+        "ut",
+        "st",
+        "pa"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Přijďte na trénink, dotazy na sekretar@florbalhorice.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.florbalhorice.cz/pridej-se-k-nam",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.florbalhorice.cz/treninky",
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "florbal-horice-zeny",
+    "organizace_id": "florbal-horice",
+    "nazev": "Florbal – ženy",
+    "kategorie": [
+      "sport-mickove"
+    ],
+    "popis": "Florbal pro ženy z ročníků 2009 a starších. Trénuje se zhruba jednou za 14 dní.",
+    "klicova_slova": [
+      "florbal",
+      "hokejka",
+      "míčové hry"
+    ],
+    "vek_od": 17,
+    "uroven": null,
+    "urceno_pro": [
+      "zeny"
+    ],
+    "misto": {
+      "nazev": "Městská sportovní hala",
+      "adresa": "Erbenova 1081, Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "19:15–20:45"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Tréninky jsou zhruba jednou za 14 dní, termín je potřeba domluvit s klubem.",
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": null,
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Před první návštěvou kontaktujte klub (sekretar@florbalhorice.cz).",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://www.florbalhorice.cz/pridej-se-k-nam",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
+    "overeno": "2026-11-02"
   },
   {
     "id": "box-club-horice-trenink",
@@ -1644,13 +2070,13 @@
     },
     "cena": null,
     "prihlaska": {
-      "typ": "bez-prihlasky",
+      "typ": null,
       "zpusob": "Informace na webu organizace.",
       "od": null,
       "do": null,
       "prubezne": true,
       "odkaz": "https://www.horice.org/seniorklub/ms-2738/p1=5055",
-      "poznamka": null
+      "poznamka": "Web neuvádí, zda je potřeba se předem přihlásit."
     },
     "zdroj_url": "https://www.horice.org/seniorklub/ms-2738/p1=5055",
     "overeno": "2026-10-30"
