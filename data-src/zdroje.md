@@ -23,6 +23,7 @@
 | rebels-gym | Rebels Gym Hořice | sportovni-klub | https://www.rebelsgym.cz | https://www.rebelsgym.cz/detske-treninky/ | – | Gymčata 3–5 let, Rebeláci 6–12 let. Podstránky zatím neověřeny. |
 | volejbal-horice | Volejbal Hořice | sportovni-klub | https://www.horice.org/volejbal/ms-11400/p1=11400 | tamtéž | – | Jen stránka města: minivolejbal 6–14 let, Út a Čt. |
 | sdh-horice | SDH Hořice – Mladí hasiči | spolek | https://www.facebook.com/groups/114975652496133/user/100057277127174 | plakát v příspěvku (jen obrázek, FB vyžaduje přihlášení) | – (stačí přijít, první trénink nezávazně) | Čtvrtek od 16:00, Otakarova 1500, děti od 1. třídy (horní hranici 15 let doplnil uživatel). Bez konce tréninku, ceny a školního roku. Plakát dodal uživatel 2026-10-30. Telefon z plakátu nezařazen (pravděpodobně osobní). |
+| dance-and-joy | Dance & Joy – taneční škola pro děti | sportovni-klub | https://www.danceandjoy.cz | https://www.danceandjoy.cz/předškoláčci-4-6-let ; https://www.danceandjoy.cz/děti-7-10-let ; https://www.danceandjoy.cz/junioři-11-15-let ; https://www.danceandjoy.cz/elitnislozka | https://www.danceandjoy.cz/přihlášky (formuláře `danceandjoy.cevis.cz/prihlaska/{skupina}`) | Učí v mnoha městech, rozvrh je na stránce každé věkové skupiny po městech. V Hořicích 4 skupiny (ZŠ Na Daliborce, elitky i v sokolovně), cena za pololetí. Tip uživatele. |
 | spv-horice | Sport pro všechny Hořice | sportovni-klub | https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788 | tamtéž | – | Jen stránka města, děti od 4 let. Zbytek na Facebooku. |
 
 ## Zvažované, zatím nezařazené
@@ -101,6 +102,14 @@
 - Rozjezd ve Dvoře Králové: úvodní dvě lekce 20. a 28. 9. 2026 v 17:15–18:15 (už proběhly, místo nejasné), potom 8 nedělních bloků v říjnu a listopadu, čas „bude upřesněn“. Přihlášky jsou na pracovní e-mail ředitele Sportovního zařízení (jméno v adrese), proto se do dat nepřebírá, karta odkazuje na průvodce.
 - Přehledné shrnutí všech tří programů je i na https://www.sporthorice.cz/bruslarska-skola-skolicka/ (tip uživatele). Údaje se shodují, časy skupin bruslařské školy tam ale nejsou. Rozpor: přihlášky na Rozjezd ve Dvoře Králové podle KLUHO „od 1. září průběžně“, podle Sportovního zařízení „od 1. do 14. 9.“. Ponecháno jako průběžné s poznámkou na kartě.
 - Adresu kluziště web neuvádí. Telefon spolku je zároveň telefon předsedy, nepřebírá se. Obecný e-mail info@kluho.cz.
+
+## Poznámky ze sběru (2026-11-02) – Dance & Joy
+
+- Zdroj od uživatele. Zapsány 4 hořické skupiny: Předškoláčci (4–6, čt 16:00–17:00), Děti (7–10, út 16:00–17:00), Junioři (11–15, út 17:00–18:00) a Elitní složka (po 16:00–17:00 malá tělocvična sokolovny, čt 17:00–18:00 a jednou měsíčně neděle 2 h na ZŠ Na Daliborce). Ostatní města (Jičín, Městec Králové, Živanice, Poděbrady…) nezařazena.
+- Rok na webu chybí, jen „začínáme 1. října“ a „6. října“. 1. 10. 2026 je čtvrtek a 6. 10. 2026 úterý, sedí to se dny lekcí, proto `skolni_rok` 2026/2027.
+- **Rozpor u elitní složky:** úvodní stránka uvádí 8–14 let, 1× týdně trénink ve věkové skupině + 1× týdně elitní trénink, 60 tréninků za rok. Stránka elitní složky pro Hořice uvádí 8–15 let, 2× týdně 60 min + 1× měsíčně 120 min, přes 80 lekcí za rok. Použita stránka elitní složky.
+- Předškoláčci mají obecně „60 nebo 45 min“, hořická skupina 16:00–17:00.
+- Provozovatel ani právní forma nejsou uvedeny (jen IČ 05350972). Typ `sportovni-klub` jako u Rebels Gym (typ určuje druh organizace, ne právní forma). Telefon školy nepřebírán (nelze poznat, zda není osobní), e-mail je obecný `info.…`. Jména lektorek se nepřebírají.
 
 ## Zjištění pro fázi 3–4
 

@@ -6416,5 +6416,230 @@
     "skolni_rok": null,
     "zdroj_url": "https://www.facebook.com/groups/114975652496133/user/100057277127174",
     "overeno": "2026-10-30"
+  },
+  {
+    "id": "dance-and-joy-predskolacci",
+    "nazev": "Předškoláčci – tanec a pohyb",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Všestranné cvičení s prvky rytmických tanců pro holky i kluky: rovnováha, ovládání těla, základy gymnastiky a vnímání rytmu. Lekce bývají tematické, děti se naučí i pár jednoduchých tanců.",
+    "klicova_slova": [
+      "tancování",
+      "gymnastika",
+      "rytmika"
+    ],
+    "vek_od": 4,
+    "vek_do": 6,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "14 lekcí v 1. pololetí a 16 ve 2. pololetí, začátek 1. 10. 2026",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 800 Kč za pololetí",
+      "castka_kc": 1800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. První lekce je ukázková a neplatí se, stačí předem dát vědět, že dítě přijde.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/predskolaci",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/p%C5%99ed%C5%A1kol%C3%A1%C4%8Dci-4-6-let"
+  },
+  {
+    "id": "dance-and-joy-deti",
+    "nazev": "Taneční lekce pro děti 7–10 let",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Děti si vyzkouší různé taneční styly – street dance, contemporary, jazz dance, disco dance – a gymnastické prvky. Pro začátečníky i pokročilé, chodit mohou i děti z jiných škol.",
+    "klicova_slova": [
+      "tancování",
+      "street dance",
+      "gymnastika"
+    ],
+    "vek_od": 7,
+    "vek_do": 10,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "14 lekcí v 1. pololetí a 16 ve 2. pololetí, začátek 6. 10. 2026",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 800 Kč za pololetí",
+      "castka_kc": 1800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. První lekce je ukázková a neplatí se, stačí předem dát vědět, že dítě přijde.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/deti",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/d%C4%9Bti-7-10-let"
+  },
+  {
+    "id": "dance-and-joy-juniori",
+    "nazev": "Junioři – street dance, contemporary, moderna",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Systematické lekce konkrétních stylů s důrazem na techniku, rytmus a týmovou práci. Z nacvičených choreografií jsou vystoupení, přehlídky i soutěže. Pro začátečníky i pokročilé.",
+    "klicova_slova": [
+      "tancování",
+      "moderní tanec",
+      "choreografie"
+    ],
+    "vek_od": 11,
+    "vek_do": 15,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "14 lekcí v 1. pololetí a 16 ve 2. pololetí, začátek 6. 10. 2026",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 900 Kč za pololetí",
+      "castka_kc": 1900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. První lekce je ukázková a neplatí se, stačí předem dát vědět, že dítě přijde.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/juniori",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/junio%C5%99i-11-15-let"
+  },
+  {
+    "id": "dance-and-joy-elitni-slozka",
+    "nazev": "Elitní taneční složka (street dance)",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Rozšířená výuka pro pokročilé a motivované tanečníky, kteří chtějí tančit intenzivněji. Složka vystupuje na městských akcích a jezdí na menší soutěže v okolí, soutěžní kostýmy jsou v ceně.",
+    "klicova_slova": [
+      "tancování",
+      "taneční soutěže",
+      "hip hop"
+    ],
+    "vek_od": 8,
+    "vek_do": 15,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": "Sokolovna – malá tělocvična"
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Navíc jednou za měsíc v neděli dvouhodinový trénink na ZŠ Na Daliborce, termín po domluvě. Více než 80 lekcí za rok.",
+      "dny": [
+        "po",
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "4 200 Kč za pololetí",
+      "castka_kc": 4200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. Náborový trénink byl 3. 9. 2026.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/elitnislozka",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/elitnislozka"
   }
 ]
