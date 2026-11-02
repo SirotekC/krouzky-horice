@@ -71,8 +71,9 @@
 ## Poznámky ze sběru (2026-10-19) – RC Konvička
 
 - Zdroj od uživatele: článek https://rckonvicka.cz/2025/01/11/do-noveho-roku-konvicka-vkrocila-s-novym-programem/ je z ledna 2025 a uvádí začátek kroužků v 9:30. Novější leták „Pravidelné aktivity od září 2025“ uvádí 9:00, platí leták.
-- Zapsáno 5 dětských aktivit (Hernička pro miminka, Hýbánky, Notičky z Konvičky, Barevné ručičky, SENZAční hraní) se `skolni_rok` 2025/2026 a poznámkou, že program na 2026/27 zatím není zveřejněn. **Po zveřejnění nového letáku aktualizovat.**
+- Zapsáno 5 dětských aktivit (Hernička pro miminka, Hýbánky, Notičky z Konvičky, Barevné ručičky, SENZAční hraní) se `skolni_rok` 2025/2026 a poznámkou, že program na 2026/27 zatím není zveřejněn. *(Aktualizováno 2026-11-02, viz níže.)*
 - 2026-10-29: Barevné ručičky (`rckonvicka.cz/tvorilek/`) zrušeny, aktivita odstraněna z webu.
+- 2026-11-02: program 2026/27 je jen na měsíčních plakátech v článcích se štítkem „program“ (`rckonvicka.cz/tag/program/`, monitor tam hlídá nové články). Podle plakátu na listopad 2026: nové ceny za rodinu (Hernička 40 Kč, Hýbánky a Notičky 70 Kč), SENZAční hraní je „Hernička se Sensory play“ každý lichý pátek od 9:30 za 100 Kč/dítě (odpolední 16:00 jen některé sudé pátky). Nově Batolecí klubík (St od 9:00, 40 Kč/rodina) – web k němu nemá stránku ani popis, přidán na přání uživatele s obecným popisem. Leták „Pravidelné aktivity od září 2025“ už neplatí.
 - Vynecháno: Maminky v kondici a Časoprostor ženy (pro dospělé), jednorázové přednášky a akce.
 - Leták uvádí jen začátek lekce („od 9:00“), proto termíny jako `text` místo `rozvrh`.
 - Hernička: věk 0–1 odvozen z popisu „první rok s děťátkem“. SENZAční hraní: „od cca 1,5 roku“ je jen v popisu, `vek_od` nevyplněn (celá čísla).

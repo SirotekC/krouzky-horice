@@ -2,11 +2,6 @@
   "pauzaMs": 5000,
   "doplnkoveUrl": [
     {
-      "url": "https://rckonvicka.cz/wp-content/uploads/2025/09/Pravidelne-aktivity-letak-14.png",
-      "organizace_id": "rc-konvicka",
-      "popis": "leták s rozvrhem pravidelných aktivit"
-    },
-    {
       "url": "https://d3c39e64da.clvaw-cdnwnd.com/974d636996c9c57d64ba97df7ad4e785/200000560-763287632b/Sn%C3%ADmek%20obrazovky%202026-10-07%20011339.png",
       "organizace_id": "kct-horice-turistacek",
       "popis": "rozvrh schůzek 1. pololetí 2026/27 (obrázek)"
@@ -66,6 +61,11 @@
     {
       "url": "https://rckonvicka.cz/aktualni-pravidelny-program/",
       "organizace_id": "rc-konvicka"
+    },
+    {
+      "url": "https://rckonvicka.cz/tag/program/",
+      "organizace_id": "rc-konvicka",
+      "vzorOdkazu": "^https://rckonvicka\\.cz/\\d{4}/\\d{2}/\\d{2}/"
     },
     {
       "url": "https://www.hohohorice.cz/detsky-krouzek-lezeni",
