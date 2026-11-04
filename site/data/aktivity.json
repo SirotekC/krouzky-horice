@@ -410,15 +410,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1010-pohybova-skolicka-pro-deti-od-4-7-let",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1010-pohybova-skolicka-pro-deti-od-4-7-let",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-sijeme-hackujeme-vysivame",
@@ -1155,7 +1155,7 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-      "poznamka": "Obsazenost podle webu DDM k 2. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
         "volna_mista": 1
@@ -1163,7 +1163,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-    "overeno": "2026-11-02"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-motoristicky-krouzek-teorie-simulator",
@@ -1499,15 +1499,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 3
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-parkour-pokrocili",
@@ -1728,7 +1728,7 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-      "poznamka": "Obsazenost podle webu DDM k 2. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
         "volna_mista": 2
@@ -1736,7 +1736,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-    "overeno": "2026-11-02"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-anglictina-pro-5-8-tridu",
@@ -3185,14 +3185,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
-        "stav": "obsazeno"
+        "stav": "posledni",
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-roztleskavacky-phoenix-kadetky-2019-2015",
@@ -5662,11 +5663,11 @@
       "zpusob": "Online formulář na stránce. Gym potvrdí rezervaci místa a pošle platební údaje.",
       "prubezne": false,
       "odkaz": "https://www.rebelsgym.cz/rebelaci/",
-      "poznamka": "K 12. 10. 2026: pondělí a středa obsazeno, čtvrtek 1 volné místo."
+      "poznamka": "K 4. 11. 2026: pondělí 1 volné místo, středa a čtvrtek obsazeno."
     },
     "skolni_rok": null,
     "zdroj_url": "https://www.rebelsgym.cz/rebelaci/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-04"
   },
   {
     "id": "volejbal-horice-minivolejbal",
