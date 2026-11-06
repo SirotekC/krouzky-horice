@@ -13,7 +13,7 @@
 | zus-melodie | Základní umělecká škola Melodie (soukromá) | zus | https://www.zusmelodie.cz | https://www.zusmelodie.cz/obory.php ; https://www.zusmelodie.cz/pobocky.php | https://www.zusmelodie.cz/ (tlačítko „Přihláška“, formulář v okně) | Ceník a organizace roku 2026/27 v PDF na https://www.zusmelodie.cz/dokumenty.php. Rozvrhy tanečního a výtvarného oboru jen na obrázcích v aktualitě „Poslední volná místa“ (9. 9. 2026). Hudební obor bez rozvrhu. |
 | rc-konvicka | Rodinné centrum Konvička, z. s. | spolek | https://rckonvicka.cz | https://rckonvicka.cz/aktualni-pravidelny-program/ (rozvrh jen na obrázku letáku) | rezervace přes Facebook (Messenger) nebo rckonvicka@seznam.cz | Kroužky pro malé děti s rodiči, platí se za lekci. Leták je „od září 2025“, program na 2026/27 zatím nezveřejněn (článek z 1. 8. 2026 slibuje návrat programů a novinky od září). Tip uživatele. |
 | horolezci-horice | HO-HO Horolezecký klub Hořice, z.s. | sportovni-klub | https://www.hohohorice.cz | https://www.hohohorice.cz/detsky-krouzek-lezeni ; ceník: https://www.hohohorice.cz/lezecka-stena-horice | – (platí se na místě) | Dětský kroužek každou středu 16:30–18:00, 60 Kč za lekci. Tip uživatele. |
-| ob-horice | TJ Jiskra Hořice, oddíl orientačního běhu | sportovni-klub | https://www.obhorice.cz | kalendář akcí (Google tabulka odkazovaná z webu jako „Přehled oddílových akcí“) | https://www.obhorice.cz/kontakt/ | Úterní tréninky mládeže, bez časů a cen. Tip uživatele. |
+| ob-horice | TJ Jiskra Hořice, oddíl orientačního běhu | sportovni-klub | https://www.obhorice.cz | kalendář akcí: https://docs.google.com/spreadsheets/d/1R5rPIGzDAx5YkVAJbRv8rjcMbznY3T7wQILq7dpYX_s/edit#gid=0 (z webu odkazovaný jako „Přehled oddílových akcí“) | https://www.obhorice.cz/kontakt/ | Úterní tréninky mládeže, bez časů a cen. Tip uživatele. |
 | kct-horice-turistacek | KČT Hořice – oddíl Turisťáček | spolek | https://turistacek-horice.webnode.cz | https://turistacek-horice.webnode.cz/zajmovy-krouzek/ (rozvrh a leták jako obrázky) | Google formulář odkazovaný ze stránky kroužku | Nábor na 1. pololetí 2026/27. Tip uživatele. |
 | curling-jicin | Curlingový club Loupežníci Jičín | sportovni-klub | https://www.curlingjicin.cz | https://www.curlingjicin.cz/ | – (stačí přijít) | **Mimo Hořice** (Jičín, asi 20 km), zařazeno jako tip uživatele. Bez cen a začátku sezóny. |
 | kluho | KLUHO – kluziště Hořice, z.s. (program Hořice do bruslí) | spolek | https://www.kluho.cz | https://www.kluho.cz/horicedobrusli ; https://www.kluho.cz/hokejovapripravka (rozpisy v PDF průvodcích) | online formuláře na stránkách programů | Bruslařská škola, hokejová přípravka a výjezdy do Dvora Králové, sezóna 2026/27. Tip uživatele. |
@@ -23,7 +23,9 @@
 | rebels-gym | Rebels Gym Hořice | sportovni-klub | https://www.rebelsgym.cz | https://www.rebelsgym.cz/detske-treninky/ | – | Gymčata 3–5 let, Rebeláci 6–12 let. Podstránky zatím neověřeny. |
 | volejbal-horice | Volejbal Hořice | sportovni-klub | https://www.horice.org/volejbal/ms-11400/p1=11400 | tamtéž | – | Jen stránka města: minivolejbal 6–14 let, Út a Čt. |
 | sdh-horice | SDH Hořice – Mladí hasiči | spolek | https://www.facebook.com/groups/114975652496133/user/100057277127174 | plakát v příspěvku (jen obrázek, FB vyžaduje přihlášení) | – (stačí přijít, první trénink nezávazně) | Čtvrtek od 16:00, Otakarova 1500, děti od 1. třídy (horní hranici 15 let doplnil uživatel). Bez konce tréninku, ceny a školního roku. Plakát dodal uživatel 2026-10-30. Telefon z plakátu nezařazen (pravděpodobně osobní). |
+| dance-and-joy | Dance & Joy – taneční škola pro děti | sportovni-klub | https://www.danceandjoy.cz | https://www.danceandjoy.cz/předškoláčci-4-6-let ; https://www.danceandjoy.cz/děti-7-10-let ; https://www.danceandjoy.cz/junioři-11-15-let ; https://www.danceandjoy.cz/elitnislozka | https://www.danceandjoy.cz/přihlášky (formuláře `danceandjoy.cevis.cz/prihlaska/{skupina}`) | Učí v mnoha městech, rozvrh je na stránce každé věkové skupiny po městech. V Hořicích 4 skupiny (ZŠ Na Daliborce, elitky i v sokolovně), cena za pololetí. Tip uživatele. |
 | spv-horice | Sport pro všechny Hořice | sportovni-klub | https://www.horice.org/sport%2Dpro%2Dvsechny/ms-11788/p1=11788 | tamtéž | – | Jen stránka města, děti od 4 let. Zbytek na Facebooku. |
+| studio-pohybu | Studio pohybu – Cvičení s Lindou | jine | https://www.cviceni-linda.cz | tamtéž (jen výčet druhů cvičení) | – (kompletní nabídku a přihlášky posílá e‑mailem, rozvrh v rezervačním systému po registraci) | Kurzy pro děti i dospělé od října 2026, rozvrh ani ceny na webu nejsou. Na přání uživatele jeden souhrnný záznam s odkazem na web (2026-11-06). |
 
 ## Zvažované, zatím nezařazené
 
@@ -71,8 +73,9 @@
 ## Poznámky ze sběru (2026-10-19) – RC Konvička
 
 - Zdroj od uživatele: článek https://rckonvicka.cz/2025/01/11/do-noveho-roku-konvicka-vkrocila-s-novym-programem/ je z ledna 2025 a uvádí začátek kroužků v 9:30. Novější leták „Pravidelné aktivity od září 2025“ uvádí 9:00, platí leták.
-- Zapsáno 5 dětských aktivit (Hernička pro miminka, Hýbánky, Notičky z Konvičky, Barevné ručičky, SENZAční hraní) se `skolni_rok` 2025/2026 a poznámkou, že program na 2026/27 zatím není zveřejněn. **Po zveřejnění nového letáku aktualizovat.**
+- Zapsáno 5 dětských aktivit (Hernička pro miminka, Hýbánky, Notičky z Konvičky, Barevné ručičky, SENZAční hraní) se `skolni_rok` 2025/2026 a poznámkou, že program na 2026/27 zatím není zveřejněn. *(Aktualizováno 2026-11-02, viz níže.)*
 - 2026-10-29: Barevné ručičky (`rckonvicka.cz/tvorilek/`) zrušeny, aktivita odstraněna z webu.
+- 2026-11-02: program 2026/27 je jen na měsíčních plakátech v článcích se štítkem „program“ (`rckonvicka.cz/tag/program/`, monitor tam hlídá nové články). Podle plakátu na listopad 2026: nové ceny za rodinu (Hernička 40 Kč, Hýbánky a Notičky 70 Kč), SENZAční hraní je „Hernička se Sensory play“ každý lichý pátek od 9:30 za 100 Kč/dítě (odpolední 16:00 jen některé sudé pátky). Nově Batolecí klubík (St od 9:00, 40 Kč/rodina) – web k němu nemá stránku ani popis, přidán na přání uživatele s obecným popisem. Leták „Pravidelné aktivity od září 2025“ už neplatí.
 - Vynecháno: Maminky v kondici a Časoprostor ženy (pro dospělé), jednorázové přednášky a akce.
 - Leták uvádí jen začátek lekce („od 9:00“), proto termíny jako `text` místo `rozvrh`.
 - Hernička: věk 0–1 odvozen z popisu „první rok s děťátkem“. SENZAční hraní: „od cca 1,5 roku“ je jen v popisu, `vek_od` nevyplněn (celá čísla).
@@ -88,7 +91,7 @@
 ## Poznámky ze sběru (2026-10-19) – tenis, orientační běh, Turisťáček, curling
 
 - **Tenis (tenishorice.cz):** web naposledy aktualizován 2022, jediný dětský nábor z 2019 (plakát). Nezařazeno, zůstává ve „Zvažovaných“.
-- **Orientační běh:** dřívější poznámka „web neuvádí trénink mládeže“ už neplatí, úterní tréninky jsou v kalendáři akcí 2026. Časy v kalendáři chybí. Archiv 2021 a 2024 uvádí začátek v 16:30, proto jen v poznámce a `casy` prázdné. Místo v zimě je „tělocvična“ (web města a archiv uvádějí sokolovnu). Věk ani cena neuvedeny. Na webu jsou jen osobní kontakty trenérů, organizace je bez e-mailu a telefonu.
+- **Orientační běh:** dřívější poznámka „web neuvádí trénink mládeže“ už neplatí, úterní tréninky jsou v kalendáři akcí 2026. Časy v kalendáři chybí. Archiv 2021 a 2024 uvádí začátek v 16:30, proto jen v poznámce a `casy` prázdné. Místo v zimě je „tělocvična“ (web města a archiv uvádějí sokolovnu). Věk ani cena neuvedeny. Na webu jsou jen osobní kontakty trenérů, organizace je bez e-mailu a telefonu. Od 2. 11. 2026 je `zdroj_url` přímo kalendář (Google tabulka): titulní stránka obhorice.cz má hlavně aktuality a monitor na ní hlásil změny, které se tréninků netýkají (issue #4).
 - **Turisťáček:** rozvrh 1. pololetí 2026/27 z obrázku (vyhotoven 6. 10. 2026). Web uvádí „od září do června“, první schůzka je ale až 7. 10. Věta „Členský příspěvek na II. pololetí je 700 Kč“ je zjevně ze starší verze stránky, cena je vedena jako 700 Kč za pololetí. Stránka `/prihlasovaci-formular/` má starý formulář (platba do 20. 1. 2025), použit formulář ze stránky kroužku. Leták uvádí „sokolovna“, web „sportovní hala TJ Jiskra“, adresa stejná (Erbenova 1081). Příměstský tábor a pochody pro veřejnost nezařazeny.
 - **Curling Jičín:** trénink dětí v pátek 15:00–16:30 na zimním stadionu v Jičíně. Časy jsou bez data platnosti, proto `skolni_rok` null. Věk „od 10 let“ je jen obecná věta o curlingu, nevyplněno. Kalendář tréninků na webu vrací chybu 500.
 
@@ -135,6 +138,14 @@
 - **Rebels Gym:** Reservio uvádí jinou otevírací dobu (středa zavřeno), rozvrh lekcí brán z rebelsgym.cz.
 - **Králičí hop:** série nedělních tréninků s termíny vypisovanými průběžně, ne pevný týdenní rozvrh.
 - **Nezařazeno:** GymLand (posilovna bez vedených lekcí), Studio pohybu Linda (cviceni-linda.cz, rozvrh dospělých jen po přihlášení do rezervačního systému), kondiční plavání (termín „připravuje se“), Aikido (časy z roku 2015), sbory DK Koruna (bez časů zkoušek), šachy dospělí („pátek večer“ bez času), City Fitness a další (jen Facebook nebo bez webu), KČT (jen roční pochody), taneční kurz DK Koruna (letní, proběhl).
+
+## Poznámky ze sběru (2026-11-02) – Dance & Joy
+
+- Zdroj od uživatele. Zapsány 4 hořické skupiny: Předškoláčci (4–6, čt 16:00–17:00), Děti (7–10, út 16:00–17:00), Junioři (11–15, út 17:00–18:00) a Elitní složka (po 16:00–17:00 malá tělocvična sokolovny, čt 17:00–18:00 a jednou měsíčně neděle 2 h na ZŠ Na Daliborce). Ostatní města (Jičín, Městec Králové, Živanice, Poděbrady…) nezařazena.
+- Rok na webu chybí, jen „začínáme 1. října“ a „6. října“. 1. 10. 2026 je čtvrtek a 6. 10. 2026 úterý, sedí to se dny lekcí, proto `skolni_rok` 2026/2027.
+- **Rozpor u elitní složky:** úvodní stránka uvádí 8–14 let, 1× týdně trénink ve věkové skupině + 1× týdně elitní trénink, 60 tréninků za rok. Stránka elitní složky pro Hořice uvádí 8–15 let, 2× týdně 60 min + 1× měsíčně 120 min, přes 80 lekcí za rok. Použita stránka elitní složky.
+- Předškoláčci mají obecně „60 nebo 45 min“, hořická skupina 16:00–17:00.
+- Provozovatel ani právní forma nejsou uvedeny (jen IČ 05350972). Typ `sportovni-klub` jako u Rebels Gym (typ určuje druh organizace, ne právní forma). Telefon školy nepřebírán (nelze poznat, zda není osobní), e-mail je obecný `info.…`. Jména lektorek se nepřebírají.
 
 ## Zjištění pro fázi 3–4
 

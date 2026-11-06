@@ -93,7 +93,7 @@
     "adresa": "Gothard 700, 508 01 Hořice v Podkrkonoší",
     "popis": "Fotbalový oddíl TJ Jiskra Hořice s mužskými týmy (A tým v 5. lize, B tým v okresním přeboru) a mládežnickými týmy od předpřípravky (U7) po starší dorost (U19). Trénuje se na hřišti Gothard.",
     "zdroj_url": "https://www.horickyfotbal.cz/cs/s/14-kontakty",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-02"
   },
   {
     "id": "rebels-gym",
@@ -286,5 +286,29 @@
     "popis": "Lekce pilates s lektorkou Vladimírou Klůzovou. Kontaktní údaje jsou zveřejněné se svolením lektorky.",
     "zdroj_url": "mailto:pilates.kluzova@seznam.cz",
     "overeno": "2026-11-02"
+  },
+  {
+    "id": "dance-and-joy",
+    "nazev": "Dance & Joy – taneční škola pro děti",
+    "typ": "sportovni-klub",
+    "web": "https://www.danceandjoy.cz",
+    "email": "info.danceandjoy@gmail.com",
+    "telefon": null,
+    "adresa": null,
+    "popis": "Taneční škola pro děti ve městech Královéhradeckého kraje a okolí. V Hořicích učí na ZŠ Na Daliborce a v sokolovně: předškoláky, děti, juniory a elitní soutěžní složku.",
+    "zdroj_url": "https://www.danceandjoy.cz/blank-3",
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "studio-pohybu",
+    "nazev": "Studio pohybu – Cvičení s Lindou",
+    "typ": "jine",
+    "web": "https://www.cviceni-linda.cz",
+    "email": null,
+    "telefon": null,
+    "adresa": null,
+    "popis": "Studio pohybu v Hořicích: skupinové i individuální lekce cvičení pro děti i dospělé.",
+    "zdroj_url": "https://www.cviceni-linda.cz",
+    "overeno": "2026-11-06"
   }
 ]

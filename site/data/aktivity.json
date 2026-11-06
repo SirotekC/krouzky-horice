@@ -410,15 +410,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1010-pohybova-skolicka-pro-deti-od-4-7-let",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1010-pohybova-skolicka-pro-deti-od-4-7-let",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-sijeme-hackujeme-vysivame",
@@ -869,15 +869,14 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 2. 11. 2026.",
       "kapacita": {
-        "stav": "posledni",
-        "volna_mista": 1
+        "stav": "nahradnici"
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1018-pece-cely-domecek",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-02"
   },
   {
     "id": "ddm-horice-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
@@ -1156,15 +1155,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-    "overeno": "2026-10-27"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-motoristicky-krouzek-teorie-simulator",
@@ -1500,15 +1499,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 3
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-parkour-pokrocili",
@@ -1688,15 +1687,15 @@
     "kategorie": [
       "technika"
     ],
-    "popis": "Základy 3D modelování, příprava návrhů a práce s 3D tiskárnou – od nápadu ke skutečnému výrobku. S sebou vlastní notebook a myš.",
+    "popis": "Základy 3D modelování, příprava návrhů a práce s 3D tiskárnou – od nápadu ke skutečnému výrobku. Vlastní notebook je výhodou.",
     "klicova_slova": [
       "3d tisk",
       "modelování",
       "tiskárna"
     ],
     "pohlavi": null,
-    "vek_od": 11,
-    "vek_do": 18,
+    "vek_od": 9,
+    "vek_do": 26,
     "misto": {
       "nazev": "DDM Hořice",
       "adresa": "Žižkova 611, Hořice"
@@ -1729,15 +1728,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-    "overeno": "2026-10-27"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-anglictina-pro-5-8-tridu",
@@ -3194,14 +3193,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
       "kapacita": {
-        "stav": "obsazeno"
+        "stav": "posledni",
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-04"
   },
   {
     "id": "ddm-horice-roztleskavacky-phoenix-kadetky-2019-2015",
@@ -5673,11 +5673,11 @@
       "zpusob": "Online formulář na stránce. Gym potvrdí rezervaci místa a pošle platební údaje.",
       "prubezne": false,
       "odkaz": "https://www.rebelsgym.cz/rebelaci/",
-      "poznamka": "K 12. 10. 2026: pondělí a středa obsazeno, čtvrtek 1 volné místo."
+      "poznamka": "K 4. 11. 2026: pondělí 1 volné místo, středa a čtvrtek obsazeno."
     },
     "skolni_rok": null,
     "zdroj_url": "https://www.rebelsgym.cz/rebelaci/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-04"
   },
   {
     "id": "volejbal-horice-minivolejbal",
@@ -5767,7 +5767,7 @@
     "kategorie": [
       "ostatni"
     ],
-    "popis": "Setkávání rodičů s miminky v prvním roce: hračky a podněty pro miminka a prostor sdílet radosti i starosti s ostatními rodiči.",
+    "popis": "Setkávání rodičů s miminky od narození do 1,5 roku: hry a podněty pro psychomotorický vývoj a prostor sdílet radosti i starosti s ostatními rodiči.",
     "klicova_slova": [
       "miminka",
       "rodiče s dětmi",
@@ -5783,14 +5783,14 @@
     "terminy": {
       "text": "Pondělí od 9:00",
       "obdobi": null,
-      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "poznamka": "Podle programu RC Konvička na listopad 2026 (plakát v článku „Listopad v Konvičce“).",
       "dny": [
         "po"
       ]
     },
     "cena": {
-      "text": "30 Kč za lekci",
-      "castka_kc": 30,
+      "text": "40 Kč za rodinu a lekci",
+      "castka_kc": 40,
       "obdobi": "lekce"
     },
     "prihlaska": {
@@ -5801,9 +5801,9 @@
       "odkaz": "https://rckonvicka.cz/hernicka-pro-miminka/",
       "poznamka": null
     },
-    "skolni_rok": "2025/2026",
+    "skolni_rok": "2026/2027",
     "zdroj_url": "https://rckonvicka.cz/hernicka-pro-miminka/",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-02"
   },
   {
     "id": "rc-konvicka-hybanky",
@@ -5828,14 +5828,14 @@
     "terminy": {
       "text": "Úterý od 9:00",
       "obdobi": null,
-      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "poznamka": "Podle programu RC Konvička na listopad 2026 (plakát v článku „Listopad v Konvičce“).",
       "dny": [
         "ut"
       ]
     },
     "cena": {
-      "text": "60 Kč za lekci",
-      "castka_kc": 60,
+      "text": "70 Kč za rodinu a lekci",
+      "castka_kc": 70,
       "obdobi": "lekce"
     },
     "prihlaska": {
@@ -5846,9 +5846,54 @@
       "odkaz": "https://rckonvicka.cz/hybanky/",
       "poznamka": null
     },
-    "skolni_rok": "2025/2026",
+    "skolni_rok": "2026/2027",
     "zdroj_url": "https://rckonvicka.cz/hybanky/",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-02"
+  },
+  {
+    "id": "rc-konvicka-batoleci-klubik",
+    "organizace_id": "rc-konvicka",
+    "nazev": "Batolecí klubík",
+    "kategorie": [
+      "ostatni"
+    ],
+    "popis": "Nová dopolední skupina pro batolata s rodiči. Podrobnější popis centrum zatím nezveřejnilo, v programu je jen název, den, čas a cena.",
+    "klicova_slova": [
+      "batolata",
+      "rodiče s dětmi",
+      "klub"
+    ],
+    "vek_od": null,
+    "vek_do": null,
+    "misto": {
+      "nazev": "RC Konvička, Sportovní hala (1. patro)",
+      "adresa": "Šalounova 2164, Hořice",
+      "gps": null
+    },
+    "terminy": {
+      "text": "Středa od 9:00",
+      "obdobi": null,
+      "poznamka": "Podle programu RC Konvička na listopad 2026 (plakát v článku „Listopad v Konvičce“).",
+      "dny": [
+        "st"
+      ]
+    },
+    "cena": {
+      "text": "40 Kč za rodinu a lekci",
+      "castka_kc": 40,
+      "obdobi": "lekce"
+    },
+    "prihlaska": {
+      "zpusob": "Na každou lekci se rezervuje předem: zprávou přes Facebook (Messenger) RC Konvička nebo e-mailem na rckonvicka@seznam.cz.",
+      "od": null,
+      "do": null,
+      "prubezne": true,
+      "odkaz": "https://rckonvicka.cz/jak-na-rezervace/",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://rckonvicka.cz/2026/10/28/listopad-v-konvicce/",
+    "overeno": "2026-11-02"
   },
   {
     "id": "rc-konvicka-noticky-z-konvicky",
@@ -5873,14 +5918,14 @@
     "terminy": {
       "text": "Čtvrtek od 9:00",
       "obdobi": null,
-      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "poznamka": "Podle programu RC Konvička na listopad 2026 (plakát v článku „Listopad v Konvičce“).",
       "dny": [
         "ct"
       ]
     },
     "cena": {
-      "text": "60 Kč za lekci",
-      "castka_kc": 60,
+      "text": "70 Kč za rodinu a lekci",
+      "castka_kc": 70,
       "obdobi": "lekce"
     },
     "prihlaska": {
@@ -5891,14 +5936,14 @@
       "odkaz": "https://rckonvicka.cz/noticky-z-konvicky/",
       "poznamka": null
     },
-    "skolni_rok": "2025/2026",
+    "skolni_rok": "2026/2027",
     "zdroj_url": "https://rckonvicka.cz/noticky-z-konvicky/",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-02"
   },
   {
     "id": "rc-konvicka-senzacni-hrani",
     "organizace_id": "rc-konvicka",
-    "nazev": "SENZAční hraní",
+    "nazev": "Hernička se sensory play (SENZAční hraní)",
     "kategorie": [
       "ostatni"
     ],
@@ -5916,16 +5961,16 @@
       "gps": null
     },
     "terminy": {
-      "text": "Pátek od 9:30 a od 16:00, každý druhý týden",
+      "text": "Pátek od 9:30, každý lichý týden",
       "obdobi": null,
-      "poznamka": "Podle letáku „Pravidelné aktivity od září 2025“. Program na školní rok 2026/2027 centrum zatím nezveřejnilo.",
+      "poznamka": "Podle programu RC Konvička na listopad 2026 (plakát v článku „Listopad v Konvičce“). Některé sudé pátky je navíc sensory play v 9:30 a 16:00 (v listopadu 13. 11.).",
       "dny": [
         "pa"
       ]
     },
     "cena": {
-      "text": "150 Kč za lekci",
-      "castka_kc": 150,
+      "text": "100 Kč za dítě a lekci",
+      "castka_kc": 100,
       "obdobi": "lekce"
     },
     "prihlaska": {
@@ -5936,9 +5981,9 @@
       "odkaz": "https://rckonvicka.cz/senzacni-hrani/",
       "poznamka": null
     },
-    "skolni_rok": "2025/2026",
+    "skolni_rok": "2026/2027",
     "zdroj_url": "https://rckonvicka.cz/senzacni-hrani/",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-02"
   },
   {
     "id": "horolezci-horice-lezecky-krouzek",
@@ -6048,8 +6093,8 @@
       "poznamka": "Kontakty na trenéry mládeže jsou na webu oddílu."
     },
     "skolni_rok": "2026/2027",
-    "zdroj_url": "https://www.obhorice.cz/",
-    "overeno": "2026-10-19"
+    "zdroj_url": "https://docs.google.com/spreadsheets/d/1R5rPIGzDAx5YkVAJbRv8rjcMbznY3T7wQILq7dpYX_s/edit#gid=0",
+    "overeno": "2026-11-02"
   },
   {
     "id": "kct-horice-turistacek-krouzek",
@@ -6382,5 +6427,274 @@
     "skolni_rok": null,
     "zdroj_url": "https://www.facebook.com/groups/114975652496133/user/100057277127174",
     "overeno": "2026-10-30"
+  },
+  {
+    "id": "dance-and-joy-predskolacci",
+    "nazev": "Předškoláčci – tanec a pohyb",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Všestranné cvičení s prvky rytmických tanců pro holky i kluky: rovnováha, ovládání těla, základy gymnastiky a vnímání rytmu. Lekce bývají tematické, děti se naučí i pár jednoduchých tanců.",
+    "klicova_slova": [
+      "tancování",
+      "gymnastika",
+      "rytmika"
+    ],
+    "vek_od": 4,
+    "vek_do": 6,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "14 lekcí v 1. pololetí a 16 ve 2. pololetí, začátek 1. 10. 2026",
+      "poznamka": null,
+      "dny": [
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "1 800 Kč za pololetí",
+      "castka_kc": 1800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. První lekce je ukázková a neplatí se, stačí předem dát vědět, že dítě přijde.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/predskolaci",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/p%C5%99ed%C5%A1kol%C3%A1%C4%8Dci-4-6-let"
+  },
+  {
+    "id": "dance-and-joy-deti",
+    "nazev": "Taneční lekce pro děti 7–10 let",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Děti si vyzkouší různé taneční styly – street dance, contemporary, jazz dance, disco dance – a gymnastické prvky. Pro začátečníky i pokročilé, chodit mohou i děti z jiných škol.",
+    "klicova_slova": [
+      "tancování",
+      "street dance",
+      "gymnastika"
+    ],
+    "vek_od": 7,
+    "vek_do": 10,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "14 lekcí v 1. pololetí a 16 ve 2. pololetí, začátek 6. 10. 2026",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 800 Kč za pololetí",
+      "castka_kc": 1800,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. První lekce je ukázková a neplatí se, stačí předem dát vědět, že dítě přijde.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/deti",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/d%C4%9Bti-7-10-let"
+  },
+  {
+    "id": "dance-and-joy-juniori",
+    "nazev": "Junioři – street dance, contemporary, moderna",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Systematické lekce konkrétních stylů s důrazem na techniku, rytmus a týmovou práci. Z nacvičených choreografií jsou vystoupení, přehlídky i soutěže. Pro začátečníky i pokročilé.",
+    "klicova_slova": [
+      "tancování",
+      "moderní tanec",
+      "choreografie"
+    ],
+    "vek_od": 11,
+    "vek_do": 15,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "14 lekcí v 1. pololetí a 16 ve 2. pololetí, začátek 6. 10. 2026",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "1 900 Kč za pololetí",
+      "castka_kc": 1900,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. První lekce je ukázková a neplatí se, stačí předem dát vědět, že dítě přijde.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/juniori",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/junio%C5%99i-11-15-let"
+  },
+  {
+    "id": "dance-and-joy-elitni-slozka",
+    "nazev": "Elitní taneční složka (street dance)",
+    "organizace_id": "dance-and-joy",
+    "kategorie": [
+      "tanec"
+    ],
+    "pohlavi": null,
+    "misto": {
+      "nazev": "ZŠ Na Daliborce, Hořice – tělocvična",
+      "adresa": null
+    },
+    "skolni_rok": "2026/2027",
+    "overeno": "2026-11-02",
+    "popis": "Rozšířená výuka pro pokročilé a motivované tanečníky, kteří chtějí tančit intenzivněji. Složka vystupuje na městských akcích a jezdí na menší soutěže v okolí, soutěžní kostýmy jsou v ceně.",
+    "klicova_slova": [
+      "tancování",
+      "taneční soutěže",
+      "hip hop"
+    ],
+    "vek_od": 8,
+    "vek_do": 15,
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "po",
+          "casy": [
+            "16:00–17:00"
+          ],
+          "misto": "Sokolovna – malá tělocvična"
+        },
+        {
+          "skupina": null,
+          "den": "ct",
+          "casy": [
+            "17:00–18:00"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": null,
+      "poznamka": "Navíc jednou za měsíc v neděli dvouhodinový trénink na ZŠ Na Daliborce, termín po domluvě. Více než 80 lekcí za rok.",
+      "dny": [
+        "po",
+        "ct"
+      ]
+    },
+    "cena": {
+      "text": "4 200 Kč za pololetí",
+      "castka_kc": 4200,
+      "obdobi": "pololeti"
+    },
+    "prihlaska": {
+      "zpusob": "Online přihláška na webu školy. Náborový trénink byl 3. 9. 2026.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://danceandjoy.cevis.cz/prihlaska/elitnislozka",
+      "poznamka": null
+    },
+    "zdroj_url": "https://www.danceandjoy.cz/elitnislozka"
+  },
+  {
+    "id": "studio-pohybu-cviceni-pro-deti-i-dospele",
+    "organizace_id": "studio-pohybu",
+    "nazev": "Cvičení pro děti i dospělé",
+    "kategorie": [
+      "sport-ostatni",
+      "tanec"
+    ],
+    "popis": "Lekce cvičení a pohybu pro děti i dospělé. Aktuální nabídku kurzů, rozvrh, ceny a přihlášky najdete na webu studia.",
+    "klicova_slova": [
+      "jóga",
+      "powerjóga",
+      "pilates",
+      "trx",
+      "jumping",
+      "step aerobik",
+      "core",
+      "zdravá záda",
+      "posilování",
+      "fitness",
+      "balet",
+      "dětská jóga",
+      "linda"
+    ],
+    "pohlavi": null,
+    "vek_od": null,
+    "vek_do": null,
+    "misto": null,
+    "terminy": null,
+    "cena": null,
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.cviceni-linda.cz",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "i_pro_dospele": true,
+    "zdroj_url": "https://www.cviceni-linda.cz",
+    "overeno": "2026-11-06"
   }
 ]
