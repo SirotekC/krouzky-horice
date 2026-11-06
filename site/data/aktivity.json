@@ -6642,5 +6642,47 @@
       "poznamka": null
     },
     "zdroj_url": "https://www.danceandjoy.cz/elitnislozka"
+  },
+  {
+    "id": "studio-pohybu-cviceni-pro-deti-i-dospele",
+    "organizace_id": "studio-pohybu",
+    "nazev": "Cvičení pro děti i dospělé",
+    "kategorie": [
+      "sport-ostatni",
+      "tanec"
+    ],
+    "popis": "Lekce cvičení a pohybu pro děti i dospělé. Aktuální nabídku kurzů, rozvrh, ceny a přihlášky najdete na webu studia.",
+    "klicova_slova": [
+      "jóga",
+      "powerjóga",
+      "pilates",
+      "trx",
+      "jumping",
+      "step aerobik",
+      "core",
+      "zdravá záda",
+      "posilování",
+      "fitness",
+      "balet",
+      "dětská jóga",
+      "linda"
+    ],
+    "pohlavi": null,
+    "vek_od": null,
+    "vek_do": null,
+    "misto": null,
+    "terminy": null,
+    "cena": null,
+    "prihlaska": {
+      "zpusob": "Informace na webu organizace.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.cviceni-linda.cz",
+      "poznamka": null
+    },
+    "skolni_rok": "2026/2027",
+    "zdroj_url": "https://www.cviceni-linda.cz",
+    "overeno": "2026-11-06"
   }
 ]
