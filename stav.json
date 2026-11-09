@@ -1,7 +1,7 @@
 {
   "verze": 1,
   "posledniBeh": "2026-11-07",
-  "zapatiDatum": "2026-11-04",
+  "zapatiDatum": "2026-11-09",
   "url": {
     "https://d3c39e64da.clvaw-cdnwnd.com/974d636996c9c57d64ba97df7ad4e785/200000560-763287632b/Sn%C3%ADmek%20obrazovky%202026-10-07%20011339.png": {
       "druh": "obsah",
@@ -1039,24 +1039,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1035-parkour": {
       "druh": "obsah",
-      "otiskPotvrzeny": "f6294021c3ea4c6bc4072c40d2500e8ef77254ee699bca2b42f5f83abb7086f7",
+      "otiskPotvrzeny": "cbad599bdc3e9c774def90f158c509010ef2c9d36c78ffce51313800039a658b",
       "otiskPosledni": "cbad599bdc3e9c774def90f158c509010ef2c9d36c78ffce51313800039a658b",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-07",
-      "posledniOk": "2026-11-04",
-      "zmena": {
-        "od": "2026-11-07",
-        "otisk": "cbad599bdc3e9c774def90f158c509010ef2c9d36c78ffce51313800039a658b"
-      },
+      "posledniOk": "2026-11-09",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 1
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":1},\"rozdily\":[{\"id\":\"ddm-horice-parkour\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":2}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1036-parkour-pokrocili": {
       "druh": "obsah",
@@ -1112,24 +1109,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1049-3d-tisk": {
       "druh": "obsah",
-      "otiskPotvrzeny": "efb7c014aedf218b4105799750dcdb76a59261c667ea854e4b541f85ecb6b811",
+      "otiskPotvrzeny": "3084d97b45bbc003c95f1386ae20ed40c3f38a25a045735989a016a5f6403046",
       "otiskPosledni": "3084d97b45bbc003c95f1386ae20ed40c3f38a25a045735989a016a5f6403046",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-07",
-      "posledniOk": "2026-11-04",
-      "zmena": {
-        "od": "2026-11-07",
-        "otisk": "3084d97b45bbc003c95f1386ae20ed40c3f38a25a045735989a016a5f6403046"
-      },
+      "posledniOk": "2026-11-09",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 1
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":1},\"rozdily\":[{\"id\":\"ddm-horice-3d-tisk\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":2}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1050-anglictina-pro-5-8-tridu": {
       "druh": "obsah",
@@ -2025,17 +2019,14 @@
     },
     "https://www.kluho.cz/horicedobrusli": {
       "druh": "obsah",
-      "otiskPotvrzeny": "8951bf8d8d40a4b9ebebe89b358c632bffaf77a239aa0c7f7db8ccc92db257ed",
+      "otiskPotvrzeny": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "otiskPosledni": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": "W/\"6bde0b5e9dfef6b881b381606d485f38\"",
       "lastModified": null,
       "posledniKontrola": "2026-11-07",
-      "posledniOk": "2026-11-04",
-      "zmena": {
-        "od": "2026-11-07",
-        "otisk": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-      },
+      "posledniOk": "2026-11-09",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
