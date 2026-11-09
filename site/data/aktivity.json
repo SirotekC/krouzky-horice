@@ -1499,15 +1499,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 9. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-    "overeno": "2026-11-04"
+    "overeno": "2026-11-09"
   },
   {
     "id": "ddm-horice-parkour-pokrocili",
@@ -1728,15 +1728,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 9. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-    "overeno": "2026-11-04"
+    "overeno": "2026-11-09"
   },
   {
     "id": "ddm-horice-anglictina-pro-5-8-tridu",
@@ -6206,7 +6206,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-10-30"
+    "overeno": "2026-11-09"
   },
   {
     "id": "kluho-bruslarska-skola-rampouchy",
@@ -6269,7 +6269,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-10-30"
+    "overeno": "2026-11-09"
   },
   {
     "id": "kluho-hokejova-pripravka",
