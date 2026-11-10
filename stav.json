@@ -1,7 +1,7 @@
 {
   "verze": 1,
   "posledniBeh": "2026-11-10",
-  "zapatiDatum": "2026-11-09",
+  "zapatiDatum": "2026-11-10",
   "url": {
     "https://d3c39e64da.clvaw-cdnwnd.com/974d636996c9c57d64ba97df7ad4e785/200000560-763287632b/Sn%C3%ADmek%20obrazovky%202026-10-07%20011339.png": {
       "druh": "obsah",
@@ -791,24 +791,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek": {
       "druh": "obsah",
-      "otiskPotvrzeny": "3a67ae1681ff824948adacada5a08fd9896d0985d77e9a103e225bde595309cf",
+      "otiskPotvrzeny": "ecb3fa4b0112f262b39d787ea6374134c07b044c4c054083e4587ced8e791c4c",
       "otiskPosledni": "ecb3fa4b0112f262b39d787ea6374134c07b044c4c054083e4587ced8e791c4c",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-10",
-      "posledniOk": "2026-11-07",
-      "zmena": {
-        "od": "2026-11-10",
-        "otisk": "ecb3fa4b0112f262b39d787ea6374134c07b044c4c054083e4587ced8e791c4c"
-      },
+      "posledniOk": "2026-11-10",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 3
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":3},\"rozdily\":[{\"id\":\"ddm-horice-prirodovedny-krouzek\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":4}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1015-lego-stavitel": {
       "druh": "obsah",
@@ -2035,17 +2032,14 @@
     },
     "https://www.kluho.cz/horicedobrusli": {
       "druh": "obsah",
-      "otiskPotvrzeny": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "otiskPotvrzeny": "8951bf8d8d40a4b9ebebe89b358c632bffaf77a239aa0c7f7db8ccc92db257ed",
       "otiskPosledni": "8951bf8d8d40a4b9ebebe89b358c632bffaf77a239aa0c7f7db8ccc92db257ed",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": "W/\"a18f99b21f7666846c3bed0a56941ffc\"",
       "lastModified": null,
       "posledniKontrola": "2026-11-10",
-      "posledniOk": "2026-11-09",
-      "zmena": {
-        "od": "2026-11-10",
-        "otisk": "8951bf8d8d40a4b9ebebe89b358c632bffaf77a239aa0c7f7db8ccc92db257ed"
-      },
+      "posledniOk": "2026-11-10",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
