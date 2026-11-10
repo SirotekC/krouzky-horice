@@ -640,15 +640,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 10. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 4
+        "volna_mista": 3
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-10"
   },
   {
     "id": "ddm-horice-lego-stavitel",
@@ -6206,7 +6206,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-11-09"
+    "overeno": "2026-11-10"
   },
   {
     "id": "kluho-bruslarska-skola-rampouchy",
@@ -6269,7 +6269,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-11-09"
+    "overeno": "2026-11-10"
   },
   {
     "id": "kluho-hokejova-pripravka",
