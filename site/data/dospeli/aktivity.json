@@ -444,13 +444,14 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1057-cviceni-s-ivou-zdravy-pohyb",
-      "poznamka": "Obsazenost podle webu DDM k 30. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
-        "stav": "nahradnici"
+        "stav": "posledni",
+        "volna_mista": 1
       }
     },
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1057-cviceni-s-ivou-zdravy-pohyb",
-    "overeno": "2026-10-30"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-anglictina-na-cesty",
