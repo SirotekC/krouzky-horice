@@ -235,10 +235,9 @@ a {
   font-weight: 600;
 }
 
-/* Přepínač sekcí Děti | Dospělí: vlastní řádek pod značkou, záložky jako segmentový přepínač. */
+/* Přepínač sekcí Děti | Dospělí (segmentový přepínač). Na stránkách s přehledem je v panelu filtrů
+   (vedle „Hledat“ na mobilu, vedle „Filtry“ na desktopu), na ostatních stránkách v hlavičce. */
 .sekce {
-  order: 3;
-  flex-basis: 100%;
   display: flex;
   gap: 0.25rem;
   padding: 0.25rem;
@@ -247,8 +246,13 @@ a {
   border-radius: 999px;
 }
 
+.hlavicka .sekce {
+  order: 3;
+  flex-basis: 100%;
+}
+
 @media (min-width: 900px) {
-  .sekce {
+  .hlavicka .sekce {
     flex-basis: auto;
     order: 0;
     margin-left: auto;
@@ -257,7 +261,7 @@ a {
 
 /* Obě volby vypadají jako tlačítka: aktivní je vybarvená s „✓“, neaktivní má plochu, rámeček,
    stín a šipku, aby bylo vidět, že se na ni dá přepnout. */
-.hlavicka .sekce__odkaz {
+.sekce .sekce__odkaz {
   flex: 1;
   display: inline-flex;
   align-items: center;
@@ -273,7 +277,7 @@ a {
   transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
 }
 
-.hlavicka .sekce__odkaz[aria-current="page"] {
+.sekce .sekce__odkaz[aria-current="page"] {
   background: var(--akcent);
   color: var(--akcent-text);
   box-shadow: 0 1px 3px rgb(0 0 0 / 18%);
@@ -281,26 +285,26 @@ a {
   view-transition-name: sekce-aktivni;
 }
 
-.hlavicka .sekce__odkaz[aria-current="page"]::before {
+.sekce .sekce__odkaz[aria-current="page"]::before {
   content: "✓";
 }
 
-.hlavicka .sekce__odkaz:not([aria-current="page"]) {
+.sekce .sekce__odkaz:not([aria-current="page"]) {
   background: var(--povrch);
   border-color: var(--okraj-pole);
   box-shadow: var(--stin), 0 1px 2px rgb(0 0 0 / 8%);
 }
 
-.hlavicka .sekce__odkaz:not([aria-current="page"])::after {
+.sekce .sekce__odkaz:not([aria-current="page"])::after {
   content: "→";
   font-weight: 400;
 }
 
-.hlavicka .sekce__odkaz:not([aria-current="page"]):hover {
+.sekce .sekce__odkaz:not([aria-current="page"]):hover {
   background: var(--akcent-jemny);
 }
 
-.hlavicka .sekce__odkaz:not([aria-current="page"]):active {
+.sekce .sekce__odkaz:not([aria-current="page"]):active {
   transform: scale(0.97);
 }
 
@@ -363,6 +367,40 @@ a {
   clip-path: inset(50%);
   white-space: nowrap;
   font-size: 1.1rem;
+}
+
+/* Základ filtru, který je vždy vidět: na mobilu řádek „Hledat“ + přepínač sekcí a pod ním pole
+   hledání (obal pole je display: contents, popisek i pole jsou buňky mřížky). Na desktopu
+   řádek „Filtry“ + přepínač a pod ním celé pole hledání. */
+.filtry__zaklad {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "popisek sekce"
+    "vstup vstup";
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.filtry__zaklad .sekce {
+  grid-area: sekce;
+}
+
+.filtry__zaklad .filtry__hledat {
+  display: contents;
+}
+
+.filtry__hledat > label {
+  grid-area: popisek;
+}
+
+.filtry__hledat > input {
+  grid-area: vstup;
+}
+
+.filtry .sekce .sekce__odkaz {
+  padding-inline: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .filtry__souhrn {
@@ -961,6 +999,36 @@ select {
     clip: auto;
     clip-path: none;
     white-space: normal;
+    grid-area: nadpis;
+  }
+
+  .filtry__zaklad {
+    grid-template-areas:
+      "nadpis sekce"
+      "pole pole";
+    gap: 1rem 0.5rem;
+  }
+
+  .filtry__zaklad .filtry__hledat {
+    display: grid;
+    grid-area: pole;
+  }
+
+  .filtry__hledat > label,
+  .filtry__hledat > input {
+    grid-area: auto;
+  }
+
+  .filtry .sekce {
+    padding: 0.2rem;
+    gap: 0.2rem;
+  }
+
+  .filtry .sekce .sekce__odkaz {
+    gap: 0.25rem;
+    min-height: 2.25rem;
+    padding-inline: 0.65rem;
+    font-size: 0.9rem;
   }
 
   /* Na desktopu jsou filtry i karty vždy rozbalené, přepínače „Další filtry“ a „Rozbalit vše“ nejsou potřeba. */

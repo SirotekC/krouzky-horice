@@ -37,10 +37,6 @@
           <p class="hlavicka__statistiky" id="statistiky"></p>
         </div>
       </div>
-      <nav class="sekce" aria-label="Sekce">
-        <a class="sekce__odkaz" href="./" aria-current="page">Děti</a>
-        <a class="sekce__odkaz" href="dospeli.html">Dospělí</a>
-      </nav>
       <nav aria-label="Hlavní">
         <a href="o-projektu.html">O projektu</a>
       </nav>
@@ -50,10 +46,16 @@
   <main class="obal rozvrzeni">
     <aside class="filtry" aria-labelledby="filtry-nadpis">
       <form id="filtry" class="filtry__panel" role="search" aria-label="Filtrovat kroužky">
-        <h2 id="filtry-nadpis" class="filtry__nadpis">Filtry</h2>
-        <div class="pole">
-          <label for="f-q">Hledat</label>
-          <input type="search" id="f-q" name="q" placeholder="např. klavír, florbal" autocomplete="off" maxlength="100">
+        <div class="filtry__zaklad">
+          <h2 id="filtry-nadpis" class="filtry__nadpis">Filtry</h2>
+          <nav class="sekce" aria-label="Sekce">
+            <a class="sekce__odkaz" href="./" aria-current="page">Děti</a>
+            <a class="sekce__odkaz" href="dospeli.html">Dospělí</a>
+          </nav>
+          <div class="pole filtry__hledat">
+            <label for="f-q">Hledat</label>
+            <input type="search" id="f-q" name="q" placeholder="např. klavír, florbal" autocomplete="off" maxlength="100">
+          </div>
         </div>
         <div class="filtry__radek">
           <label class="filtry__rozbalit">
