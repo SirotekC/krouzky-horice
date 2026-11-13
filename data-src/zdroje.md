@@ -157,3 +157,9 @@ _(doplní se v úkolu 8)_
 - **Jóga, Aerobic s Janou, Slender Life:** nabídka na sporthorice.cz/cviceni, vedená pod Sportovním zařízením. Osobní telefony lektorek se nepřebírají, odkaz vede na stránku Sportovního zařízení.
 - **Fotbal muži, florbal muži a ženy:** fotbal bez časů tréninků (web oddílu je neuvádí), florbal muži podle /treninky, ženy podle /pridej-se-k-nam.
 - **Pilates – Vladimíra Klůzová:** údaje od uživatele (2026-11-02): pondělí 17:00–18:00, učebna v areálu bazénu, 80 Kč za lekci, lze chodit na jednotlivé lekce. Lektorka dala **svolení ke zveřejnění kontaktů** (603 195 210, pilates.kluzova@seznam.cz). Web pilateskluzova.cz nefunguje, proto `web`/`zdroj_url` = `mailto:`.
+
+## Poznámky ze sběru (2026-11-13) – plakát bazénu
+
+- Plavecký zdokonalovací kurz pro dospělé (`plavani-sporthorice-zdokonalovaci-kurz`) je přepsaný z plakátu Bazénu Hořice (fotka od uživatele, mimo git). Na webu se na přání uživatele neověřoval, proto `zdroj_url` i odkaz na přihlášku vedou na hlavní stránku www.sporthorice.cz, kam plakát odkazuje.
+- Platnost údajů je v poli `plati_do` (2027-01-19, poslední lekce kurzu). Pak validace upozorní, že je potřeba kurz aktualizovat (např. podle plakátu na 2. pololetí), nebo ho vyřadit.
+- Úroveň (`uroven`) je `null`: plakát nepíše „pokročilí“, jen že účastník musí zvládat aspoň jeden plavecký způsob. To je v popisu.

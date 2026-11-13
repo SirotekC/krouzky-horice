@@ -195,6 +195,7 @@ Pole objektů:
 | `skolni_rok` | string\|null | ne | `^\d{4}/\d{4}$` |
 | `zdroj_url` | URL | ano | |
 | `overeno` | date | ano | `YYYY-MM-DD` |
+| `plati_do` | date | ne | `YYYY-MM-DD`, do kdy údaje platí, když je zdroj časově omezený (plakát, leták, kurz s koncem). Po tomto datu `npm run validate` varuje, že je potřeba údaje aktualizovat nebo aktivitu vyřadit. Na kartě se nezobrazuje. *(doplněno 2026-11-13)* |
 
 ### 4.3 Číselník kategorií
 

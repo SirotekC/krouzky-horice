@@ -1311,6 +1311,60 @@
     "overeno": "2026-10-30"
   },
   {
+    "id": "plavani-sporthorice-zdokonalovaci-kurz",
+    "organizace_id": "plavani-sporthorice",
+    "nazev": "Plavecký zdokonalovací kurz pro dospělé",
+    "kategorie": [
+      "sport-ostatni"
+    ],
+    "popis": "Kurz pro dospělé, kteří už zvládají aspoň jeden plavecký způsob a chtějí plavání vylepšit nebo se naučit další způsob. 15 lekcí po 50 minutách, skupina 6 až 10 plavců.",
+    "klicova_slova": [
+      "plavání",
+      "bazén",
+      "technika plavání"
+    ],
+    "vek_od": 16,
+    "uroven": null,
+    "misto": {
+      "nazev": "Bazén, Sportovní zařízení města Hořice",
+      "adresa": "Janderova 2156, 508 01 Hořice"
+    },
+    "terminy": {
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ut",
+          "casy": [
+            "18:00–18:50"
+          ],
+          "misto": null
+        }
+      ],
+      "obdobi": "15 lekcí, 29. 9. 2026 – 19. 1. 2027",
+      "poznamka": null,
+      "dny": [
+        "ut"
+      ]
+    },
+    "cena": {
+      "text": "3 000 Kč za kurz (15 lekcí)",
+      "castka_kc": 3000,
+      "obdobi": "kurz"
+    },
+    "prihlaska": {
+      "typ": "prihlaska",
+      "zpusob": "Elektronicky na webu Sportovního zařízení města Hořice.",
+      "od": null,
+      "do": null,
+      "prubezne": false,
+      "odkaz": "https://www.sporthorice.cz",
+      "poznamka": "Skupina nejméně 6 a nejvýše 10 plavců. Údaje podle plakátu v bazénu."
+    },
+    "zdroj_url": "https://www.sporthorice.cz",
+    "overeno": "2026-11-13",
+    "plati_do": "2027-01-19"
+  },
+  {
     "id": "plavani-sporthorice-joga",
     "organizace_id": "plavani-sporthorice",
     "nazev": "Jóga",

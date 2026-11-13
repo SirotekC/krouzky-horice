@@ -50,7 +50,12 @@
         "description": "Zobrazit aktivitu i v sekci pro děti (se štítkem „Z nabídky pro dospělé“)."
       },
       "zdroj_url": { "type": "string", "format": "uri" },
-      "overeno": { "type": "string", "format": "date" }
+      "overeno": { "type": "string", "format": "date" },
+      "plati_do": {
+        "type": "string",
+        "format": "date",
+        "description": "Do kdy údaje platí (např. konec kurzu z plakátu). Po tomto datu validace varuje."
+      }
     }
   },
   "$defs": {

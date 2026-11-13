@@ -144,6 +144,17 @@ export function zkontrolujData({
   zkontrolujOvereno('aktivity', aktivity);
   zkontrolujOvereno('dospeli', aktivityDospeli);
 
+  /** Údaje s omezenou platností (plakát, leták): po datu `plati_do` je potřeba je aktualizovat nebo vyřadit. */
+  const zkontrolujPlatnost = (soubor, polozky) => {
+    polozky.forEach((p, i) => {
+      if (p.plati_do && cisloDne(dnes) > cisloDne(p.plati_do)) {
+        varovani.push(`${soubor}[${i}].plati_do: platnost údajů skončila ${p.plati_do} (${p.id})`);
+      }
+    });
+  };
+  zkontrolujPlatnost('aktivity', aktivity);
+  zkontrolujPlatnost('dospeli', aktivityDospeli);
+
   const idOrganizaci = new Set(organizace.map((o) => o.id));
   const zkontrolujAktivitu = (soubor) => (a, i) => {
     const cesta = `${soubor}[${i}]`;

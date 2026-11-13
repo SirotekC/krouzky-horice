@@ -176,3 +176,14 @@ test('i_pro_dospele vyžaduje prihlaska.typ (filtr a karta „Vstup“ u dospěl
   assert.equal(chyby.length, 1);
   assert.match(chyby[0], /^aktivity\[0\]\.prihlaska\.typ: u aktivity s i_pro_dospele je povinný/);
 });
+
+test('plati_do: po skončení platnosti je varování, do posledního dne včetně ne', () => {
+  const { chyby, varovani } = dospeli([org('o')], [akt('a', 'o', { plati_do: '2026-10-11' })], [
+    akt('d', 'o', { plati_do: DNES }),
+    akt('e', 'o', { plati_do: '2026-10-11' }),
+  ]);
+  assert.deepEqual(chyby, []);
+  assert.equal(varovani.length, 2);
+  assert.match(varovani[0], /^aktivity\[0\]\.plati_do: platnost údajů skončila 2026-10-11 \(a\)/);
+  assert.match(varovani[1], /^dospeli\[1\]\.plati_do: platnost údajů skončila 2026-10-11 \(e\)/);
+});
