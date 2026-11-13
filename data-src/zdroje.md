@@ -40,7 +40,7 @@
 ## Poznámky ze sběru (2026-10-12)
 
 - **DDM** je zatím jedna souhrnná aktivita. Vlastní řešení pro jednotlivé kroužky (asi 70) přijde později. Začátek činnosti web uvádí jako 29. 9. i 29. 10. 2026. Přihlášky jsou online přes iDDM od 26. 8. 2026.
-- **Sokol:** sokol.eu a web města uvádějí rozdílné skupiny a časy. Použit sokol.eu, rozpor je v poznámkách aktivit.
+- **Sokol:** sokol.eu a web města uvádějí rozdílné skupiny a časy. Použit sokol.eu, rozpor je v poznámkách aktivit. Od 13. 11. 2026 sokol.eu uvádí i cvičení pro seniorky od 60 let (pondělí 15:00–16:00), na dětský web nezařazeno (issue #10).
 - **ZUŠ:** přijímací řízení 2026/2027 proběhlo v červnu, termín dalšího kola web neuvádí. Ceny jsou z ceníku, ne ze stránek oborů.
 - **Florbal:** stránky /treninky a /pridej-se-k-nam se v časech liší. Použita náborová stránka. Věk je dopočítaný z ročníků narození.
 - **Fotbal:** aktivity sdružují více kategorií. Nábor ani ceny web neuvádí.
