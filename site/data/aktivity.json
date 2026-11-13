@@ -526,14 +526,14 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1012-mlada-modni-navrhar-ka",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
-        "stav": "nahradnici"
+        "stav": "obsazeno"
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1012-mlada-modni-navrhar-ka",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-kreativky",
@@ -595,15 +595,15 @@
   {
     "id": "ddm-horice-prirodovedny-krouzek",
     "organizace_id": "ddm-horice",
-    "nazev": "Přírodovědný kroužek",
+    "nazev": "Mladý badatel – objevujeme přírodu",
     "kategorie": [
       "priroda"
     ],
-    "popis": "Zvířata, rostliny a ochrana přírody. Pravidelné vycházky do terénu, rukodělné činnosti a jednou za pololetí sobotní výprava.",
+    "popis": "Pro děti, které mají rády přírodu a zvířátka. Vycházky do terénu, pozorování s lupou a mikroskopem, péče o zvířátka a zahrádku v DDM, výpravy na Školní statek nebo do lesa a tvoření z různých materiálů.",
     "klicova_slova": [
-      "zvířata",
-      "rostliny",
-      "příroda"
+      "přírodověda",
+      "biologie",
+      "rostliny"
     ],
     "pohlavi": null,
     "vek_od": 6,
@@ -640,15 +640,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 4
+        "volna_mista": 3
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-lego-stavitel",
@@ -926,15 +926,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1019-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1019-materske-centrum-pohybove-aktivity-pro-deti-a-maminky",
-    "overeno": "2026-10-27"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-hratky-s-batolatky",
@@ -1155,15 +1155,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-    "overeno": "2026-11-04"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-motoristicky-krouzek-teorie-simulator",
@@ -1441,15 +1441,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
-    "overeno": "2026-10-27"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-parkour",
@@ -1499,15 +1499,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 9. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-    "overeno": "2026-11-04"
+    "overeno": "2026-11-09"
   },
   {
     "id": "ddm-horice-parkour-pokrocili",
@@ -1728,15 +1728,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 9. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-    "overeno": "2026-11-04"
+    "overeno": "2026-11-09"
   },
   {
     "id": "ddm-horice-anglictina-pro-5-8-tridu",
@@ -1903,14 +1903,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1055-anglicky-klubik",
-      "poznamka": "Obsazenost podle webu DDM k 27. 10. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
-        "stav": "nahradnici"
+        "stav": "posledni",
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1055-anglicky-klubik",
-    "overeno": "2026-10-19"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-anglictina-2-4-trida",
@@ -3193,15 +3194,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-      "poznamka": "Obsazenost podle webu DDM k 4. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 4
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-    "overeno": "2026-11-04"
+    "overeno": "2026-11-13"
   },
   {
     "id": "ddm-horice-roztleskavacky-phoenix-kadetky-2019-2015",
@@ -5013,7 +5014,7 @@
     },
     "skolni_rok": null,
     "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-13"
   },
   {
     "id": "tj-sokol-horice-vsestrannost",
@@ -5063,7 +5064,7 @@
     },
     "skolni_rok": null,
     "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-13"
   },
   {
     "id": "tj-sokol-horice-mladsi-zakyne",
@@ -5114,7 +5115,7 @@
     },
     "skolni_rok": null,
     "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-13"
   },
   {
     "id": "tj-sokol-horice-starsi-zakyne",
@@ -5165,7 +5166,7 @@
     },
     "skolni_rok": null,
     "zdroj_url": "https://www.sokol.eu/sokolovna/tj-sokol-horice",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-13"
   },
   {
     "id": "junak-horice-zlatenky",
@@ -6216,7 +6217,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-10-30"
+    "overeno": "2026-11-10"
   },
   {
     "id": "kluho-bruslarska-skola-rampouchy",
@@ -6279,7 +6280,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.kluho.cz/horicedobrusli",
-    "overeno": "2026-10-30"
+    "overeno": "2026-11-10"
   },
   {
     "id": "kluho-hokejova-pripravka",
