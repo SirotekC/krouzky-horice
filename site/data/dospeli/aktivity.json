@@ -1221,9 +1221,18 @@
       "adresa": "Erbenova 1081, Hořice"
     },
     "terminy": {
-      "text": "Vybrané neděle: 15. 11. 2026 10:00–15:00; 29. 11., 6. 12., 20. 12. a 27. 12. 2026 vždy 10:00–14:00.",
+      "rozvrh": [
+        {
+          "skupina": null,
+          "den": "ne",
+          "casy": [
+            "10:00–14:00"
+          ],
+          "misto": null
+        }
+      ],
       "obdobi": null,
-      "poznamka": "Termíny vypisuje pořadatel průběžně v rezervačním systému na webu.",
+      "poznamka": "Na konkrétní trénink se rezervujte v systému na webu pořadatele.",
       "dny": [
         "ne"
       ]
@@ -1246,7 +1255,7 @@
       }
     },
     "zdroj_url": "https://checkershappiness.cz/treninky/",
-    "overeno": "2026-10-30"
+    "overeno": "2026-11-13"
   },
   {
     "id": "plavani-sporthorice-aquaaerobik",
