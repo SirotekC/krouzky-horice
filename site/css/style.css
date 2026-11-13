@@ -255,25 +255,74 @@ a {
   }
 }
 
+/* Obě volby vypadají jako tlačítka: aktivní je vybarvená s „✓“, neaktivní má plochu, rámeček,
+   stín a šipku, aby bylo vidět, že se na ni dá přepnout. */
 .hlavicka .sekce__odkaz {
   flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
   min-height: 2.75rem;
   padding-inline: 1.25rem;
+  border: 1.5px solid transparent;
   border-radius: 999px;
   color: var(--text);
+  font-weight: 700;
   text-decoration: none;
+  transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
 }
 
 .hlavicka .sekce__odkaz[aria-current="page"] {
   background: var(--akcent);
   color: var(--akcent-text);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 18%);
+  /* Při přechodu mezi stránkami se vybarvená volba přesune na nové místo (View Transitions). */
+  view-transition-name: sekce-aktivni;
+}
+
+.hlavicka .sekce__odkaz[aria-current="page"]::before {
+  content: "✓";
+}
+
+.hlavicka .sekce__odkaz:not([aria-current="page"]) {
+  background: var(--povrch);
+  border-color: var(--okraj-pole);
+  box-shadow: var(--stin), 0 1px 2px rgb(0 0 0 / 8%);
+}
+
+.hlavicka .sekce__odkaz:not([aria-current="page"])::after {
+  content: "→";
+  font-weight: 400;
 }
 
 .hlavicka .sekce__odkaz:not([aria-current="page"]):hover {
   background: var(--akcent-jemny);
+}
+
+.hlavicka .sekce__odkaz:not([aria-current="page"]):active {
+  transform: scale(0.97);
+}
+
+/* Plynulé přepnutí mezi sekcemi (podporované prohlížeče; ostatní prostě načtou stránku). */
+@view-transition {
+  navigation: auto;
+}
+
+/* Animuje se jen vybarvená volba přepínače; stránka pod ní se vymění hned (bez prolínání celé obrazovky). */
+:root {
+  view-transition-name: none;
+}
+
+::view-transition-group(sekce-aktivni) {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
 }
 
 .sekce__odkaz:focus-visible {
