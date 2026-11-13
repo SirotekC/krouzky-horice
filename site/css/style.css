@@ -238,7 +238,9 @@ a {
 /* Přepínač sekcí Děti | Dospělí (segmentový přepínač). Na stránkách s přehledem je v panelu filtrů
    (vedle „Hledat“ na mobilu, vedle „Filtry“ na desktopu), na ostatních stránkách v hlavičce. */
 .sekce {
-  display: flex;
+  /* Dvě stejně široké volby; šířky se při přepnutí sekce nemění. */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.25rem;
   padding: 0.25rem;
   background: var(--pozadi);
@@ -259,34 +261,33 @@ a {
   }
 }
 
-/* Obě volby vypadají jako tlačítka: aktivní je vybarvená s „✓“, neaktivní má plochu, rámeček,
-   stín a šipku, aby bylo vidět, že se na ni dá přepnout. */
+/* Obě volby vypadají jako tlačítka: aktivní je vybarvená s „✓“, neaktivní má plochu, rámeček
+   a stín. Přepnutí je obyčejné načtení druhé stránky, bez animace. */
 .sekce .sekce__odkaz {
-  flex: 1;
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
   min-height: 2.75rem;
-  padding-inline: 1.25rem;
+  /* Vlevo je místo pro „✓“, aby text a šířka zůstaly stejné u aktivní i neaktivní volby. */
+  padding-inline: 1.75rem;
   border: 1.5px solid transparent;
   border-radius: 999px;
   color: var(--text);
   font-weight: 700;
   text-decoration: none;
-  transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
 }
 
 .sekce .sekce__odkaz[aria-current="page"] {
   background: var(--akcent);
   color: var(--akcent-text);
   box-shadow: 0 1px 3px rgb(0 0 0 / 18%);
-  /* Při přechodu mezi stránkami se vybarvená volba přesune na nové místo (View Transitions). */
-  view-transition-name: sekce-aktivni;
 }
 
 .sekce .sekce__odkaz[aria-current="page"]::before {
   content: "✓";
+  position: absolute;
+  left: 0.8rem;
 }
 
 .sekce .sekce__odkaz:not([aria-current="page"]) {
@@ -295,38 +296,8 @@ a {
   box-shadow: var(--stin), 0 1px 2px rgb(0 0 0 / 8%);
 }
 
-.sekce .sekce__odkaz:not([aria-current="page"])::after {
-  content: "→";
-  font-weight: 400;
-}
-
 .sekce .sekce__odkaz:not([aria-current="page"]):hover {
   background: var(--akcent-jemny);
-}
-
-.sekce .sekce__odkaz:not([aria-current="page"]):active {
-  transform: scale(0.97);
-}
-
-/* Plynulé přepnutí mezi sekcemi (podporované prohlížeče; ostatní prostě načtou stránku). */
-@view-transition {
-  navigation: auto;
-}
-
-/* Animuje se jen vybarvená volba přepínače; stránka pod ní se vymění hned (bez prolínání celé obrazovky). */
-:root {
-  view-transition-name: none;
-}
-
-::view-transition-group(sekce-aktivni) {
-  animation-duration: 0.3s;
-  animation-timing-function: ease-in-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  @view-transition {
-    navigation: none;
-  }
 }
 
 .sekce__odkaz:focus-visible {
@@ -399,8 +370,22 @@ a {
 }
 
 .filtry .sekce .sekce__odkaz {
-  padding-inline: 0.9rem;
+  padding-inline: 1.75rem;
   font-size: 0.95rem;
+}
+
+.filtry .sekce .sekce__odkaz[aria-current="page"]::before {
+  left: 0.7rem;
+}
+
+@media (max-width: 359px) {
+  .filtry .sekce .sekce__odkaz {
+    padding-inline: 1.45rem;
+  }
+
+  .filtry .sekce .sekce__odkaz[aria-current="page"]::before {
+    left: 0.5rem;
+  }
 }
 
 .filtry__souhrn {
@@ -1025,10 +1010,13 @@ select {
   }
 
   .filtry .sekce .sekce__odkaz {
-    gap: 0.25rem;
     min-height: 2.25rem;
-    padding-inline: 0.65rem;
+    padding-inline: 1.3rem;
     font-size: 0.9rem;
+  }
+
+  .filtry .sekce .sekce__odkaz[aria-current="page"]::before {
+    left: 0.55rem;
   }
 
   /* Na desktopu jsou filtry i karty vždy rozbalené, přepínače „Další filtry“ a „Rozbalit vše“ nejsou potřeba. */
