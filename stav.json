@@ -1,7 +1,7 @@
 {
   "verze": 1,
   "posledniBeh": "2026-11-13",
-  "zapatiDatum": "2026-11-10",
+  "zapatiDatum": "2026-11-13",
   "url": {
     "https://d3c39e64da.clvaw-cdnwnd.com/974d636996c9c57d64ba97df7ad4e785/200000560-763287632b/Sn%C3%ADmek%20obrazovky%202026-10-07%20011339.png": {
       "druh": "obsah",
@@ -757,23 +757,20 @@
     },
     "https://www.ddmhorice.cz/krouzky/1012-mlada-modni-navrhar-ka": {
       "druh": "obsah",
-      "otiskPotvrzeny": "72f40fc06911185f7a0675f580f28ca732c264739507f8137c653fe18e18d983",
+      "otiskPotvrzeny": "729e32fee9502ff7d072bf6ee5164dea1d28e9cfd430b0f8e46dd0ae54c5e218",
       "otiskPosledni": "729e32fee9502ff7d072bf6ee5164dea1d28e9cfd430b0f8e46dd0ae54c5e218",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "729e32fee9502ff7d072bf6ee5164dea1d28e9cfd430b0f8e46dd0ae54c5e218"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "obsazeno"
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"obsazeno\"},\"rozdily\":[{\"id\":\"ddm-horice-mlada-modni-navrhar-ka\",\"data\":{\"stav\":\"nahradnici\"}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1013-kreativky": {
       "druh": "obsah",
@@ -794,17 +791,14 @@
     },
     "https://www.ddmhorice.cz/krouzky/1014-prirodovedny-krouzek": {
       "druh": "obsah",
-      "otiskPotvrzeny": "ecb3fa4b0112f262b39d787ea6374134c07b044c4c054083e4587ced8e791c4c",
+      "otiskPotvrzeny": "d5d62fdd8826ff0b65cc20d4f2211c3d4b0a738d13549f14323d804c77fb125d",
       "otiskPosledni": "d5d62fdd8826ff0b65cc20d4f2211c3d4b0a738d13549f14323d804c77fb125d",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "d5d62fdd8826ff0b65cc20d4f2211c3d4b0a738d13549f14323d804c77fb125d"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
@@ -883,24 +877,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1019-materske-centrum-pohybove-aktivity-pro-deti-a-maminky": {
       "druh": "obsah",
-      "otiskPotvrzeny": "8fb828a685b6e4449378fb11e3a2df516152046ce16bc87f339f979ba1493cfe",
+      "otiskPotvrzeny": "2a8e9369e84b5eb7f33b8e85c9ba9d38a5f5372523c3fc3816ff0a83d53b64bf",
       "otiskPosledni": "2a8e9369e84b5eb7f33b8e85c9ba9d38a5f5372523c3fc3816ff0a83d53b64bf",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "2a8e9369e84b5eb7f33b8e85c9ba9d38a5f5372523c3fc3816ff0a83d53b64bf"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 1
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":1},\"rozdily\":[{\"id\":\"ddm-horice-materske-centrum-pohybove-aktivity-pro-deti-a-maminky\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":2}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1020-hratky-s-batolatky": {
       "druh": "obsah",
@@ -956,24 +947,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni": {
       "druh": "obsah",
-      "otiskPotvrzeny": "051e43a66c9794b24a1d21123e6c95d585917294d27a82a26c857beedb60fc9f",
+      "otiskPotvrzeny": "c288f2a0a9e07c6c6016dbc80b6436baa95a34e0a7407f3f0b4a5c86527e3775",
       "otiskPosledni": "c288f2a0a9e07c6c6016dbc80b6436baa95a34e0a7407f3f0b4a5c86527e3775",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "c288f2a0a9e07c6c6016dbc80b6436baa95a34e0a7407f3f0b4a5c86527e3775"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 2
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":2},\"rozdily\":[{\"id\":\"ddm-horice-keramika-kreativni-tvoreni\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":1}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1030-motoristicky-krouzek-teorie-simulator": {
       "druh": "obsah",
@@ -1046,24 +1034,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna": {
       "druh": "obsah",
-      "otiskPotvrzeny": "f8c2a8e9028cf4ec1913c273422d60d2433419ec24185da54692da4d54471240",
+      "otiskPotvrzeny": "a3b1bbe72549d4bc64c5d96392a6fc1ed5600fdc775958c082a61d8b2813d5a8",
       "otiskPosledni": "a3b1bbe72549d4bc64c5d96392a6fc1ed5600fdc775958c082a61d8b2813d5a8",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "a3b1bbe72549d4bc64c5d96392a6fc1ed5600fdc775958c082a61d8b2813d5a8"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 2
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":2},\"rozdily\":[{\"id\":\"ddm-horice-keramika-tvurci-dilna\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":1}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1035-parkour": {
       "druh": "obsah",
@@ -1190,24 +1175,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1055-anglicky-klubik": {
       "druh": "obsah",
-      "otiskPotvrzeny": "eb8ab96c5fe847b0ddd6fb1dc79fb161c6bb04e1ea9fcf3c408733d247e7e715",
+      "otiskPotvrzeny": "f46f18e6b28af0d6411dfb7247c63bd3d3e424b6d6990948c54ac9720203f52b",
       "otiskPosledni": "f46f18e6b28af0d6411dfb7247c63bd3d3e424b6d6990948c54ac9720203f52b",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "f46f18e6b28af0d6411dfb7247c63bd3d3e424b6d6990948c54ac9720203f52b"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 1
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":1},\"rozdily\":[{\"id\":\"ddm-horice-anglicky-klubik\",\"data\":{\"stav\":\"nahradnici\"}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1059-anglictina-2-4-trida": {
       "druh": "obsah",
@@ -1572,24 +1554,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou": {
       "druh": "obsah",
-      "otiskPotvrzeny": "02706d1f33f12ce4e92896de723e2032b09fc5dcbfd0bb8c698c5302c873dab1",
+      "otiskPotvrzeny": "e24cab20e34c0ea0ed127b013aa11f9b985dfc2731187c2302168bb101a71f62",
       "otiskPosledni": "e24cab20e34c0ea0ed127b013aa11f9b985dfc2731187c2302168bb101a71f62",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "e24cab20e34c0ea0ed127b013aa11f9b985dfc2731187c2302168bb101a71f62"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 4
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":4},\"rozdily\":[{\"id\":\"ddm-horice-keramika-zaciname-s-hlinou\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":1}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/988-roztleskavacky-phoenix-kadetky-2019-2015": {
       "druh": "obsah",
@@ -2158,17 +2137,14 @@
     },
     "https://www.sokol.eu/sokolovna/tj-sokol-horice": {
       "druh": "obsah",
-      "otiskPotvrzeny": "efd33580b1a58ecf44926d980b883f6a7b47ffaa1e5606a3e9ec031b0af61789",
+      "otiskPotvrzeny": "f6bd405879c163208a68424ca7192e56520b337e506faccf190f82419bc77113",
       "otiskPosledni": "f6bd405879c163208a68424ca7192e56520b337e506faccf190f82419bc77113",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-13",
-      "posledniOk": "2026-11-10",
-      "zmena": {
-        "od": "2026-11-13",
-        "otisk": "f6bd405879c163208a68424ca7192e56520b337e506faccf190f82419bc77113"
-      },
+      "posledniOk": "2026-11-13",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
