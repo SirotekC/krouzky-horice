@@ -117,7 +117,7 @@
 | box-club-horice | Box club Hořice | https://www.horice.org/box-club/ms-11402/p1=11402 | Jen stránka na webu města. |
 | horolezci-horice | HO-HO Horolezecký klub Hořice | https://www.hohohorice.cz/lezecka-stena-horice | Lezecká stěna pro veřejnost a klubový trénink. |
 | knihovna-horice | Městská knihovna Hořice | https://knihovna.horice.org/aktualni%2Dkurz/d-1155 | Virtuální univerzita třetího věku, semestrální rozpis přednášek. |
-| magic-english | Jazyková škola MAGIC ENGLISH | https://magicenglish.cz/hledate-anglictinu-v-horicich/ | Dny a časy skupin web neuvádí. |
+| magic-english | Jazyková škola MAGIC ENGLISH | https://magicenglish.cz/hledate-anglictinu-v-horicich/ | Dny a časy skupin web neuvádí. Ceny jsou ve společném ceníku prezenční výuky (https://magicenglish.cz/cenik-prezencni-vyuka-nachod-trutnov-atd/, 2026/2027), Hořice v něm nejsou výslovně uvedené. |
 | seniorklub-horice | Seniorklub Hořice | https://www.horice.org/seniorklub/ms-2738/p1=5055 | Stránka města, nedatovaná. |
 
 ## Poznámky ze sběru (2026-10-30) – DDM, aktivity pro dospělé

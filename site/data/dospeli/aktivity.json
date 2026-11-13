@@ -1612,7 +1612,7 @@
     "kategorie": [
       "sport-mickove"
     ],
-    "popis": "Mužské týmy fotbalového oddílu TJ Jiskra Hořice. A tým hraje 5. ligu mužů, B tým okresní přebor mužů. Domácí zápasy na hřišti Gothard.",
+    "popis": "Mužské týmy fotbalového oddílu TJ Jiskra Hořice. A tým hraje 5. ligu mužů. Domácí zápasy na hřišti Gothard.",
     "klicova_slova": [
       "fotbal",
       "kopaná",
@@ -1625,7 +1625,7 @@
     ],
     "misto": {
       "nazev": "Hřiště Gothard",
-      "adresa": "Na Gothardě, Hořice"
+      "adresa": "Gothard 700, 508 01 Hořice"
     },
     "terminy": {
       "text": "Časy tréninků web oddílu neuvádí.",
@@ -1644,7 +1644,7 @@
       "poznamka": "Web neuvádí, zda oddíl přijímá nové hráče."
     },
     "zdroj_url": "https://www.horickyfotbal.cz/cs/s/13-soupiska/1-tj-jiskra-horice",
-    "overeno": "2026-11-02"
+    "overeno": "2026-11-13"
   },
   {
     "id": "florbal-horice-muzi",
