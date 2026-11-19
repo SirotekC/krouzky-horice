@@ -163,3 +163,12 @@ _(doplní se v úkolu 8)_
 - Plavecký zdokonalovací kurz pro dospělé (`plavani-sporthorice-zdokonalovaci-kurz`) je přepsaný z plakátu Bazénu Hořice (fotka od uživatele, mimo git). Na webu se na přání uživatele neověřoval, proto `zdroj_url` i odkaz na přihlášku vedou na hlavní stránku www.sporthorice.cz, kam plakát odkazuje.
 - Platnost údajů je v poli `plati_do` (2027-01-19, poslední lekce kurzu). Pak validace upozorní, že je potřeba kurz aktualizovat (např. podle plakátu na 2. pololetí), nebo ho vyřadit.
 - Úroveň (`uroven`) je `null`: plakát nepíše „pokročilí“, jen že účastník musí zvládat aspoň jeden plavecký způsob. To je v popisu.
+
+## Poznámky ze sběru (2026-11-19) – kontrola zdrojů (#11, #12)
+
+- **DDM:** obsazenost u 5 kroužků podle webu. Kroužek Parkour se nově jmenuje „Parkour začátečníci“ (adresa `…/1035-parkour-zacatecnici`, id `ddm-horice-parkour` beze změny).
+- **Plavecké kroužky:** web nově uvádí věk Plaváčci 5–7 let (dříve do 6) a Štiky 7–9 let (dříve od 6). Přihlášky na 2. pololetí elektronicky od 4. 1. 2027, proto `prihlaska.od` = 2027-01-04. U plavání rodičů s dětmi doplněny odlišné konce pololetí pro pondělí a středu.
+- Stránka plaveckých kroužků nově uvádí i kurz pro dospělé (úterý 18:00–18:50, 3 000 Kč, nejméně 6 účastníků), shodně s plakátem. Záznam `plavani-sporthorice-zdokonalovaci-kurz` zůstal beze změny (viz poznámky 2026-11-13).
+- **Florbal:** posunuté časy tréninků podle náborové stránky: páteční U7, U8, dívky, chlapci 2010–2012 a junioři, pondělní žáci (16:15–17:30), ženy (úterý 19:30–20:45); muži pátek 19:30–21:00 podle /treninky. Rozpor trvá: /treninky vede U13 (po 17:30, út 15:30, čt 15:30) a U17 (pátek 18:15–19:30) s jinými časy než náborová stránka, která U13 a U17 zvlášť neuvádí. Ponechána náborová stránka.
+- **Junák, KLUHO, Magic English:** změnily se jen aktuality a texty o organizaci, údaje o kroužcích platí. KLUHO na úvodní stránce nově zmiňuje Hobby ligu (soutěž amatérských hokejových týmů), nezařazeno.
+- **Knihovna:** web knihovna.horice.org má nově ochranu proti automatickému přístupu (podstránky se zobrazí až po kliknutí na odkaz, ze serverů GitHubu chyba sítě). Přidáno do `nekontrolovat`, VU3V se tento den neověřovala.

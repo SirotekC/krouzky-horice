@@ -1750,7 +1750,7 @@
           "skupina": "Muži",
           "den": "pa",
           "casy": [
-            "19:15–20:45"
+            "19:30–21:00"
           ],
           "misto": "SH Gymnázia"
         }
@@ -1774,7 +1774,7 @@
       "poznamka": null
     },
     "zdroj_url": "https://www.florbalhorice.cz/treninky",
-    "overeno": "2026-11-02"
+    "overeno": "2026-11-19"
   },
   {
     "id": "florbal-horice-zeny",
@@ -1804,7 +1804,7 @@
           "skupina": null,
           "den": "ut",
           "casy": [
-            "19:15–20:45"
+            "19:30–20:45"
           ],
           "misto": null
         }
@@ -1826,7 +1826,7 @@
       "poznamka": null
     },
     "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
-    "overeno": "2026-11-02"
+    "overeno": "2026-11-19"
   },
   {
     "id": "box-club-horice-trenink",
@@ -2024,7 +2024,7 @@
       "poznamka": "Zápisy na školní rok 2026/2027 podle webu probíhají. Dny a časy skupin web neuvádí."
     },
     "zdroj_url": "https://magicenglish.cz/hledate-anglictinu-v-horicich/",
-    "overeno": "2026-10-30"
+    "overeno": "2026-11-19"
   },
   {
     "id": "horolezci-horice-lezecka-stena",

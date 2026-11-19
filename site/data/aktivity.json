@@ -1155,15 +1155,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 19. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni",
-    "overeno": "2026-11-13"
+    "overeno": "2026-11-19"
   },
   {
     "id": "ddm-horice-motoristicky-krouzek-teorie-simulator",
@@ -1441,20 +1441,20 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
-      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 19. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 2
+        "volna_mista": 1
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
-    "overeno": "2026-11-13"
+    "overeno": "2026-11-19"
   },
   {
     "id": "ddm-horice-parkour",
     "organizace_id": "ddm-horice",
-    "nazev": "Parkour",
+    "nazev": "Parkour začátečníci",
     "kategorie": [
       "sport-ostatni"
     ],
@@ -1498,16 +1498,16 @@
       "od": "2026-08-26",
       "do": null,
       "prubezne": false,
-      "odkaz": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-      "poznamka": "Obsazenost podle webu DDM k 9. 11. 2026.",
+      "odkaz": "https://www.ddmhorice.cz/krouzky/1035-parkour-zacatecnici",
+      "poznamka": "Obsazenost podle webu DDM k 19. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 1
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
-    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour",
-    "overeno": "2026-11-09"
+    "zdroj_url": "https://www.ddmhorice.cz/krouzky/1035-parkour-zacatecnici",
+    "overeno": "2026-11-19"
   },
   {
     "id": "ddm-horice-parkour-pokrocili",
@@ -1728,15 +1728,14 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-      "poznamka": "Obsazenost podle webu DDM k 9. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 19. 11. 2026.",
       "kapacita": {
-        "stav": "posledni",
-        "volna_mista": 1
+        "stav": "nahradnici"
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/1049-3d-tisk",
-    "overeno": "2026-11-09"
+    "overeno": "2026-11-19"
   },
   {
     "id": "ddm-horice-anglictina-pro-5-8-tridu",
@@ -3194,15 +3193,15 @@
       "do": null,
       "prubezne": false,
       "odkaz": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-      "poznamka": "Obsazenost podle webu DDM k 13. 11. 2026.",
+      "poznamka": "Obsazenost podle webu DDM k 19. 11. 2026.",
       "kapacita": {
         "stav": "posledni",
-        "volna_mista": 4
+        "volna_mista": 2
       }
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou",
-    "overeno": "2026-11-13"
+    "overeno": "2026-11-19"
   },
   {
     "id": "ddm-horice-roztleskavacky-phoenix-kadetky-2019-2015",
@@ -3757,15 +3756,15 @@
     },
     "prihlaska": {
       "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
-      "od": "2026-08-16",
+      "od": "2027-01-04",
       "do": null,
       "prubezne": false,
       "odkaz": "https://rezervace.sporthorice.cz",
-      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+      "poznamka": "Přihlášky na 2. pololetí od 4. 1. 2027. Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "plavani-sporthorice-rybicky",
@@ -3816,15 +3815,15 @@
     },
     "prihlaska": {
       "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
-      "od": "2026-08-16",
+      "od": "2027-01-04",
       "do": null,
       "prubezne": false,
       "odkaz": "https://rezervace.sporthorice.cz",
-      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+      "poznamka": "Přihlášky na 2. pololetí od 4. 1. 2027. Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "plavani-sporthorice-plavacci",
@@ -3840,7 +3839,7 @@
       "výuka plavání"
     ],
     "vek_od": 5,
-    "vek_do": 6,
+    "vek_do": 7,
     "terminy": {
       "rozvrh": [
         {
@@ -3875,15 +3874,15 @@
     },
     "prihlaska": {
       "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
-      "od": "2026-08-16",
+      "od": "2027-01-04",
       "do": null,
       "prubezne": false,
       "odkaz": "https://rezervace.sporthorice.cz",
-      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+      "poznamka": "Přihlášky na 2. pololetí od 4. 1. 2027. Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "plavani-sporthorice-stiky",
@@ -3898,7 +3897,7 @@
       "bazén",
       "potápění"
     ],
-    "vek_od": 6,
+    "vek_od": 7,
     "vek_do": 9,
     "terminy": {
       "rozvrh": [
@@ -3933,15 +3932,15 @@
     },
     "prihlaska": {
       "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
-      "od": "2026-08-16",
+      "od": "2027-01-04",
       "do": null,
       "prubezne": false,
       "odkaz": "https://rezervace.sporthorice.cz",
-      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+      "poznamka": "Přihlášky na 2. pololetí od 4. 1. 2027. Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "plavani-sporthorice-delfini",
@@ -3993,15 +3992,15 @@
     },
     "prihlaska": {
       "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
-      "od": "2026-08-16",
+      "od": "2027-01-04",
       "do": null,
       "prubezne": false,
       "odkaz": "https://rezervace.sporthorice.cz",
-      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+      "poznamka": "Přihlášky na 2. pololetí od 4. 1. 2027. Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "plavani-sporthorice-rodice-s-detmi",
@@ -4047,7 +4046,7 @@
           "termin": "16. 2. – 25. 5. 2027"
         }
       ],
-      "poznamka": null,
+      "poznamka": "Pondělní lekce končí 18. 1. a 31. 5. 2027, středeční 27. 1. a 26. 5. 2027.",
       "dny": [
         "po",
         "st"
@@ -4060,15 +4059,15 @@
     },
     "prihlaska": {
       "zpusob": "Elektronicky přes rezervační systém, přihláška platí po zaplacení.",
-      "od": "2026-08-16",
+      "od": "2027-01-04",
       "do": null,
       "prubezne": false,
       "odkaz": "https://rezervace.sporthorice.cz",
-      "poznamka": "Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
+      "poznamka": "Přihlášky na 2. pololetí od 4. 1. 2027. Platba nejpozději 2 týdny před zahájením. Na první hodinu je nutné potvrzení o bezinfekčnosti."
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.sporthorice.cz/plavecke-krouzky/",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "plavani-sporthorice-rejnok",
@@ -4175,7 +4174,7 @@
           "skupina": "U7 (2020)",
           "den": "pa",
           "casy": [
-            "15:30–16:45"
+            "15:45–17:00"
           ],
           "misto": null
         }
@@ -4199,7 +4198,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "florbal-horice-elevove",
@@ -4230,7 +4229,7 @@
           "skupina": "U8 (2019)",
           "den": "pa",
           "casy": [
-            "15:30–16:45"
+            "15:45–17:00"
           ],
           "misto": null
         },
@@ -4319,7 +4318,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "florbal-horice-zaci",
@@ -4342,7 +4341,7 @@
           "skupina": null,
           "den": "po",
           "casy": [
-            "15:30–16:45"
+            "16:15–17:30"
           ],
           "misto": "městská hala Erbenova"
         },
@@ -4382,7 +4381,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "florbal-horice-dorost",
@@ -4421,7 +4420,7 @@
           "skupina": "Dívky 2010–2013",
           "den": "pa",
           "casy": [
-            "16:45–18:00"
+            "17:00–18:15"
           ],
           "misto": null
         },
@@ -4445,7 +4444,7 @@
           "skupina": "Chlapci 2010–2012",
           "den": "pa",
           "casy": [
-            "16:45–18:00"
+            "17:00–18:15"
           ],
           "misto": null
         },
@@ -4469,7 +4468,7 @@
           "skupina": "Junioři 2008–2009",
           "den": "pa",
           "casy": [
-            "18:00–19:15"
+            "18:15–19:30"
           ],
           "misto": null
         }
@@ -4494,7 +4493,7 @@
     },
     "skolni_rok": "2026/2027",
     "zdroj_url": "https://www.florbalhorice.cz/pridej-se-k-nam",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "zus-horice-hudebni-obor",
@@ -5263,7 +5262,7 @@
     },
     "skolni_rok": null,
     "zdroj_url": "https://www.junakhorice.cz",
-    "overeno": "2026-10-12"
+    "overeno": "2026-11-19"
   },
   {
     "id": "junak-horice-3-oddil-skautu",
