@@ -1,7 +1,7 @@
 {
   "verze": 1,
   "posledniBeh": "2026-11-19",
-  "zapatiDatum": "2026-11-13",
+  "zapatiDatum": "2026-11-19",
   "url": {
     "https://checkershappiness.cz": {
       "druh": "obsah",
@@ -202,17 +202,14 @@
     },
     "https://magicenglish.cz/hledate-anglictinu-v-horicich/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "15f275e40cd26041f67d839beda185f0c6312e1f69597c0bbc0f93780858f6a6",
+      "otiskPotvrzeny": "e4139ac24dde44d33e99abadbd9c0c3bd0b18ade713eb995fdff4b8385ef50a8",
       "otiskPosledni": "e4139ac24dde44d33e99abadbd9c0c3bd0b18ade713eb995fdff4b8385ef50a8",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": "Thu, 19 Nov 2026 10:23:29 GMT",
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-16",
-      "zmena": {
-        "od": "2026-11-19",
-        "otisk": "e4139ac24dde44d33e99abadbd9c0c3bd0b18ade713eb995fdff4b8385ef50a8"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -574,13 +571,13 @@
     },
     "https://www.ddmhorice.cz/krouzky": {
       "druh": "prehled",
-      "otiskPotvrzeny": "4b21bb5779cc422f961e7fba0bf080f0577728a9849dd02c9e20ffafdfa47016",
+      "otiskPotvrzeny": "5dc6018294fc9a0bf82793fd5a54deec6f52cd211501ee7976669df61d834279",
       "otiskPosledni": "5dc6018294fc9a0bf82793fd5a54deec6f52cd211501ee7976669df61d834279",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-13",
+      "posledniOk": "2026-11-19",
       "zmena": null,
       "chyba": null,
       "presmerovani": null,
@@ -615,7 +612,7 @@
         "https://www.ddmhorice.cz/krouzky/1032-myslivecky-krouzek",
         "https://www.ddmhorice.cz/krouzky/1033-rybarsky-krouzek-8-15-let",
         "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna",
-        "https://www.ddmhorice.cz/krouzky/1035-parkour",
+        "https://www.ddmhorice.cz/krouzky/1035-parkour-zacatecnici",
         "https://www.ddmhorice.cz/krouzky/1036-parkour-pokrocili",
         "https://www.ddmhorice.cz/krouzky/1037-formace-little-kadetky",
         "https://www.ddmhorice.cz/krouzky/1048-sachy-pokrocili",
@@ -1170,24 +1167,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/1029-keramika-kreativni-tvoreni": {
       "druh": "obsah",
-      "otiskPotvrzeny": "c288f2a0a9e07c6c6016dbc80b6436baa95a34e0a7407f3f0b4a5c86527e3775",
+      "otiskPotvrzeny": "051e43a66c9794b24a1d21123e6c95d585917294d27a82a26c857beedb60fc9f",
       "otiskPosledni": "051e43a66c9794b24a1d21123e6c95d585917294d27a82a26c857beedb60fc9f",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-16",
-      "zmena": {
-        "od": "2026-11-19",
-        "otisk": "051e43a66c9794b24a1d21123e6c95d585917294d27a82a26c857beedb60fc9f"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 1
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":1},\"rozdily\":[{\"id\":\"ddm-horice-keramika-kreativni-tvoreni\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":2}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1030-motoristicky-krouzek-teorie-simulator": {
       "druh": "obsah",
@@ -1260,45 +1254,39 @@
     },
     "https://www.ddmhorice.cz/krouzky/1034-keramika-tvurci-dilna": {
       "druh": "obsah",
-      "otiskPotvrzeny": "a3b1bbe72549d4bc64c5d96392a6fc1ed5600fdc775958c082a61d8b2813d5a8",
+      "otiskPotvrzeny": "f8c2a8e9028cf4ec1913c273422d60d2433419ec24185da54692da4d54471240",
       "otiskPosledni": "f8c2a8e9028cf4ec1913c273422d60d2433419ec24185da54692da4d54471240",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-13",
-      "zmena": {
-        "od": "2026-11-16",
-        "otisk": "f8c2a8e9028cf4ec1913c273422d60d2433419ec24185da54692da4d54471240"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 1
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":1},\"rozdily\":[{\"id\":\"ddm-horice-keramika-tvurci-dilna\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":2}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1035-parkour": {
       "druh": "obsah",
-      "otiskPotvrzeny": "cbad599bdc3e9c774def90f158c509010ef2c9d36c78ffce51313800039a658b",
+      "otiskPotvrzeny": "47912e4db904fcdfd5a718fa359b8ddfddecea8d4c1f5d5e0eb576fbae73f4f1",
       "otiskPosledni": "47912e4db904fcdfd5a718fa359b8ddfddecea8d4c1f5d5e0eb576fbae73f4f1",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-13",
-      "zmena": {
-        "od": "2026-11-16",
-        "otisk": "47912e4db904fcdfd5a718fa359b8ddfddecea8d4c1f5d5e0eb576fbae73f4f1"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 2
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":2},\"rozdily\":[{\"id\":\"ddm-horice-parkour\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":1}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1036-parkour-pokrocili": {
       "druh": "obsah",
@@ -1354,23 +1342,20 @@
     },
     "https://www.ddmhorice.cz/krouzky/1049-3d-tisk": {
       "druh": "obsah",
-      "otiskPotvrzeny": "3084d97b45bbc003c95f1386ae20ed40c3f38a25a045735989a016a5f6403046",
+      "otiskPotvrzeny": "52611eb80ee172fbae9eec4f0d52e335fcf18a2e0ed09b1754b63d03304c832d",
       "otiskPosledni": "52611eb80ee172fbae9eec4f0d52e335fcf18a2e0ed09b1754b63d03304c832d",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-13",
-      "zmena": {
-        "od": "2026-11-16",
-        "otisk": "52611eb80ee172fbae9eec4f0d52e335fcf18a2e0ed09b1754b63d03304c832d"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "nahradnici"
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"nahradnici\"},\"rozdily\":[{\"id\":\"ddm-horice-3d-tisk\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":1}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/1050-anglictina-pro-5-8-tridu": {
       "druh": "obsah",
@@ -1929,24 +1914,21 @@
     },
     "https://www.ddmhorice.cz/krouzky/987-keramika-zaciname-s-hlinou": {
       "druh": "obsah",
-      "otiskPotvrzeny": "e24cab20e34c0ea0ed127b013aa11f9b985dfc2731187c2302168bb101a71f62",
+      "otiskPotvrzeny": "58b12eec35885f0709fc28cafc58155e4051f92d39de172969f18597111c1bec",
       "otiskPosledni": "58b12eec35885f0709fc28cafc58155e4051f92d39de172969f18597111c1bec",
       "verzePravidel": "3593173fb9a08fe3c9538c747904e20eb61e358209ba481f0c5fae3e95f06bb6",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-13",
-      "zmena": {
-        "od": "2026-11-16",
-        "otisk": "58b12eec35885f0709fc28cafc58155e4051f92d39de172969f18597111c1bec"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null,
       "kapacitaWeb": {
         "stav": "posledni",
         "volna_mista": 2
       },
-      "kapacitaNeshoda": "{\"web\":{\"stav\":\"posledni\",\"volna_mista\":2},\"rozdily\":[{\"id\":\"ddm-horice-keramika-zaciname-s-hlinou\",\"data\":{\"stav\":\"posledni\",\"volna_mista\":4}}]}"
+      "kapacitaNeshoda": null
     },
     "https://www.ddmhorice.cz/krouzky/988-roztleskavacky-phoenix-kadetky-2019-2015": {
       "druh": "obsah",
@@ -2169,33 +2151,27 @@
     },
     "https://www.florbalhorice.cz/pridej-se-k-nam": {
       "druh": "obsah",
-      "otiskPotvrzeny": "92ca19170de23334b180684af7302a7812316bffb8e56f0fe1a17df747a86f8c",
+      "otiskPotvrzeny": "bbb2ebf8d3c100bad4b7c089ee0b832ef5c59a84368a733178bed1e1474560f3",
       "otiskPosledni": "bbb2ebf8d3c100bad4b7c089ee0b832ef5c59a84368a733178bed1e1474560f3",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": "W/\"d70c-+I1FTB3o/tAzGwceF+SX0aYVxmM\"",
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-16",
-      "zmena": {
-        "od": "2026-11-19",
-        "otisk": "bbb2ebf8d3c100bad4b7c089ee0b832ef5c59a84368a733178bed1e1474560f3"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
     "https://www.florbalhorice.cz/treninky": {
       "druh": "obsah",
-      "otiskPotvrzeny": "0107fd7343615fc8ddace3f8d1e3d598909135cd58584cfbe6a5b9cec770263c",
+      "otiskPotvrzeny": "747dd2cdceef1e62b4a213bcb559a34fb856542922719a5dc807bde66e99f497",
       "otiskPosledni": "747dd2cdceef1e62b4a213bcb559a34fb856542922719a5dc807bde66e99f497",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": "W/\"12240-sC/UUrSvhjY1brMY/ztFGNw2zMM\"",
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-16",
-      "zmena": {
-        "od": "2026-11-19",
-        "otisk": "747dd2cdceef1e62b4a213bcb559a34fb856542922719a5dc807bde66e99f497"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -2370,17 +2346,14 @@
     },
     "https://www.junakhorice.cz": {
       "druh": "obsah",
-      "otiskPotvrzeny": "e85f72e6fd7e460e462de2a9dac7c8f67cc7122be4b2bcf79d0531f0c6f5fcce",
+      "otiskPotvrzeny": "5d20001f799ad83afc578c96ab9136ee61c8f15925cdf405fa5232c6cf2cf704",
       "otiskPosledni": "5d20001f799ad83afc578c96ab9136ee61c8f15925cdf405fa5232c6cf2cf704",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-13",
-      "zmena": {
-        "od": "2026-11-16",
-        "otisk": "5d20001f799ad83afc578c96ab9136ee61c8f15925cdf405fa5232c6cf2cf704"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -2451,17 +2424,14 @@
     },
     "https://www.kluho.cz": {
       "druh": "obsah",
-      "otiskPotvrzeny": "4d0cf55e34badf86cb0d9cdb059157f5fdf215042b7e738f779fd511bfcd59f7",
+      "otiskPotvrzeny": "158a5938bec6753e63019aebc5fcb9345a26f786a4823d6db52a8ee0d692baa6",
       "otiskPosledni": "158a5938bec6753e63019aebc5fcb9345a26f786a4823d6db52a8ee0d692baa6",
       "verzePravidel": "798e1fee104b349b1678455f8eb1910c84264f6db94865f9f07c98f01e6ed3ba",
       "etag": "W/\"051f157ec0e569c55d475167e0dbc7e2\"",
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-16",
-      "zmena": {
-        "od": "2026-11-19",
-        "otisk": "158a5938bec6753e63019aebc5fcb9345a26f786a4823d6db52a8ee0d692baa6"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
@@ -2727,17 +2697,14 @@
     },
     "https://www.sporthorice.cz/plavecke-krouzky/": {
       "druh": "obsah",
-      "otiskPotvrzeny": "e39f6a8a833c615b0289fc0099e4b1e1724c160c904f3a9d64c0b729c6a72ca2",
+      "otiskPotvrzeny": "3d01be0c3d9706b2f88280f83df530555e791c2ca117f8b860081756a48f9b41",
       "otiskPosledni": "3d01be0c3d9706b2f88280f83df530555e791c2ca117f8b860081756a48f9b41",
       "verzePravidel": "4cb926d490af2d6d4fe0210661c0e7c52acffb634f21b9b9c4874522c1cef4b1",
       "etag": null,
       "lastModified": null,
       "posledniKontrola": "2026-11-19",
-      "posledniOk": "2026-11-13",
-      "zmena": {
-        "od": "2026-11-16",
-        "otisk": "3d01be0c3d9706b2f88280f83df530555e791c2ca117f8b860081756a48f9b41"
-      },
+      "posledniOk": "2026-11-19",
+      "zmena": null,
       "chyba": null,
       "presmerovani": null
     },
